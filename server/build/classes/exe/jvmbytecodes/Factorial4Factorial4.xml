@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<pseudocode>
+	<stack>Class: Factorial4 Method: Factorial4</stack>
+	<code>
+	<line num="0">	aload_0</line>
+	<line num="4">	return</line>
+	</code>
+	<vars>
+	<var>heap height = <replace var="heap_height" /></var>
+	<var>stack height = <replace var="stack_height" /></var>
+	</vars>
+</pseudocode>

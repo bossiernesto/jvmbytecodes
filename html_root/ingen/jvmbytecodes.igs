@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+
+<input_panel>
+  <textfield>
+    <label_line>File name:</label_line>
+    <default_field></default_field>
+    <value_entered></value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Code to visualize:</label_line>
+    <default_field></default_field>
+    <value_entered></value_entered>
+  </textarea>
+</input_panel>
+

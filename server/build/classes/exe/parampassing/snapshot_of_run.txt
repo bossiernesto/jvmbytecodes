@@ -1,0 +1,59 @@
+[goweyj98@csf11 parampassing]$ cd ..
+[goweyj98@csf11 exe]$ java exe/parampassing/RandomProblemGenerator 1.sho 2.sho 3.html 1 1 1
+Exception in thread "main" java.lang.NoClassDefFoundError: exe/parampassing/RandomProblemGenerator
+[goweyj98@csf11 exe]$ export CLASSPATH=/home/naps/jhave_testing/client:/home/naps/jhave_testing/Server/GaigsServer2000:/home/naps/jhave_testing
+[goweyj98@csf11 exe]$ java exe/parampassing/RandomProblemGenerator 1.sho 2.sho 3.html 1 1 1
+
+Exception in thread "main" java.io.FileNotFoundException: 1.sho (Permission denied)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:131)
+	at java.io.FileWriter.<init>(FileWriter.java:73)
+	at exe.parampassing.ProblemGenerator.printFile(ProblemGenerator.java:911)
+	at exe.parampassing.CopyAndRef.createProgram(CopyAndRef.java:218)
+	at exe.parampassing.RandomProblemGenerator.main(RandomProblemGenerator.java:34)
+[goweyj98@csf11 exe]$ pwd
+/home/naps/jhave_testing/Server/GaigsServer2000/exe
+[goweyj98@csf11 exe]$ java exe/parampassing/RandomProblemGenerator parampassing/1.sho parampassing/2.sho parampassing/3.html 1 1 1
+
+[goweyj98@csf11 exe]$ java exe/parampassing/Test parampassing/1.sho 
+Exception in thread "main" java.net.MalformedURLException: no protocol: parampassing/1.sho
+	at java.net.URL.<init>(URL.java:537)
+	at java.net.URL.<init>(URL.java:434)
+	at java.net.URL.<init>(URL.java:383)
+	at exe.parampassing.Test.main(Test.java:18)
+[goweyj98@csf11 exe]$ java exe/parampassing/Test file//home/naps/jhave_testing/Server/GaigsServer2000/exe/parampassing/1.sho
+Exception in thread "main" java.net.MalformedURLException: no protocol: file//home/naps/jhave_testing/Server/GaigsServer2000/exe/parampassing/1.sho
+	at java.net.URL.<init>(URL.java:537)
+	at java.net.URL.<init>(URL.java:434)
+	at java.net.URL.<init>(URL.java:383)
+	at exe.parampassing.Test.main(Test.java:18)
+[goweyj98@csf11 exe]$ ls parampassing/
+1.sho	      alg_vis.html	CopyAndRef.java~   Makefile	    parampassing.pl~	    RandomProblemGenerator.class  Test.java
+2.sho	      alg_vis.sho	DataStorage.class  Makefile~	    ProblemGenerator.class  RandomProblemGenerator.java   Test.java~
+3.html	      CopyAndRef.class	DataStorage.java   #MakeFIle#	    ProblemGenerator.java   RandomProblemGenerator.java~
+alg_vis2.sho  CopyAndRef.java	DataStorage.java~  parampassing.pl  ProblemGenerator.java~  Test.class
+[goweyj98@csf11 exe]$ java exe/parampassing/Test file///home/naps/jhave_testing/Server/GaigsServer2000/exe/parampassing/1.sho
+Exception in thread "main" java.net.MalformedURLException: no protocol: file///home/naps/jhave_testing/Server/GaigsServer2000/exe/parampassing/1.sho
+	at java.net.URL.<init>(URL.java:537)
+	at java.net.URL.<init>(URL.java:434)
+	at java.net.URL.<init>(URL.java:383)
+	at exe.parampassing.Test.main(Test.java:18)
+[goweyj98@csf11 exe]$ java exe/parampassing/Test file:///home/naps/jhave_testing/Server/GaigsServer2000/exe/parampassing/1.sho
+Exception in thread "main" java.lang.NoClassDefFoundError: animal/misc/QuestionInterface
+	at java.lang.ClassLoader.defineClass0(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:537)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:123)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:251)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:55)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:194)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:187)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:289)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:274)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:235)
+	at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:302)
+	at gaigs.GaigsAV.init(GaigsAV.java:168)
+	at gaigs.GaigsAV.<init>(GaigsAV.java:74)
+	at exe.parampassing.Test.main(Test.java:19)
+[goweyj98@csf11 exe]$ 

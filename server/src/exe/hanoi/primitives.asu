@@ -1,0 +1,67 @@
+%Animal 2
+{
+  circle "dot" (20, 65) radius 4 color black filled fillColor black
+  circle "dot0" offset (0, 35) from "dot" C radius 4 color black filled fillColor black hidden
+  circle "dot1" offset (0, 35) from "dot0" C radius 4 color black filled fillColor black hidden
+  circle "dot2" offset (0, 35) from "dot1" C radius 4 color black filled fillColor black hidden
+  circle "dot3" offset (0, 35) from "dot2" C radius 4 color black filled fillColor black hidden
+  circle "dot4" offset (0, 35) from "dot3" C radius 4 color black filled fillColor black hidden
+  circle "dot5" offset (0, 35) from "dot4" C radius 4 color black filled fillColor black hidden
+  circle "dot6" offset (0, 35) from "dot5" C radius 4 color black filled fillColor black hidden
+  circle "dot7" offset (0, 35) from "dot6" C radius 4 color black filled fillColor black hidden
+  circle "dot8" offset (0, 35) from "dot7" C radius 4 color black filled fillColor black hidden
+  circle "dot9" offset (0, 35) from "dot8" C radius 4 color black filled fillColor black hidden
+  circle "dot10" offset (0, 35) from "dot9" C radius 4 color black filled fillColor black hidden
+  circle "dot11" offset (0, 35) from "dot10" C radius 4 color black filled fillColor black hidden
+  text "header" "AnimalScript Primitives" (380, 30) centered depth 2 font SansSerif size 24 bold boxed
+  text "aml1" "Supported basic graphic primitives:" offset (10, 6) from "dot" SE size 24
+}
+{
+  text "aml2" "- point" offset (40, 6) from "dot0" SE
+  point "p0" offset (20, 0) from "aml2" E color red after 3 ticks
+  point "p1" offset (10, 2) from "p0" E color green2 after 6 ticks
+  point "p2" offset (10, -4) from "p1" E color blue after 9 ticks
+  point "p3" offset (10, 2) from "p2" E color cyan4 after 12 ticks
+  point "p4" offset (10, -4) from "p3" E color brown3 after 15 ticks
+  text "aml2a" "(by definition almost invisible!)" offset (10, 12) from "p4" C  after 20 ticks
+}
+{
+  text "aml3" "- polyline / polygon" offset (40, 6) from "dot1" SE
+  polyline "pl0" offset (20, 0) from "aml3" E offset (15, -10) from "aml3" E offset (10, 0) from "aml3" E offset (15, 10) from "aml3" E color red after 3 ticks
+  polyline "pl1" offset (40, 0) from "aml3" E offset (65, 0) from "aml3" E color red fwArrow after 6 ticks
+  square "pl2" offset (70, -10) from "aml3" E 20 after 9 ticks
+  rectangle "pl3" offset (95, -10) from "aml3" E offset (115, 20) from "aml3" E filled fillColor gold  after 12 ticks
+  square "pl4" offset (2, -10) from "pl3" E 30 filled fillColor blue after 15 ticks
+  triangle "pl4a" offset (0, 0) from "pl4" NW move (15, -15) move (15, 15) filled fillColor red after 15 ticks
+  polygon "pl5" (450, 160) (450, 130) (460, 130) (460, 150) (470, 150) (470, 140) (480, 140) (480, 150) (490, 150) (490, 130) (500, 130) (500, 160) color red filled fillColor gold after 18 ticks
+}
+{
+  text "aml4" "- text" offset (40, 6) from "dot2" SE
+  text "aml4a" "Serif24" offset (10, 6) from "aml4" E color gold font Serif size 24 italic after 3 ticks
+  text "aml4b" "SansSerif16" offset (10, 6) from "aml4a" E color blue3 font SansSerif size 16 bold after 6 ticks
+  text "aml4c" "Mono18" offset (10, 6) from "aml4b" E color green3 font Monospaced size 18 after 9 ticks
+}
+{
+  text "aml5" "- arcs" offset (40, 6) from "dot3" SE color black font SansSerif size 24
+  circle "arc0" offset (20, 0) from "aml5" E radius 10 after 3 ticks
+  ellipse "arc1" offset (60, 0) from "aml5" E radius (20, 10) filled after 6 ticks
+  circlesegment "arc2" offset (110, 0) from "aml5" E radius 20 angle 150 starts 30 color blue fwArrow after 9 ticks
+  arc "arc3" offset (170, -10) from "aml5" E radius (30, 20) angle 210 starts 10 closed filled fillColor red after 9 ticks
+  arc "arc4" offset (240, -10) from "aml5" E radius (30, 25) angle 210 starts 10 clockwise closed after 12 ticks
+  arc "arc3" offset (310, -10) from "aml5" E radius (30, 20) angle 80 starts 10 closed filled fillColor green after 15 ticks
+  arc "arc4" offset (310, -10) from "aml5" E radius (30, 20) angle 280 starts 90 closed filled fillColor blue after 15 ticks
+}
+{
+  text "aml6" "- list elements" offset (40, 6) from "dot4" SE color black font SansSerif size 24
+  listelement "le0" offset (20, 0) from "aml6" NE text "Elem1" pointers 1 after 3 ticks
+  listelement "le1" offset (20, 0) from "le0" NE text "Elem2" pointers 2 after 6 ticks
+  listelement "le2" offset (20, 0) from "le1" NE text "Elem3" pointers 2 ptr2 to "le1" after 9 ticks
+  listelement "le3" offset (20, 0) from "le2" NE text "Elem4" pointers 1 position right textColor blue after 12 ticks
+  listelement "le4" offset (20, 0) from "le3" NE text "Elem5" pointers 2 position top after 15 ticks
+}
+array "array" (525, 200) length 5 "1" "2" "3" "4" "5"
+arrayMarker "index1" on "array" atIndex 1 label "i" 
+arrayPut "42" on "array" position 0 after 5 ticks
+highlightArrayCell on "array" position 2
+unhighlightArrayCell on "array" position 2
+arraySwap on "array" position 0 with 3 within 10 ticks

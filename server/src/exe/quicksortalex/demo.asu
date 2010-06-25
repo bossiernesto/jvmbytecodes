@@ -1,0 +1,267 @@
+%Animal 2
+{
+array "qarray" (100,10) color black fillColor white elementColor black elemHighlight red cellHighlight yellow vertical length 16 "75""17""6""49""67""85""19""97""33""34""85""28""93""53""Pivot""X"
+highlightArrayCell on "qarray" position 14
+arrayMarker "lo" on "qarray" atIndex 0 label "lo"
+arrayMarker "hi" on "qarray" atIndex 13 label "hi"
+}
+{
+{
+moveArrayIndex "lo" to position 0
+moveArrayIndex "hi" to position 13
+arraySwap on "qarray" position 0 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 1
+}
+{
+moveArrayIndex "lo" to position 2
+}
+{
+moveArrayIndex "lo" to position 3
+}
+{
+moveArrayIndex "lo" to position 4
+}
+{
+moveArrayIndex "lo" to position 5
+}
+{
+arraySwap on "qarray" position 5 with 13 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 6
+}
+{
+moveArrayIndex "lo" to position 7
+}
+{
+moveArrayIndex "hi" to position 12
+}
+{
+moveArrayIndex "hi" to position 11
+}
+{
+arraySwap on "qarray" position 7 with 11 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 8
+}
+{
+moveArrayIndex "lo" to position 9
+}
+{
+moveArrayIndex "lo" to position 10
+}
+{
+moveArrayIndex "hi" to position 10
+}
+{
+moveArrayIndex "hi" to position 9
+}
+{
+arraySwap on "qarray" position 0 with 9 within 500 ms
+}
+{
+arraySwap on "qarray" position 9 with 15 within 500 ms
+highlightArrayCell on "qarray" position 9
+}
+{
+moveArrayIndex "lo" to position 0
+moveArrayIndex "hi" to position 8
+arraySwap on "qarray" position 0 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 1
+}
+{
+moveArrayIndex "lo" to position 2
+}
+{
+moveArrayIndex "lo" to position 3
+}
+{
+arraySwap on "qarray" position 3 with 8 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 4
+}
+{
+moveArrayIndex "hi" to position 7
+}
+{
+arraySwap on "qarray" position 4 with 7 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 5
+}
+{
+moveArrayIndex "hi" to position 6
+}
+{
+arraySwap on "qarray" position 5 with 6 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 6
+}
+{
+moveArrayIndex "hi" to position 5
+}
+{
+arraySwap on "qarray" position 0 with 5 within 500 ms
+}
+{
+arraySwap on "qarray" position 5 with 15 within 500 ms
+highlightArrayCell on "qarray" position 5
+}
+{
+moveArrayIndex "lo" to position 0
+moveArrayIndex "hi" to position 4
+arraySwap on "qarray" position 0 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 1
+}
+{
+moveArrayIndex "lo" to position 2
+}
+{
+moveArrayIndex "lo" to position 3
+}
+{
+moveArrayIndex "hi" to position 3
+}
+{
+moveArrayIndex "hi" to position 2
+}
+{
+arraySwap on "qarray" position 0 with 2 within 500 ms
+}
+{
+arraySwap on "qarray" position 2 with 15 within 500 ms
+highlightArrayCell on "qarray" position 2
+}
+{
+moveArrayIndex "lo" to position 0
+moveArrayIndex "hi" to position 1
+arraySwap on "qarray" position 0 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 1
+}
+{
+moveArrayIndex "hi" to position 0
+}
+{
+arraySwap on "qarray" position 0 with 15 within 500 ms
+highlightArrayCell on "qarray" position 0
+}
+{
+highlightArrayCell on "qarray" position 0
+}
+{
+highlightArrayCell on "qarray" position 1
+}
+{
+moveArrayIndex "lo" to position 3
+moveArrayIndex "hi" to position 4
+arraySwap on "qarray" position 3 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 4
+}
+{
+arraySwap on "qarray" position 3 with 4 within 500 ms
+}
+{
+arraySwap on "qarray" position 4 with 15 within 500 ms
+highlightArrayCell on "qarray" position 4
+}
+{
+highlightArrayCell on "qarray" position 3
+}
+{
+highlightArrayCell on "qarray" position 5
+}
+{
+moveArrayIndex "lo" to position 6
+moveArrayIndex "hi" to position 8
+arraySwap on "qarray" position 6 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 7
+}
+{
+arraySwap on "qarray" position 7 with 8 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 8
+}
+{
+moveArrayIndex "hi" to position 7
+}
+{
+arraySwap on "qarray" position 6 with 7 within 500 ms
+}
+{
+arraySwap on "qarray" position 7 with 15 within 500 ms
+highlightArrayCell on "qarray" position 7
+}
+{
+highlightArrayCell on "qarray" position 6
+}
+{
+highlightArrayCell on "qarray" position 8
+}
+{
+moveArrayIndex "lo" to position 10
+moveArrayIndex "hi" to position 13
+arraySwap on "qarray" position 10 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 11
+}
+{
+arraySwap on "qarray" position 11 with 13 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 12
+}
+{
+moveArrayIndex "hi" to position 12
+}
+{
+moveArrayIndex "hi" to position 11
+}
+{
+arraySwap on "qarray" position 10 with 11 within 500 ms
+}
+{
+arraySwap on "qarray" position 11 with 15 within 500 ms
+highlightArrayCell on "qarray" position 11
+}
+{
+highlightArrayCell on "qarray" position 10
+}
+{
+moveArrayIndex "lo" to position 12
+moveArrayIndex "hi" to position 13
+arraySwap on "qarray" position 12 with 15 within 500 ms
+}
+{
+moveArrayIndex "lo" to position 13
+}
+{
+moveArrayIndex "hi" to position 12
+}
+{
+arraySwap on "qarray" position 12 with 15 within 500 ms
+highlightArrayCell on "qarray" position 12
+}
+{
+highlightArrayCell on "qarray" position 12
+}
+{
+highlightArrayCell on "qarray" position 13
+}
+}

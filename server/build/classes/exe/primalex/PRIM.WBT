@@ -1,0 +1,34 @@
+filebase = param1 
+datafileparam = param2
+paramstring = param3
+; if the datafileparam is *, we'll have to produce a data file (.dat) and will
+; need a temp (.tmp) file to do it
+; For example, run in the following fashion -- 
+;                            prim_scr e:\junk\data\foo * *
+; we will create three files foo.tmp, foo.dat, and foo.sho in the directory 
+; e:\junk\data
+if datafileparam == "*" 
+	tempfile = strcat(filebase, ".tmp")
+	datafile = strcat(filebase, ".dat")
+else
+	; else we pick up the extension to the data file name
+	; For example, run in the following fashion -- 
+	;               prim e:\junk\data\foo .dat *
+	; we will not create a new data file, but instead the algo will read data
+	; from the file e:\junk\data\foo.dat 
+	; The sho file produced will be named e:\junk\data\foo.sho
+	datafile = strcat(filebase, datafileparam)
+endif
+; Establish the name of the sho file
+shofile = strcat(filebase, ".sho")
+datagenexe = "prim_data.exe"
+algoexe = "prim_algo.exe"
+; if the datafileparam is *, we'll run the data file generator since this tells
+; us that no data file exists
+if datafileparam == "*"
+	runhidewait(datagenexe, "%tempfile% %datafile%")
+endif
+runhidewait(algoexe, "%datafile% %shofile%")
+
+exit                                   ; bye
+

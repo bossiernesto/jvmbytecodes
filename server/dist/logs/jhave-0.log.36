@@ -1,0 +1,1020 @@
+6/16/10 9:22 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:22 AM - INFO: Object: Thread[Thread-157,5,main]
+6/16/10 9:22 AM - INFO: 1 memorymanager no_username
+6/16/10 9:22 AM - FINER: ENTRY
+6/16/10 9:22 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:22 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:22 AM - FINER: ENTRY
+6/16/10 9:22 AM - FINER: ENTRY
+6/16/10 9:22 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/157 *
+6/16/10 9:22 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:22 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/157 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/157.xml
+6/16/10 9:22 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/157 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/157.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:22 AM - FINE: Process started
+6/16/10 9:22 AM - FINE: And completed
+6/16/10 9:22 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/157.sho
+6/16/10 9:22 AM - FINE: http://localhost:8080/html_root/uid/157.sho
+6/16/10 9:22 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:22 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/157.sho
+6/16/10 9:22 AM - INFO: Accepted connection 158 from 127.0.0.1
+6/16/10 9:22 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:22 AM - INFO: Object: Thread[Thread-158,5,main]
+6/16/10 9:22 AM - INFO: 1 memorymanager no_username
+6/16/10 9:22 AM - FINER: ENTRY
+6/16/10 9:22 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:28 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:28 AM - FINE: killConnection: Communication Error.
+6/16/10 9:28 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:28 AM - FINE: Killing client 158
+6/16/10 9:28 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:28 AM - FINE: killConnection: Communication Error.
+6/16/10 9:28 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:28 AM - FINE: Killing client 157
+6/16/10 9:28 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:28 AM - FINE: killConnection: Communication Error.
+6/16/10 9:28 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:28 AM - FINE: Killing client 156
+6/16/10 9:28 AM - INFO: Accepted connection 159 from 127.0.0.1
+6/16/10 9:28 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:28 AM - INFO: Object: Thread[Thread-159,5,main]
+6/16/10 9:28 AM - INFO: 1 memorymanager no_username
+6/16/10 9:28 AM - FINER: ENTRY
+6/16/10 9:28 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:28 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:28 AM - FINER: ENTRY
+6/16/10 9:28 AM - FINER: ENTRY
+6/16/10 9:28 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/159 *
+6/16/10 9:28 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:28 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/159 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/159.xml
+6/16/10 9:28 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/159 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/159.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:28 AM - FINE: Process started
+6/16/10 9:28 AM - FINE: And completed
+6/16/10 9:28 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/159.sho
+6/16/10 9:28 AM - FINE: http://localhost:8080/html_root/uid/159.sho
+6/16/10 9:28 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:28 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/159.sho
+6/16/10 9:32 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:32 AM - FINE: killConnection: Communication Error.
+6/16/10 9:32 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:32 AM - FINE: Killing client 159
+6/16/10 9:32 AM - INFO: Accepted connection 160 from 127.0.0.1
+6/16/10 9:32 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:32 AM - INFO: Object: Thread[Thread-160,5,main]
+6/16/10 9:32 AM - INFO: 1 memorymanager no_username
+6/16/10 9:32 AM - FINER: ENTRY
+6/16/10 9:32 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:32 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:32 AM - FINER: ENTRY
+6/16/10 9:32 AM - FINER: ENTRY
+6/16/10 9:32 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/160 *
+6/16/10 9:32 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:32 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/160 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/160.xml
+6/16/10 9:32 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/160 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/160.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:32 AM - FINE: Process started
+6/16/10 9:32 AM - FINE: And completed
+6/16/10 9:32 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/160.sho
+6/16/10 9:32 AM - FINE: http://localhost:8080/html_root/uid/160.sho
+6/16/10 9:32 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:32 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/160.sho
+6/16/10 9:32 AM - INFO: Accepted connection 161 from 127.0.0.1
+6/16/10 9:32 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:32 AM - INFO: Object: Thread[Thread-161,5,main]
+6/16/10 9:32 AM - INFO: 1 memorymanager no_username
+6/16/10 9:32 AM - FINER: ENTRY
+6/16/10 9:32 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:33 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:33 AM - FINER: ENTRY
+6/16/10 9:33 AM - FINER: ENTRY
+6/16/10 9:33 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/161 *
+6/16/10 9:33 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:33 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/161 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/161.xml
+6/16/10 9:33 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/161 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/161.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:33 AM - FINE: Process started
+6/16/10 9:33 AM - FINE: And completed
+6/16/10 9:33 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/161.sho
+6/16/10 9:33 AM - FINE: http://localhost:8080/html_root/uid/161.sho
+6/16/10 9:33 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:33 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/161.sho
+6/16/10 9:35 AM - INFO: Accepted connection 162 from 127.0.0.1
+6/16/10 9:35 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:35 AM - INFO: Object: Thread[Thread-162,5,main]
+6/16/10 9:35 AM - INFO: 1 memorymanager no_username
+6/16/10 9:35 AM - FINER: ENTRY
+6/16/10 9:35 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:43 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:43 AM - FINE: killConnection: Communication Error.
+6/16/10 9:43 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:43 AM - FINE: Killing client 160
+6/16/10 9:43 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:43 AM - FINE: killConnection: Communication Error.
+6/16/10 9:43 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:43 AM - FINE: Killing client 161
+6/16/10 9:43 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:43 AM - FINE: killConnection: Communication Error.
+6/16/10 9:43 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:43 AM - FINE: Killing client 162
+6/16/10 9:43 AM - INFO: Accepted connection 163 from 127.0.0.1
+6/16/10 9:43 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:43 AM - INFO: Object: Thread[Thread-163,5,main]
+6/16/10 9:43 AM - INFO: 1 reu_bubsort no_username
+6/16/10 9:43 AM - FINER: ENTRY
+6/16/10 9:43 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:44 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 9:44 AM - FINER: ENTRY
+6/16/10 9:44 AM - FINER: ENTRY
+6/16/10 9:44 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 *
+6/16/10 9:44 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 9:44 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.xml
+6/16/10 9:44 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:44 AM - FINE: Process started
+6/16/10 9:44 AM - FINE: And completed
+6/16/10 9:44 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.sho
+6/16/10 9:44 AM - FINE: http://localhost:8080/html_root/uid/163.sho
+6/16/10 9:44 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 9:44 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/163.sho
+6/16/10 9:45 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 9:45 AM - FINER: ENTRY
+6/16/10 9:45 AM - FINER: ENTRY
+6/16/10 9:45 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 *
+6/16/10 9:45 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 9:45 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.xml
+6/16/10 9:45 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/163 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:45 AM - FINE: Process started
+6/16/10 9:45 AM - FINE: And completed
+6/16/10 9:45 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/163.sho
+6/16/10 9:45 AM - FINE: http://localhost:8080/html_root/uid/163.sho
+6/16/10 9:45 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 9:45 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/163.sho
+6/16/10 9:49 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:49 AM - FINE: killConnection: Communication Error.
+6/16/10 9:49 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:49 AM - FINE: Killing client 163
+6/16/10 9:49 AM - INFO: Accepted connection 164 from 127.0.0.1
+6/16/10 9:49 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:49 AM - INFO: Object: Thread[Thread-164,5,main]
+6/16/10 9:49 AM - INFO: 1 reu_bubsort no_username
+6/16/10 9:49 AM - FINER: ENTRY
+6/16/10 9:49 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:49 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 9:49 AM - FINER: ENTRY
+6/16/10 9:49 AM - FINER: ENTRY
+6/16/10 9:49 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/164 *
+6/16/10 9:49 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 9:49 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/164 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/164.xml
+6/16/10 9:49 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/164 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/164.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:49 AM - FINE: Process started
+6/16/10 9:49 AM - FINE: And completed
+6/16/10 9:49 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/164.sho
+6/16/10 9:49 AM - FINE: http://localhost:8080/html_root/uid/164.sho
+6/16/10 9:49 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 9:49 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/164.sho
+6/16/10 9:57 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:57 AM - FINE: killConnection: Communication Error.
+6/16/10 9:57 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:57 AM - FINE: Killing client 164
+6/16/10 9:57 AM - INFO: Accepted connection 165 from 127.0.0.1
+6/16/10 9:57 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:57 AM - INFO: Object: Thread[Thread-165,5,main]
+6/16/10 9:57 AM - INFO: 1 memorymanager no_username
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:57 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/165 *
+6/16/10 9:57 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:57 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/165 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/165.xml
+6/16/10 9:57 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/165 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/165.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:57 AM - FINE: Process started
+6/16/10 9:57 AM - FINE: And completed
+6/16/10 9:57 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/165.sho
+6/16/10 9:57 AM - FINE: http://localhost:8080/html_root/uid/165.sho
+6/16/10 9:57 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:57 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/165.sho
+6/16/10 9:57 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:57 AM - FINE: killConnection: Communication Error.
+6/16/10 9:57 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:57 AM - FINE: Killing client 165
+6/16/10 9:57 AM - INFO: Accepted connection 166 from 127.0.0.1
+6/16/10 9:57 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:57 AM - INFO: Object: Thread[Thread-166,5,main]
+6/16/10 9:57 AM - INFO: 1 reu_bubsort no_username
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:57 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - FINER: ENTRY
+6/16/10 9:57 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/166 *
+6/16/10 9:57 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 9:57 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/166 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/166.xml
+6/16/10 9:57 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/166 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/166.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:57 AM - FINE: Process started
+6/16/10 9:57 AM - FINE: And completed
+6/16/10 9:57 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/166.sho
+6/16/10 9:57 AM - FINE: http://localhost:8080/html_root/uid/166.sho
+6/16/10 9:57 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 9:57 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/166.sho
+6/16/10 10:01 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:01 AM - FINE: killConnection: Communication Error.
+6/16/10 10:01 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:01 AM - FINE: Killing client 166
+6/16/10 10:01 AM - INFO: Accepted connection 167 from 127.0.0.1
+6/16/10 10:01 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:01 AM - INFO: Object: Thread[Thread-167,5,main]
+6/16/10 10:01 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:01 AM - FINER: ENTRY
+6/16/10 10:01 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:02 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 10:02 AM - FINER: ENTRY
+6/16/10 10:02 AM - FINER: ENTRY
+6/16/10 10:02 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/167 *
+6/16/10 10:02 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:02 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/167 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/167.xml
+6/16/10 10:02 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/167 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/167.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:02 AM - FINE: Process started
+6/16/10 10:02 AM - FINE: And completed
+6/16/10 10:02 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/167.sho
+6/16/10 10:02 AM - FINE: http://localhost:8080/html_root/uid/167.sho
+6/16/10 10:02 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 10:02 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/167.sho
+6/16/10 10:06 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:06 AM - FINE: killConnection: Communication Error.
+6/16/10 10:06 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:06 AM - FINE: Killing client 167
+6/16/10 10:06 AM - INFO: Accepted connection 168 from 127.0.0.1
+6/16/10 10:06 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:06 AM - INFO: Object: Thread[Thread-168,5,main]
+6/16/10 10:06 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:06 AM - FINER: ENTRY
+6/16/10 10:06 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:07 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 10:07 AM - FINER: ENTRY
+6/16/10 10:07 AM - FINER: ENTRY
+6/16/10 10:07 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 *
+6/16/10 10:07 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:07 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.xml
+6/16/10 10:07 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:07 AM - FINE: Process started
+6/16/10 10:07 AM - FINE: And completed
+6/16/10 10:07 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.sho
+6/16/10 10:07 AM - FINE: http://localhost:8080/html_root/uid/168.sho
+6/16/10 10:07 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 10:07 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/168.sho
+6/16/10 10:08 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>10</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered></value_entered>
+  </textarea>
+</input_panel>
+6/16/10 10:08 AM - FINER: ENTRY
+6/16/10 10:08 AM - FINER: ENTRY
+6/16/10 10:08 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 *
+6/16/10 10:08 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:08 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.xml
+6/16/10 10:08 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/168 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:08 AM - FINE: Process started
+6/16/10 10:09 AM - FINE: And completed
+6/16/10 10:09 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/168.sho
+6/16/10 10:09 AM - FINE: http://localhost:8080/html_root/uid/168.sho
+6/16/10 10:09 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 10:09 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/168.sho
+6/16/10 10:10 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:10 AM - FINE: killConnection: Communication Error.
+6/16/10 10:10 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:10 AM - FINE: Killing client 168
+6/16/10 10:11 AM - INFO: Accepted connection 169 from 127.0.0.1
+6/16/10 10:11 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:11 AM - INFO: Object: Thread[Thread-169,5,main]
+6/16/10 10:11 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:11 AM - FINER: ENTRY
+6/16/10 10:11 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:11 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 10:11 AM - FINER: ENTRY
+6/16/10 10:11 AM - FINER: ENTRY
+6/16/10 10:11 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/169 *
+6/16/10 10:11 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:11 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/169 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/169.xml
+6/16/10 10:11 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/169 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/169.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:11 AM - FINE: Process started
+6/16/10 10:11 AM - FINE: And completed
+6/16/10 10:11 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/169.sho
+6/16/10 10:11 AM - FINE: http://localhost:8080/html_root/uid/169.sho
+6/16/10 10:11 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 10:11 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/169.sho
+6/16/10 10:18 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:18 AM - FINE: killConnection: Communication Error.
+6/16/10 10:18 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:18 AM - FINE: Killing client 169
+6/16/10 10:19 AM - INFO: Accepted connection 170 from 127.0.0.1
+6/16/10 10:19 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:19 AM - INFO: Object: Thread[Thread-170,5,main]
+6/16/10 10:19 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:19 AM - FINER: ENTRY
+6/16/10 10:19 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:19 AM - INFO: 4 reu_bubsort new null
+6/16/10 10:19 AM - FINER: ENTRY
+6/16/10 10:19 AM - FINER: ENTRY
+6/16/10 10:19 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/170 *
+6/16/10 10:19 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:19 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/170 * null
+6/16/10 10:19 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/170 * null)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:19 AM - FINE: Process started
+6/16/10 10:19 AM - FINE: And completed
+6/16/10 10:19 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/170.sho
+6/16/10 10:19 AM - WARNING: Could not locate the generated script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/170.sho
+6/16/10 10:19 AM - FINE: sendtoClient - 402 An error occured trying to run the requested algorithm.
+6/16/10 10:21 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:21 AM - FINE: killConnection: Communication Error.
+6/16/10 10:21 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:21 AM - FINE: Killing client 170
+6/16/10 10:21 AM - INFO: Accepted connection 171 from 127.0.0.1
+6/16/10 10:21 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:21 AM - INFO: Object: Thread[Thread-171,5,main]
+6/16/10 10:21 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:21 AM - FINER: ENTRY
+6/16/10 10:21 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:21 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here:</label_line>
+    <default_field>EMPTY</default_field>
+    <value_entered />
+  </textarea>
+</input_panel>
+6/16/10 10:21 AM - FINER: ENTRY
+6/16/10 10:21 AM - FINER: ENTRY
+6/16/10 10:21 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/171 *
+6/16/10 10:21 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:21 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/171 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/171.xml
+6/16/10 10:21 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/171 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/171.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 10:21 AM - FINE: Process started
+6/16/10 10:21 AM - FINE: And completed
+6/16/10 10:21 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/171.sho
+6/16/10 10:21 AM - FINE: http://localhost:8080/html_root/uid/171.sho
+6/16/10 10:21 AM - FINE: sendtoClient - 400 reu_bubsort gaigs
+6/16/10 10:21 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/171.sho
+6/16/10 10:22 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:22 AM - FINE: killConnection: Communication Error.
+6/16/10 10:22 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:22 AM - FINE: Killing client 171
+6/16/10 10:27 AM - INFO: Accepted connection 172 from 127.0.0.1
+6/16/10 10:27 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:27 AM - INFO: Object: Thread[Thread-172,5,main]
+6/16/10 10:27 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:27 AM - FINER: ENTRY
+6/16/10 10:27 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:27 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 10:27 AM - FINE: killConnection: Communication Error.
+6/16/10 10:27 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 10:27 AM - FINE: Killing client 172
+6/16/10 10:29 AM - INFO: Accepted connection 173 from 127.0.0.1
+6/16/10 10:29 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 10:29 AM - INFO: Object: Thread[Thread-173,5,main]
+6/16/10 10:29 AM - INFO: 1 reu_bubsort no_username
+6/16/10 10:29 AM - FINER: ENTRY
+6/16/10 10:29 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 10:29 AM - INFO: 4 reu_bubsort new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>Enter the size of the array to be sorted:</label_line>
+    <default_field>10</default_field>
+    <value_entered>10</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Enter your stuff here:</label_line>
+    <default_field>THIS IS REALLY FUCKING STUPID</default_field>
+    <value_entered>ladfjaoisdfjaosidfjaiosdjfioasjdfoiasjdfioasjdfiojasiodfjasiodfjaoisdjfioasdjfiajvioanroghalgbnngaousdnfoaisvjienviwehgoiahnsogihnasiovnweionfaoiwergnoi[asrngoi[asngo[iasn[oginasoigna[iognaoignaosinvo[iwner[ivbqahn</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 10:29 AM - FINER: ENTRY
+6/16/10 10:29 AM - FINER: ENTRY
+6/16/10 10:29 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/173 *
+6/16/10 10:29 AM - FINE: Up front with user  no_username looking for -- exe/reu_bubsort/reu_bubsort
+6/16/10 10:29 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/173 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/173.xml
+6/16/10 10:29 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.reu_bubsort.reu_bubsort /students/sheelc21/Documents/SVN/trunk/html_root/uid/173 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/173.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/

@@ -1,0 +1,11 @@
+use strict;
+use warnings;
+
+if ($ARGV[2] eq "QUIZMODE")
+{
+    system("java exe.beamsearch.BeamSearch " . $ARGV[0] . ".sho errant8 2 10 High");
+}
+else
+{
+system("java exe.beamsearch.BeamSearch " . $ARGV[0] . ".sho " . $ARGV[2] . " " . $ARGV[4] . " " . $ARGV[6] . " " . $ARGV[8]);
+}

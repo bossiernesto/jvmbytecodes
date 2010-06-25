@@ -1,0 +1,582 @@
+%Animal 2 
+title "Extensible Visualization Framework Animal"
+author "Guido Rößling (roessling@acm.org)"
+{
+  defineLocation "dotPos" (20, 65)
+  defineLocation "dot0Pos" offset (0, 35) from "dotPos" C
+  defineLocation "dot1Pos" offset (0, 35) from "dot0Pos" C
+  defineLocation "dot2Pos" offset (0, 35) from "dot1Pos" C
+  defineLocation "dot3Pos" offset (0, 35) from "dot2Pos" C
+  defineLocation "dot4Pos" offset (0, 35) from "dot3Pos" C
+  defineLocation "dot5Pos" offset (0, 35) from "dot4Pos" C
+  defineLocation "dot6Pos" offset (0, 35) from "dot5Pos" C
+  defineLocation "dot7Pos" offset (0, 35) from "dot6Pos" C
+  defineLocation "dot8Pos" offset (0, 35) from "dot7Pos" C
+  defineLocation "dot9Pos" offset (0, 35) from "dot8Pos" C
+  defineLocation "dot10Pos" offset (0, 35) from "dot9Pos" C
+  defineLocation "dot11Pos" offset (0, 35) from "dot10Pos" C
+  defineLocation "headerPos" (380, 30)
+  defineLocation "miniHdrPos" (760, 25)
+  defineLocation "miniAuthorPos" (760, 45)
+  defineLocation "textPos" offset (10, 8) from "dotPos" SE
+  defineLocation "text0Pos" offset (10, 8) from "dot0Pos" SE
+  defineLocation "text1Pos" offset (10, 8) from "dot1Pos" SE
+  defineLocation "text2Pos" offset (10, 8) from "dot2Pos" SE
+  defineLocation "text3Pos" offset (10, 8) from "dot3Pos" SE
+  defineLocation "text4Pos" offset (10, 8) from "dot4Pos" SE
+  defineLocation "text5Pos" offset (10, 8) from "dot5Pos" SE
+  defineLocation "text6Pos" offset (10, 8) from "dot6Pos" SE
+  defineLocation "text7Pos" offset (10, 8) from "dot7Pos" SE
+  defineLocation "text8Pos" offset (10, 8) from "dot8Pos" SE
+  defineLocation "text9Pos" offset (10, 8) from "dot9Pos" SE
+  defineLocation "text10Pos" offset (10, 8) from "dot10Pos" SE
+  defineLocation "text11Pos" offset (10, 8) from "dot11Pos" SE
+  text "mainTitle" "The Extensible Dynamically Configurable" "headerPos" centered depth 0 font SansSerif size 24 bold
+  rectangle "mainTitleRect" offset (-3, -3) from "mainTitle" NW offset (3, 3) from "mainTitle" SE depth 1 filled fillColor white
+  text "subTitle" "Visualization Framework Animal" offset (0, 40) from "mainTitle" S centered depth 0 bold
+  rectangle "subTitleRect" offset (-3, -3) from "subTitle" NW offset (3, 3) from "subTitle" SE depth 1 filled fillColor white
+  text "authors" "Guido Rößling" offset (0, 100) from "mainTitle" S centered size 24
+  text "addr1" "Dept. of Electrical Engineering and Computer Science" offset (0, 50) from "authors" S centered
+  text "uni" "University of Siegen" offset (0, 50) from "addr1" S centered      
+  text "addr2" "Hoelderlinstr. 3, D-57068 Siegen, GERMANY" offset (0, 50) from "uni" S centered
+  text "email" "roessling@acm.org" offset (0, 90) from "addr2" S centered font Monospaced bold
+  text "url" "Animal URL:   http://www.animal.ahrgr.de/" (390, 450) centered
+  circle "dot" "dotPos" radius 4 color black filled fillColor black hidden
+  circle "dot0" "dot0Pos" radius 4 color black filled fillColor black hidden 
+  circle "dot1" "dot1Pos" radius 4 color black filled fillColor black hidden
+  circle "dot2" "dot2Pos" radius 4 color black filled fillColor black hidden
+  circle "dot3" "dot3Pos" radius 4 color black filled fillColor black hidden
+  circle "dot4" "dot4Pos" radius 4 color black filled fillColor black hidden
+  circle "dot5" "dot5Pos" radius 4 color black filled fillColor black hidden
+  circle "dot6" "dot6Pos"  radius 4 color black filled fillColor black hidden
+  circle "dot7" "dot7Pos" radius 4 color black filled fillColor black hidden
+  circle "dot8" "dot8Pos" radius 4 color black filled fillColor black hidden
+  circle "dot9" "dot9Pos" radius 4 color black filled fillColor black hidden
+  circle "dot10" "dot10Pos" radius 4 color black filled fillColor black hidden
+  circle "dot11" "dot11Pos" radius 4 color black filled fillColor black hidden
+}
+label "Title"
+{
+  hideAll
+  text "miniHdr" "...Animal..." "miniHdrPos" right color blue2 depth 0 font SansSerif size 24 bold
+  text "miniAuthor" "Guido Rößling" "miniAuthorPos" right size 16 bold
+  text "tocHdr" "Contents of this Presentation" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "tocHdrRect" offset (-3, -3) from "tocHdr" NW offset (3, 3) from "tocHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "toc" "Problem and Motivation" "textPos"
+}
+{
+  show "dot1"
+  text "toc1" "Background and Related Work" "text1Pos"
+}
+{
+  show "dot3"
+  text "toc3" "Development Goals and Research Areas" "text3Pos"
+}
+{
+  show "dot5"
+  text "toc5" "Current Status" "text5Pos"
+}
+{
+  show "dot7"
+  text "toc7" "Some Examples" "text7Pos"
+}
+label "Contents"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "problem" "Problem and Motivation" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "problemRect" offset (-3, -3) from "problem" NW offset (3, 3) from "problem" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "problem" "Algorithm animation has become popular with many educators" "textPos"
+}
+{
+  show "dot1"
+  text "problem1" "A large number of different tools are offered, some for free" "text1Pos"
+}
+{
+  show "dot3"
+  text "problem3" "Most tools do not offer all features a user might want" "text3Pos"
+}
+{
+  show "dot5"
+  text "problem5" "Tools that offer 'everything' may become difficult to use" "text5Pos"
+}
+{
+  show "dot7"
+  text "problem7" "Extensible framework approach helps reduce this problem" "text7Pos"
+}
+{
+  show "dot9"
+  text "problem9" "Level of knowledge needed for extending should be minimal" "text9Pos"
+}
+{
+  show "dot11"
+  text "problem11" "Support the addition of arbitrary objects or animation effects" "text11Pos"
+}
+label "Problem & Motivation"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "bgHdr" "Background" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "bgHdrRect" offset (-3, -3) from "bgHdr" NW offset (3, 3) from "bgHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "bgX" "GUI-based" "textPos" color blue2
+  text "bg" "'animation tools' are often used (e.g. PowerPoint)" offset (5, 9) from "bgX" E color black
+}
+{
+  show "dot1"
+  text "bg1" "GUI usually forces manual input -- " "text1Pos"
+  text "bg1X" "no automation possible" offset (0, 9) from "bg1" E color red2
+}
+{
+  show "dot3"
+  text "bg3" "General-purpose tools do not support" "text3Pos" color black
+  text "bg3X" "CS algorithms/structures" offset (5, 9) from "bg3" E color red2
+}
+{
+  show "dot5"
+  text "bg5" "API-based tools" "text5Pos" color blue2
+  text "bg5X" "(JDSL, JAL) require"  offset (5, 9) from "bg5" E color black
+  text "bg5Xa" "programming skills" offset (5, 9) from "bg5X" E color red2
+}
+{
+  show "dot7"
+  text "bg7" "Code-based" "text7Pos" color blue2
+  text "bg7X" "systems (Jeliot, DDD) require" offset (5, 9) from "bg7" E color black
+  text "bg7Xa" "underlying source" offset (5, 9) from "bg7X" E color red2
+}
+{
+  show "dot9"
+  text "bg9" "Scripting-based" "text9Pos" color blue2
+  text "bg9X" "systems (JAWAA, JSamba) use" offset (5, 9) from "bg9" E color black
+  text "bg9Xa" "own language" offset (5, 9) from "bg9X" E color red2
+}
+{
+  show "dot11"
+  text "bg11" "All approaches have typical strengths and weaknesses" "text11Pos" color black
+}
+label "Background"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "relatedHdr" "Related Work" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "relatedHdrRect" offset (-3, -3) from "relatedHdr" NW offset (3, 3) from "relatedHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "related" "Jeliot: dynamic visualization of Java code in interpreter" "textPos"
+}
+{
+  show "dot1"
+  text "related1" "DDD: visualize program state from debugger data" "text1Pos"
+}
+{
+  show "dot3"
+  text "related3" "JDSL: visualize provided algorithms and data structures" "text3Pos"
+}
+{
+  show "dot5"
+  text "related5" "JAWAA: some CS data structure support incl. array, list, tree" "text5Pos"
+}
+{
+  show "dot7"
+  text "related7" "JSamba: generic (but limited) graphic primitives (<= 8 nodes)" "text7Pos"
+}
+{
+  show "dot9"
+  text "related9" "Inherent limitation" "text9Pos" color red2
+  text "related9X" "in all tools: fixed state, hard to extend" offset (5, 9) from "related9" E color black
+}
+{
+  show "dot11"
+  text "related11" "Some 'key' elements are missing in all tools" "text11Pos"
+}
+label "Related Work"
+
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "goalsHdr" "Required Software Features" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "goalsHdrRect" offset (-3, -3) from "goalsHdr" NW offset (3, 3) from "goalsHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "goals" "Java-based animation tool that is"  "textPos"
+  text "goalsX" "easy to extend / adapt" offset (5, 9) from "goals" E color blue2
+}
+{
+  show "dot1"
+  text "goals1" "Animations generatable in" "text1Pos" color black
+  text "goals1X" "GUI, by API calls, or scripting" offset (5, 9) from "goals1" E color blue2
+}
+{
+  show "dot3"
+  text "goals3" "Offer graphical editors with" "text3Pos" color black
+  text "goals3X" "full drag & drop support" offset (5, 9) from "goals3" E color blue2
+}
+{
+  show "dot5"
+  text "goals5" "Allow user to time all operations, both" "text5Pos" color black
+  text "goals5X" "offset and duration" offset (5, 9) from "goals5" E color blue2
+}
+{
+  show "dot7"
+  text "goals7" "Provide filters for" "text7Pos" color black
+  text "goals7X" "import / export" offset (5, 9) from "goals7" E color blue2
+  text "goals7Xa" ", allow easy addition" offset (0, 9) from "goals7X" E color black
+}
+{
+  show "dot9"
+  text "goals9" "VCR-like controls incl." "text9Pos"
+  text "goals9X" "rewind, back, play backwards" offset (5, 9) from "goals9" E color blue2
+}
+{
+  show "dot11"
+  text "goals11" "Internationalization" "text11Pos" color blue2
+  text "goals11X" "in GUI and animations" offset (5, 9) from "goals11" E color black
+}
+label "SW Development Goals"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "researchHdr" "Research Areas" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "researchHdrRect" offset (-3, -3) from "researchHdr" NW offset (3, 3) from "researchHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "research" "Introspection / Reflection" "textPos" color blue2
+  text "researchX" "- for dynamic addition/removal" offset (5, 9) from "research" E color black
+}
+{
+  show "dot1"
+  text "research1" "Design Patterns" "text1Pos" color blue2
+  text "research1X" "- used / modified for basic system structure"  offset (5, 9) from "research1" E color black
+}
+{
+  show "dot3"
+  text "research3" "Event Management" "text3Pos" color blue2
+  text "research3X" "- customized for ease of implementation" offset (5, 9) from "research3" E color black
+}
+{
+  show "dot5"
+  text "research5" "Internationalization" "text5Pos" color blue2
+  text "research5X" "- translation on demand, on the fly" offset (5, 9) from "research5" E color black
+}
+{
+  show "dot7"
+  text "research7" "Interface design" "text7Pos" color blue2
+  text "research7X" "- easy to use, but powerful and flexible"  offset (5, 9) from "research7" E color black
+}
+{
+  show "dot9"
+  text "research9" "Parsing & Interpretation" "text9Pos" color blue2
+  text "research9X" "- required for AnimalScript support"  offset (5, 9) from "research9" E color black
+}
+label "Research Areas"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "archHdr" "System Architecture" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "archHdrRect" offset (-3, -3) from "archHdr" NW offset (3, 3) from "archHdr" SE depth 1 filled fillColor white
+}
+{
+  rectangle "archCoreBox" (275, 150) (475, 350) depth 5 filled fillColor white
+  text "archCore" "Core System" offset (0, 10) from "archCoreBox" C centered depth 0 bold
+}
+{
+  rectangle "archEditorBox" offset (-160, -50) from "archCoreBox" W offset (-60, 50) from "archCoreBox" W depth 4 filled fillColor white
+  line "archEditorCoreLine" offset (-5, 0) from "archCoreBox" W offset (5, 0) from "archEditorBox" E fwArrow bwArrow
+  text "archEditor" "GUI Editor" offset (0, 30) from "archEditorBox" S centered
+  rectangle "archDisplayBox" offset (60, -50) from "archCoreBox" E offset (160, 50) from "archCoreBox" E depth 4 filled fillColor white
+  line "archDisplayCoreLine" offset (5, 0) from "archCoreBox" E offset (-5, 0) from "archDisplayBox" W fwArrow bwArrow
+  text "archDisplay" "Display" offset (0, 30) from "archDisplayBox" S centered
+  rectangle "archDisplayControlLine" offset (0, -15) from "archDisplayBox" SW offset (0, 0) from "archDisplayBox" SE depth 3 filled fillColor (200, 200, 200)
+  defineLocation "baseSW" offset (0, 0) from "archDisplayBox" SW
+  rectangle "archDisplayStartPolygon" offset (3, -12) from "baseSW" move (3, 10) depth 2 filled fillColor black
+  triangle "archDisplayStartTriangle" move (8, 0) move (-5, -5) move (5, -5) depth 2 filled fillColor black
+  triangle "archDisplayPrevTriangle" move (10, 10) move (-5, -5) move (5, -5) depth 2 filled fillColor black
+  triangle "archDisplayBwTriangle" move (10, 10) move (-5, -5) move (5, -5) depth 2 filled fillColor black
+  rectangle "archDisplayBwPolygon" move (2, 0)  move (3, 10) depth 2 filled fillColor black
+  rectangle "archDisplayPausePolygon1" move (5, -10)  move (3, 10) depth 2 filled fillColor black
+  rectangle "archDisplayPausePolygon1" move (2, -10) move (3, 10) depth 2 filled fillColor black
+  rectangle "archDisplayPlayPolygon" move (5, -10) move (3, 10) depth 2 filled fillColor black
+  triangle "archDisplayPlayTriangle" move (2, 0)  move (5, -5) move (-5, -5) depth 2 filled fillColor black
+  triangle "archDisplayNextTriangle" move (10, 10) move (5, -5) move (-5, -5) depth 2 filled fillColor black
+  triangle "archDisplayEndTriangle" move (10, 10) move (5, -5) move (-5, -5) depth 2 filled fillColor black
+  rectangle "archDisplayEndPolygon" move (8, 0) move (3, 10) depth 2 filled fillColor black
+}
+{
+  square "demoSquare" offset (10, 10) from "archDisplayBox" NW 30 depth 3 filled fillColor red
+  clone "demoSquare" as "editSquare" offset (10, 10) from "archEditorBox" NW
+  circle "editPoint" offset (0, 0) from "editSquare" SE radius 3 depth 2
+  text "editText" "Editor" offset (5, 20) from "editPoint" SE depth 2 size 16 italic
+  rectangle "editFrame" offset (-3,-3) from "editText" NW offset (3, 3) from "editText" SE depth 3 filled fillColor (200, 200, 200)
+}
+{
+  fillColor "archDisplayPlayPolygon" "archDisplayPlayTriangle" blue after 5 ticks
+  move "demoSquare" along polyline (10, 10) (30, 20) (40, 10) (50, 30) after 10 ticks within 10 ticks
+}
+fillColor "demoSquare" blue within 10 ticks
+fillColor "archDisplayPlayPolygon" "archDisplayPlayTriangle" black after 5 ticks
+{
+  text "archImport" "Import Filters" offset (0, -60) from "archCoreBox" N centered depth 2 size 24 bold boxed
+  line "archImportLine" offset (0, 5) from "archImport" S offset (0, -5) from "archCoreBox" N fwArrow
+}
+{
+  text "archExport" "Export Filters" offset (0, 80) from "archCoreBox" S centered depth 2 size 24 bold boxed
+  line "archExportLine" offset (0, 5) from "archCoreBox" S offset (0, -5) from "archExport" N fwArrow
+}
+{
+  hide "archCore" "archCoreRect"
+  fillColor "archCoreBox" light Gray
+  text "archCorePrim" "Primitives" offset (0, 30) from "archCoreBox" N centered depth 1 size 20 boxed
+  text "archCoreHandler" "Handlers" offset (0, 107) from "archCoreBox" N centered depth 1 boxed
+  text "archCoreAnimator" "Effects" offset (0, -15) from "archCoreBox" S centered depth 1 boxed
+  line "PrimHandler" offset (0, 3) from "archCorePrim" S offset (0, -3) from "archCoreHandler" N depth 2 fwArrow bwArrow
+  line "HandlerAnimator" offset (0, 3) from "archCoreHandler" S offset (0, -3) from "archCoreAnimator" N depth 2 fwArrow bwArrow
+}
+label "System Architecture"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "reprHdr" "Internal Representation" "headerPos" centered color black depth 0 size 24 bold boxed
+}
+{
+  show "dot"
+  text "repr" "Primitives maintain state as set of" "textPos"
+  text "reprX" "properties" offset (5,9) from "repr" E color blue2
+}
+{
+  show "dot1"
+  text "repr1" "Handler lists" "text1Pos"
+  text "repr1X" "accessible effect types" offset (5,9) from "repr1" E color blue2
+  text "repr1Xa" "for a given primitive" offset (5, 9) from "repr1X" E color black
+}
+{
+  show "dot3"
+  text "repr3" "Effects store" "text3Pos"
+  text "repr3X" "pertinent data" offset (5, 9) from "repr3" E color blue2
+  text "repr3Xa" ", e.g. duration, target color" offset (0, 9) from "repr3X" E color black
+}
+{
+  show "dot5"
+  text "repr5" "Effect requests" "text5Pos"
+  text "repr5X" "available subtypes" offset (5, 9) from "repr5" E color blue2
+  text "repr5Xa" "from handler" offset (5, 9) from "repr5X" E color black
+}
+{
+  show "dot7"
+  text "repr7" "Effect sends" "text7Pos"
+  text "repr7X" "state change request" offset (5, 9) from "repr7" E color blue2
+  text "repr7Xa" "to handler" offset (5,9) from "repr7X" E color black
+}
+{
+  show "dot9"
+  text "repr9" "Handler translates request into (set of)" "text9Pos"
+  text "repr9X" "primitive operations" offset (5,9) from "repr9" E color blue2
+}
+{
+  show "dot11"
+  text "repr11" "Primitive is redrawn -- updates display" "text11Pos" color black
+}
+label "Internal Representation"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "advHdr" "Evaluation of Approach" "headerPos" centered color black depth 0 size 24 bold boxed
+}
+{
+  show "dot"
+  text "adv" "Separation of concerns" "textPos" color blue2
+  text "advX" "(somewhat similar to Smalltalk's MVC)" offset (5, 9) from "adv" E color black
+}
+{
+  show "dot1"
+  text "adv1" "Clear focus for each component" "text1Pos"
+}
+{
+  show "dot3"
+  text "adv3" "Abstraction makes implementing each class easier" "text3Pos"
+}
+{
+  show "dot5"
+  text "adv5" "User can add new effects: need only touch" "text5Pos"
+  text "adv5X" "Handler code" offset (5,9) from "adv5" E color blue2
+}
+{
+  show "dot7"
+  text "adv7" "Allows for" "text7Pos"
+  text "adv7X" "great flexibility" offset (5,9) from "adv7" E color blue2
+  text "adv7Xa" ", e.g. conditional effects possible" offset (5, 9) from "adv7X" E color black
+}
+{
+  show "dot9"
+  text "adv9" "Uses Java's PropertyChangeEvent model to propagate changes" "text9Pos"
+}
+{
+  show "dot11"
+  text "adv11" "Add new features by modifying the registry -" "text11Pos" color black
+  text "adv11X" "no code editing!" offset (5, 9) from "adv11" E color blue2
+}
+label "Evaluation"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "statusHdr" "Current Status" "headerPos" centered color black depth 0 size 24 bold
+  rectangle "statusHdrRect" offset (-3, -3) from "statusHdr" NW offset (3, 3) from "statusHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "status" "Primitives:" "textPos" color blue2
+  text "statusX" "point, polyline / polygon, text, arc; list elements" offset (5, 9) from "status" E color green4
+}
+{
+  show "dot1"
+  text "status1" "Effects:" "text1Pos" color blue2
+  text "status1X" "show / hide, move, rotate, change color" offset (5, 9) from "status1" E color green4
+}
+{
+  show "dot3"
+  text "status3" "Timing control" "text3Pos" color blue2
+  text "status3X" "for all effects in 'ticks' or ms - duration, offset" offset (5, 9) from "status3" E color green4
+}
+{
+  show "dot5"
+  text "status5" "Import filters:" "text5Pos" color blue2
+  text "status5X" "own format(s), JSamba (beta version)" offset (5, 9) from "status5" E color green4
+}
+{
+  show "dot7"
+  text "status7" "Export filters:" "text7Pos" color blue2
+  text "status7X" "own, image / image sequence, XML, QuickTime" offset (5, 9) from "status7" E color green4
+}
+{
+  show "dot9"
+  text "status9" "GUI, API, Scripting" "text9Pos" color blue2
+  text "status9X" "generation finished; player also finished" offset (5, 9) from "status9" E color green4
+}
+{
+  show "dot11"
+  text "status11" "Internationalization" "text11Pos" color blue2
+  text "status11X" "in GUI and animations nearly finished" offset (5, 9) from "status11" E color green4
+}
+label "Current Status"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "examplesHdr" "Some Examples" "headerPos" centered color black depth 0 size 24 bold boxed
+}
+label "Examples (Start)"
+{
+  show "dot"
+  text "examples" "Placement: absolute, relative: bounding box, node, last node" "textPos"
+  codegroup "placementCode" "text8Pos" size 20 italic highlightColor blue
+  addCodeLine "square \"s\" (400, 200) 30 color red filled fillColor blue" to "placementCode"
+  addCodeLine "text \"txt0\" \"Bounding box offset\" offset (100, 50) from \"s\" SE" to "placementCode"
+  addCodeLine "text \"txt1\" \"Relative to node\" offset (100, -100) from \"s\" node 4" to "placementCode"
+  addCodeLine "text \"txt2\" \"Relative to last node\" move (-50, 50) color red" to "placementCode"
+{ 
+  highlightCode on "placementCode" line 0
+  square "s" (400, 200) 30 color red depth 1 filled fillColor blue
+}
+{
+  highlightCode on "placementCode" line 1
+  unhighlightCode on "placementCode" line 0
+  text "s0" "Bounding box offset" offset (100, 50) from "s" SE color blue size 20
+  polyline "s0dx" offset (0,0) from "s" SE offset (100, 0) from "s" SE fwArrow bwArrow
+  polyline "s0dy" offset (100 ,0) from "s" SE offset (100, 50) from "s" SE fwArrow bwArrow
+  text "s0dxt" "100" offset (0, -10) from "s0dx" C centered color black size 16
+  text "s0dyt" "50" offset (10, -12) from "s0dy" C
+  circle "s0c" offset (0, 0) from "s" SE radius 3 filled fillColor white
+}
+{
+  unhighlightCode on "placementCode" line 1
+  highlightCode on "placementCode" line 2
+  circle "s1c" offset (0, 0) from "s" node 4 radius 3 filled fillColor white
+  polyline "s1dy" offset (0,0) from "s" node 4 offset (0, -100) from "s" node 4 fwArrow bwArrow
+  polyline "s1dx" offset (0, -100) from "s" node 4 offset (100, -100) from "s" node 4 fwArrow bwArrow
+  text "s1dxt" "100" offset (0, -10) from "s1dx" C centered color black size 16
+  text "s1dyt" "-100" offset (10, 6) from "s1dy" C
+  text "txt" "Relative to polygon node" offset (100, -100) from "s" node 4 color blue size 20
+}
+{
+  unhighlightCode on "placementCode" line 2
+  highlightCode on "placementCode" line 3
+  defineLocation "currentPos" move (0, 0)
+  circle "s2c" "currentPos" radius 3 filled
+  text "TXT1" "...last node" offset (50, 50) from "currentPos" color blue size 20
+  polyline "s2dy" "currentPos" move (0, 50) fwArrow bwArrow
+  polyline "s2dx" offset (0, 0) from "s2dy" S move (50, 0) fwArrow bwArrow
+  text "s2dxt" "50" offset (0, 15) from "s2dx" C centered color black size 16
+  text "s2dyt" "50" offset (5, 0) from "s2dy" C
+}
+label "Object Placement"
+{
+  hideAllBut "miniAuthor" "miniHdr" "dot" "examples" "examplesHdr" "examplesHdrRect"
+  show "dot1"
+  text "examples1" "Array support: display, highlighting, put, swap, marker" "text1Pos" size 24
+  array "array" (525, 220) length 5 "1" "2" "3" "4" "5"
+}
+arrayMarker "index1" on "array" atIndex 1 label "i" 
+moveMarker "index1" to position 4 within 10 ticks
+arrayPut "42" on "array" position 0 after 5 ticks
+highlightArrayCell on "array" position 2
+{
+  unhighlightArrayCell on "array" position 2
+  arraySwap on "array" position 0 with 3 within 10 ticks
+}
+label "Array Support"
+{
+  hide "array"
+  show "dot3"
+  text "examples3" "List support: display, set / clear links" "text3Pos"
+}
+{
+  listElement "le0" offset (100, 0) from "text5Pos" text "List Elem 1" pointers 2 position bottom
+}
+delay 500 ms
+{
+  listElement "le1" offset (30, 0) from "le0" NE text "List Elem 2" pointers 2 position bottom ptr2 to "le0"
+  setLink "le0" link 1 to "le1" after 5 ticks
+  listElement "le2" offset (30, 30) from "le1" SE text "Triple Elem" pointers 3 position top ptr2 to "le1" after 10 ticks
+}
+label "List Support"
+{
+  hide "le0" "le1" "le2"
+  show "dot5"
+  text "examples5" "Code Support with indentation and highlight" "text5Pos" size 24
+  codegroup "codeCode" "text6Pos" color blue size 20 italic
+  addCodeLine "code line, indentation = 0" to "codeCode" indentation 0
+  addCodeLine "code line, indentation = 1" to "codeCode" indentation 1
+  addCodeLine "code line, indentation = 2" to "codeCode" indentation 2
+  addCodeLine "code line, indentation = 3" to "codeCode" indentation 3
+  addCodeLine "code line, indentation = 2" to "codeCode" indentation 2
+  addCodeLine "code elems in same line:" to "codeCode" indentation 1
+  addCodeElem "row 1" to "codeCode" row 1
+  addCodeElem "row 2" to "codeCode" row 2
+  addCodeElem "row 3" to "codeCode" row 3
+}
+delay 500 ms
+highlightCode on "codeCode" line 5 row 1
+delay 500 ms
+{
+  unhighlightCode on "codeCode" line 5 row 1
+  highlightCode on "codeCode" line 5 row 2
+}
+delay 500 ms
+{
+  unhighlightCode on "codeCode" line 5 row 2
+  highlightCode on "codeCode" line 5 row 3
+}
+label "Code Support"
+{
+  hide "codeCode"
+  show "dot7"
+  text "examples7" "Free moves along arbitrary polyline or arc, or to a location" "text7Pos"
+  square "s1" "text8Pos" 20 filled fillColor blue
+}
+#move "s1" along polyline (0, 0) (60, 20) (50, 50) (160, 10) (30, 0) within 10 ticks
+move "s1" along polyline (0, 0) (0, 100) (0, 50) (50, 50) (50,0) (50,100) (60, 100) (60, 20) within 20 ticks
+#move "s1" along arc (550, 450)  30 15 200 90 within 10 ticks
+{
+  line "target" offset (20, 20) from "text8Pos" move (20, 0) fwArrow
+  move "s1" to offset (0, 0) from "target" NE within 5 ticks
+}
+label "Flexible Moves"

@@ -1,0 +1,42 @@
+%Animal 2
+{
+array "qarray" (50,50) color black fillColor white elementColor black elemHighlight red cellHighlight yellow vertical length 13 "20  ""63  ""30  ""56  ""26  ""42  ""94  ""66  ""37  ""65  ""25  ""90  ""42  "
+}
+{
+{
+arraySwap on "qarray" position 0 with 0 within 500 ms
+}
+{
+arraySwap on "qarray" position 6 with 12 within 500 ms
+}
+{
+arraySwap on "qarray" position 7 with 10 within 500 ms
+}
+{
+arraySwap on "qarray" position 1 with 8 within 500 ms
+}
+{
+arraySwap on "qarray" position 3 with 7 within 500 ms
+}
+{
+arraySwap on "qarray" position 1 with 4 within 500 ms
+}
+{
+arraySwap on "qarray" position 2 with 3 within 500 ms
+}
+{
+arraySwap on "qarray" position 1 with 2 within 500 ms
+}
+{
+arraySwap on "qarray" position 5 with 6 within 500 ms
+}
+{
+arraySwap on "qarray" position 9 with 9 within 500 ms
+}
+{
+arraySwap on "qarray" position 10 with 10 within 500 ms
+}
+{
+arraySwap on "qarray" position 11 with 11 within 500 ms
+}
+}

@@ -1,0 +1,88 @@
+{
+  relrect "rectangle" (20, 10)  (155, 30)  color black filled fillColor white
+  text "text" "BubbleSort" offset (10, 24) from "rectangle" nw  color black font SansSerif size 24 bold
+  array "array" offset (0, 60) from "text" sw  color black fillColor white elementColor black elemHighlight red cellHighlight yellow horizontal length 9 "57" "9" "155" "28" "45" "99" "173" "207" "2"
+
+  codeGroup "code" at (20, 250) font Monospaced size 12
+  addCodeLine "public void sort(Comparable[] a)" to "code"
+  addCodeLine "{" to "code"
+  addCodeLine "int i, j;                                           // Counter" to "code" indentation 1
+  addCodeLine "boolean swapPerformed = true;                       // was swapped?" to "code" indentation 1
+  addCodeLine "for (i=a.length; swapPerformed && i>-1; i--)" to "code" indentation 1
+  addCodeLine "for (j=1,swapPerformed = false; j<i; j++)         // Test all elements" to "code" indentation 2
+  addCodeLine "if (a[j-1].isGreaterThan(a[j]))                 // swap necessary?" to "code" indentation 3
+  addCodeLine "{" to "code" indentation 3
+  addCodeLine "swap.swapComparable(a, j-1, j);               // then swap" to "code" indentation 4
+  addCodeLine "swapPerformed = true;                         // and note swap" to "code" indentation 4
+  addCodeLine "}" to "code" indentation 3
+  addCodeLine "}" to "code"
+}
+{
+arraySwap on "array" position 0 with 1 within 15 ticks
+  text "text0" "Swapping elements 0 and 1" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 2 with 3 within 15 ticks
+  hide "text0"
+  text "text1" "Swapping elements 2 and 3" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 3 with 4 within 15 ticks
+  hide "text1"
+  text "text2" "Swapping elements 3 and 4" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 4 with 5 within 15 ticks
+  hide "text2"
+  text "text3" "Swapping elements 4 and 5" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 7 with 8 within 15 ticks
+  hide "text3"
+  text "text4" "Swapping elements 7 and 8" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 1 with 2 within 15 ticks
+  hide "text4"
+  text "text5" "Swapping elements 1 and 2" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 2 with 3 within 15 ticks
+  hide "text5"
+  text "text6" "Swapping elements 2 and 3" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 6 with 7 within 15 ticks
+  hide "text6"
+  text "text7" "Swapping elements 6 and 7" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 5 with 6 within 15 ticks
+  hide "text7"
+  text "text8" "Swapping elements 5 and 6" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 4 with 5 within 15 ticks
+  hide "text8"
+  text "text9" "Swapping elements 4 and 5" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 3 with 4 within 15 ticks
+  hide "text9"
+  text "text10" "Swapping elements 3 and 4" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 2 with 3 within 15 ticks
+  hide "text10"
+  text "text11" "Swapping elements 2 and 3" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 1 with 2 within 15 ticks
+  hide "text11"
+  text "text12" "Swapping elements 1 and 2" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}
+{
+arraySwap on "array" position 0 with 1 within 15 ticks
+  hide "text12"
+  text "text13" "Swapping elements 0 and 1" offset (20, 50) from "array" sw  color black font SansSerif size 16
+}

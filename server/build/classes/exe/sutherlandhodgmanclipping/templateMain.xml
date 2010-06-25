@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<pseudocode>
+  <stack><replace var="stack2" /></stack>
+  <code>
+ <signature>SutherlandHodgmanClip(vertices, edges)</signature> 
+    <line num="1">for(int i = 0; i &lt; edges.length; i++){</line>
+    <line num="2"  indent="1">Edge e = edges[i];</line>
+    <line num="3"  indent="1">Vertex s = vertices[last];</line>
+    <line num="4"  indent="1">for(int j = 0; j &lt; vertices.length; j++){</line>
+    <line num="5"  indent="2">Vertex p = vertices[j];</line>
+    <line num="6"  indent="2">int casenum = determineCase(s,p,e);</line>
+    <line num="7"  indent="2">executeCase(casenum,s,p,e);</line>
+    <line num="8"  indent="2">s = p;</line>
+    <line num="9"  indent="1">}</line>
+    <line num="10" indent="1">vertices = outvertices;</line>
+    <line num="11" indent="1">outvertices.clear();</line>
+    <line num="12" indent="0">}</line>
+  </code>
+  <vars>
+    <var>s = <replace var="s" /></var>
+    <var>p = <replace var="p" /></var>
+    <var>casenum = <replace var="casenum" /></var>
+    <var>outvertices = <replace var="outvertices" /></var>
+  </vars>
+</pseudocode>
