@@ -7,7 +7,7 @@ import java.io.FilenameFilter;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-
+//import exe.GAIGSprimitiveCollection.*;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -32,9 +32,26 @@ abstract class Bytecode_ {
 	 * Writes a snapshot for the visualization
 	 */
 	public void writeSnap() throws IOException {
-		Driver.show.writeSnap(Driver.TITLE, MakeURI.doc_uri(lineNumber), MakeURI
-				.make_uri(lineNumber, Driver.pseudo.RED), Driver.runTimeStack, Driver.stack, Driver.heap,
-				Driver.localVariableArray);
+	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection();
+	    pc.addPolygon(
+			    4,
+			    new double[] { 0.45, 0.45, 0.95, 0.95 },
+			    new double[] { 0.05, 0.95, 0.95, 0.05 },
+			    Driver.CURRENT_FRAME_COLOR,  // fill color
+			    Driver.CURRENT_FRAME_COLOR,  // outline color
+			    "#FFFFFF",  // label color
+			    ""          // polygon label
+			  );
+
+	    Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber), 
+				  MakeURI.make_uri(lineNumber, 
+						   Driver.pseudo.RED), 
+				  pc,
+				  Driver.runTimeStack, 
+				  Driver.stack, Driver.heap,
+				  Driver.localVariableArray
+				  );
 	}
 
 	/*

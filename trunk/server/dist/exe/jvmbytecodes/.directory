@@ -1,4 +1,6 @@
 [Dolphin]
-AdditionalInfo=35
-Timestamp=2010,6,22,17,8,38
+Timestamp=2010,6,24,20,45,44
 ViewMode=1
+
+[Settings]
+ShowDotFiles=true

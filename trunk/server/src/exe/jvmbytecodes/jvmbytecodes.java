@@ -43,17 +43,22 @@ public class jvmbytecodes {
 	 * @param args[1] ex: Test.java
 	 * @param args[2] ex: ../../src/exe/jvmbytecodes/1.xml
 	 */
-	public static void main(String args[]) throws IOException {
-		System.out.println("jvmbytecodes.java args[0]: " + args[0] + " args[1]: " + args[1]);
+    public static void main(String args[]) throws IOException {
+	System.out.println("jvmbytecodes.java args[0]: " + args[0] + " args[1]: " + args[1]);
 
-		// Send the XML file name from the server to the parser.
-		Hashtable hash = XMLParameterParser.parseToHash(args[2]);
+	Hashtable hash = XMLParameterParser.parseToHash( args[2]);
 
-		String[] params = new String[3];
-		params[0] = args[0];
-		params[1] = (String) hash.get("File name:");
-		params[2] = (String) hash.get("Code to visualize:");
+	String s = (String)hash.get("Load your program and be sure that EMPTY is replaced by the name of the Java source file:");
 
-		Driver.main(params);
-	}
+	String[] params = new String[3];
+	params[0] = args[0];
+	// the first line of s is the name of the file
+	params[1] = s.substring(0,s.indexOf('\n') );
+	// the rest of s is the contents of the file
+	params[2] = s.substring(s.indexOf('\n') + 1);
+
+	Driver.main(params);
+
+
+    }
 }

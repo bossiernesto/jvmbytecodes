@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>       
+<?xml version="1.0" ?>         
 <project default="compile">
 
     <target name="compile">
@@ -6,12 +6,10 @@
     </target>
 
     <target name="run">
-       <java fork="true" 
-	     dir="../../../build/classes" 
-	     classpath="../../../build/classes:../../../lib/jdom.jar:../../../lib/jaxen.jar:." 
-	     classname="exe.reu_bubsort.BytecodeViewer"> 
-	  <arg value= "1.sho" />
-          <arg value="/Users/davidfurcy/Documents/REU/2010/JVM/tmp/trunk/html_root/uid/1/" />  
+      <java fork="true" dir="../../../build/classes" classpath="../../../build/classes:../../../lib/jdom.jar:../../../lib/jaxen.jar:." classname="exe.jvmbytecodes.jvmbytecodes"> 
+       	  <arg value="../../src/exe/jvmbytecodes" />  
+          <arg value="ignored with the new input generator" />
+       	  <arg value="../../src/exe/jvmbytecodes/1.xml" />  
         </java> 
     </target>
 
@@ -20,7 +18,7 @@
             Removing all class files
         </echo>
         <delete> 
-            <fileset dir="../../../build/classes/exe/reu_bubsort">
+            <fileset dir="../../../build/classes/exe/jvmbytecodes">
                 <include name="*.class" />
             </fileset>
         </delete>

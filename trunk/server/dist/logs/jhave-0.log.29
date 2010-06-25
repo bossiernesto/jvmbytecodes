@@ -1,33 +1,4 @@
-6/21/10 7:08 AM - INFO: Using WEBROOT = http://localhost:8080/
-6/21/10 7:08 AM - INFO: Using Script Root of /Users/davidfurcy/Documents/REU/2010/JVM/tmp/trunk/server/build/classes/
-6/21/10 7:08 AM - INFO: Using User Script Directory of /Users/davidfurcy/Documents/REU/2010/JVM/tmp/trunk/
-6/21/10 7:08 AM - INFO: JHAVE Server started. Listening on port 7004
-6/21/10 7:08 AM - INFO: Accepted connection 1 from 127.0.0.1
-6/21/10 7:08 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
-6/21/10 7:08 AM - INFO: Object: Thread[Thread-1,5,main]
-6/21/10 7:08 AM - INFO: Accepted connection 2 from 127.0.0.1
-6/21/10 7:08 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
-6/21/10 7:08 AM - INFO: Object: Thread[Thread-2,5,main]
-6/21/10 7:08 AM - INFO: 1 jvmbytecodes no_username
-6/21/10 7:08 AM - FINER: ENTRY
-6/21/10 7:08 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
-6/21/10 7:08 AM - SEVERE: getObject
-java.io.EOFException
-	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2500)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1273)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:348)
-	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
-	at jhave.server.ClientConnection.run(ClientConnection.java:123)
-6/21/10 7:08 AM - FINE: killConnection: Communication Error.
-6/21/10 7:08 AM - FINE: sendtoClient - 101 Communication Error.
-6/21/10 7:08 AM - FINE: Killing client 2
-6/21/10 7:08 AM - SEVERE: getObject
-java.io.EOFException
-	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2500)
-	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1273)
-	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:348)
-	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
-	at jhave.server.ClientConnection.run(ClientConnection.java:123)
-6/21/10 7:08 AM - FINE: killConnection: Communication Error.
-6/21/10 7:08 AM - FINE: sendtoClient - 101 Communication Error.
-6/21/10 7:08 AM - FINE: Killing client 1
+6/23/10 11:34 AM - INFO: Using WEBROOT = http://localhost:8080/
+6/23/10 11:34 AM - INFO: Using Script Root of /students/clemew37/workspace/trunk/server/build/classes/
+6/23/10 11:34 AM - INFO: Using User Script Directory of /students/clemew37/workspace/trunk/
+6/23/10 11:34 AM - INFO: JHAVE Server started. Listening on port 7004

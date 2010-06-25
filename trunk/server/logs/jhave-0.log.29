@@ -1,4 +1,54 @@
-6/23/10 11:34 AM - INFO: Using WEBROOT = http://localhost:8080/
-6/23/10 11:34 AM - INFO: Using Script Root of /students/clemew37/workspace/trunk/server/build/classes/
-6/23/10 11:34 AM - INFO: Using User Script Directory of /students/clemew37/workspace/trunk/
-6/23/10 11:34 AM - INFO: JHAVE Server started. Listening on port 7004
+6/25/10 9:27 AM - INFO: Using WEBROOT = http://localhost:8080/
+6/25/10 9:27 AM - INFO: Using Script Root of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
+6/25/10 9:27 AM - INFO: Using User Script Directory of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/
+6/25/10 9:27 AM - INFO: JHAVE Server started. Listening on port 7004
+6/25/10 9:27 AM - INFO: Accepted connection 1 from 127.0.0.1
+6/25/10 9:27 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/25/10 9:27 AM - INFO: Object: Thread[Thread-1,5,main]
+6/25/10 9:27 AM - INFO: 1 jvmbytecodes no_username
+6/25/10 9:27 AM - FINER: ENTRY
+6/25/10 9:27 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/25/10 9:27 AM - INFO: 4 jvmbytecodes new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textfield>
+    <label_line>File name:</label_line>
+    <default_field />
+    <value_entered>Fib.java</value_entered>
+  </textfield>
+  <textarea>
+    <label_line>Code to visualize:</label_line>
+    <default_field />
+    <value_entered>public class Fib {
+
+	public static void main(String args[]) {
+		int firstNum = 0;
+		int secondNum = 1;
+		int fibonacci = 0;
+		int temp = 0;
+
+		int i = 0;
+		while (i &lt; 10) {
+			temp = secondNum;
+			secondNum = firstNum + secondNum;
+			firstNum = temp;
+
+			i++;
+		}
+
+		fibonacci = secondNum; // the twelfth fib num
+
+	}
+
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/25/10 9:27 AM - FINER: ENTRY
+6/25/10 9:27 AM - FINER: ENTRY
+6/25/10 9:27 AM - INFO: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 *
+6/25/10 9:27 AM - FINE: Up front with user  no_username looking for -- exe/jvmbytecodes/jvmbytecodes
+6/25/10 9:27 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml
+6/25/10 9:27 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml)
+..........with script root /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
+6/25/10 9:27 AM - FINE: Process started

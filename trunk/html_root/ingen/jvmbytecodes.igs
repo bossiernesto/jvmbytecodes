@@ -2,15 +2,10 @@
 <!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
 
 <input_panel>
-  <textfield>
-    <label_line>File name:</label_line>
+  <jvm_text_area>
+    <label_line>Load your program and be sure that EMPTY is replaced by the name of the Java source file:</label_line>
     <default_field></default_field>
     <value_entered></value_entered>
-  </textfield>
-  <textarea>
-    <label_line>Code to visualize:</label_line>
-    <default_field></default_field>
-    <value_entered></value_entered>
-  </textarea>
+  </jvm_text_area>
 </input_panel>
 
