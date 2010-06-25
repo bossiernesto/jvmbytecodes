@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<pseudocode>
+	<stack></stack>
+	<code>
+	<line num="0">class Factorial4</line>
+	<line num="1">{</line>
+	<line num="2"></line>
+	<line num="3"> public static void main( String [ ] args )</line>
+	<line num="4"> {</line>
+	<line num="5"> int factorial = 1;</line>
+	<line num="6"> for(int i = 2; i &#60;= 5; i++)</line>
+	<line num="7"> factorial *= i;</line>
+	<line num="8"> }</line>
+	<line num="9">}</line>
+	</code>
+</pseudocode>

@@ -1,0 +1,2279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD GAIGS SHO//EN" "gaigs_sho.dtd">
+
+<show>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<doc_url>doc.html</doc_url>
+<pseudocode_url>ps.html</pseudocode_url>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>null</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "0"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "3"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="green">
+<label>1</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push onto Operator Stack (empty stack).</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push onto Operator Stack (empty stack).</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "8"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="green">
+<label>4</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push onto Operator Stack (higher precedence).</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="green">
+<label>2</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="green">
+<label>2</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "16"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="green">
+<label>2</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "18"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="blue">
+<label>/</label>
+</list_item>
+<list_item color="blue">
+<label>+</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push on Operator Stack after removing higher or equal
+precedence operators and enqueueing onto Postfix Queue.</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="yellow">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="yellow">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push ( onto Operator Stack</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="green">
+<label>3</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="green">
+<label>3</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "26"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push onto Operator Stack (higher precedence).</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="green">
+<label>5</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="green">
+<label>5</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "33"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="red">
+<label>+</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="red">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Pop items from Operator Stack up to and including (. 
+Enqueue operators onto Postfix Queue.</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="red">
+<label>+</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="red">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="red">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Pop items from Operator Stack up to and including (. 
+Enqueue operators onto Postfix Queue.</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+<question_ref ref = "34"/>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="blue">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="blue">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Push onto Operator Stack (higher precedence).</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="green">
+<label>6</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="green">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Enqueue onto Postfix Queue</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<snap>
+<title>Infix to Postfix Conversion
+1+4/2-(3+5)*6</title>
+<queue>
+<name>Infix Queue</name>
+<bounds x1="0.0" y1="0.4" x2="0.3" y2="0.8" fontsize="0.07"/>
+</queue>
+<stack>
+<name>Operator stack</name>
+<bounds x1="0.35" y1="0.4" x2="0.65" y2="0.8" fontsize="0.07"/>
+</stack>
+<queue>
+<name>Postfix queue</name>
+<bounds x1="0.7" y1="0.4" x2="1.0" y2="0.8" fontsize="0.07"/>
+<list_item color="#999999">
+<label>1</label>
+</list_item>
+<list_item color="#999999">
+<label>4</label>
+</list_item>
+<list_item color="#999999">
+<label>2</label>
+</list_item>
+<list_item color="#999999">
+<label>/</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>3</label>
+</list_item>
+<list_item color="#999999">
+<label>5</label>
+</list_item>
+<list_item color="#999999">
+<label>+</label>
+</list_item>
+<list_item color="#999999">
+<label>6</label>
+</list_item>
+<list_item color="#999999">
+<label>*</label>
+</list_item>
+<list_item color="#999999">
+<label>-</label>
+</list_item>
+</queue>
+<array>
+<name>Current Token</name>
+<bounds x1="0.0" y1="0.0" x2="0.3" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="magenta">
+<label>null</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Token Type</name>
+<bounds x1="0.3" y1="0.0" x2="0.65" y2="0.3" fontsize="0.07"/>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<row_label></row_label>
+<column_label></column_label>
+<column>
+<list_item color="#999999">
+<label>Operand</label>
+</list_item>
+<list_item color="#999999">
+<label>Operator</label>
+</list_item>
+<list_item color="#999999">
+<label>(</label>
+</list_item>
+<list_item color="#999999">
+<label>)</label>
+</list_item>
+</column>
+</array>
+<array>
+<name>Action Taken
+Pop all remaining items from Operator Stack. 
+Enqueue operators onto Postfix Queue.</name>
+<bounds x1="0.7" y1="0.0" x2="1.0" y2="0.3" fontsize="0.07"/>
+</array>
+</snap>
+
+<questions>
+<question type = "FIBQUESTION" id = "0">
+<question_text>What will be the size of the final postfix queue? (enter an integer)</question_text>
+<answer_option is_correct = "yes">11</answer_option>
+</question>
+<question type = "FIBQUESTION" id = "3">
+<question_text>What will be the content of the postfix queue after processing the next token 1? (place a blank between elements)</question_text>
+<answer_option is_correct = "yes">1</answer_option>
+</question>
+<question type = "MCQUESTION" id = "8">
+<question_text>What action will be taken with the current token 4?</question_text>
+<answer_option is_correct = "yes">Enqueue onto postfix queue</answer_option>
+<answer_option is_correct = "no">Push immediately onto operator stack</answer_option>
+<answer_option is_correct = "no">Peek at operator on top of operator stack</answer_option>
+</question>
+<question type = "TFQUESTION" id = "16">
+<question_text>Will the current token - be placed on the operator stack?</question_text>
+<answer_option is_correct = "yes">true</answer_option>
+</question>
+<question type = "FIBQUESTION" id = "18">
+<question_text>What will be the content of the postfix queue after processing the next token -? (place a blank between elements)</question_text>
+<answer_option is_correct = "yes">1 4 2 / +</answer_option>
+</question>
+<question type = "MCQUESTION" id = "26">
+<question_text>What action will be taken with the current token +?</question_text>
+<answer_option is_correct = "no">Enqueue onto postfix queue</answer_option>
+<answer_option is_correct = "no">Push immediately onto operator stack</answer_option>
+<answer_option is_correct = "yes">Peek at operator on top of operator stack</answer_option>
+</question>
+<question type = "FIBQUESTION" id = "33">
+<question_text>What will be the content of the postfix queue after processing the next token )? (place a blank between elements)</question_text>
+<answer_option is_correct = "yes">1 4 2 / + 3 5 +</answer_option>
+</question>
+<question type = "TFQUESTION" id = "34">
+<question_text>Will the current token * be placed on the operator stack?</question_text>
+<answer_option is_correct = "yes">true</answer_option>
+</question>
+</questions>
+</show>

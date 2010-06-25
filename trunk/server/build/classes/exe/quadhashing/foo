@@ -1,0 +1,3058 @@
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+We have 7 keys to Insert:
+63, 49, 60, 82, 79, 17, 0
+into a hash table with 7 slots.
+***\***
+7
+1
+0
+1
+\W .
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 0
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 63.
+H(key) = key % TableSize
+H(63) = 63 % 7
+H(63) = 0
+0 is the hash code for key 63.
+***\***
+7
+1
+0
+1
+\W .
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 63 into slot 0.
+***\***
+7
+1
+0
+1
+\M 63
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 49.
+H(key) = key % TableSize
+H(49) = 49 % 7
+H(49) = 0
+0 is the hash code for key 49.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 49 into slot 0.
+COLLISION!!
+The number of collisions so far is 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the origional hash code and try again.
+Hash code = 0 + 1*1 = 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\W .
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 49 into slot 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\M 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 2
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 60.
+H(key) = key % TableSize
+H(60) = 60 % 7
+H(60) = 4
+4 is the hash code for key 60.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\W .
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 60 into slot 4.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\M 60
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 3
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 82.
+H(key) = key % TableSize
+H(82) = 82 % 7
+H(82) = 5
+5 is the hash code for key 82.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\Y 60
+5
+1
+\W .
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 82 into slot 5.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\Y 60
+5
+1
+\M 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 4
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 79.
+H(key) = key % TableSize
+H(79) = 79 % 7
+H(79) = 2
+2 is the hash code for key 79.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\W .
+3
+1
+\W .
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 79 into slot 2.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\M 79
+3
+1
+\W .
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 5
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 17.
+H(key) = key % TableSize
+H(17) = 17 % 7
+H(17) = 3
+3 is the hash code for key 17.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\W .
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 17 into slot 3.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\M 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 6
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 0.
+H(key) = key % TableSize
+H(0) = 0 % 7
+H(0) = 0
+0 is the hash code for key 0.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 0 into slot 0.
+COLLISION!!
+The number of collisions so far is 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the origional hash code and try again.
+Hash code = 0 + 1*1 = 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 0 into slot 1.
+COLLISION!!
+The number of collisions so far is 2.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the origional hash code and try again.
+Hash code = 0 + 2*2 = 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Insert key 0 into slot 4.
+COLLISION!!
+The number of collisions so far is 3.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the origional hash code and try again.
+Hash code = 0 + 3*3 = 9.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 9 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 9%7 = 2.
+Insert key 0 into slot 2.
+COLLISION!!
+The number of collisions so far is 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since the number of collisions is greater than half the table size,
+start to insert into the table by subracting the square of the
+number of collisions minus half the table size from the hash code.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+subtract half the table size,
+subtract that from the origional hash code and try again.
+Hash code = 0 - 1*1 = -1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\W .
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -1 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -1+7 = 6.
+Insert key 0 into slot 6.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\M 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+We're done inserting keys.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Let's search for the following keys: 63, 67, 82, 89, 0, 92.
+Note that some of these keys are not in the hash table.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 7
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 63.
+H(key) = key % TableSize
+H(63) = 63 % 7
+H(63) = 0
+0 is the hash code for key 63.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 63 in hash table slot 0.
+Key 63 found in hash table slot 0.
+***\***
+7
+1
+0
+1
+\M 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 8
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 67.
+H(key) = key % TableSize
+H(67) = 67 % 7
+H(67) = 4
+4 is the hash code for key 67.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 67 in hash table slot 4.
+The key 60 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 1.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 4 + 1*1 = 5.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 67 in hash table slot 5.
+The key 82 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 2.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 4 + 2*2 = 8.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 8 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 8%7 = 1.
+Search for the key 67 in hash table slot 1.
+The key 49 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 3.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 4 + 3*3 = 13.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 13 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 13%7 = 6.
+Search for the key 67 in hash table slot 6.
+The key 0 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 4.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since the number of collisions is greater than half the table size,
+start to search the table by subracting the square of the
+number of collisions minus half the table size from the hash code.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 4 - 1*1 = 3.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 67 in hash table slot 3.
+The key 17 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 5.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 4 - 2*2 = 0.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 67 in hash table slot 0.
+The key 63 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 6.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 4 - 3*3 = -5.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -5 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -5+7 = 2.
+Search for the key 67 in hash table slot 2.
+The key 79 is not equal to the key we're searching for, 67.
+The number of times we've searched
+a hash table slot unsuccessfully is 7.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Done searching, key 67 not found.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 9
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 82.
+H(key) = key % TableSize
+H(82) = 82 % 7
+H(82) = 5
+5 is the hash code for key 82.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 82 in hash table slot 5.
+Key 82 found in hash table slot 5.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\M 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 10
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 89.
+H(key) = key % TableSize
+H(89) = 89 % 7
+H(89) = 5
+5 is the hash code for key 89.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 89 in hash table slot 5.
+The key 82 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 1.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 5 + 1*1 = 6.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 89 in hash table slot 6.
+The key 0 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 2.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 5 + 2*2 = 9.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 9 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 9%7 = 2.
+Search for the key 89 in hash table slot 2.
+The key 79 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 3.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 5 + 3*3 = 14.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 14 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 14%7 = 0.
+Search for the key 89 in hash table slot 0.
+The key 63 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since the number of collisions is greater than half the table size,
+start to search the table by subracting the square of the
+number of collisions minus half the table size from the hash code.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 5 - 1*1 = 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 89 in hash table slot 4.
+The key 60 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 5.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 5 - 2*2 = 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 89 in hash table slot 1.
+The key 49 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 6.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 5 - 3*3 = -4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -4 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -4+7 = 3.
+Search for the key 89 in hash table slot 3.
+The key 17 is not equal to the key we're searching for, 89.
+The number of times we've searched
+a hash table slot unsuccessfully is 7.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Done searching, key 89 not found.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 11
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 0.
+H(key) = key % TableSize
+H(0) = 0 % 7
+H(0) = 0
+0 is the hash code for key 0.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 0 in hash table slot 0.
+The key 63 is not equal to the key we're searching for, 0.
+The number of times we've searched
+a hash table slot unsuccessfully is 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 0 + 1*1 = 1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 0 in hash table slot 1.
+The key 49 is not equal to the key we're searching for, 0.
+The number of times we've searched
+a hash table slot unsuccessfully is 2.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 0 + 2*2 = 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 0 in hash table slot 4.
+The key 60 is not equal to the key we're searching for, 0.
+The number of times we've searched
+a hash table slot unsuccessfully is 3.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 0 + 3*3 = 9.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 9 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 9%7 = 2.
+Search for the key 0 in hash table slot 2.
+The key 79 is not equal to the key we're searching for, 0.
+The number of times we've searched
+a hash table slot unsuccessfully is 4.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since the number of collisions is greater than half the table size,
+start to search the table by subracting the square of the
+number of collisions minus half the table size from the hash code.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 0 - 1*1 = -1.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -1 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -1+7 = 6.
+Search for the key 0 in hash table slot 6.
+Key 0 found in hash table slot 6.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\R 60
+5
+1
+\Y 82
+6
+1
+\M 0
+***^***
+VIEW WINDOWS 1
+MCQUESTION 12
+MD_Array 0.015 0.015 HeavyBold
+1
+Compute hashcode for key 92.
+H(key) = key % TableSize
+H(92) = 92 % 7
+H(92) = 1
+1 is the hash code for key 92.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 92 in hash table slot 1.
+The key 49 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 1.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 1 + 1*1 = 2.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 92 in hash table slot 2.
+The key 79 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 2.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 1 + 2*2 = 5.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 92 in hash table slot 5.
+The key 82 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 3.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Square the number of collisions,
+add that to the hash code and try again.
+Hash code = 1 + 3*3 = 10.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since 10 is greater than the highest indexed table slot,
+mod out by the size of the hash table.  hash code = 10%7 = 3.
+Search for the key 92 in hash table slot 3.
+The key 17 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 4.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since the number of collisions is greater than half the table size,
+start to search the table by subracting the square of the
+number of collisions minus half the table size from the hash code.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 1 - 1*1 = 0.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Search for the key 92 in hash table slot 0.
+The key 63 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 5.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 1 - 2*2 = -3.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\Y 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -3 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -3+7 = 4.
+Search for the key 92 in hash table slot 4.
+The key 60 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 6.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Subtract half the table size from the number of collisions,
+square the quantity,
+subtract that from the hash code and try again.
+Hash code = 1 - 3*3 = -8.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\Y 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Since -8 is less than zero, add a multiple
+of the size of the hash table that makes the hash code non-negative.
+hash code = -8+14 = 6.
+Search for the key 92 in hash table slot 6.
+The key 0 is not equal to the key we're searching for, 92.
+The number of times we've searched
+a hash table slot unsuccessfully is 7.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+Done searching, key 92 not found.
+***\***
+7
+1
+0
+1
+\R 63
+1
+1
+\R 49
+2
+1
+\R 79
+3
+1
+\R 17
+4
+1
+\R 60
+5
+1
+\R 82
+6
+1
+\R 0
+***^***
+VIEW WINDOWS 1
+MD_Array 0.015 0.015 HeavyBold
+1
+We're done searching for keys.
+***\***
+7
+1
+0
+1
+\Y 63
+1
+1
+\Y 49
+2
+1
+\Y 79
+3
+1
+\Y 17
+4
+1
+\Y 60
+5
+1
+\Y 82
+6
+1
+\Y 0
+***^***
+STARTQUESTIONS
+FIBQUESTION 0
+At what index will the key 63 be inserted?
+ENDTEXT
+ANSWER
+0
+ENDANSWER
+FIBQUESTION 1
+At what index will the key 49 be inserted?
+ENDTEXT
+ANSWER
+1
+ENDANSWER
+FIBQUESTION 2
+At what index will the key 60 be inserted?
+ENDTEXT
+ANSWER
+4
+ENDANSWER
+FIBQUESTION 3
+At what index will the key 82 be inserted?
+ENDTEXT
+ANSWER
+5
+ENDANSWER
+FIBQUESTION 4
+At what index will the key 79 be inserted?
+ENDTEXT
+ANSWER
+2
+ENDANSWER
+FIBQUESTION 5
+At what index will the key 17 be inserted?
+ENDTEXT
+ANSWER
+3
+ENDANSWER
+FIBQUESTION 6
+At what index will the key 0 be inserted?
+ENDTEXT
+ANSWER
+6
+ENDANSWER
+MCQUESTION 7
+How many hash table slots will have to be searched to determine whether the key 63 is in the table?
+ENDTEXT
+1
+ENDCHOICE
+3
+ENDCHOICE
+2
+ENDCHOICE
+4
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 8
+How many hash table slots will have to be searched to determine whether the key 67 is in the table?
+ENDTEXT
+7
+ENDCHOICE
+9
+ENDCHOICE
+8
+ENDCHOICE
+6
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 9
+How many hash table slots will have to be searched to determine whether the key 82 is in the table?
+ENDTEXT
+1
+ENDCHOICE
+3
+ENDCHOICE
+2
+ENDCHOICE
+4
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 10
+How many hash table slots will have to be searched to determine whether the key 89 is in the table?
+ENDTEXT
+7
+ENDCHOICE
+9
+ENDCHOICE
+8
+ENDCHOICE
+6
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 11
+How many hash table slots will have to be searched to determine whether the key 0 is in the table?
+ENDTEXT
+4
+ENDCHOICE
+6
+ENDCHOICE
+5
+ENDCHOICE
+3
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 12
+How many hash table slots will have to be searched to determine whether the key 92 is in the table?
+ENDTEXT
+7
+ENDCHOICE
+9
+ENDCHOICE
+8
+ENDCHOICE
+6
+ENDCHOICE
+ANSWER
+1
+ENDANSWER

@@ -1,0 +1,372 @@
+%Animal 2 781*504
+title "Program Visualization Using AnimalScript"
+author "Guido Rößling <roessling@acm.org>"
+{
+  text "mainTitle" "Program Visualization Using AnimalScript" (380, 80) centered depth 0 font SansSerif size 24 bold 
+  rectangle "headerRect" offset (-3, -3) from "mainTitle" NW offset (3, 3) from "mainTitle" SE depth 1 filled fillColor white 
+  text "authors" "Guido Rößling, Bernd Freisleben" offset (0, 100) from "mainTitle" S centered size 24
+  text "addr1" "Dept. of Electrical Engineering and Computer Science" offset (0, 50) from "authors" S centered
+  text "uni" "University of Siegen" offset (0, 50) from "addr1" S centered
+  text "addr2" "Hölderlinstr. 3, D-57068 Siegen, GERMANY" offset (0, 50) from "uni" S centered
+  text "email" "{roessling,freisleb}@informatik.uni-siegen.de" offset (0, 90) from "addr2" S centered font Monospaced bold
+  circle "dot" (20, 65) radius 4 color black filled fillColor black hidden
+  circle "dot0" offset (0, 35) from "dot" C radius 4 color black filled fillColor black hidden
+  circle "dot1" offset (0, 35) from "dot0" C radius 4 color black filled fillColor black hidden
+  circle "dot2" offset (0, 35) from "dot1" C radius 4 color black filled fillColor black hidden
+  circle "dot3" offset (0, 35) from "dot2" C radius 4 color black filled fillColor black hidden
+  circle "dot4" offset (0, 35) from "dot3" C radius 4 color black filled fillColor black hidden
+  circle "dot5" offset (0, 35) from "dot4" C radius 4 color black filled fillColor black hidden
+  circle "dot6" offset (0, 35) from "dot5" C radius 4 color black filled fillColor black hidden
+  circle "dot7" offset (0, 35) from "dot6" C radius 4 color black filled fillColor black hidden
+  circle "dot8" offset (0, 35) from "dot7" C radius 4 color black filled fillColor black hidden
+  circle "dot9" offset (0, 35) from "dot8" C radius 4 color black filled fillColor black hidden
+  circle "dot10" offset (0, 35) from "dot9" C radius 4 color black filled fillColor black hidden
+  circle "dot11" offset (0, 35) from "dot10" C radius 4 color black filled fillColor black hidden
+}
+label "Title"
+{
+  hide "mainTitle" "headerRect" "authors" "uni" "addr1" "addr2" "email"
+  text "miniHdr" "AnimalScript" (580, 30) color blue2 depth 0 font SansSerif size 24 bold
+  text "miniAuthor" "Guido Rößling" offset (0, 10) from "miniHdr" S centered size 16 bold
+  text "tocHdr" "Contents of this Presentation" (380, 30) centered color black depth 0 size 24 bold
+  rectangle "tocHdrRect" offset (-3, -3) from "tocHdr" NW offset (3, 3) from "tocHdr" SE depth 1 filled fillColor white 
+}
+{
+  show "dot"
+  text "str0" "The animation tool Animal" offset (5, 6) from "dot" SE color black
+}
+{
+  show "dot1"
+  text "str1" "Basic AnimalScript structure" offset (5, 6) from "dot1" SE
+}
+{
+  show "dot3"
+  text "str2" "Basic AnimalScript features" offset (5, 6) from "dot3" SE
+}
+{
+  show "dot5"
+  text "str3" "Extended AnimalScript features" offset (5, 6) from "dot5" SE
+}
+{
+  show "dot7"
+  text "str4" "Extensibility" offset (5, 6) from "dot7" SE
+}
+{
+  show "dot9"
+  text "str5" "Summary and conclusions" offset (5, 6) from "dot9" SE
+}
+label "Contents"
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "reaHdr" "The Animation Tool Animal" (380, 30) centered depth 0 bold
+  rectangle "reaHdrRect" offset (-5, -5) from "reaHdr" NW offset (5, 5) from "reaHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "aml1" "Supported basic graphic primitives:" offset (10, 6) from "dot" SE
+}
+{
+  text "aml2" "- point" offset (40, 6) from "dot0" SE
+  point "p0" offset (20, 0) from "aml2" E color red after 3 ticks
+  point "p1" offset (10, 2) from "p0" E color white after 6 ticks
+  point "p2" offset (10, -4) from "p1" E color blue after 9 ticks
+  point "p3" offset (10, 2) from "p2" E color cyan4 after 12 ticks
+  point "p4" offset (10, -4) from "p3" E color black after 15 ticks
+  text "aml2a" "(by definition almost invisible!)" offset (10, 12) from "p4" C  after 20 ticks
+}
+{
+  text "aml3" "- polyline / polygon" offset (40, 6) from "dot1" SE
+  polyline "pl0" offset (20, 0) from "aml3" E offset (15, -10) from "aml3" E offset (10, 0) from "aml3" E offset (15, 10) from "aml3" E color red after 3 ticks
+  polyline "pl1" offset (40, 0) from "aml3" E offset (65, 0) from "aml3" E color red fwArrow after 6 ticks
+  square "pl2" offset (70, -10) from "aml3" E 20 after 9 ticks
+  rectangle "pl3" offset (95, -10) from "aml3" E offset (115, 20) from "aml3" E filled fillColor gold  after 12 ticks
+  square "pl4" (410, 130) 30 filled fillColor blue after 15 ticks
+  triangle "pl4a" offset (0, 0) from "pl4" NW move (15, -15) move (15, 15) filled fillColor red after 15 ticks
+  polygon "pl5" (450, 160) (450, 130) (460, 130) (460, 150) (470, 150) (470, 140) (480, 140) (480, 150) (490, 150) (490, 130) (500, 130) (500, 160) color red filled fillColor gold after 18 ticks
+}
+{
+  text "aml4" "- text" offset (40, 6) from "dot2" SE
+  text "aml4a" "Serif24" offset (10, 6) from "aml4" E color gold font Serif size 24 italic after 3 ticks
+  text "aml4b" "SansSerif16" offset (10, 6) from "aml4a" E color blue3 font SansSerif size 16 bold after 6 ticks
+  text "aml4c" "Mono18" offset (10, 6) from "aml4b" E color green3 font Monospaced size 18 after 9 ticks
+}
+{
+  text "aml5" "- arcs" offset (40, 6) from "dot3" SE color black font SansSerif size 24
+  circle "arc0" offset (20, 0) from "aml5" E radius 10 after 3 ticks
+  ellipse "arc1" offset (60, 0) from "aml5" E radius (20, 10) filled after 6 ticks
+  circlesegment "arc2" offset (110, 0) from "aml5" E radius 20 angle 150 starts 30 color blue fwArrow after 9 ticks
+  arc "arc3" offset (170, -10) from "aml5" E radius (30, 20) angle 210 starts 10 closed filled fillColor red after 9 ticks
+  arc "arc4" offset (240, -10) from "aml5" E radius (30, 25) angle 210 starts 10 clockwise closed after 12 ticks
+  arc "arc3" offset (310, -10) from "aml5" E radius (30, 20) angle 80 starts 10 closed filled fillColor green after 15 ticks
+  arc "arc4" offset (310, -10) from "aml5" E radius (30, 20) angle 280 starts 90 closed filled fillColor blue after 15 ticks
+}
+{
+  text "aml6" "- list elements" offset (40, 6) from "dot4" SE color black font SansSerif size 24
+  listelement "le0" offset (20, 0) from "aml6" NE text "Elem1" pointers 1 after 3 ticks
+  listelement "le1" offset (20, 0) from "le0" NE text "Elem2" pointers 2 after 6 ticks
+  listelement "le2" offset (20, 0) from "le1" NE text "Elem3" pointers 2 ptr2 to "le1" after 9 ticks
+  listelement "le3" offset (20, 0) from "le2" NE text "Elem4" pointers 1 position right textColor blue after 12 ticks
+  listelement "le4" offset (20, 0) from "le3" NE text "Elem5" pointers 2 position top after 15 ticks
+}
+{
+  show "dot6"
+  text "fea5" "Animation generation: graphically / using AnimalScript / by API calls" offset (10, 6) from "dot6" SE
+  text "fea5a" "- editor: drag & drop using grid and grid snapping" offset (40, 6) from "dot7" SE
+}
+label "Animal Features"
+{
+  show "dot8"
+  text "fea8" "Relative object placement using bounding box / anchors" offset (10, 6) from "dot8" SE
+  codegroup "demoBB" offset (10, 6) from "dot9" SE size 24
+  addCodeLine "generate / select object" to "demoBB"
+  addCodeLine "show bounding box" to "demoBB"
+  addCodeLine "show anchors" to "demoBB"
+}
+label "Relative Placement"
+{
+  polygon "demoPolygon" (330, 430) (550, 460) (413, 465) (427, 480) (380, 470) (320, 465) filled fillColor white
+  highlightCode on "demoBB" line 0
+}
+{
+  rectangle "boundingBox" offset (0, 0) from "demoPolygon" NW offset (0, 0) from "demoPolygon" SE color blue4
+  unhighlightCode on "demoBB" line 0
+  highlightCode on "demoBB" line 1
+}
+{
+  unhighlightCode on "demoBB" line 1
+  highlightCode on "demoBB" line 2
+  circle "NW" offset (0, 0) from "demoPolygon" NW radius 5 color green4 filled fillColor green4
+  text "NWTag" "NW" offset (0, -5) from "NW" N centered size 16
+  circle "N" offset (0, 0) from "demoPolygon" N radius 5 color green4 filled fillColor green4
+  text "NTag" "N" offset (0, -5) from "N" N centered 
+  circle "NE" offset (0, 0) from "demoPolygon" NE radius 5 color green4 filled fillColor green4
+  text "NETag" "NE" offset (0, -5) from "NE" N centered 
+  circle "W" offset (0, 0) from "demoPolygon" W radius 5 color green4 filled fillColor green4
+  text "WTag" "W" offset (-20, 0) from "W" SW 
+  circle "C" offset (0, 0) from "demoPolygon" C radius 5 color green4 filled fillColor green4
+  text "CTag" "C" offset (5, 5) from "C" C 
+  circle "E" offset (0, 0) from "demoPolygon" E radius 5 color green4 filled fillColor green4
+  text "ETag" "E" offset (3, 0) from "E" SE
+  circle "SW" offset (0, 0) from "demoPolygon" SW radius 5 color green4 filled fillColor green4
+  text "SWTag" "SW" offset (-20, 0) from "SW" S centered 
+  circle "S" offset (0, 0) from "demoPolygon" S radius 5 color green4 filled fillColor green4
+  text "STag" "S" offset (0, 15) from "S" S centered 
+  circle "SE" offset (0, 0) from "demoPolygon" SE radius 5 color green4 filled fillColor green4
+  text "SETag" "SE" offset (5, 0) from "SE" S 
+}
+{
+  hideAllBut "miniHdr" "miniAuthor" "reaHdr" "reaHdrRect"
+  hide "demoBB"
+  show "dot"
+  text "det" "Compact tool: JAR of about 400kB" offset (10, 6) from "dot" SE size 24
+}
+{
+  show "dot1"
+  text "det" "Compact animations: typically <12kB" offset (10, 6) from "dot1" SE size 24
+}
+{
+  show "dot3"
+  text "det3" "Image export: BMP, JPG, PNG, APF, PCX, PICT, ..." offset (10, 6) from "dot3" SE size 24
+}
+{
+  show "dot5"
+  text "det5" "Full timing control: 'ticks' or ms; offset and/or duration" offset (10, 6) from "dot5" SE size 24
+}
+{
+  show "dot7"
+  text "det7" "Magnification for display: 50%, 71%, 100%, 141%, 200%" offset (10, 6) from "dot7" SE size 24
+}
+{
+  show "dot9"
+  text "det9" "Time line for direct jump to animation positions" offset (10, 6) from "dot9" SE size 24
+}
+{
+  show "dot11"
+  text "det11" "Partial import for JAWAA, JSamba (beta stage)" offset (10, 6) from "dot11" SE size 24
+}
+label "Animal Details"
+{
+  hideAllBut "miniHdr" "miniAuthor" 
+  text "baseHdr" "Basic AnimalScript Structure" (380, 30) centered depth 0 bold
+  rectangle "baseHdrRect" offset (-5, -5) from "baseHdr" NW offset (5,5) from "baseHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "base" "Pure editable ASCII input (optionally compressed)" offset (10, 6) from "dot" SE
+}
+{
+  show "dot1"
+  text "base1" "Each line contains exactly one command or comment (#)" offset (10, 6) from "dot1" SE
+}
+{
+  show "dot3"
+  text "base3" "Standard header:" offset (10, 6) from "dot3" SE
+  text "base3a" "% Animal 1.4" offset (200, 6) from "dot4" SE depth 0
+  text "base3b" "title \"Demo Animation\"" offset (0, 25) from "base3a" SW depth 0
+  text "base3c" "author \"Guido Roessling\"" offset (0, 25) from "base3b" SW depth 0
+  rectangle "base3Rect" offset (-5, -5) from "base3a" NW offset (5, 5) from "base3c" SE depth 1 filled fillColor white
+}
+{
+  show "dot7"
+  text "base7" "Parser determined by the first word of each line" offset (10, 6) from "dot7" SE
+}
+{
+  show "dot9"
+  text "base9" "AnimalScript supports optional parameters" offset (10, 6) from "dot9" SE
+}
+{
+  show "dot11"
+  text "base11" "Offers all Animal features... and then some!" offset (10, 6) from "dot11" SE
+}
+label "Basic Structure AS"
+{
+  hideAllBut "miniAuthor" "miniHdr"
+  text "asfHdr" "Basic AnimalScript Features" (380, 30) centered depth 0 bold
+  rectangle "asdHdrRect" offset (-5, -5) from "asfHdr" NW offset (5, 5) from "asfHdr" SE filled fillColor white
+}
+{
+  show "dot"
+  text "asf" "Supports points... (nearly invisible!)" offset (10, 6) from "dot" SE
+  point "p0" (460, 66) color red depth 0
+  circle "p0C" offset (0, 0) from "p0" C radius 3 depth 1 filled fillColor white after 10 ticks
+  text "asfx" "point \"p0\" (460, 66) color red" offset (10, 6) from "dot11" SE color blue
+}
+{
+  hide "asfx"
+  show "dot0"
+  text "asf0" "... polylines / polygons ... " offset (10, 6) from "dot0" SE color black
+  polyline "l0" (501, 101) (533, 101) fwArrow color black
+  polyline "l1" (551, 101) (583, 101) fwArrow color black
+  text "asfx0" "polyline \"l0\" (501, 101) (533, 101) fwArrow" offset (10, 6) from "dot11" SE color blue
+}
+{
+  hide "asfx0"
+  show "dot1"
+  text "asfx1" "text \"t0\" \"Demo Text\" (500, 145) color red" offset (10, 6) from "dot11" SE
+  text "t0" "Demo Text" (500, 145) color red 
+  text "asf1" "... text ..." offset (10, 6) from "dot1" SE color black
+}
+{
+  show "dot2"
+  hide "asfx1"
+  text "asf2" "... arc components ..." offset (10, 6) from "dot2" SE color black
+  text "asfx2" "arc \"a0\" (400, 220) radius (50, 30) angle 210 filled fillColor blue" offset (10, 6) from "dot11" SE color blue
+  arc "a0" (400, 220) radius (50, 30) angle 210 closed filled fillColor blue
+}
+{
+  hide "asfx2"
+  show "dot5"
+  text "asfx5" "listElement \"le0\" (600, 250) text \"Elem\" pointers 2" offset (10, 6) from "dot11" SE
+  text "asf5" "... and list elements" offset (10, 6) from "dot5" SE color black
+  listElement "le0" (500, 250) text "Elem" pointers 2
+  listElement "le1" offset (60, 0) from "le0" NE text "Elem" pointers 2 ptr2 to "le0"
+}
+{
+  show "dot6"
+  hide "asfx5"
+  text "asf6" "Base effects: show / hide..." offset (10, 6) from "dot6" SE
+  text "asfx6" "hide \"le0\" after 20 ticks" offset (10, 6) from "dot11" SE color blue
+  hide "le0" after 20 ticks
+}
+{
+  show "dot7"
+  hide "asfx6"
+  text "asfx7" "move \"l0\" along line (10, 10) (20, 30) (30, 10) within 10 ticks" offset (10, 6) from "dot11" SE
+  text "asf7" "... moving objects ... (relative!)" offset (10, 6) from "dot7" SE color black
+  move "l0" along line (10, 10) (20, 30) (30, 10) within 10 ticks
+}
+{
+  hide "asfx7"
+  show "dot8"
+  text "asf8" "... rotating ..." offset (10, 6) from "dot8" SE
+  text "asfx8" "rotate \"l0\" center (150, 150) degrees 90 within 10 ticks" offset (10, 6) from "dot11" SE color blue
+  rotate "l0" center (536, 101) degrees 180 within 10 ticks
+}
+{
+  hide "asfx8"
+  show "dot9"
+  text "asfx9" "color \"l0\" blue after 10 ticks" offset (10, 6) from "dot11" SE
+  text "asf9" "... and changing color" offset (10, 6) from "dot9" SE color black
+  color "l0" blue after 10 ticks
+}
+label "AnimalScript Base Features"
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "extHdr" "Extended AnimalScript Features" (380, 30) centered depth 0 bold
+  rectangle "extHdrRect" offset (-5, -5) from "extHdr" NW offset (5, 5) from "extHdr" SE depth 1 color black filled fillColor white
+}
+{
+  show "dot"
+  text "ext" "Placement: absolute..." offset (10, 6) from "dot" SE
+  text "extx" "square \"s\" (400, 200) 30 color red filled fillColor blue" offset (10, 6) from "dot8" SE color blue
+  square "s" (400, 200) 30 color red depth 1 filled fillColor blue
+}
+{
+  show "dot0"
+  color "extx" black
+  text "ext0x" "square \"s0\" offset (100, 50) from \"s\" SE 30" offset (10, 6) from "dot9" SE color green2
+  square "s0" offset (100, 50) from "s" SE 30"
+  polyline "s0dx" offset (0,0) from "s" SE offset (100, 0) from "s" SE color green2 fwArrow bwArrow
+  polyline "s0dy" offset (100 ,0) from "s" SE offset (100, 50) from "s" SE fwArrow bwArrow
+  text "s0dxt" "100" offset (0, -10) from "s0dx" C
+  text "s0dyt" "50" offset (10, 6) from "s0dy" C
+  circle "s0c" offset (0, 0) from "s" SE radius 3 filled fillColor white
+  text "ext0" "...relative to bounding box..." offset (10, 6) from "dot0" SE color black
+}
+{
+  show "dot1"
+  color "ext0x" black
+  text "ext1" "...relative to node..." offset (10, 6) from "dot1" SE
+  text "ext1x" "text \"txt\" \"Demo Text\" offset (100, -100) from \"s\" node 4" offset (10, 6) from "dot10" SE color blue
+  text "txt" "Demo Text" offset (100, -100) from "s" node 4
+  polyline "s1dy" offset (0,0) from "s" node 4 offset (0, -100) from "s" node 4 color blue fwArrow bwArrow
+  polyline "s1dx" offset (0, -100) from "s" node 4 offset (100, -100) from "s" node 4 fwArrow bwArrow
+  text "s1dxt" "100" offset (0, -10) from "s1dx" C
+  text "s1dyt" "-100" offset (10, 6) from "s1dy" C
+}
+{
+  show "dot2"
+  color "ext1x" black
+  text "ext2x" "text \"TXT1\" \"Another Demo\" move (50, 50) color red" offset (10, 6) from "dot11" SE
+  text "ext2" "...relative to last node" offset (10, 6) from "dot2" SE color black
+  text "TXT1" "Another Demo" move (50, 50) color red
+  polyline "s2dy" offset (-50,0) from "TXT1" NW move (0, -50) fwArrow bwArrow
+  polyline "s2dx" offset (0, 0) from "TXT1" NW move (-50, 0) fwArrow bwArrow
+  text "s2dxt" "50" offset (0, -10) from "s2dx" C centered
+  text "s2dyt" "50" offset (-30, 0) from "s2dy" C
+}
+label "Extended AnimalScript features I"
+{
+  show "dot3"
+  hide "ext2x" "TXT1" "s1dxt" "s1dyt" "extx" "ext1x" "s1dx" "s1dy"  "s0dxt" "s0dyt" "ext0x" "s0dx" "s0dy" "s2dyt" "s2dxt" "s2dx" "s2dy" "s" "s0" "s0c"
+  text "ext3" "Array Support: show/hide; put; swap; marker" offset (10, 6) from "dot3" SE color black
+  array "array" (525, 200) length 5 "1" "2" "3" "4" "5"
+  text "ext3x" "array \"array\" (525, 200) length 5 \"1\" \"2\" \"3\" \"4\" \"5\"" offset (10, 6) from "dot11" SE color blue
+  arrayMarker "index1" on "array" atIndex 1 label "i" 
+}
+delay 200 ms
+moveMarker "index1" to position 4 within 10 ticks
+arrayPut "42" on "array" position 0 after 5 ticks
+highlightArrayCell on "array" position 2
+unhighlightArrayCell on "array" position 2
+arraySwap on "array" position 0 with 3 within 10 ticks
+{
+  hideAllBut "miniAuthor" "miniHdr" "extHdr" "extHdrRect" "dot"
+  hide "array" "array[0]"
+echo ids: "array"
+  text "frt" "Further features include...:" offset (10, 6) from "dot" SE color black
+}
+  text "frt0" "Code support with highlighting & indentation" offset (10, 6) from "dot0" SE
+  text "frt1" "Flexible move: along " offset (10, 6) from "dot1" SE
+  text "frt1a" "polyline / " offset (10, -6) from "frt1" SE italic
+  text "frt1b" "arc" offset (10, -6) from "frt1a" SE italic
+  text "frt1c" "or to ..." offset (10, -6) from "frt1b" SE italic
+  text "frt2" "Delay between steps [ms]" offset (10, 6) from "dot2" SE
+  text "frt3" "grouping / ungrouping of objects" offset (10, 6) from "dot3" SE
+  text "frt4" "Support for tree / graph (alpha stage), stack (late beta)" offset (10, 6) from "dot4" SE
+  text "frt5" "Internationalization using language key '(de: \"Hallo\" en: \"Hi\")'" offset (10, 6) from "dot5" SE
+  text "frt6" "Assignable variables (String basis) incl. assertion tests" offset (10, 6) from "dot6" SE
+  text "frt7" "Block Charts (alpha stage)" offset (10, 6) from "dot7" SE
+  text "frt8" "'echo': bounding box; location of node; text; ids; visible objects" offset (10, 6) from "dot8" SE
+}
+label "Extended AnimalScript features II"

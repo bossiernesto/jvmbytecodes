@@ -1,0 +1,120 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD GAIGS SHO//EN" "gaigs_sho.dtd">
+<show>
+<snap>
+<title>Search with Start Node G and Goal Node D:</title>
+<graph weighted = "false">
+<bounds x1 = "0.0" y1 = "0.0" x2 = "1.0" y2 = "0.95" fontsize = "0.03"/>
+<vertex color = "#FFFFFF" id = "0">
+<label>A
+2</label>
+<position x = "0.9108476229342437" y = "0.4680280744126516"/>
+<edge target = "2" directed = "false" color = "#999999">
+</edge>
+<edge target = "7" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "1">
+<label>B
+1</label>
+<position x = "0.4711698009818949" y = "0.16700056402192986"/>
+<edge target = "3" directed = "false" color = "#999999">
+</edge>
+<edge target = "5" directed = "false" color = "#999999">
+</edge>
+<edge target = "7" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "2">
+<label>C
+2</label>
+<position x = "0.9500000000000001" y = "0.7305376795672636"/>
+<edge target = "0" directed = "false" color = "#999999">
+</edge>
+<edge target = "6" directed = "false" color = "#999999">
+</edge>
+<edge target = "9" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "3">
+<label>D
+0</label>
+<position x = "0.11053881793020187" y = "0.05"/>
+<edge target = "1" directed = "false" color = "#999999">
+</edge>
+<edge target = "5" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "4">
+<label>E
+2</label>
+<position x = "0.05" y = "0.5136174995196343"/>
+<edge target = "5" directed = "false" color = "#999999">
+</edge>
+<edge target = "7" directed = "false" color = "#999999">
+</edge>
+<edge target = "8" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "5">
+<label>F
+1</label>
+<position x = "0.11882474722401107" y = "0.2841708976790933"/>
+<edge target = "1" directed = "false" color = "#999999">
+</edge>
+<edge target = "3" directed = "false" color = "#999999">
+</edge>
+<edge target = "4" directed = "false" color = "#999999">
+</edge>
+<edge target = "7" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "6">
+<label>G
+3</label>
+<position x = "0.7295167188614671" y = "0.9500000000000001"/>
+<edge target = "2" directed = "false" color = "#999999">
+</edge>
+<edge target = "8" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "7">
+<label>H
+1</label>
+<position x = "0.43400253558553437" y = "0.40057787671175626"/>
+<edge target = "0" directed = "false" color = "#999999">
+</edge>
+<edge target = "1" directed = "false" color = "#999999">
+</edge>
+<edge target = "4" directed = "false" color = "#999999">
+</edge>
+<edge target = "5" directed = "false" color = "#999999">
+</edge>
+<edge target = "9" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "8">
+<label>I
+3</label>
+<position x = "0.27639457093804903" y = "0.7864799613107877"/>
+<edge target = "4" directed = "false" color = "#999999">
+</edge>
+<edge target = "6" directed = "false" color = "#999999">
+</edge>
+<edge target = "9" directed = "false" color = "#999999">
+</edge>
+</vertex>
+<vertex color = "#FFFFFF" id = "9">
+<label>J
+1</label>
+<position x = "0.5725975269143815" y = "0.6194960713954532"/>
+<edge target = "2" directed = "false" color = "#999999">
+</edge>
+<edge target = "7" directed = "false" color = "#999999">
+</edge>
+<edge target = "8" directed = "false" color = "#999999">
+</edge>
+</vertex>
+</graph>
+</snap>
+</show>

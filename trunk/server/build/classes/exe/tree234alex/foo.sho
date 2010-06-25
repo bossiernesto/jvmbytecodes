@@ -1,0 +1,3065 @@
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   **25**  60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+25
+.
+.
+***^***
+TFQUESTION 0
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 **60**  87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R25
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 **60**  87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+25
+60
+.
+***^***
+TFQUESTION 1
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 **87**  91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R25
+60
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 **87**  91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+25
+60
+87
+***^***
+TFQUESTION 2
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 **91**  98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R25
+60
+87
+***^***
+TFQUESTION 3
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 **91**  98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+.
+.
+1
+87
+.
+.
+***^***
+TFQUESTION 4
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 **91**  98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+.
+.
+1
+\R87
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 **91**  98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+.
+.
+1
+87
+91
+.
+***^***
+TFQUESTION 5
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 **98**  45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+.
+.
+1
+87
+91
+.
+***^***
+TFQUESTION 6
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 **98**  45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+.
+.
+1
+\R87
+91
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 **98**  45 73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+.
+.
+1
+87
+91
+98
+***^***
+TFQUESTION 7
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 **45**  73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+.
+.
+1
+87
+91
+98
+***^***
+TFQUESTION 8
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 **45**  73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R25
+.
+.
+1
+87
+91
+98
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 **45**  73 49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+1
+87
+91
+98
+***^***
+TFQUESTION 9
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 **73**  49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+1
+87
+91
+98
+***^***
+TFQUESTION 10
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 **73**  49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+1
+\R87
+91
+98
+***^***
+TFQUESTION 11
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 **73**  49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+91
+.
+1
+25
+45
+.
+1
+87
+.
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 12
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 **73**  49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+91
+.
+1
+25
+45
+.
+1
+\R87
+.
+.
+1
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 **73**  49 38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+91
+.
+1
+25
+45
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 13
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 **49**  38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+91
+.
+1
+25
+45
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 14
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 **49**  38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+91
+.
+1
+\R25
+45
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 **49**  38 13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+91
+.
+1
+25
+45
+49
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 15
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 **38**  13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+91
+.
+1
+25
+45
+49
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 16
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 **38**  13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+91
+.
+1
+\R25
+45
+49
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 17
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 **38**  13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R45
+60
+91
+1
+25
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 18
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 **38**  13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+45
+60
+91
+1
+\R25
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 **38**  13 58 45 87 40 21 65 15 81 38 52
+***\***
+0
+45
+60
+91
+1
+25
+38
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 19
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 **13**  58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R45
+60
+91
+1
+25
+38
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+98
+.
+.
+***^***
+TFQUESTION 20
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 **13**  58 45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+45
+.
+.
+2
+25
+38
+.
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 21
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 **13**  58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R45
+.
+.
+2
+25
+38
+.
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 22
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 **13**  58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+\R25
+38
+.
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 **13**  58 45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 23
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 **58**  45 87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 24
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 **58**  45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R45
+.
+.
+2
+13
+25
+38
+2
+49
+.
+.
+1
+49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 25
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 **58**  45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+\R49
+.
+.
+1
+\R49
+.
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 **58**  45 87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 26
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 **45**  87 40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 27
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 **45**  87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 **45**  87 40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 28
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 **87**  40 21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 29
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 **87**  40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+\R91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 30
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 **87**  40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+\R73
+87
+.
+1
+91
+.
+.
+2
+\R73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 **87**  40 21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 31
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 32
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R45
+.
+.
+2
+13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 33
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+45
+.
+.
+2
+\R13
+25
+38
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 34
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R25
+45
+.
+2
+13
+.
+.
+2
+38
+.
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 35
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+.
+.
+2
+\R38
+.
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 **40**  21 65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+.
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 36
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 **21**  65 15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+.
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 37
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 **21**  65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+\R25
+45
+.
+2
+13
+.
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 38
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 **21**  65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+\R13
+.
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 **21**  65 15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 39
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 **65**  15 81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 40
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 **65**  15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+73
+87
+.
+1
+\R91
+.
+.
+2
+73
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 41
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 **65**  15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+\R73
+87
+.
+1
+91
+.
+.
+2
+\R73
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 **65**  15 81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 42
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 **15**  81 38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 43
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 **15**  81 38 52
+***\***
+0
+60
+.
+.
+1
+\R25
+45
+.
+2
+13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 44
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 **15**  81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+\R13
+21
+.
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 **15**  81 38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 45
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 46
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+\R91
+.
+.
+2
+65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 47
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+\R65
+73
+87
+1
+91
+.
+.
+2
+\R65
+73
+87
+2
+98
+.
+.
+***^***
+TFQUESTION 48
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+\R73
+91
+.
+2
+65
+.
+.
+2
+87
+.
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 49
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+\R87
+.
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 **81**  38 52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 50
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 **38**  52
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 51
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 **38**  52
+***\***
+0
+60
+.
+.
+1
+\R25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 52
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 **38**  52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+\R38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 **38**  52
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 53
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 **52** 
+***\***
+0
+\R60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 54
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 **52** 
+***\***
+0
+60
+.
+.
+1
+\R25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+58
+.
+1
+49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+TFQUESTION 55
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 **52** 
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+\R49
+58
+.
+1
+\R49
+58
+.
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+VIEW ALGO a234tree.htm
+GeneralTree
+ 3 1.1 1.1
+Order of arrival:   25 60 87 91 98 45 73 49 38 13 58 45 87 40 21 65 15 81 38 **52** 
+***\***
+0
+60
+.
+.
+1
+25
+45
+.
+2
+13
+15
+21
+2
+38
+40
+.
+2
+49
+52
+58
+1
+49
+52
+58
+1
+65
+73
+87
+1
+73
+91
+.
+2
+65
+.
+.
+2
+81
+87
+.
+2
+98
+.
+.
+***^***
+STARTQUESTIONS
+TFQUESTION 0
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 1
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 2
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 3
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 4
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 5
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 6
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 7
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 8
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 9
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 10
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 11
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 12
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 13
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 14
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 15
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 16
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 17
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 18
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 19
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 20
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 21
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 22
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 23
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 24
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 25
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 26
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 27
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 28
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 29
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 30
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 31
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 32
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 33
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 34
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 35
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 36
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 37
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 38
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 39
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 40
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 41
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 42
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 43
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 44
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 45
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 46
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 47
+The red node will split:
+ENDTEXT
+ANSWER
+T
+ENDANSWER
+TFQUESTION 48
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 49
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 50
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 51
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 52
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 53
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 54
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER
+TFQUESTION 55
+The red node will split:
+ENDTEXT
+ANSWER
+F
+ENDANSWER

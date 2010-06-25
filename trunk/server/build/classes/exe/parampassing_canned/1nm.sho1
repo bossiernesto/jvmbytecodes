@@ -1,0 +1,650 @@
+VIEW DOCS param1.php?file=1nm.php&line=0
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+1
+declare
+c
+g
+true
+false
+false
+-1
+1
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=1
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+2
+declare
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+true
+false
+false
+-1
+0
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=2
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+3
+declare
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+0
+m
+g
+true
+false
+false
+-1
+0
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=5
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+4
+declare
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+0
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+true
+false
+false
+-1
+3
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=11
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+5
+declare
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+0
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+true
+false
+false
+-1
+*f
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=12
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+declare
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+0
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+true
+false
+false
+-1
+0
+***^***
+FIBQUESTION 0
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+question
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+0
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+0
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=14
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+equation
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+true
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+0
+***^***
+FIBQUESTION 1
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+question
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+0
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+0
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=15
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+equation
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+true
+false
+false
+-1
+3
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+0
+***^***
+FIBQUESTION 2
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+question
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+3
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+0
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=16
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+equation
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+3
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+true
+false
+false
+-1
+3
+***^***
+FIBQUESTION 3
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+question
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+3
+f
+m
+false
+false
+false
+-1
+3
+c
+a
+false
+false
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+3
+***^***
+VIEW DOCS param1.php?file=1nm.php&line=17
+Alg_vis
+1
+Variable Colors: Black = created/changed, Green = global
+Red = main, Magenta = arguments, Blue = function 
+Key: "*" indicates reference pointer (ex: "*k")
+***\***
+6
+equation
+c
+g
+false
+false
+false
+-1
+1
+k
+g
+false
+false
+false
+-1
+3
+m
+g
+false
+false
+false
+-1
+3
+f
+m
+true
+false
+false
+-1
+3
+c
+a
+true
+true
+f
+m
+false
+-1
+*f
+f
+f
+false
+false
+false
+-1
+3
+***^***
+STARTQUESTIONS
+FIBQUESTION 0
+What is the value of k after the next expression is evaluated?
+ENDTEXT
+ANSWER
+3
+ENDANSWER
+FIBQUESTION 1
+What is the value of m after the next expression is evaluated?
+ENDTEXT
+ANSWER
+3
+ENDANSWER
+FIBQUESTION 2
+What is the value of f after the next expression is evaluated?
+ENDTEXT
+ANSWER
+3
+ENDANSWER
+FIBQUESTION 3
+What is the value of c after the next expression is evaluated?
+ENDTEXT
+ANSWER
+3
+ENDANSWER

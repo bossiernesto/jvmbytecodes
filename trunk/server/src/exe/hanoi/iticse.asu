@@ -1,0 +1,515 @@
+%Animal 2 781*504
+title "The Animal Algorithm Animation Tool"
+author "Guido Rößling <roessling@acm.org>"
+{
+  text "mainTitle" "The Animal Algorithm Animation Tool" (380, 80) centered depth 0 font SansSerif size 24 bold 
+  rectangle "headerRect" offset (-3, -3) from "mainTitle" NW offset (3, 3) from "mainTitle" SE depth 1 filled fillColor white 
+  text "authors" "Guido Rößling, Markus Schüler, Bernd Freisleben" offset (0, 100) from "mainTitle" S centered size 24
+  text "addr1" "Dept. of Electrical Engineering and Computer Science" offset (0, 50) from "authors" S centered
+  text "uni" "University of Siegen" offset (0, 50) from "addr1" S centered
+  text "addr2" "Hölderlinstr. 3, D-57068 Siegen, GERMANY" offset (0, 50) from "uni" S centered
+  text "email" "{roessling,freisleb}@informatik.uni-siegen.de" offset (0, 90) from "addr2" S centered font Monospaced bold
+  circle "dot" (20, 65) radius 4 color black filled fillColor black hidden
+  circle "dot0" offset (0, 35) from "dot" C radius 4 color black filled fillColor black hidden
+  circle "dot1" offset (0, 35) from "dot0" C radius 4 color black filled fillColor black hidden
+  circle "dot2" offset (0, 35) from "dot1" C radius 4 color black filled fillColor black hidden
+  circle "dot3" offset (0, 35) from "dot2" C radius 4 color black filled fillColor black hidden
+  circle "dot4" offset (0, 35) from "dot3" C radius 4 color black filled fillColor black hidden
+  circle "dot5" offset (0, 35) from "dot4" C radius 4 color black filled fillColor black hidden
+  circle "dot6" offset (0, 35) from "dot5" C radius 4 color black filled fillColor black hidden
+  circle "dot7" offset (0, 35) from "dot6" C radius 4 color black filled fillColor black hidden
+  circle "dot8" offset (0, 35) from "dot7" C radius 4 color black filled fillColor black hidden
+  circle "dot9" offset (0, 35) from "dot8" C radius 4 color black filled fillColor black hidden
+  circle "dot10" offset (0, 35) from "dot9" C radius 4 color black filled fillColor black hidden
+  circle "dot11" offset (0, 35) from "dot10" C radius 4 color black filled fillColor black hidden
+}
+label "Title"
+{
+  hide "mainTitle" "headerRect" "authors" "uni" "addr1" "addr2" "email"
+  text "miniHdr" "Animal Tool" (635, 30) color blue2 depth 0 font SansSerif size 24 bold
+  text "miniAuthor" "Guido Rößling" offset (0, 10) from "miniHdr" S centered size 16 bold
+  text "tocHdr" "Contents of this Presentation" (380, 30) centered color black depth 0 size 24 bold
+  rectangle "tocHdrRect" offset (-3, -3) from "tocHdr" NW offset (3, 3) from "tocHdr" SE depth 1 filled fillColor white 
+}
+{
+  show "dot"
+  text "str0" "Reasons for using animations in lectures" offset (5, 6) from "dot" SE color black
+}
+{
+  show "dot1"
+  text "str1" "Desirable features for animation tools" offset (5, 6) from "dot1" SE
+}
+{
+  show "dot3"
+  text "str2" "Evaluation of other tools" offset (5, 6) from "dot3" SE
+}
+{
+  show "dot5"
+  text "str3" "Animal features and examples" offset (5, 6) from "dot5" SE
+}
+{
+  show "dot7"
+  text "str4" "Further details" offset (5, 6) from "dot7" SE
+}
+{
+  show "dot9"
+  text "str5" "Summary and conclusions" offset (5, 6) from "dot9" SE
+}
+label "Contents"
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "reaHdr" "Reasons for Using Animations in Lectures" (380, 30) centered depth 0 bold
+  rectangle "reaHdrRect" offset (-5, -5) from "reaHdr" NW offset (5, 5) from "reaHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot0"
+  text "rea0" "Very useful for illustrating dynamic behaviour" offset (5, 6) from "dot0" SE
+}
+{
+  show "dot2"
+  text "rea2" "Very helpful for 'visual' learner types: see what happens!" offset (5, 6) from "dot2" SE
+}
+{
+  show "dot4"
+  text "rea4" "Reversible actions: back up a step" offset (5, 6) from "dot4" SE
+}
+{
+  show "dot6"
+  text "rea6" "Interesting supplemental material for self-study" offset (5, 6) from "dot6" SE
+}
+{
+  show "dot8"
+  text "rea10" "Media shifts during lecture increase student attention" offset (5, 6) from "dot8" SE
+}
+{
+  show "dot10"
+  text "rea10" "May be generated on demand (if supported by tool)" offset (5, 6) from "dot10" SE
+}
+label "Reasons..."
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "desHdr" "Desirable Features for Animation Tools" (380, 30) centered depth 0 bold
+  rectangle "desHdrRect" offset (-5, -5) from "desHdr" NW offset (5, 5) from "desHdr" SE depth 1 filled
+}
+{
+  show "dot0"
+  text "des0" "Platform independence" offset (5, 6) from "dot0" SE color black
+  text "xpl0" "The tool should run on all major platforms" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot1"
+  text "des1" "Language independence" offset (5, 6) from "dot1" SE color black
+  hide "xpl0"
+  text "xpl1" "Not restricted to specific (programming) languages" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot2"
+  text "des2" "Freely available" offset (5, 6) from "dot2" SE color black
+  hide "xpl1"
+  text "xpl2" "No cost for either teacher or student" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot3"
+  text "des3" "Easy to use" offset (5, 6) from "dot3" SE color black
+  hide "xpl2"
+  text "xpl3" "No special CS knowledge should be required; 'intuitive' interface" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot4"
+  text "des4" "No programming required" offset (5, 6) from "dot4" SE color black
+  hide "xpl3"
+  text "xpl4" "Programming may be supported, but should not be mandatory" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot5"
+  text "des5" "No network required" offset (5, 6) from "dot5" SE color black
+  hide "xpl4"
+  text "xpl5" "Network may not be available in class or be inaccessible" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot6"
+  text "des6" "Code inclusion" offset (5, 6) from "dot6" SE color black
+  hide "xpl5"
+  text "xpl6" "Is it possible to include code (source / pseudo / text)?" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot7"
+  text "des7" "Code/element highlighting" offset (5, 6) from "dot7" SE color black
+  hide "xpl6"
+  text "xpl7" "Highlight current element / code line by color, marker, ..." offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot8"
+  text "des8" "Timing control" offset (5, 6) from "dot8" SE color black
+  hide "xpl7"
+  text "xpl8" "Offset and duration for all operations should be adjustable" offset (5, 6) from "dot11" SE color blue italic
+}
+{
+  show "dot9"
+  text "des9" "Widely usable" offset (5, 6) from "dot9" SE color black
+  hide "xpl8"
+  text "xpl9" "Tool should not be restricted to use in CS context" offset (5, 6) from "dot11" SE color blue italic
+}
+label "Desired Features"
+{
+  hide "xpl9" "desHdr" "desHdrRect"
+  text "evoHdr" "Evaluation of Other Tools" (380, 30) centered color black depth 0 bold
+  rectangle "evoHdrRect" offset (-5, -5) from "evoHdr" NW offset (5, 5) from "evoHdr" SE depth 1 filled
+}
+{
+  text "oth0" "JAWAA" (330, 80) italic
+  circle "smileyFace" offset (0, 30) from "oth0" C radius 10 color green2 filled fillColor white
+  circle "smileyFaceA" offset (0, 30) from "oth0" C radius 11 color green2
+  circle "smileyLeftEye" offset (-3, -3) from "smileyFace" C radius 2 filled fillColor green2
+  circle  "smileyRightEye" offset (3, -3) from "smileyFace" C radius 2 filled fillColor green2
+  arc "smileySmile" offset (0, 0) from "smileyFace" C radius (7, 5) angle 180 starts 180 color green2
+  set "smiley" "smileyFace" "smileyLeftEye" "smileyRightEye" "smileySmile" "smileyFaceA"
+  circle "hmpheyFace" offset (1, 35) from "smiley" C radius 10 color blue2 filled fillColor white
+  circle "hmpheyFaceA" offset (1, 35) from "smiley" C radius 11 color blue2
+  circle "hmpheyLeftEye" offset (-3, -3) from "hmpheyFace" C radius 2 filled fillColor blue2
+  circle  "hmpheyRightEye" offset (3, -3) from "hmpheyFace" C radius 2 filled fillColor blue2
+  polyline "hmpheyHmph" offset (-3, 5) from "hmpheyFace" C offset (3, 5) from "hmpheyFace" C color blue
+  set "hmphey" "hmpheyFace" "hmpheyFaceA" "hmpheyLeftEye" "hmpheyRightEye" "hmpheyHmph"
+  clone "smiley" as "smiley02" offset (0, 70) from "smiley" NW
+  clone "hmphey" as "hmphey03" offset (0,70) from "hmphey" NW
+  circle "frowneyFace" offset (1, 35) from "hmphey03" C radius 10 color red filled fillColor white
+  circle "frowneyFaceA" offset (1, 35) from "hmphey03" C radius 11 color red
+  circle "frowneyLeftEye" offset (-3, -3) from "frowneyFace" C radius 2 filled fillColor red
+  circle  "frowneyRightEye" offset (3, -3) from "frowneyFace" C radius 2 filled fillColor red
+  arc "frowneyFrown" offset (0, 6) from "frowneyFace" C radius (6, 5) angle 140 starts 20 color red
+  set "frowney" "frowneyFace" "frowneyLeftEye" "frowneyRightEye" "frowneyFrown" "frowneyFaceA"
+  clone "smiley" as "smiley05" offset (1, 35) from "frowney" NW
+  clone "hmphey" as "hmphey06" offset (1, 35) from "smiley05" NW
+  clone "hmphey" as "hmphey07" offset (1, 35) from "hmphey06" NW
+  clone "frowney" as "frowney08"  offset (1, 35) from "hmphey07" NW
+  clone "hmphey" as "hmphey09" offset (1, 35) from "frowney08" NW
+}
+{
+  text "oth1" "JSamba" (440, 80) color black italic
+  clone "smiley" as "smiley10" offset (-5, 20) from "oth1" C
+  clone "hmphey" as "hmphey11" offset (1, 35) from "smiley10" NW
+  clone "smiley" as "smiley12" offset (1, 35) from "hmphey11" NW
+  clone "hmphey" as "hmphey13" offset (1, 35) from "smiley12" NW
+  clone "frowney" as "frowney14"  offset (1, 35) from "hmphey13" NW
+  clone "smiley" as "smiley15" offset (1, 35) from "frowney14" NW
+  clone "hmphey" as "hmphey16" offset (1, 35) from "smiley15" NW
+  clone "hmphey" as "hmphey17" offset (1, 35) from "hmphey16" NW
+  clone "frowney" as "frowney18"  offset (-12, 35) from "hmphey17" NW
+  clone "hmphey" as "hmphey18" offset (12, 35) from "hmphey17" NW
+  clone "hmphey" as "hmphey19" offset (0, 70) from "hmphey17" NW
+#  text "oth10" "+" (485, 110) color green2
+#  text "oth11" "o" (485, 145) color blue
+#  text "oth12" "+" (485, 180) color green2
+#  text "oth13" "o" (485, 215) color blue
+#  text "oth14" "-" (485, 250) color red
+#  text "oth15" "+" (485, 285) color green2
+#  text "oth16" "o" (485, 320) color blue
+#  text "oth17" "o" (485, 355) color blue
+#  text "oth18" "-/o" (475, 390) color red
+#  text "oth19" "o" (485, 425) color blue
+}
+{
+  text "oth2" "Jeliot" (560, 80) color black italic
+  clone "smiley" as "smiley20" offset (-5, 20) from "oth2" C
+  clone "frowney" as "frowney21"  offset (1, 35) from "smiley20" NW
+  clone "smiley" as "smiley22"  offset (1, 35) from "frowney21" NW
+  clone "smiley" as "smiley23"  offset (1, 35) from "smiley22" NW
+  clone "frowney" as "frowney24"  offset (1, 35) from "smiley23" NW
+  clone "frowney" as "frowney25"  offset (1, 35) from "frowney24" NW
+  clone "smiley" as "smiley26"  offset (1, 35) from "frowney25" NW
+  clone "smiley" as "smiley27"  offset (1, 35) from "smiley26" NW
+  clone "frowney" as "frowney28"  offset (1, 35) from "smiley27" NW
+  clone "frowney" as "frowney29"  offset (1, 35) from "frowney28" NW
+#  text "oth20" "+" (590, 110) color green2
+#  text "oth21" "-" (590, 145) color red
+#  text "oth22" "+" (590, 180) color green2
+#  text "oth23" "+" (590, 215) color green2
+#  text "oth24" "-" (590, 250) color red
+#  text "oth25" "-" (590, 285) color red
+#  text "oth26" "+" (590, 320) color green2
+#  text "oth27" "+" (590, 355) color green2
+#  text "oth28" "-" (590, 390) color red
+#  text "oth29" "-" (590, 425) color red
+}
+label "Evaluating Other Tools"
+{
+  text "oth3" "Animal" (640, 80) color black bold italic
+  clone "smiley" as "smiley30" offset (-5, 20) from "oth3" C
+  clone "smiley" as "smiley31"  offset (-12, 35) from "smiley30" NW
+  clone "hmphey" as "hmphey31"  offset (12, 35) from "smiley30" NW
+  clone "smiley" as "smiley32"  offset (1, 70) from "smiley30" NW
+  clone "smiley" as "smiley33"  offset (1, 35) from "smiley32" NW
+  clone "smiley" as "smiley34"  offset (1, 35) from "smiley33" NW
+  clone "smiley" as "smiley35"  offset (1, 35) from "smiley34" NW
+  clone "smiley" as "smiley36"  offset (1, 35) from "smiley35" NW
+  clone "smiley" as "smiley37"  offset (1, 35) from "smiley36" NW
+  clone "smiley" as "smiley38"  offset (1, 35) from "smiley37" NW
+  clone "smiley" as "smiley39"  offset (1, 35) from "smiley38" NW
+#  text "oth30" "+" (681, 110) color green2
+#  text "oth31" "+/o" (671, 145) color green2
+#  text "oth32" "+" (681, 180) color green2
+#  text "oth33" "+" (681, 215) color green2
+#  text "oth34" "+" (681, 250) color green2
+#  text "oth35" "+" (681, 285) color green2
+#  text "oth36" "+" (681, 320) color green2
+#  text "oth37" "+" (681, 355) color green2
+#  text "oth38" "+" (681, 390) color green2
+#  text "oth39" "+" (681, 425) color green2
+}
+label "Evaluating Animal"
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "feaHdr" "Animal Features" (380, 30) centered color black depth 0 bold
+  rectangle "feaHdrRect" offset (-5, -5) from "feaHdr" NW offset (5, 5) from "feaHdr" SE depth 1 filled
+}
+{
+  show "dot"
+  text "aml1" "Supported basic graphic primitives:" offset (10, 6) from "dot" SE
+}
+{
+  text "aml2" "- point" offset (40, 6) from "dot0" SE
+  point "p0" offset (20, 0) from "aml2" E color red after 3 ticks
+  point "p1" offset (10, 2) from "p0" E color green2 after 6 ticks
+  point "p2" offset (10, -4) from "p1" E color blue after 9 ticks
+  point "p3" offset (10, 2) from "p2" E color cyan4 after 12 ticks
+  point "p4" offset (10, -4) from "p3" E color brown3 after 15 ticks
+  text "aml2a" "(by definition almost invisible!)" offset (10, 12) from "p4" C  after 20 ticks
+}
+{
+  text "aml3" "- polyline / polygon" offset (40, 6) from "dot1" SE
+  polyline "pl0" offset (20, 0) from "aml3" E offset (15, -10) from "aml3" E offset (10, 0) from "aml3" E offset (15, 10) from "aml3" E color red after 3 ticks
+  polyline "pl1" offset (40, 0) from "aml3" E offset (65, 0) from "aml3" E color red fwArrow after 6 ticks
+  square "pl2" offset (70, -10) from "aml3" E 20 after 9 ticks
+  rectangle "pl3" offset (95, -10) from "aml3" E offset (115, 20) from "aml3" E filled fillColor gold  after 12 ticks
+  square "pl4" (410, 130) 30 filled fillColor blue after 15 ticks
+  triangle "pl4a" offset (0, 0) from "pl4" NW move (15, -15) move (15, 15) filled fillColor red after 15 ticks
+  polygon "pl5" (450, 160) (450, 130) (460, 130) (460, 150) (470, 150) (470, 140) (480, 140) (480, 150) (490, 150) (490, 130) (500, 130) (500, 160) color red filled fillColor gold after 18 ticks
+}
+{
+  text "aml4" "- text" offset (40, 6) from "dot2" SE
+  text "aml4a" "Serif24" offset (10, 6) from "aml4" E color gold font Serif size 24 italic after 3 ticks
+  text "aml4b" "SansSerif16" offset (10, 6) from "aml4a" E color blue3 font SansSerif size 16 bold after 6 ticks
+  text "aml4c" "Mono18" offset (10, 6) from "aml4b" E color green3 font Monospaced size 18 after 9 ticks
+}
+{
+  text "aml5" "- arcs" offset (40, 6) from "dot3" SE color black font SansSerif size 24
+  circle "arc0" offset (20, 0) from "aml5" E radius 10 after 3 ticks
+  ellipse "arc1" offset (60, 0) from "aml5" E radius (20, 10) filled after 6 ticks
+  circlesegment "arc2" offset (110, 0) from "aml5" E radius 20 angle 150 starts 30 color blue fwArrow after 9 ticks
+  arc "arc3" offset (170, -10) from "aml5" E radius (30, 20) angle 210 starts 10 closed filled fillColor red after 9 ticks
+  arc "arc4" offset (240, -10) from "aml5" E radius (30, 25) angle 210 starts 10 clockwise closed after 12 ticks
+  arc "arc3" offset (310, -10) from "aml5" E radius (30, 20) angle 80 starts 10 closed filled fillColor green after 15 ticks
+  arc "arc4" offset (310, -10) from "aml5" E radius (30, 20) angle 280 starts 90 closed filled fillColor blue after 15 ticks
+}
+{
+  text "aml6" "- list elements" offset (40, 6) from "dot4" SE color black font SansSerif size 24
+  listelement "le0" offset (20, 0) from "aml6" NE text "Elem1" pointers 1 after 3 ticks
+  listelement "le1" offset (20, 0) from "le0" NE text "Elem2" pointers 2 after 6 ticks
+  listelement "le2" offset (20, 0) from "le1" NE text "Elem3" pointers 2 ptr2 to "le1" after 9 ticks
+  listelement "le3" offset (20, 0) from "le2" NE text "Elem4" pointers 1 position right textColor blue after 12 ticks
+  listelement "le4" offset (20, 0) from "le3" NE text "Elem5" pointers 2 position top after 15 ticks
+}
+{
+  show "dot6"
+  text "fea5" "Animation generation: graphically / using AnimalScript / by API calls" offset (10, 6) from "dot6" SE
+  text "fea5a" "- editor: drag & drop using grid and grid snapping" offset (40, 6) from "dot7" SE
+}
+label "Animal Features"
+{
+  show "dot8"
+  text "fea8" "Relative object placement using bounding box / anchors" offset (10, 6) from "dot8" SE
+  codegroup "demoBB" offset (10, 6) from "dot9" SE size 24
+  addCodeLine "generate / select object" to "demoBB"
+  addCodeLine "show bounding box" to "demoBB"
+  addCodeLine "show anchors" to "demoBB"
+}
+label "Relative Placement"
+{
+  polygon "demoPolygon" (330, 430) (550, 460) (413, 465) (427, 480) (380, 470) (320, 465) filled fillColor white
+  highlightCode on "demoBB" line 0
+}
+{
+  rectangle "boundingBox" offset (0, 0) from "demoPolygon" NW offset (0, 0) from "demoPolygon" SE color blue4
+  unhighlightCode on "demoBB" line 0
+  highlightCode on "demoBB" line 1
+}
+{
+  unhighlightCode on "demoBB" line 1
+  highlightCode on "demoBB" line 2
+  circle "NW" offset (0, 0) from "demoPolygon" NW radius 5 color green4 filled fillColor green4
+  text "NWTag" "NW" offset (0, -5) from "NW" N centered size 16
+  circle "N" offset (0, 0) from "demoPolygon" N radius 5 color green4 filled fillColor green4
+  text "NTag" "N" offset (0, -5) from "N" N centered 
+  circle "NE" offset (0, 0) from "demoPolygon" NE radius 5 color green4 filled fillColor green4
+  text "NETag" "NE" offset (0, -5) from "NE" N centered 
+  circle "W" offset (0, 0) from "demoPolygon" W radius 5 color green4 filled fillColor green4
+  text "WTag" "W" offset (-20, 0) from "W" SW 
+  circle "C" offset (0, 0) from "demoPolygon" C radius 5 color green4 filled fillColor green4
+  text "CTag" "C" offset (5, 5) from "C" C 
+  circle "E" offset (0, 0) from "demoPolygon" E radius 5 color green4 filled fillColor green4
+  text "ETag" "E" offset (3, 0) from "E" SE
+  circle "SW" offset (0, 0) from "demoPolygon" SW radius 5 color green4 filled fillColor green4
+  text "SWTag" "SW" offset (-20, 0) from "SW" S centered 
+  circle "S" offset (0, 0) from "demoPolygon" S radius 5 color green4 filled fillColor green4
+  text "STag" "S" offset (0, 15) from "S" S centered 
+  circle "SE" offset (0, 0) from "demoPolygon" SE radius 5 color green4 filled fillColor green4
+  text "SETag" "SE" offset (5, 0) from "SE" S 
+}
+{
+  hideAllBut "miniHdr" "miniAuthor" "feaHdr" "feaHdrRect"
+  hide "demoBB"
+  show "dot"
+  text "demo0" "Array / Source Code Support incl. Highlighting:" offset (10, 6) from "dot" SE size 24 bold
+  codegroup "demo01" (10, 250) font Serif size 24
+  addCodeline "array \"a\" at (80, 150) length 5 \"1\" \"demo\" \"3\" \"x\" \"5\" after 20 ticks cascaded within 80 ticks" to "demo01"
+  addCodeline "arrayMarker \"index1\" on \"a\" atIndex 1 label \"i\"" to "demo01"
+  addCodeline "moveMarker \"index1\" to position 4 after 10 ticks within 10 ticks" to "demo01"
+  addCodeline "arrayPut \"42\" on \"a\" position 1 after 20 ticks" to "demo01"
+  addCodeline "arraySwap on \"a\" position 2 with 3 within 20 ticks" to "demo01"
+}
+{
+  array "a" at (80, 150) length 5 "1" "hi there" "3" "x" "5" after 20 ticks cascaded within 80 ticks
+  highlightCode on "demo01" line 0
+}
+{
+  arrayMarker "index1" on "a" atIndex 1 label "i" 
+  highlightCode on "demo01" line 1
+  unhighlightCode on "demo01" line 0
+}
+{
+  highlightCode on "demo01" line 2
+  unhighlightCode on "demo01" line 1
+  moveMarker "index1" to position 4 after 10 ticks within 10 ticks
+}
+label "Array / Code Demo"
+{
+  highlightCode on "demo01" line 3
+  unhighlightCode on "demo01" line 2
+  arrayPut "42" on "a" position 1 after 20 ticks
+}
+{
+  highlightCode on "demo01" line 4
+  unhighlightCode on "demo01" line 3
+  arraySwap on "a" position 2 with 3 within 20 ticks
+}
+{
+  hideAllBut "miniHdr" "miniAuthor" "feaHdr" "feaHdrRect"
+  hide "demo01" "a" "a[1]"
+  codegroup "demo1" (10, 250) size 24
+  addCodeLine "listelement \"l1\" (200, 80) text \"Elem 1\" pointers 2 position bottom" to "demo1"
+  addCodeLine "listelement \"l2\" offset (180, 0) from \"l1\" NE text \"Elem 3\" pointers 2" to "demo1"
+  addCodeLine "setLink \"l2\" link 2 to \"l1\" after 5 ticks within 10 ticks" to "demo1"
+  addCodeLine "setLink \"l1\" link 1 to \"l2\" after 5 ticks within 10 ticks" to "demo1"
+  addCodeLine "listelement \"l3\" offset (120, 30) from \"l1\" SW text \"Elem 2\" pointers 2" to "demo1"
+  addCodeLine "setLink \"l3\" link 2 to \"l1\" after 5 ticks within 10 ticks" to "demo1"
+  addCodeLine "setLink \"l3\" link 1 to \"l2\" after 5 ticks within 10 ticks" to "demo1"
+  addCodeLine "setLink \"l2\" link 2 to \"l3\" after 5 ticks within 10 ticks" to "demo1"
+  addCodeLine "setLink \"l1\" link 1 to \"l3\" after 5 ticks within 10 ticks" to "demo1"
+}
+{
+  highlightCode on "demo1" line 0
+  listelement "l1" (200, 80) text "Elem 1" pointers 2 position bottom
+}
+{
+  unhighlightCode on "demo1" line 0
+  highlightCode on "demo1" line 1
+  listelement "l2" offset (180, 0) from "l1" NE text "Elem 3" pointers 2
+}
+{
+  unhighlightCode on "demo1" line 1
+  highlightCode on "demo1" line 2
+  setLink "l2" link 2 to "l1" after 5 ticks within 10 ticks
+}
+label "List / Code Demo"
+{
+  unhighlightCode on "demo1" line 2
+  highlightCode on "demo1" line 3
+  setLink "l1" link 1 to "l2" after 20 ticks within 10 ticks
+}
+{
+  unhighlightCode on "demo1" line 3
+  highlightCode on "demo1" line 4
+  listelement "l3" offset (120, 30) from "l1" SW text "Elem 2" pointers 2
+}
+{
+  unhighlightCode on "demo1" line 4
+  highlightCode on "demo1" line 5
+  setLink "l3" link 2 to "l1" after 5 ticks within 10 ticks
+}
+{
+  unhighlightCode on "demo1" line 5
+  highlightCode on "demo1" line 6
+  setLink "l3" link 1 to "l2" after 5 ticks within 10 ticks
+}
+{
+  unhighlightCode on "demo1" line 6
+  highlightCode on "demo1" line 7
+  setLink "l2" link 2 to "l3" after 5 ticks within 10 ticks
+}
+{
+  unhighlightCode on "demo1" line 7
+  highlightCode on "demo1" line 8
+  setLink "l1" link 1 to "l3" after 5 ticks within 10 ticks
+}
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  hide "demo1"
+  text "detHdr" "Further Details" (380, 30) centered depth 0 bold
+  rectangle "detHdrRecgt" offset (-5, -5) from "detHdr" NW offset (5, 5) from "detHdr" SE depth 1 filled fillColor white
+}
+{
+  show "dot"
+  text "det" "Compact tool: JAR of about 400kB"  offset (10, 6) from "dot" SE size 24
+}
+{
+  show "dot1"
+  text "det" "Compact animations: typically <12kB"  offset (10, 6) from "dot1" SE size 24
+}
+{
+  show "dot3"
+  text "det3" "Image export: BMP, JPG, PNG, APF, PCX, PICT, ..."  offset (10, 6) from "dot3" SE size 24
+}
+{
+  show "dot5"
+  text "det5" "Full timing control: 'ticks' or ms; offset and/or duration"  offset (10, 6) from "dot5" SE size 24
+}
+{
+  show "dot7"
+  text "det7" "Magnification for display: 50%, 71%, 100%, 141%, 200%"  offset (10, 6) from "dot7" SE size 24
+}
+{
+  show "dot9"
+  text "det9" "Time line for direct jump to animation positions"  offset (10, 6) from "dot9" SE size 24
+}
+{
+  show "dot11"
+  text "det11" "Partial import for JAWAA, JSamba (beta stage)"  offset (10, 6) from "dot11" SE size 24
+}
+label "Further Details"
+{
+  hideAllBut "miniHdr" "miniAuthor"
+  text "conHdr" "Summary and Conclusions" (380, 30) centered depth 0
+  rectangle "conHdrRect" offset (-3, -3) from "conHdr" NW offset (3, 3) from "conHdr" SE depth 1 filled fillColor white 
+}
+{
+  show "dot"
+  text "det" "Animal offers all desirable features listed at beginning" offset (10, 6) from "dot" SE size 24
+}
+{
+  show "dot1"
+  text "con1" "Currently more than 50 CS-related animations" offset (10, 6) from "dot1" SE
+}
+{
+  show "dot3"
+  text "con3" "Animation Collection WWW-Server (with descriptions, screen shots):" offset (10, 6) from "dot3" SE
+  text "rest7" "http://www.informatik.uni-siegen.de/cgi-bin/roesslin/animations.pm" offset (10, 6) from "dot4" SE color blue
+}
+{
+  show "dot6"
+  text "con6" "Used at ...: Siegen, Darmstadt, Mannheim (Germany), Parkside (US)" offset (10, 6) from "dot6" SE color black
+}
+{
+  show "dot8"
+  text "con8" "Demonstration at ITiCSE: <<please ask for date>>" offset (10, 6) from "dot8" SE bold
+}
+label "Summary"

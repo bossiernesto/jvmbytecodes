@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD GAIGS SHO//EN" "gaigs_sho.dtd">
+
+<show>
+
+<snap>
+  <title>Index Test Slide 1</title>
+  <index>
+    <bounds x1="0.0" y1="0.0" x2="1.0" y2="1.0"/>
+    <namesortedroot boxname="nameSorted"></namesortedroot>
+    <valsortedroot boxname="valSorted"></valsortedroot>
+  </index>
+</snap>
+
+<snap>
+  <title>Index Test Slide 2</title>
+  <index>
+    <bounds x1="0.0" y1="0.0" x2="1.0" y2="1.0"/>
+    <namesortedroot boxname="nameSorted"></namesortedroot>
+    <valsortedroot boxname="valSorted"></valsortedroot>
+    <indexitemlist>  
+      <indexitem name="tom" value="14"></indexitem>
+    </indexitemlist>
+  </index>
+</snap>
+
+<snap>
+  <title>Index Test Slide 3</title>
+  <index>
+    <bounds x1="0.0" y1="0.0" x2="1.0" y2="1.0"/>
+    <namesortedroot boxname="nameSorted"></namesortedroot>
+    <valsortedroot boxname="valSorted"></valsortedroot>
+    <indexitemlist>
+      <indexitem name="tom" value="14"></indexitem>
+      <indexitem name="mike" value="89"></indexitem>
+    </indexitemlist>
+  </index>
+</snap>
+
+<snap>
+  <title>Index Test Slide 4</title>
+  <index>
+    <bounds x1="0.0" y1="0.0" x2="1.0" y2="1.0"/>
+    <namesortedroot boxname="nameSorted"></namesortedroot>
+    <valsortedroot boxname="valSorted"></valsortedroot>
+    <indexitemlist>  
+      <indexitem name="tom" value="14"></indexitem>
+      <indexitem name="mike" value="89"></indexitem>
+      <indexitem name="joe" value="72"></indexitem>
+    </indexitemlist>
+  </index>
+</snap>
+
+</show>

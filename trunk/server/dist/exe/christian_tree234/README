@@ -1,0 +1,3 @@
+Note the java front-end assumes no input generator.   The Perl front-end processes data from a non-XML input generator.
+
+(TN 10/05/08)

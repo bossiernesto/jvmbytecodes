@@ -1,0 +1,33 @@
+,.,.,UWO REU Sutherland Hodgman Clipping Algorithm Visualization TO-DO List
+
+--------------------------------------------------------------------------------
+To cite modifications (place the following under the Item completed or updated):
+Date Name Comment
+--------------------------------------------------------------------------------
+
+
+18 June 2010
+********************************************************************************
+- Write More Questions
+
+- Extend logic of Master Question
+
+- Input Generator
+  # 18 June 2010 Alejandro beat his head against the input generator wall.
+  Require assistance from Dr. Naps.
+  
+- Logic for validating an exercise
+  # 19 June 2010 Shawn and Alejandro Added exercises 1-4 and wrote the logic
+  to handle validating the questions.  Want some user feedback.
+  
+- Modify original program to handle input generator, exercise validation, etc
+  # 19 June 2010 Shawn Modified program into two distinct parts 
+  (exercise and standard). Each part is tagged with those headers.
+  
+- Random input data generation
+
+- Additonal Paper Sections
+  - Cite AV wiki on previous visualizations for Intro
+  - Background Work (section 2)
+  
+********************************************************************************

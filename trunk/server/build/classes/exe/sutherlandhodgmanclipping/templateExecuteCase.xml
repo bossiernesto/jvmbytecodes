@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<pseudocode>
+  <stack><replace var="stack2" /></stack>
+  <code>
+ <signature>executeCase(casenum,s,p,e)</signature> 
+    <line num="1">switch(casenum){</line>
+    <line num="2" indent="1">case 1:</line>
+    <line num="3" indent="2">outvertices.add(p);</line>
+    <line num="4" indent="1">case 2:</line>
+    <line num="5" indent="2">Vertex i = compInter(s,p,e);</line>
+    <line num="6" indent="2">outvertices.add(i);</line>
+    <line num="7" indent="1">case 3:</line>
+    <line num="8" indent="1">case 4:</line>
+    <line num="9" indent="2">Vertex i = compInter(s,p,e);</line>
+    <line num="10" indent="2">outvertices.add(i);</line>
+    <line num="11" indent="2">outvertices.add(p);</line>
+    <line num="12">}</line>
+  </code>
+  <vars>
+    <var>s = <replace var="s" /></var>
+    <var>p = <replace var="p" /></var>
+    <var>casenum = <replace var="casenum" /></var>
+    <var>outvertices = <replace var="outvertices" /></var>
+  </vars>
+</pseudocode>

@@ -1,0 +1,2120 @@
+VIEW WINDOWS 1
+MCQUESTION 0
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Count the frequencies of each letter
+in the string:  happy_happy_joy_joy
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\Yh
+freq: 2
+ 
+ 
+1
+\Ya
+freq: 2
+ 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\Yj
+freq: 2
+ 
+ 
+1
+\Yo
+freq: 2
+ 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort from least common letter to most common.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\Yh
+freq: 2
+ 
+ 
+1
+\Ya
+freq: 2
+ 
+ 
+1
+\Yj
+freq: 2
+ 
+ 
+1
+\Yo
+freq: 2
+ 
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+MCQUESTION 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yj
+freq: 2
+ 
+ 
+1
+\Yo
+freq: 2
+ 
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort according to frequencies.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\Yj
+freq: 2
+ 
+ 
+1
+\Yo
+freq: 2
+ 
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+MCQUESTION 2
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yj
+freq: 2
+0 
+ 
+2
+\Yo
+freq: 2
+1 
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort according to frequencies.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\Y_
+freq: 3
+ 
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yj
+freq: 2
+0 
+ 
+2
+\Yo
+freq: 2
+1 
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+MCQUESTION 3
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 7
+ 
+ 
+2
+\Y_
+freq: 3
+0 
+ 
+2
+\W.
+freq: 4
+1 
+ 
+3
+\Yj
+freq: 2
+10 
+ 
+3
+\Yo
+freq: 2
+11 
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort according to frequencies.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 4
+ 
+ 
+2
+\Yh
+freq: 2
+0 
+ 
+2
+\Ya
+freq: 2
+1 
+ 
+1
+\Yp
+freq: 4
+ 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+1
+\W.
+freq: 7
+ 
+ 
+2
+\Y_
+freq: 3
+0 
+ 
+2
+\W.
+freq: 4
+1 
+ 
+3
+\Yj
+freq: 2
+10 
+ 
+3
+\Yo
+freq: 2
+11 
+ 
+***^***
+VIEW WINDOWS 1
+MCQUESTION 4
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 8
+ 
+ 
+2
+\W.
+freq: 4
+0 
+ 
+3
+\Yh
+freq: 2
+00 
+ 
+3
+\Ya
+freq: 2
+01 
+ 
+2
+\Yp
+freq: 4
+1 
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+1
+\W.
+freq: 7
+ 
+ 
+2
+\Y_
+freq: 3
+0 
+ 
+2
+\W.
+freq: 4
+1 
+ 
+3
+\Yj
+freq: 2
+10 
+ 
+3
+\Yo
+freq: 2
+11 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort according to frequencies.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\Yy
+freq: 4
+ 
+ 
+1
+\W.
+freq: 7
+ 
+ 
+2
+\Y_
+freq: 3
+0 
+ 
+2
+\W.
+freq: 4
+1 
+ 
+3
+\Yj
+freq: 2
+10 
+ 
+3
+\Yo
+freq: 2
+11 
+ 
+1
+\W.
+freq: 8
+ 
+ 
+2
+\W.
+freq: 4
+0 
+ 
+3
+\Yh
+freq: 2
+00 
+ 
+3
+\Ya
+freq: 2
+01 
+ 
+2
+\Yp
+freq: 4
+1 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 11
+ 
+ 
+2
+\Yy
+freq: 4
+0 
+ 
+2
+\W.
+freq: 7
+1 
+ 
+3
+\Y_
+freq: 3
+10 
+ 
+3
+\W.
+freq: 4
+11 
+ 
+4
+\Yj
+freq: 2
+110 
+ 
+4
+\Yo
+freq: 2
+111 
+ 
+1
+\W.
+freq: 8
+ 
+ 
+2
+\W.
+freq: 4
+0 
+ 
+3
+\Yh
+freq: 2
+00 
+ 
+3
+\Ya
+freq: 2
+01 
+ 
+2
+\Yp
+freq: 4
+1 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Sort according to frequencies.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 8
+ 
+ 
+2
+\W.
+freq: 4
+0 
+ 
+3
+\Yh
+freq: 2
+00 
+ 
+3
+\Ya
+freq: 2
+01 
+ 
+2
+\Yp
+freq: 4
+1 
+ 
+1
+\W.
+freq: 11
+ 
+ 
+2
+\Yy
+freq: 4
+0 
+ 
+2
+\W.
+freq: 7
+1 
+ 
+3
+\Y_
+freq: 3
+10 
+ 
+3
+\W.
+freq: 4
+11 
+ 
+4
+\Yj
+freq: 2
+110 
+ 
+4
+\Yo
+freq: 2
+111 
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+4 1.15 1.15
+Join the two nodes with the smallest frequencies.
+Append '0' to the codes for the letters in the left subtree.
+Append '1' to the codes for the letters in the right subtree.
+***\***
+0
+\XThe
+Huffman
+Codes
+ 
+1
+\W.
+freq: 19
+ 
+ 
+2
+\W.
+freq: 8
+0 
+ 
+3
+\W.
+freq: 4
+00 
+ 
+4
+\Yh
+freq: 2
+000 
+ 
+4
+\Ya
+freq: 2
+001 
+ 
+3
+\Yp
+freq: 4
+01 
+ 
+2
+\W.
+freq: 11
+1 
+ 
+3
+\Yy
+freq: 4
+10 
+ 
+3
+\W.
+freq: 7
+11 
+ 
+4
+\Y_
+freq: 3
+110 
+ 
+4
+\W.
+freq: 4
+111 
+ 
+5
+\Yj
+freq: 2
+1110 
+ 
+5
+\Yo
+freq: 2
+1111 
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 5
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The Huffman Tree is complete.
+Now compute the code for the string: happy_happy_joy_joy
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 6
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'h' is: 000
+The code for the string 'h' is:
+000
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\R.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 7
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'a' is: 001
+The code for the string 'ha' is:
+000001
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\R.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'p' is: 01
+The code for the string 'hap' is:
+00000101
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\R.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 8
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'p' is: 01
+The code for the string 'happ' is:
+0000010101
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\R.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 9
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'y' is: 10
+The code for the string 'happy' is:
+000001010110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\R.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for '_' is: 110
+The code for the string 'happy_' is:
+000001010110110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\R.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'h' is: 000
+The code for the string 'happy_h' is:
+000001010110110000
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\R.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'a' is: 001
+The code for the string 'happy_ha' is:
+000001010110110000001
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\R.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'p' is: 01
+The code for the string 'happy_hap' is:
+00000101011011000000101
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\R.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'p' is: 01
+The code for the string 'happy_happ' is:
+0000010101101100000010101
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\R.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'y' is: 10
+The code for the string 'happy_happy' is:
+000001010110110000001010110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\R.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 10
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for '_' is: 110
+The code for the string 'happy_happy_' is:
+000001010110110000001010110110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\R.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+FIBQUESTION 11
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'j' is: 1110
+The code for the string 'happy_happy_j' is:
+0000010101101100000010101101101110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\R.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'o' is: 1111
+The code for the string 'happy_happy_jo' is:
+00000101011011000000101011011011101111
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\R.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'y' is: 10
+The code for the string 'happy_happy_joy' is:
+0000010101101100000010101101101110111110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\R.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for '_' is: 110
+The code for the string 'happy_happy_joy_' is:
+0000010101101100000010101101101110111110110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\R.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'j' is: 1110
+The code for the string 'happy_happy_joy_j' is:
+00000101011011000000101011011011101111101101110
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\R.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'o' is: 1111
+The code for the string 'happy_happy_joy_jo' is:
+000001010110110000001010110110111011111011011101111
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\Y.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\R.
+o
+ 
+***^***
+VIEW WINDOWS 1
+GeneralTree 0.01 0.01
+3 1.15 1.15
+The code for 'y' is: 10
+The code for the string 'happy_happy_joy_joy' is:
+00000101011011000000101011011011101111101101110111110
+Done encoding.
+***\***
+0
+\W.
+ 
+ 
+1
+\W.
+ 
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+h
+ 
+3
+\Y.
+a
+ 
+2
+\Y.
+p
+ 
+1
+\W.
+ 
+ 
+2
+\R.
+y
+ 
+2
+\W.
+ 
+ 
+3
+\Y.
+_
+ 
+3
+\W.
+ 
+ 
+4
+\Y.
+j
+ 
+4
+\Y.
+o
+ 
+***^***
+STARTQUESTIONS
+MCQUESTION 0
+Which two trees will be joined next?
+ENDTEXT
+the tree that contains 'h' and the tree that contains 'a'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'a'
+ENDCHOICE
+the tree that contains 'p' and the tree that contains '_'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'p'
+ENDCHOICE
+the tree that contains '_' and the tree that contains 'a'
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 1
+Which two trees will be joined next?
+ENDTEXT
+the tree that contains 'j' and the tree that contains 'o'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'o'
+ENDCHOICE
+the tree that contains 'p' and the tree that contains 'j'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'j'
+ENDCHOICE
+the tree that contains '_' and the tree that contains 'o'
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 2
+Which two trees will be joined next?
+ENDTEXT
+the tree that contains '_' and the tree that contains 'o' and 'j'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'p'
+ENDCHOICE
+the tree that contains 'a' and 'h' and the tree that contains 'o' and 'j'
+ENDCHOICE
+the tree that contains 'p' and the tree that contains 'o' and 'j'
+ENDCHOICE
+the tree that contains 'y' and the tree that contains 'a' and 'h'
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 3
+Which two trees will be joined next?
+ENDTEXT
+the tree that contains 'a' and 'h' and the tree that contains 'p'
+ENDCHOICE
+the tree that contains  'o', 'j', and '_' and the tree that contains 'a' and 'h'
+ENDCHOICE
+the tree that contains  'o', 'j', and '_' and the tree that contains 'y'
+ENDCHOICE
+the tree that contains  'o', 'j', and '_' and the tree that contains 'p'
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+MCQUESTION 4
+Which two trees will be joined next?
+ENDTEXT
+the tree that contains 'y' and the tree that contains  'o', 'j', and '_'
+ENDCHOICE
+the tree that contains  'p', 'a', and 'h' and the tree that contains 'y'
+ENDCHOICE
+the tree that contains  'p', 'a', and 'h' and the tree that contains  'o', 'j', and '_'
+ENDCHOICE
+ANSWER
+1
+ENDANSWER
+FIBQUESTION 5
+What will be the bit string code for the letter 'h'?
+ENDTEXT
+ANSWER
+000
+ENDANSWER
+FIBQUESTION 6
+What will be the bit string code for the letter 'a'?
+ENDTEXT
+ANSWER
+001
+ENDANSWER
+FIBQUESTION 7
+What will be the bit string code for the letter 'p'?
+ENDTEXT
+ANSWER
+01
+ENDANSWER
+FIBQUESTION 8
+What will be the bit string code for the letter 'y'?
+ENDTEXT
+ANSWER
+10
+ENDANSWER
+FIBQUESTION 9
+What will be the bit string code for the letter '_'?
+ENDTEXT
+ANSWER
+110
+ENDANSWER
+FIBQUESTION 10
+What will be the bit string code for the letter 'j'?
+ENDTEXT
+ANSWER
+1110
+ENDANSWER
+FIBQUESTION 11
+What will be the bit string code for the letter 'o'?
+ENDTEXT
+ANSWER
+1111
+ENDANSWER

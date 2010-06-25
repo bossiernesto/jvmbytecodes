@@ -1,0 +1,10 @@
+<?php
+$pgm = array(
+"0     int a[4] = {9, 8, 3, 3};", "1     int n = 7;", "2", "3     int main() { ", "4       int o[4] = {9, 4, 2, 8};", "5       int i = 8;", "6", "7       By_Name_Macro(o[3], i);", "8     }", "9", "10", "11    void By_Name_Macro(int j, int p){", "12       int i = 2;", "13", "14       i = j + p;", "15       n = a[1] + n;", "16       p = i + j;", "17    }", " ");
+for($i = 0; $i < count($pgm); $i++){
+if($i ==$line)
+print("<font color = 'red'>$pgm[$i]</font><br>");
+else
+print("$pgm[$i]<br>");
+}
+?>

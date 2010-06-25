@@ -1,0 +1,1084 @@
+6/16/10 8:22 AM - FINER: ENTRY
+6/16/10 8:22 AM - FINER: ENTRY
+6/16/10 8:22 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/132 *
+6/16/10 8:22 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:22 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/132 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/132.xml
+6/16/10 8:22 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/132 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/132.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:22 AM - FINE: Process started
+6/16/10 8:22 AM - FINE: And completed
+6/16/10 8:22 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/132.sho
+6/16/10 8:22 AM - FINE: http://localhost:8080/html_root/uid/132.sho
+6/16/10 8:22 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:22 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/132.sho
+6/16/10 8:23 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:23 AM - FINE: killConnection: Communication Error.
+6/16/10 8:23 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:23 AM - FINE: Killing client 132
+6/16/10 8:23 AM - INFO: Accepted connection 133 from 127.0.0.1
+6/16/10 8:23 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:23 AM - INFO: Object: Thread[Thread-133,5,main]
+6/16/10 8:23 AM - INFO: 1 memorymanager no_username
+6/16/10 8:23 AM - FINER: ENTRY
+6/16/10 8:23 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:24 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:24 AM - FINE: killConnection: Communication Error.
+6/16/10 8:24 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:24 AM - FINE: Killing client 133
+6/16/10 8:29 AM - INFO: Accepted connection 134 from 127.0.0.1
+6/16/10 8:29 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:29 AM - INFO: Object: Thread[Thread-134,5,main]
+6/16/10 8:29 AM - INFO: 1 memorymanager no_username
+6/16/10 8:29 AM - FINER: ENTRY
+6/16/10 8:29 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:32 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:32 AM - FINE: killConnection: Communication Error.
+6/16/10 8:32 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:32 AM - FINE: Killing client 134
+6/16/10 8:32 AM - INFO: Accepted connection 135 from 127.0.0.1
+6/16/10 8:32 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:32 AM - INFO: Object: Thread[Thread-135,5,main]
+6/16/10 8:32 AM - INFO: 1 memorymanager no_username
+6/16/10 8:32 AM - FINER: ENTRY
+6/16/10 8:32 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:34 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:34 AM - FINE: killConnection: Communication Error.
+6/16/10 8:34 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:34 AM - FINE: Killing client 135
+6/16/10 8:34 AM - INFO: Accepted connection 136 from 127.0.0.1
+6/16/10 8:34 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:34 AM - INFO: Object: Thread[Thread-136,5,main]
+6/16/10 8:34 AM - INFO: 1 memorymanager no_username
+6/16/10 8:34 AM - FINER: ENTRY
+6/16/10 8:34 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:35 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:35 AM - FINE: killConnection: Communication Error.
+6/16/10 8:35 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:35 AM - FINE: Killing client 136
+6/16/10 8:36 AM - INFO: Accepted connection 137 from 127.0.0.1
+6/16/10 8:36 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:36 AM - INFO: Object: Thread[Thread-137,5,main]
+6/16/10 8:36 AM - INFO: 1 memorymanager no_username
+6/16/10 8:36 AM - FINER: ENTRY
+6/16/10 8:36 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:36 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:36 AM - FINER: ENTRY
+6/16/10 8:36 AM - FINER: ENTRY
+6/16/10 8:36 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/137 *
+6/16/10 8:36 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:36 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/137 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/137.xml
+6/16/10 8:36 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/137 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/137.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:36 AM - FINE: Process started
+6/16/10 8:36 AM - FINE: And completed
+6/16/10 8:36 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/137.sho
+6/16/10 8:36 AM - FINE: http://localhost:8080/html_root/uid/137.sho
+6/16/10 8:36 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:36 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/137.sho
+6/16/10 8:37 AM - INFO: Accepted connection 138 from 127.0.0.1
+6/16/10 8:37 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:37 AM - INFO: Object: Thread[Thread-138,5,main]
+6/16/10 8:37 AM - INFO: 1 memorymanager no_username
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:37 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered></value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/138 *
+6/16/10 8:37 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:37 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/138 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/138.xml
+6/16/10 8:37 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/138 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/138.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:37 AM - FINE: Process started
+6/16/10 8:37 AM - FINE: And completed
+6/16/10 8:37 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/138.sho
+6/16/10 8:37 AM - FINE: http://localhost:8080/html_root/uid/138.sho
+6/16/10 8:37 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:37 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/138.sho
+6/16/10 8:37 AM - INFO: Accepted connection 139 from 127.0.0.1
+6/16/10 8:37 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:37 AM - INFO: Object: Thread[Thread-139,5,main]
+6/16/10 8:37 AM - INFO: 1 memorymanager no_username
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:37 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - FINER: ENTRY
+6/16/10 8:37 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/139 *
+6/16/10 8:37 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:37 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/139 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/139.xml
+6/16/10 8:37 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/139 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/139.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:37 AM - FINE: Process started
+6/16/10 8:37 AM - FINE: And completed
+6/16/10 8:37 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/139.sho
+6/16/10 8:37 AM - FINE: http://localhost:8080/html_root/uid/139.sho
+6/16/10 8:37 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:37 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/139.sho
+6/16/10 8:38 AM - INFO: Accepted connection 140 from 127.0.0.1
+6/16/10 8:38 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:38 AM - INFO: Object: Thread[Thread-140,5,main]
+6/16/10 8:38 AM - INFO: 1 memorymanager no_username
+6/16/10 8:38 AM - FINER: ENTRY
+6/16/10 8:38 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:42 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:42 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:42 AM - FINE: killConnection: Communication Error.
+6/16/10 8:42 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:42 AM - FINE: Killing client 137
+6/16/10 8:42 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:42 AM - FINE: killConnection: Communication Error.
+6/16/10 8:42 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:42 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:42 AM - FINE: Killing client 139
+6/16/10 8:42 AM - FINE: killConnection: Communication Error.
+6/16/10 8:42 AM - FINE: killConnection: Communication Error.
+6/16/10 8:42 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:42 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:42 AM - FINE: Killing client 138
+6/16/10 8:42 AM - FINE: Killing client 140
+6/16/10 8:42 AM - INFO: Accepted connection 141 from 127.0.0.1
+6/16/10 8:42 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:42 AM - INFO: Object: Thread[Thread-141,5,main]
+6/16/10 8:42 AM - INFO: 1 memorymanager no_username
+6/16/10 8:42 AM - FINER: ENTRY
+6/16/10 8:42 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:42 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:42 AM - FINER: ENTRY
+6/16/10 8:42 AM - FINER: ENTRY
+6/16/10 8:42 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/141 *
+6/16/10 8:42 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:42 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/141 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/141.xml
+6/16/10 8:42 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/141 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/141.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:42 AM - FINE: Process started
+6/16/10 8:42 AM - FINE: And completed
+6/16/10 8:42 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/141.sho
+6/16/10 8:42 AM - FINE: http://localhost:8080/html_root/uid/141.sho
+6/16/10 8:42 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:42 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/141.sho
+6/16/10 8:43 AM - INFO: Accepted connection 142 from 127.0.0.1
+6/16/10 8:43 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:43 AM - INFO: Object: Thread[Thread-142,5,main]
+6/16/10 8:43 AM - INFO: 1 memorymanager no_username
+6/16/10 8:43 AM - FINER: ENTRY
+6/16/10 8:43 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:43 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:43 AM - FINER: ENTRY
+6/16/10 8:43 AM - FINER: ENTRY
+6/16/10 8:43 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/142 *
+6/16/10 8:43 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:43 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/142 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/142.xml
+6/16/10 8:43 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/142 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/142.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:43 AM - FINE: Process started
+6/16/10 8:43 AM - FINE: And completed
+6/16/10 8:43 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/142.sho
+6/16/10 8:43 AM - FINE: http://localhost:8080/html_root/uid/142.sho
+6/16/10 8:43 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:43 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/142.sho
+6/16/10 8:43 AM - INFO: Accepted connection 143 from 127.0.0.1
+6/16/10 8:43 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:43 AM - INFO: Object: Thread[Thread-143,5,main]
+6/16/10 8:43 AM - INFO: 1 memorymanager no_username
+6/16/10 8:43 AM - FINER: ENTRY
+6/16/10 8:43 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:44 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Nodeaaaaaaaaaaaaaaaaaaaaaaaaaaaa head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:44 AM - FINER: ENTRY
+6/16/10 8:44 AM - FINER: ENTRY
+6/16/10 8:44 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/143 *
+6/16/10 8:44 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:44 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/143 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/143.xml
+6/16/10 8:44 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/143 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/143.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:44 AM - FINE: Process started
+6/16/10 8:44 AM - FINE: And completed
+6/16/10 8:44 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/143.sho
+6/16/10 8:44 AM - FINE: http://localhost:8080/html_root/uid/143.sho
+6/16/10 8:44 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:44 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/143.sho
+6/16/10 8:44 AM - INFO: Accepted connection 144 from 127.0.0.1
+6/16/10 8:44 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:44 AM - INFO: Object: Thread[Thread-144,5,main]
+6/16/10 8:44 AM - INFO: 1 memorymanager no_username
+6/16/10 8:44 AM - FINER: ENTRY
+6/16/10 8:44 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:45 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:45 AM - FINER: ENTRY
+6/16/10 8:45 AM - FINER: ENTRY
+6/16/10 8:45 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/144 *
+6/16/10 8:45 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:45 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/144 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/144.xml
+6/16/10 8:45 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/144 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/144.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:45 AM - FINE: Process started
+6/16/10 8:45 AM - FINE: And completed
+6/16/10 8:45 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/144.sho
+6/16/10 8:45 AM - FINE: http://localhost:8080/html_root/uid/144.sho
+6/16/10 8:45 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:45 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/144.sho
+6/16/10 8:45 AM - INFO: Accepted connection 145 from 127.0.0.1
+6/16/10 8:45 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:45 AM - INFO: Object: Thread[Thread-145,5,main]
+6/16/10 8:45 AM - INFO: 1 memorymanager no_username
+6/16/10 8:45 AM - FINER: ENTRY
+6/16/10 8:45 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:45 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:45 AM - FINER: ENTRY
+6/16/10 8:45 AM - FINER: ENTRY
+6/16/10 8:45 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/145 *
+6/16/10 8:45 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:45 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/145 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/145.xml
+6/16/10 8:45 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/145 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/145.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:45 AM - FINE: Process started
+6/16/10 8:45 AM - FINE: And completed
+6/16/10 8:45 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/145.sho
+6/16/10 8:45 AM - FINE: http://localhost:8080/html_root/uid/145.sho
+6/16/10 8:45 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:45 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/145.sho
+6/16/10 8:46 AM - INFO: Accepted connection 146 from 127.0.0.1
+6/16/10 8:46 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:46 AM - INFO: Object: Thread[Thread-146,5,main]
+6/16/10 8:46 AM - INFO: 1 memorymanager no_username
+6/16/10 8:46 AM - FINER: ENTRY
+6/16/10 8:46 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: Killing client 145
+6/16/10 8:53 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: killConnection: Communication Error.
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: Killing client 144
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:53 AM - FINE: Killing client 142
+6/16/10 8:53 AM - FINE: Killing client 146
+6/16/10 8:53 AM - FINE: Killing client 143
+6/16/10 8:53 AM - FINE: Killing client 141
+6/16/10 8:53 AM - INFO: Accepted connection 147 from 127.0.0.1
+6/16/10 8:53 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:53 AM - INFO: Object: Thread[Thread-147,5,main]
+6/16/10 8:53 AM - INFO: 1 memorymanager no_username
+6/16/10 8:53 AM - FINER: ENTRY
+6/16/10 8:53 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:53 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 8:53 AM - FINER: ENTRY
+6/16/10 8:53 AM - FINER: ENTRY
+6/16/10 8:53 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/147 *
+6/16/10 8:53 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 8:53 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/147 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/147.xml
+6/16/10 8:53 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/147 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/147.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 8:53 AM - FINE: Process started
+6/16/10 8:53 AM - FINE: And completed
+6/16/10 8:53 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/147.sho
+6/16/10 8:53 AM - FINE: http://localhost:8080/html_root/uid/147.sho
+6/16/10 8:53 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 8:53 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/147.sho
+6/16/10 8:53 AM - INFO: Accepted connection 148 from 127.0.0.1
+6/16/10 8:53 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:53 AM - INFO: Object: Thread[Thread-148,5,main]
+6/16/10 8:53 AM - INFO: 1 memorymanager no_username
+6/16/10 8:53 AM - FINER: ENTRY
+6/16/10 8:53 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 8:58 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:58 AM - FINE: killConnection: Communication Error.
+6/16/10 8:58 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:58 AM - FINE: Killing client 147
+6/16/10 8:58 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 8:58 AM - FINE: killConnection: Communication Error.
+6/16/10 8:58 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 8:58 AM - FINE: Killing client 148
+6/16/10 8:59 AM - INFO: Accepted connection 149 from 127.0.0.1
+6/16/10 8:59 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 8:59 AM - INFO: Object: Thread[Thread-149,5,main]
+6/16/10 8:59 AM - INFO: 1 memorymanager no_username
+6/16/10 8:59 AM - FINER: ENTRY
+6/16/10 8:59 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:01 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:01 AM - FINE: killConnection: Communication Error.
+6/16/10 9:01 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:01 AM - FINE: Killing client 149
+6/16/10 9:01 AM - INFO: Accepted connection 150 from 127.0.0.1
+6/16/10 9:01 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:01 AM - INFO: Object: Thread[Thread-150,5,main]
+6/16/10 9:01 AM - INFO: 1 memorymanager no_username
+6/16/10 9:01 AM - FINER: ENTRY
+6/16/10 9:01 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:04 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:04 AM - FINE: killConnection: Communication Error.
+6/16/10 9:04 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:04 AM - FINE: Killing client 150
+6/16/10 9:04 AM - INFO: Accepted connection 151 from 127.0.0.1
+6/16/10 9:04 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:04 AM - INFO: Object: Thread[Thread-151,5,main]
+6/16/10 9:04 AM - INFO: 1 memorymanager no_username
+6/16/10 9:04 AM - FINER: ENTRY
+6/16/10 9:04 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:05 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:05 AM - FINE: killConnection: Communication Error.
+6/16/10 9:05 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:05 AM - FINE: Killing client 151
+6/16/10 9:05 AM - INFO: Accepted connection 152 from 127.0.0.1
+6/16/10 9:05 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:05 AM - INFO: Object: Thread[Thread-152,5,main]
+6/16/10 9:05 AM - INFO: 1 memorymanager no_username
+6/16/10 9:05 AM - FINER: ENTRY
+6/16/10 9:05 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:10 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:10 AM - FINE: killConnection: Communication Error.
+6/16/10 9:10 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:10 AM - FINE: Killing client 152
+6/16/10 9:10 AM - INFO: Accepted connection 153 from 127.0.0.1
+6/16/10 9:10 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:10 AM - INFO: Object: Thread[Thread-153,5,main]
+6/16/10 9:10 AM - INFO: 1 memorymanager no_username
+6/16/10 9:10 AM - FINER: ENTRY
+6/16/10 9:10 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:14 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:14 AM - FINE: killConnection: Communication Error.
+6/16/10 9:14 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:14 AM - FINE: Killing client 153
+6/16/10 9:14 AM - INFO: Accepted connection 154 from 127.0.0.1
+6/16/10 9:14 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:14 AM - INFO: Object: Thread[Thread-154,5,main]
+6/16/10 9:14 AM - INFO: 1 memorymanager no_username
+6/16/10 9:14 AM - FINER: ENTRY
+6/16/10 9:14 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:16 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:16 AM - FINE: killConnection: Communication Error.
+6/16/10 9:16 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:16 AM - FINE: Killing client 154
+6/16/10 9:17 AM - INFO: Accepted connection 155 from 127.0.0.1
+6/16/10 9:17 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:17 AM - INFO: Object: Thread[Thread-155,5,main]
+6/16/10 9:17 AM - INFO: 1 memorymanager no_username
+6/16/10 9:17 AM - FINER: ENTRY
+6/16/10 9:17 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:19 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2554)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1297)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:351)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/16/10 9:19 AM - FINE: killConnection: Communication Error.
+6/16/10 9:19 AM - FINE: sendtoClient - 101 Communication Error.
+6/16/10 9:19 AM - FINE: Killing client 155
+6/16/10 9:21 AM - INFO: Accepted connection 156 from 127.0.0.1
+6/16/10 9:21 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/16/10 9:21 AM - INFO: Object: Thread[Thread-156,5,main]
+6/16/10 9:21 AM - INFO: 1 memorymanager no_username
+6/16/10 9:21 AM - FINER: ENTRY
+6/16/10 9:21 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/16/10 9:21 AM - INFO: 4 memorymanager/remove_a new <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
+<input_panel>
+  <textarea>
+    <label_line>Enter your Java or C++ source code below:</label_line>
+    <default_field>Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;</default_field>
+    <value_entered>//Cory Sheeley
+
+public class Ad{
+{
+	public static void main(String args[])
+	{
+		int num1 = 10, num2 = 50, num3 = 0;
+		num3 = num1 + num2;
+		System.out.println("Num1 = " + num1 + "    Num2 = " + num2);
+	}
+}
+Remove all A's from a list
+// gridsize 2 6 java 0.3
+Node head = Utils.createList( 'A','A','B','A','C','A',"tail" );
+Node p; // 0 2
+while ((head != null) &amp;&amp; (head.info =='A')) {
+     head = head.next;
+}
+if (head == null)
+{
+   tail = null;
+}
+else
+{
+  for( p = head; p.next != null; )
+  {
+     if (p.next.info == 'A') {
+         p.next =  p.next.next;
+     }
+     else {
+         p = p.next;
+     }
+  }
+}
+tail = p;
+</value_entered>
+  </textarea>
+</input_panel>
+6/16/10 9:21 AM - FINER: ENTRY
+6/16/10 9:21 AM - FINER: ENTRY
+6/16/10 9:21 AM - INFO: /students/sheelc21/Documents/SVN/trunk/html_root/uid/156 *
+6/16/10 9:21 AM - FINE: Up front with user  no_username looking for -- exe/memorymanager/memorymanager
+6/16/10 9:21 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/156 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/156.xml
+6/16/10 9:21 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.memorymanager.memorymanager /students/sheelc21/Documents/SVN/trunk/html_root/uid/156 * /students/sheelc21/Documents/SVN/trunk/html_root/uid/156.xml)
+..........with script root /students/sheelc21/Documents/SVN/trunk/server/build/classes/
+6/16/10 9:21 AM - FINE: Process started
+6/16/10 9:21 AM - FINE: And completed
+6/16/10 9:21 AM - FINE: Loading dynamic script: /students/sheelc21/Documents/SVN/trunk/html_root/uid/156.sho
+6/16/10 9:21 AM - FINE: http://localhost:8080/html_root/uid/156.sho
+6/16/10 9:21 AM - FINE: sendtoClient - 400 memorymanager/remove_a gaigs
+6/16/10 9:21 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/156.sho
+6/16/10 9:22 AM - INFO: Accepted connection 157 from 127.0.0.1

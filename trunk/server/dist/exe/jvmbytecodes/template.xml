@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<pseudocode>
+	<stack><replace var="class_name" /></stack>
+	<code>
+	<signature>Java Byte Code</signature>
+	<line num="0">	iconst_1</line>
+	<line num="1">	istore_1</line>
+	<line num="2">	iconst_2</line>
+	<line num="3">	istore_2</line>
+	<line num="4">	iload_2</line>
+	<line num="5">	iconst_5</line>
+	<line num="6">	if_icmpgt	19</line>
+	<line num="9">	iload_1</line>
+	<line num="10">	iload_2</line>
+	<line num="11">	imul</line>
+	<line num="12">	istore_1</line>
+	<line num="13">	iinc	2, 1</line>
+	<line num="16">	goto	4</line>
+	<line num="19">	return</line>
+	</code>
+	<vars>
+	<var>heap height = <replace var="heap_height" /></var>
+	<var>stack height = <replace var="stack_height" /></var>
+	</vars>
+</pseudocode>

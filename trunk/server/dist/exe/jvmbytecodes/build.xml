@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>       
+<project default="compile">
+
+    <target name="compile">
+        <javac debug="true" srcdir="." destdir="../../../build/classes" classpath=".:../../../build/classes:../../../lib/jdom.jar" includes="*.java" /> 
+    </target>
+
+    <target name="run">
+       <java fork="true" 
+	     dir="../../../build/classes" 
+	     classpath="../../../build/classes:../../../lib/jdom.jar:../../../lib/jaxen.jar:." 
+	     classname="exe.reu_bubsort.BytecodeViewer"> 
+	  <arg value= "1.sho" />
+          <arg value="/Users/davidfurcy/Documents/REU/2010/JVM/tmp/trunk/html_root/uid/1/" />  
+        </java> 
+    </target>
+
+    <target name="clean">
+        <echo>
+            Removing all class files
+        </echo>
+        <delete> 
+            <fileset dir="../../../build/classes/exe/reu_bubsort">
+                <include name="*.class" />
+            </fileset>
+        </delete>
+    </target>
+  
+</project>
