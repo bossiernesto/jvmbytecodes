@@ -3,5 +3,15 @@
 	<stack><replace var="class_name" /></stack>
 	<code>
 	<signature>Java Code</signature>
+	<line num="0">class Fb</line>
+	<line num="1">{</line>
+	<line num="2"></line>
+	<line num="3"> public static void main( String [ ] args )</line>
+	<line num="4"> {</line>
+	<line num="5"> int factorial = 1;</line>
+	<line num="6"> for(int i = 2; i &#60;= 5; i++)</line>
+	<line num="7"> factorial *= i;</line>
+	<line num="8"> }</line>
+	<line num="9">}</line>
 	</code>
 </pseudocode>

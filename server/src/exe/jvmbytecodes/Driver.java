@@ -33,30 +33,31 @@ import exe.pseudocode.*;
 
 public class Driver {
 
-	static final String TITLE = null; // no title
-	static final String FILE = "exe/jvmbytecodes/template.xml";
+    static final String TITLE = null; // no title
+    static final String FILE = "exe/jvmbytecodes/template.xml";
 	static int arraySize; // # of items to sort
-	static GAIGSarray items; // the array of items
-	static PseudoCodeDisplay pseudo; // The pseudocode
-	static boolean success;
-	static final String CLASSFILE = "exe/jvmbytecodes/classTemplate.xml";
-	static PseudoCodeDisplay realCode;
-	static ShowFile show;
-	static int numberOfLinesInJavaFile = 1;
-	static int stackSize = 0;
-	static int heapSize = 0;
-	static int currentStackHeight;
-	static int currentMethod = 1;
-	static GAIGSarray stack;
-	static GAIGSarray localVariableArray;
-	static GAIGSstack runTimeStack;
-	static GAIGSstack heap;
-	static Stack _runTimeStack = new Stack();
-	static Stack _stack = new Stack();
-	static ArrayList _heap;
-	static int currentClass;
-	static int questionID;
-	static Class_[] classes;
+    static GAIGSarray items; // the array of items
+    static PseudoCodeDisplay pseudo; // The pseudocode
+    static boolean success;
+    static final String CLASSFILE = "exe/jvmbytecodes/classTemplate.xml";
+    static PseudoCodeDisplay realCode;
+    static ShowFile show;
+    static int numberOfLinesInJavaFile = 1;
+    static int stackSize = 0;
+    static int heapSize = 0;
+    static int currentStackHeight;
+    static int currentMethod = 1;
+    static GAIGSarray stack;
+    static GAIGSarray localVariableArray;
+    static GAIGSstack runTimeStack;
+    static GAIGSstack heap;
+    static Stack _runTimeStack = new Stack();
+    static Stack _stack = new Stack();
+    static ArrayList _heap;
+    static int currentClass;
+    static int questionID;
+    static Class_[] classes;
+    static final String CURRENT_FRAME_COLOR = "#990022";
 
 	/*
 	 * Main driver for the client
@@ -65,6 +66,7 @@ public class Driver {
 	 * is the contents of the Java file
 	 */
 	public static void main(String args[]) throws IOException {
+
 
 		String file_contents = args[2];
 		File pathname = new File("", args[0]);
@@ -86,7 +88,8 @@ public class Driver {
 			System.err.println("Error: " + e.getMessage() + "here1");
 		}
 
-		String[] tmp = { args[0] + ".sho", args[0], args[1] };
+		    //String[] tmp = { args[0] + ".sho", args[0], args[1] };
+		    String[] tmp = { args[0], args[1] };
 
 		show = new ShowFile(args[0] + ".sho", 5); // first argument is the script foo.sho
 		// String[] temp = {"../../src/exe/jvmbytecodes/Test","Factorial4.java"};
@@ -103,7 +106,7 @@ public class Driver {
 		currentClass = 0;
 		currentMethod = 1;
 		GenerateXML.generateXMLfile();
-		GenerateXML.generateJavaXMLFile(args[1], args[2]);
+		GenerateXML.generateJavaXMLFile(args[0], args[1]);
 
 		try {
 			pseudo = new PseudoCodeDisplay(FILE);
@@ -118,8 +121,9 @@ public class Driver {
 			stack.set("", i);
 
 		// get a random color for the stack
-		String mainColor = getRandomColor();
-		runTimeStack.push(classes[0].methods.get(1).name, mainColor);
+		    //String mainColor = getRandomColor();
+		    String mainColor = CURRENT_FRAME_COLOR;
+		    runTimeStack.push(classes[0].methods.get(1).name, mainColor);
 
 		localVariableArray = new GAIGSarray(classes[0].methods.get(1).localVariableTable.length, false,
 				"Local Variables", "#999999", 0.5, 0.5, 0.9, 0.9, 0.1);
@@ -134,7 +138,11 @@ public class Driver {
 		// begin interpreter
 		Interpreter.interpret();
 
-		show.close();
+	   show.close();
+		
+	   // delete files in uid/<number>
+	   //Runtime.getRuntime().exec( "rm -f " + args[0] + "/*" );
+
 	}
 
 	/*

@@ -85,6 +85,7 @@ exe.splaytreealex
 exe.stacktest
 exe.stacktest_with_audio
 exe.stringManip
+exe.sutherlandhodgmanclipping
 exe.synthDiv
 exe.tn_dp_lcs_via_design_pattern
 exe.tn_dp_string_distance_via_design_pattern

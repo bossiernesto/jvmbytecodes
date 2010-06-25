@@ -31,6 +31,7 @@ public class GenerateXML {
 			e.printStackTrace();
 		}
 
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(cat.getInputStream()));
 		ArrayList<String> javaCode = new ArrayList<String>();
 		String tempStr;
@@ -43,6 +44,7 @@ public class GenerateXML {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 
 		Driver.numberOfLinesInJavaFile = javaCode.size();
 		for (int k = 0; k < Driver.numberOfLinesInJavaFile; k++) {
