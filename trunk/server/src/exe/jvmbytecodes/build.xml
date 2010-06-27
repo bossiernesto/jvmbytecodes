@@ -9,7 +9,7 @@
       <java fork="true" dir="../../../build/classes" classpath="../../../build/classes:../../../lib/jdom.jar:../../../lib/jaxen.jar:." classname="exe.jvmbytecodes.jvmbytecodes"> 
        	  <arg value="../../src/exe/jvmbytecodes" />  
           <arg value="ignored with the new input generator" />
-       	  <arg value="../../src/exe/jvmbytecodes/1.xml" />  
+       	  <arg value="../../../html_root/uid/1.xml" />  
         </java> 
     </target>
 
