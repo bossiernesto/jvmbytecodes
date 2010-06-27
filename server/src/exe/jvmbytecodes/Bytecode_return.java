@@ -30,6 +30,7 @@ public class Bytecode_return extends Bytecode_ {
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
 	public int execute() throws IOException {
+		f = (Frame_) Driver._runTimeStack.peek();
 		// return
 		next = -1;
 

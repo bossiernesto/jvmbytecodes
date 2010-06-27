@@ -31,6 +31,7 @@ public class Bytecode_if extends Bytecode_ {
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
 	public int execute() throws IOException {
+		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber + 1;
 		next = next + 2;
 		// If
@@ -43,10 +44,10 @@ public class Bytecode_if extends Bytecode_ {
 			System.out.println("Enter if_icmp");
 			if (arguments.get(0).contains("icmpgt")) {
 				System.out.println("Enter if_icmpgt");
-				x = (Integer) Driver._stack.pop();
+				x = (Integer) f._stack.pop();
 
-				System.out.println(Driver._stack);
-				y = (Integer) Driver._stack.pop();
+				System.out.println(f._stack);
+				y = (Integer) f._stack.pop();
 
 				if (counter == 0) {
 					createQuestion1(x, y);
@@ -61,8 +62,8 @@ public class Bytecode_if extends Bytecode_ {
 				if (x > y - 1) { /* no jump */
 				} else
 					next = Integer.parseInt(arguments.get(1));
-				Driver.stack.set("", Driver.currentStackHeight++);
-				Driver.stack.set("", Driver.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
 			}
 		}
 		return next;
@@ -75,11 +76,11 @@ public class Bytecode_if extends Bytecode_ {
 		XMLtfQuestion question = new XMLtfQuestion(Driver.show, Driver.questionID + "");
 		question.setQuestionText("The bytecode will jump to line number " + arguments.get(1) + ".");
 		question.setAnswer(x <= y);
-		Driver.stack.setColor(Driver.currentStackHeight, "#CD0000");
-		Driver.stack.setColor(Driver.currentStackHeight + 1, "#CD0000");
+		f.stack.setColor(f.currentStackHeight, "#CD0000");
+		f.stack.setColor(f.currentStackHeight + 1, "#CD0000");
 		writeSnap();
-		Driver.stack.setColor(Driver.currentStackHeight, "#999999");
-		Driver.stack.setColor(Driver.currentStackHeight + 1, "#999999");
+		f.stack.setColor(f.currentStackHeight, "#999999");
+		f.stack.setColor(f.currentStackHeight + 1, "#999999");
 	}
 
 	/*
@@ -95,11 +96,11 @@ public class Bytecode_if extends Bytecode_ {
 			question.setAnswer(1);
 		else
 			question.setAnswer(2);
-		Driver.stack.setColor(Driver.currentStackHeight, "#CD0000");
-		Driver.stack.setColor(Driver.currentStackHeight + 1, "#CD0000");
+		f.stack.setColor(f.currentStackHeight, "#CD0000");
+		f.stack.setColor(f.currentStackHeight + 1, "#CD0000");
 		writeSnap();
-		Driver.stack.setColor(Driver.currentStackHeight, "#999999");
-		Driver.stack.setColor(Driver.currentStackHeight + 1, "#999999");
+		f.stack.setColor(f.currentStackHeight, "#999999");
+		f.stack.setColor(f.currentStackHeight + 1, "#999999");
 	}
 
 }

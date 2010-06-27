@@ -28,6 +28,7 @@ public class Bytecode_goto extends Bytecode_
 	 */
 	public int execute() throws IOException 
 	{
+		f = (Frame_) Driver._runTimeStack.peek();
 		//Goto
 		next = Integer.parseInt(arguments.get(0));
 		writeSnap();

@@ -34,36 +34,30 @@ import exe.pseudocode.*;
 public class Driver {
 
     static final String TITLE = null; // no title
-    static final String FILE = "exe/jvmbytecodes/template.xml";
-	static int arraySize; // # of items to sort
-    static GAIGSarray items; // the array of items
-    static PseudoCodeDisplay pseudo; // The pseudocode
+    static ArrayList<PseudoCodeDisplay> pseudoBytecodes[];//pseudo;
+    static PseudoCodeDisplay pseudoSourceCode[];//realCode;
     static boolean success;
-    static final String CLASSFILE = "exe/jvmbytecodes/classTemplate.xml";
-    static PseudoCodeDisplay realCode;
     static ShowFile show;
-    static int numberOfLinesInJavaFile = 1;
-    static int stackSize = 0;
-    static int heapSize = 0;
-    static int currentStackHeight;
-    static int currentMethod = 1;
-    static GAIGSarray stack;
-    static GAIGSarray localVariableArray;
     static GAIGSstack runTimeStack;
-    static GAIGSstack heap;
     static Stack _runTimeStack = new Stack();
-    static Stack _stack = new Stack();
+    static GAIGSstack heap;
     static ArrayList _heap;
     static int currentClass;
     static int questionID;
+    static int numberOfLinesInJavaFile = 1;
+    static int heapSize = 0;
+    static int currentMethod = 1;
     static Class_[] classes;
     static final String CURRENT_FRAME_COLOR = "#990022";
+    static GAIGSarray XMLstack;
+    static int XMLstackSize = 0;
 
 	/*
 	 * Main driver for the client
 	 * 
-	 * args[0] is the full path and number for naming showfile args[1] is the name of the Java source file or "" args[2]
-	 * is the contents of the Java file
+	 * args[0] is the full path and number for naming showfile 
+	 * args[1] is the name of the Java source file or "" 
+	 * args[2] is the contents of the Java file
 	 */
 	public static void main(String args[]) throws IOException {
 
@@ -92,48 +86,70 @@ public class Driver {
 		    String[] tmp = { args[0], args[1] };
 
 		show = new ShowFile(args[0] + ".sho", 5); // first argument is the script foo.sho
-		// String[] temp = {"../../src/exe/jvmbytecodes/Test","Factorial4.java"};
+		
 		classes = GenerateBytecodes.getClasses(tmp);
 
 		// create visual stack and heap using the predetermined sizes
-		stackSize = classes[0].methods.get(1).stackSize;
-		currentStackHeight = classes[0].methods.get(1).stackSize;
-		stack = new GAIGSarray(stackSize, false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
 		heap = new GAIGSstack("Heap", "#999999", 0.01, 0.5, 0.3, 0.9, 0.15);
 		runTimeStack = new GAIGSstack("Run Time Stack", "#999999", 0.01, 0.1, 0.3, 0.5, 0.15);
 
-		// new xml file
-		currentClass = 0;
-		currentMethod = 1;
-		GenerateXML.generateXMLfile();
-		GenerateXML.generateJavaXMLFile(args[0], args[1]);
+		// set current method and class
+		currentClass = 0;		
+		int index = 0;
+        for(Method_ m : classes[0].methods)
+        {
+                if(m.name.equals("main"))
+                {
+                        currentMethod = index;
+                        break;
+                }
+                index++;
+        }
+		
+        //make the XML files
+		GenerateXML.generateBytecodeXML();
+		GenerateXML.generateSourceCodeXML(args[0], args[1]);
 
+		pseudoBytecodes = new ArrayList[Driver.classes.length];
+		for (int i=0; i<Driver.classes.length; i++)
+			pseudoBytecodes[i] = new ArrayList<PseudoCodeDisplay>();
+		pseudoSourceCode = new PseudoCodeDisplay[Driver.classes.length];
+		
+		//make the URI need for the display
 		try {
-			pseudo = new PseudoCodeDisplay(FILE);
-			realCode = new PseudoCodeDisplay(CLASSFILE);
+			
+			System.out.println("starting uri ");
+			
+			for (int i=0; i < Driver.classes.length; i++)
+				for (int j = 0; j < Driver.classes[i].methods.size(); j++) {
+					String signature="";
+					for (int m=0; m<Driver.classes[i].methods.get(j).localVariableTable.length; m++)
+						signature+=Driver.classes[i].methods.get(j).localVariableTable[m][2];
+					signature = GenerateXML.replaceSlashWithDot(signature);
+					System.out.println("sinature is: "+signature+" i: "+i+" j: "+j+" "+"exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml");
+					pseudoBytecodes[i].add(new PseudoCodeDisplay("exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml"));
+					System.out.println("found file");
+				}
+			System.out.println("completed uri ");
+
+			for (int i=0; i < Driver.classes.length; i++)
+				pseudoSourceCode[i] = (new PseudoCodeDisplay("exe/jvmbytecodes/" + Driver.classes[i].name + ".xml"));
 		} catch (JDOMException e) {
 			e.printStackTrace();
 		}
 
-		// set stack to initial values
+		//questionID
 		questionID = 0;
-		for (int i = 0; i < stackSize; i++)
-			stack.set("", i);
 
 		// get a random color for the stack
-		    //String mainColor = getRandomColor();
-		    String mainColor = CURRENT_FRAME_COLOR;
-		    runTimeStack.push(classes[0].methods.get(1).name, mainColor);
+		//String mainColor = getRandomColor();
+		String mainColor = CURRENT_FRAME_COLOR;
+		runTimeStack.push(classes[0].methods.get(1).name, mainColor);
+ 
 
-		localVariableArray = new GAIGSarray(classes[0].methods.get(1).localVariableTable.length, false,
-				"Local Variables", "#999999", 0.5, 0.5, 0.9, 0.9, 0.1);
 
-		for (int i = 0; i < classes[0].methods.get(1).localVariableTable.length; i++) {
-			String[][] array = classes[0].methods.get(1).localVariableTable;
-			Arrays.sort(array, new Compare());
-			localVariableArray.set("", i);
-			localVariableArray.setRowLabel(array[i][1] + " | " + array[i][0], i);
-		}
+		Frame_ f = new Frame_(currentMethod);
+		_runTimeStack.push(f);
 
 		// begin interpreter
 		Interpreter.interpret();
@@ -144,16 +160,8 @@ public class Driver {
 	   //Runtime.getRuntime().exec( "rm -f " + args[0] + "/*" );
 
 	}
-
-	/*
-	 * Initializes the stack that local variable reside on
-	 */
-	void setStackToInitialValues(GenerateBytecodes gbc) throws IOException {
-		questionID = 0;
-		for (int i = 0; i < stackSize; i++)
-			stack.set("", i);
-
-	}
+	
+	
 
 	/*
 	 * Generates a random string for a hex color in the format: "#000000"

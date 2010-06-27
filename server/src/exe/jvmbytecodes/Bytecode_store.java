@@ -29,6 +29,7 @@ public class Bytecode_store extends Bytecode_ {
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
 	public int execute() throws IOException {
+		f = (Frame_) Driver._runTimeStack.peek();
 		// Store
 		next = lineNumber + 1;
 
@@ -38,12 +39,12 @@ public class Bytecode_store extends Bytecode_ {
 
 			int index = getLocalVariableTable(arguments.get(0));
 			Integer x;
-			x = (Integer) Driver._stack.pop();
+			x = (Integer) f._stack.pop();
 			Driver.classes[0].methods.get(1).localVariableTable[index][2] = String.valueOf(x);
-			Driver.stack.set("", Driver.currentStackHeight++);
-			Driver.localVariableArray.set(String.valueOf(x), index, "#FFCC11");
+			f.stack.set("", f.currentStackHeight++);
+			f.localVariableArray.set(String.valueOf(x), index, "#FFCC11");
 			writeSnap();
-			Driver.localVariableArray.setColor(index, "#999999");
+			f.localVariableArray.setColor(index, "#999999");
 		}
 
 		if (underscore.compareTo("_") == 0)

@@ -31,6 +31,7 @@ public class Bytecode_load extends Bytecode_
 	 */
 	public int execute() throws IOException 
 	{
+		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
 		//Load
 		System.out.println("Next starts as: " + next);
@@ -41,11 +42,11 @@ public class Bytecode_load extends Bytecode_
 
 			int index = getLocalVariableTable(arguments.get(0));
 
-			Driver._stack.push(Integer.parseInt(Driver.classes[0].methods.get(1).localVariableTable[index][2]));
-			Driver.stack.set((String) Driver.classes[0].methods.get(1).localVariableTable[index][2], --Driver.currentStackHeight, "#FFCC11");
+			f._stack.push(Integer.parseInt(Driver.classes[0].methods.get(1).localVariableTable[index][2]));
+			f.stack.set((String) Driver.classes[0].methods.get(1).localVariableTable[index][2], --f.currentStackHeight, "#FFCC11");
 
 			writeSnap();
-			Driver.stack.setColor(Driver.currentStackHeight, "#999999");
+			f.stack.setColor(f.currentStackHeight, "#999999");
 		}
 
 		if(underscore.compareTo("_") == 0)

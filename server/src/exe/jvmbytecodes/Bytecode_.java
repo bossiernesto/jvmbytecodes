@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
 import java.net.*;
+import exe.pseudocode.*;
 
 /*
  * A representation of a byte code within the Java Virtual Machine.
@@ -25,6 +26,7 @@ abstract class Bytecode_ {
 	public int next;
 	public String underscore;
 	public String entireOpcode;
+	public Frame_ f;
 
 	public abstract int execute() throws IOException;
 
@@ -32,6 +34,8 @@ abstract class Bytecode_ {
 	 * Writes a snapshot for the visualization
 	 */
 	public void writeSnap() throws IOException {
+		System.out.println("LineNumber: " + lineNumber + " and currentStackHeight: " + f.currentStackHeight + " and stacksize: " + f.stackSize + " and methodName: " + f.methodName);
+		f = (Frame_) Driver._runTimeStack.peek();
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection();
 	    pc.addPolygon(
 			    4,
@@ -44,13 +48,13 @@ abstract class Bytecode_ {
 			  );
 
 	    Driver.show.writeSnap(Driver.TITLE, 
-				  MakeURI.doc_uri(lineNumber), 
+				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
-						   Driver.pseudo.RED), 
+						   PseudoCodeDisplay.RED, f), 
 				  pc,
 				  Driver.runTimeStack, 
-				  Driver.stack, Driver.heap,
-				  Driver.localVariableArray
+				  f.stack, Driver.heap,
+				  f.localVariableArray
 				  );
 	}
 
@@ -61,15 +65,12 @@ abstract class Bytecode_ {
 		entireOpcode = s;
 		String[] s2 = s.split(":");
 		entireOpcode = s2[1];
-		next = lineNumber + 1;
-		System.out.println(s);
-		System.out.println("Enter Bytecode_parse");
+
 		if (s.contains(";")) {
-			System.out.println("Enter contains(;) if");
 			String[] temp = s.split(";");
 			comments = temp[1];
 			temp = temp[0].split("[ \t]");
-			lineNumber = Integer.parseInt(temp[0].substring(0, temp[0].length() - 2));
+			lineNumber = Integer.parseInt(temp[0].substring(0, temp[0].length() - 1));
 
 			int j = 1;
 			while (temp[j].compareTo("") == 0)
@@ -81,27 +82,40 @@ abstract class Bytecode_ {
 				String[] temp1 = opcode.split("_");
 				opcode = temp1[0];
 				arguments.add(temp1[1]);
-				// System.out.println(arguments);
 			} else {
 				underscore = " ";
 			}
 
 			if (temp.length <= 1) {
 				;
-				// System.out.println("no arguments");
 			} else {
-
-				// System.out.println("enter else");
-
-				for (int i = 1; i < temp.length; i++) {
+				for (int i = 2; i < temp.length; i++) {
 					if (temp[i].contains(",")) {
-						temp[i] = temp[i].substring(0, temp[i].length() - 2);
+						temp[i] = temp[i].substring(0, temp[i].length() - 1);
 					}
 					arguments.add(temp[i]);
 				}
 			}
+
+                        if(!comments.equals(null))
+                        {
+				String[] commentsString = comments.split(" ");
+
+                                        for( int i = 1; i < commentsString.length; i++)
+                                        {
+                                                String returnType = "";
+                                                if(commentsString[i].contains(":"))
+                                                {
+                                                        returnType = commentsString[i].substring(commentsString[i].length() - 1, commentsString[i].length());
+                                                        commentsString[i] = commentsString[i].substring(0, commentsString[i].length()-1);
+                                                }
+                                                arguments.add(commentsString[i]);
+                                                if(returnType != "")
+                                                        arguments.add(returnType);
+                                        }
+                         }
+
 		} else {
-			System.out.println("Enter contains(;) else");
 			String[] temp = s.split("[ \t]");
 			lineNumber = Integer.parseInt(temp[0].substring(0, temp[0].length() - 1));
 
@@ -126,6 +140,7 @@ abstract class Bytecode_ {
 				arguments.add(temp[i]);
 			}
 		}
+		next = lineNumber + 1;
 		System.out.println(opcode + " " + lineNumber + " " + arguments + " " + comments + " " + next);
 	}
 
@@ -136,20 +151,21 @@ abstract class Bytecode_ {
 		return this.lineNumber;
 	}
 
-	/*
-	 * Local variables that reside within the frame of the Java Virtual Machine
-	 */
-	public int getLocalVariableTable(String parameter) {
-		int index = 0;
-		for (int i = 0; i < Driver.classes[0].methods.get(1).localVariableTable.length; i++) {
-			if (Driver.classes[0].methods.get(1).localVariableTable[i][0].compareTo(parameter) == 0) {
-				index = i;
-				System.out.println("The index we found is: " + index);
-				break;
-			}
-		}
-		return index;
-	}
+
+        public int getLocalVariableTable(String parameter)
+        {
+                int index = 0;
+                for(int i = 0; i < Driver.classes[0].methods.get(1).localVariableTable.length; i++)
+                {
+                        if(Driver.classes[0].methods.get(1).localVariableTable[i][0].compareTo(parameter) == 0)
+                        {
+                                index = i;
+                                break;
+                        }                       
+                }
+                return index;
+        }
+
 
 	/*
 	 * (non-Javadoc)

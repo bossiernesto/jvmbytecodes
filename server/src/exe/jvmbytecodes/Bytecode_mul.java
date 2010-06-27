@@ -26,43 +26,44 @@ class Bytecode_mul extends Bytecode_ {
 	 * @return line number
 	 */
 	public int execute() throws IOException {
+		f = (Frame_) Driver._runTimeStack.peek();
 		
 		next = lineNumber+1;
 	
 		//pop and grab objects on the stack
 		Object x, y;
-		x = Driver._stack.pop();
-		Driver.stack.set("",Driver.currentStackHeight++);
+		x = f._stack.pop();
+		f.stack.set("",f.currentStackHeight++);
 
-		y = Driver._stack.pop();
-		Driver.stack.set("",Driver.currentStackHeight++);
+		y = f._stack.pop();
+		f.stack.set("",f.currentStackHeight++);
 
 		//determine if the opcode is int long float or double
 		if(opcode.contains("i")) //the opcode is imul
 		{
 			System.out.println("Enter imul");
-			Driver._stack.push((Integer) x * (Integer) y);
-			Driver.stack.set((Integer) x * (Integer) y,--Driver.currentStackHeight);
+			f._stack.push((Integer) x * (Integer) y);
+			f.stack.set((Integer) x * (Integer) y,--f.currentStackHeight);
 			writeSnap();
 		}
 		else if(opcode.contains("l")) //the opcode lmul
 		{
-			Driver._stack.push((Long) x * (Long) y);
-			Driver.stack.set((Long) x * (Long) y,--Driver.currentStackHeight);
+			f._stack.push((Long) x * (Long) y);
+			f.stack.set((Long) x * (Long) y,--f.currentStackHeight);
 			writeSnap();
 		}
 		else if(opcode.contains("f")) //the opcode fmul
 		{
-			Driver._stack.push((Float) x * (Float) y);
-			Driver.stack.set((Float) x * (Float) y,--Driver.currentStackHeight);
+			f._stack.push((Float) x * (Float) y);
+			f.stack.set((Float) x * (Float) y,--f.currentStackHeight);
 			writeSnap();
 		}
 
 		//dmul
 		else if(opcode.contains("d"))
 		{
-			Driver._stack.push((Double) x * (Double) y);
-			Driver.stack.set((Double) x * (Double) y,--Driver.currentStackHeight);
+			f._stack.push((Double) x * (Double) y);
+			f.stack.set((Double) x * (Double) y,--f.currentStackHeight);
 			writeSnap();
 		}
 		else

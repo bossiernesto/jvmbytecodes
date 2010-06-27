@@ -26,6 +26,7 @@ class Bytecode_add extends Bytecode_ {
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
 	public int execute() throws IOException {
+		f = (Frame_) Driver._runTimeStack.peek();
 		System.out.println("Enter Bytecode_add execute");
 		//Add
 		//total: 4
@@ -33,31 +34,31 @@ class Bytecode_add extends Bytecode_ {
 		if(opcode.contains("add"))
 		{
 		Object x, y;
-		x = Driver._stack.pop();
-		y = Driver._stack.pop();
+		x = f._stack.pop();
+		y = f._stack.pop();
 		//iadd
 		if(opcode.contains("i"))
 		{
-		Driver._stack.push((Integer) x + (Integer) y);
-		System.out.println(Driver._stack.peek() + " " + Driver._stack.peek().getClass());
+		f._stack.push((Integer) x + (Integer) y);
+		System.out.println(f._stack.peek() + " " + f._stack.peek().getClass());
 		}
 		//ladd
 		else if(opcode.contains("l"))
 		{
-		Driver._stack.push((Long) x + (Long) y);
-		System.out.println(Driver._stack.peek() + " " + Driver._stack.peek().getClass());
+		f._stack.push((Long) x + (Long) y);
+		System.out.println(f._stack.peek() + " " + f._stack.peek().getClass());
 		}
 		//fadd
 		else if(opcode.contains("f"))
 		{
-		Driver._stack.push((Float) x + (Float) y);
-		System.out.println(Driver._stack.peek() + " " + Driver._stack.peek().getClass());
+		f._stack.push((Float) x + (Float) y);
+		System.out.println(f._stack.peek() + " " + f._stack.peek().getClass());
 		}
 		//dadd
 		else if(opcode.contains("d"))
 		{
-		Driver._stack.push((Double) x + (Double) y);
-		System.out.println(Driver._stack.peek() + " " + Driver._stack.peek().getClass());
+		f._stack.push((Double) x + (Double) y);
+		System.out.println(f._stack.peek() + " " + f._stack.peek().getClass());
 		}
 		else
 		{

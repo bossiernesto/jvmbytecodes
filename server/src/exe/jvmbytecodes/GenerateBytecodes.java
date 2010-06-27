@@ -403,7 +403,10 @@ class GenerateBytecodes {
 			} else if (b.contains("return")) {
 				System.out.println(";;;;;;;;;;;;;;;;;;;;;;;;;;;");
 				arraylist.add(new Bytecode_return(b));
-			} else
+			}else if (b.contains("invokestatic")) {
+				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				arraylist.add(new Bytecode_invokestatic(b));
+			}  else
 				System.out.println("no bytecodes generated");
 			// arraylist.add(new Bytecode_(b));
 
