@@ -42,8 +42,8 @@ public class Bytecode_load extends Bytecode_
 
 			int index = getLocalVariableTable(arguments.get(0));
 
-			f._stack.push(Integer.parseInt(Driver.classes[0].methods.get(1).localVariableTable[index][2]));
-			f.stack.set((String) Driver.classes[0].methods.get(1).localVariableTable[index][2], --f.currentStackHeight, "#FFCC11");
+			f._stack.push(Integer.parseInt(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2]));
+			f.stack.set((String) Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2], --f.currentStackHeight, "#FFCC11");
 
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");

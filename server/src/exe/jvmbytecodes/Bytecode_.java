@@ -155,9 +155,9 @@ abstract class Bytecode_ {
         public int getLocalVariableTable(String parameter)
         {
                 int index = 0;
-                for(int i = 0; i < Driver.classes[0].methods.get(1).localVariableTable.length; i++)
+                for(int i = 0; i < Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable.length; i++)
                 {
-                        if(Driver.classes[0].methods.get(1).localVariableTable[i][0].compareTo(parameter) == 0)
+                        if(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[i][0].compareTo(parameter) == 0)
                         {
                                 index = i;
                                 break;

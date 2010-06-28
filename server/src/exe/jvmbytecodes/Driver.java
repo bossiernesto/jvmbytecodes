@@ -141,15 +141,18 @@ public class Driver {
 		//questionID
 		questionID = 0;
 
-		// get a random color for the stack
-		//String mainColor = getRandomColor();
-		String mainColor = CURRENT_FRAME_COLOR;
-		runTimeStack.push(classes[0].methods.get(1).name, mainColor);
- 
-
 
 		Frame_ f = new Frame_(currentMethod);
 		_runTimeStack.push(f);
+
+		// get a random color for the stack
+		//String mainColor = getRandomColor();
+		String mainColor = CURRENT_FRAME_COLOR;
+		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
+		runTimeStack.push(classes[0].methods.get(1).name, mainColor);
+		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
+
+
 
 		// begin interpreter
 		Interpreter.interpret();

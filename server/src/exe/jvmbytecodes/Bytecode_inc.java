@@ -38,18 +38,18 @@ public class Bytecode_inc extends Bytecode_ {
 			System.out.println("Index is: " + index);
 			Integer x, y;
 			x = Integer.parseInt(arguments.get(1));
-			y = Integer.parseInt(Driver.classes[0].methods.get(1).localVariableTable[index][2]);
+			y = Integer.parseInt(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2]);
 			int z = x + y;
 			System.out.println("z is: " + z);
-			Driver.classes[0].methods.get(1).localVariableTable[index][2] = String.valueOf(z);
+			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = String.valueOf(z);
 			f.localVariableArray.set(z, index);
 			writeSnap();
 			System.out.println("hi");
 		}
 
-		for (int r = 0; r < Driver.classes[0].methods.get(1).localVariableTable.length; r++) {
-			for (int c = 0; c < Driver.classes[0].methods.get(1).localVariableTable[r].length; c++) {
-				System.out.println(Driver.classes[0].methods.get(1).localVariableTable[r][c]);
+		for (int r = 0; r < Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable.length; r++) {
+			for (int c = 0; c < Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[r].length; c++) {
+				System.out.println(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[r][c]);
 			}
 		}
 
