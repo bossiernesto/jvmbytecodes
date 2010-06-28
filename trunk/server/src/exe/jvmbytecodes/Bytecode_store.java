@@ -40,7 +40,10 @@ public class Bytecode_store extends Bytecode_ {
 			int index = getLocalVariableTable(arguments.get(0));
 			Integer x;
 			x = (Integer) f._stack.pop();
-			Driver.classes[0].methods.get(1).localVariableTable[index][2] = String.valueOf(x);
+			System.out.println("Driver.currentMethod: " + Driver.currentMethod);
+			System.out.println("Index: " + index);
+			System.out.println("Arguments: " + arguments);
+			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = String.valueOf(x);
 			f.stack.set("", f.currentStackHeight++);
 			f.localVariableArray.set(String.valueOf(x), index, "#FFCC11");
 			writeSnap();
