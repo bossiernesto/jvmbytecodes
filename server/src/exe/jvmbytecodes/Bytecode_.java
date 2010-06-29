@@ -32,11 +32,12 @@ abstract class Bytecode_ {
 
 	/*
 	 * Writes a snapshot for the visualization
+	 * the line is highlighted green for executing right now!
 	 */
 	public void writeSnap() throws IOException {
-		System.out.println("LineNumber: " + lineNumber + " and currentStackHeight: " + f.currentStackHeight + " and stacksize: " + f.stackSize + " and methodName: " + f.methodName);
+		//System.out.println("LineNumber: " + lineNumber + " and currentStackHeight: " + f.currentStackHeight + " and stacksize: " + f.stackSize + " and methodName: " + f.methodName);
 		f = (Frame_) Driver._runTimeStack.peek();
-	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection();
+	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
 	    pc.addPolygon(
 			    4,
 			    new double[] { 0.45, 0.45, 0.95, 0.95 },
@@ -47,15 +48,88 @@ abstract class Bytecode_ {
 			    ""          // polygon label
 			  );
 
+       if (f.stackSize > 0)
 	    Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.GREEN, f), 
+				  pc,
+				  Driver.runTimeStack, 
+				  f.stack, 
+				  Driver.heap,
+				  f.localVariableArray
+				  );
+		else
+			Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.GREEN, f), 
+				  pc,
+				  Driver.runTimeStack,
+				  Driver.heap,
+				  f.localVariableArray
+				  );
+		}
+
+	//highlights the next line we want to execute red
+	public void writeNextLineSnap() throws IOException
+	{
+		f = (Frame_) Driver._runTimeStack.peek();
+	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
+	    pc.addPolygon(
+			    4,
+			    new double[] { 0.45, 0.45, 0.95, 0.95 },
+			    new double[] { 0.05, 0.95, 0.95, 0.05 },
+			    Driver.CURRENT_FRAME_COLOR,  // fill color
+			    Driver.CURRENT_FRAME_COLOR,  // outline color
+			    "#FFFFFF",  // label color
+			    ""          // polygon label
+			  );
+
+		if (f.stackSize > 0)
+			Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.RED, f), 
 				  pc,
 				  Driver.runTimeStack, 
-				  f.stack, Driver.heap,
+				  f.stack, 
+				  Driver.heap,
 				  f.localVariableArray
 				  );
+		else
+			Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.RED, f), 
+				  pc,
+				  Driver.runTimeStack,
+				  Driver.heap,
+				  f.localVariableArray
+				  );
+	}
+
+	//we may need this to show that we are starting to execute a new method
+	//i think it's called in invoke static
+	public void writeMethodSnap() throws IOException
+	{
+		Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.GREEN, f), 
+				  Driver.runTimeStack,
+				  Driver.heap);
+	}
+
+	//last snap of the entire slideshow, called in Driver
+	public void writeFinalSnap() throws IOException
+	{
+		Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.RED, f), 
+				  Driver.runTimeStack,
+				  Driver.heap);
 	}
 
 	/*

@@ -30,42 +30,194 @@ public class Bytecode_if extends Bytecode_ {
 	 * 
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException 
+	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber + 1;
 		next = next + 2;
 		// If
+		//total: 11
 		Integer x, y;
+		
+		writeNextLineSnap();
+
 		Random rand = new Random();
 		int random = rand.nextInt(2);
-		// if_cmpgt
 
-		if (arguments.get(0).contains("icmp")) {
-			System.out.println("Enter if_icmp");
-			if (arguments.get(0).contains("icmpgt")) {
-				System.out.println("Enter if_icmpgt");
+		if(!underscore.contains("_"))
+		{
+			if (opcode.contains("ifeq"))
+			{
 				x = (Integer) f._stack.pop();
 
-				System.out.println(f._stack);
+				if ( x == 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else if (opcode.contains("ifne"))
+			{
+				x = (Integer) f._stack.pop();
+
+				if ( x != 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else if (opcode.contains("iflt"))
+			{
+				x = (Integer) f._stack.pop();
+
+				if ( x < 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else if (opcode.contains("ifge"))
+			{
+				x = (Integer) f._stack.pop();
+
+				if ( x >= 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else if (opcode.contains("ifgt"))
+			{
+				x = (Integer) f._stack.pop();
+
+				if ( x > 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else if (opcode.contains("ifle"))
+			{
+				x = (Integer) f._stack.pop();
+
+				if ( x <= 0) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);				
+			}
+			else
+				System.out.println("Not a recognized bytecode");
+		}
+		//if_cmp
+		else
+		{
+			// if_icmpeq
+			if (arguments.get(0).contains("icmpeq")) 
+			{
+				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
 
-				if (counter == 0) {
+				if ( x == y) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+			}
+			// if_icmpeq
+			else if (arguments.get(0).contains("icmpne")) 
+			{
+				x = (Integer) f._stack.pop();
+				y = (Integer) f._stack.pop();
+
+				if ( x != y) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+			}
+			// if_icmplt
+			else if (arguments.get(0).contains("icmplt")) 
+			{
+				x = (Integer) f._stack.pop();
+				y = (Integer) f._stack.pop();
+
+				if ( x > y) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+			}
+			// if_icmpge
+			else if (arguments.get(0).contains("icmpge")) 
+			{
+				x = (Integer) f._stack.pop();
+				y = (Integer) f._stack.pop();
+
+				if ( x <= y) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+			}
+			// if_icmpgt
+			else if (arguments.get(0).contains("icmpgt")) 
+			{
+				x = (Integer) f._stack.pop();
+				y = (Integer) f._stack.pop();
+				if (counter == 0) 
+				{
 					createQuestion1(x, y);
 					counter++;
-				} else
+				} 
+				else
 					createQuestion2(x, y);
 
 				/*
 				 * if(random == 1) { createQuestion1(x, y); } } else { createQuestion2(x, y); }
 				 */
 				Driver.questionID++;
-				if (x > y - 1) { /* no jump */
-				} else
+				if (x < y) 
 					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
+			// if_icmple
+			else if (arguments.get(0).contains("icmple")) 
+			{
+				x = (Integer) f._stack.pop();
+				y = (Integer) f._stack.pop();
+
+				if ( x >= y) 
+					next = Integer.parseInt(arguments.get(1));
+				else
+					/* no jump */
+				
+				f.stack.set("", f.currentStackHeight++);
+				f.stack.set("", f.currentStackHeight++);
+			}
+			else
+				System.out.println("Not a recognized bytecode.");
 		}
+
+		f.returnAddress = next;
 		return next;
 	}
 
@@ -76,8 +228,8 @@ public class Bytecode_if extends Bytecode_ {
 		XMLtfQuestion question = new XMLtfQuestion(Driver.show, Driver.questionID + "");
 		question.setQuestionText("The bytecode will jump to line number " + arguments.get(1) + ".");
 		question.setAnswer(x <= y);
-		f.stack.setColor(f.currentStackHeight, "#CD0000");
-		f.stack.setColor(f.currentStackHeight + 1, "#CD0000");
+		f.stack.setColor(f.currentStackHeight, "#6666BB");
+		f.stack.setColor(f.currentStackHeight + 1, "#6666BB");
 		writeSnap();
 		f.stack.setColor(f.currentStackHeight, "#999999");
 		f.stack.setColor(f.currentStackHeight + 1, "#999999");
@@ -96,8 +248,8 @@ public class Bytecode_if extends Bytecode_ {
 			question.setAnswer(1);
 		else
 			question.setAnswer(2);
-		f.stack.setColor(f.currentStackHeight, "#CD0000");
-		f.stack.setColor(f.currentStackHeight + 1, "#CD0000");
+		f.stack.setColor(f.currentStackHeight, "#6666BB");
+		f.stack.setColor(f.currentStackHeight + 1, "#6666BB");
 		writeSnap();
 		f.stack.setColor(f.currentStackHeight, "#999999");
 		f.stack.setColor(f.currentStackHeight + 1, "#999999");

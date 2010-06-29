@@ -48,7 +48,8 @@ public class Driver {
     static int heapSize = 0;
     static int currentMethod = 1;
     static Class_[] classes;
-    static final String CURRENT_FRAME_COLOR = "#990022";
+    static final String CURRENT_FRAME_COLOR = "#66CCBB";
+	static String CURRENT_HIGHLIGHT_COLOR = "#FFEE11";
     static GAIGSarray XMLstack;
     static int XMLstackSize = 0;
 
@@ -95,16 +96,9 @@ public class Driver {
 
 		// set current method and class
 		currentClass = 0;		
+		currentMethod =0;
 		int index = 0;
-        for(Method_ m : classes[0].methods)
-        {
-                if(m.name.equals("main"))
-                {
-                        currentMethod = index;
-                        break;
-                }
-                index++;
-        }
+
 		
         //make the XML files
 		GenerateXML.generateBytecodeXML();
@@ -120,7 +114,8 @@ public class Driver {
 			
 			System.out.println("starting uri ");
 			
-			for (int i=0; i < Driver.classes.length; i++)
+			for (int i=0; i < Driver.classes.length; i++) {
+				currentMethod =0;
 				for (int j = 0; j < Driver.classes[i].methods.size(); j++) {
 					String signature="";
 					for (int m=0; m<Driver.classes[i].methods.get(j).localVariableTable.length; m++)
@@ -129,18 +124,36 @@ public class Driver {
 					System.out.println("sinature is: "+signature+" i: "+i+" j: "+j+" "+"exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml");
 					pseudoBytecodes[i].add(new PseudoCodeDisplay("exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml"));
 					System.out.println("found file");
+					currentMethod++;
 				}
+				currentClass++;
+			}
+			currentClass = 0;		
+			currentMethod =0;
 			System.out.println("completed uri ");
 
-			for (int i=0; i < Driver.classes.length; i++)
+			for (int i=0; i < Driver.classes.length; i++) {
 				pseudoSourceCode[i] = (new PseudoCodeDisplay("exe/jvmbytecodes/" + Driver.classes[i].name + ".xml"));
+				currentClass++;
+			}
+			currentClass = 0;		
+			currentMethod =0;
 		} catch (JDOMException e) {
 			e.printStackTrace();
 		}
 
+        for(Method_ m : classes[0].methods)
+        {
+                if(m.name.equals("main"))
+                {
+                        currentMethod = index;
+                        break;
+                }
+                index++;
+        }
+
 		//questionID
 		questionID = 0;
-
 
 		Frame_ f = new Frame_(currentMethod);
 		_runTimeStack.push(f);
@@ -149,19 +162,13 @@ public class Driver {
 		//String mainColor = getRandomColor();
 		String mainColor = CURRENT_FRAME_COLOR;
 		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-		runTimeStack.push(classes[0].methods.get(1).name, mainColor);
+		runTimeStack.push(classes[0].methods.get(currentMethod).name, mainColor);
 		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-
-
 
 		// begin interpreter
 		Interpreter.interpret();
 
-	   show.close();
-		
-	   // delete files in uid/<number>
-	   //Runtime.getRuntime().exec( "rm -f " + args[0] + "/*" );
-
+	   	show.close();
 	}
 	
 	

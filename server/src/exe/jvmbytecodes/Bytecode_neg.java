@@ -10,14 +10,14 @@ import exe.*;
 import exe.pseudocode.*;
 /*
  * Recognizes all byte codes that contain mul
- * imul, lmul, fmul, dmul implemented
+ * ineg, lneg, fneg, dneg implemented
  */
-class Bytecode_mul extends Bytecode_ {
+class Bytecode_neg extends Bytecode_ {
 	
 	/*
 	 * Constructor that parses the current bytecode 
 	 */
-	Bytecode_mul(String str) {
+	Bytecode_neg(String str) {
 		parse(str);
 	}
 
@@ -29,33 +29,29 @@ class Bytecode_mul extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
 		writeNextLineSnap();
-		//imul
+	
+		//ineg
 		if(opcode.contains("i"))
 		{
-			Object x, y;
-			x = f._stack.pop();
-			y = f._stack.pop();
+			Integer x;
+			x = (Integer) f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Integer z = (Integer) x * (Integer) y;
+			Integer z = -x.intValue();
 			f._stack.push(z);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
 		}
-		//lmul
-		else if(opcode.contains("lm"))
+		//lneg
+		else if(opcode.contains("l"))
 		{
-			Object x, y, a;
+			Object a;
+			Long x;
 			a = f._stack.pop();
-			x = f._stack.pop();
-			f._stack.pop();
-			y = f._stack.pop();
+			x = (Long) f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Long z = (Long) x * (Long) y;
+			Long z = -x.longValue();
 			f._stack.push(z);
 			f._stack.push(a);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -64,33 +60,28 @@ class Bytecode_mul extends Bytecode_ {
 			f.stack.setColor(f.currentStackHeight, "#999999");
 			f.stack.setColor(f.currentStackHeight+1, "#999999");
 		}
-		//fmul
+		//fneg
 		else if(opcode.contains("f"))
 		{
-			Object x, y;
-			x = f._stack.pop();
-			y = f._stack.pop();
+			Float x;
+			x = (Float) f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Float z = (Float) x * (Float) y;
+			Float z = -x.floatValue();
 			f._stack.push(z);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
 		}
-		//dmul
+		//dneg
 		else if(opcode.contains("d"))
 		{
-			Object x, y, a;
+			Object a;
+			Double x;
 			a = f._stack.pop();
-			x = f._stack.pop();
-			f._stack.pop();
-			y = f._stack.pop();
+			x = (Double) f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Double z = (Double) x * (Double) y;
+			Double z = -x.doubleValue();
 			f._stack.push(z);
 			f._stack.push(a);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);

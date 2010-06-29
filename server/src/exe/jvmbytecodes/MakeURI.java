@@ -20,16 +20,14 @@ public class MakeURI {
 	 * Generate the byte code for the visualization
 	 */
 	static String make_uri(int[] lines, int[] colors, Frame_ f) {
-		String sHeight = f.stackSize == -1 ? "null" : String
-				.valueOf(f.stackSize - f.currentStackHeight);
-		String hHeight = Driver.heapSize == -1 ? "null" : String
-				.valueOf(Driver.heapSize);
-		String current_class_name = Driver.classes[Driver.currentClass].name;
+		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
+		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
+		String current_method_name = Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).name;
 
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("stack_height", sHeight);
-		map.put("heap_height", hHeight);
-		map.put("class_name", current_class_name);
+		map.put("stack_size", sSize);
+		map.put("heap_size", hSize);
+		map.put("method_name", current_method_name);
 		String uri = null;
 
 		try {
@@ -46,16 +44,14 @@ public class MakeURI {
 	 * This method displays the java class
 	 */
 	static String doc_uri(int line, Frame_ f) {
-		String sHeight = f.stackSize == -1 ? "null" : String
-				.valueOf(f.stackSize - f.currentStackHeight);
-		String hHeight = Driver.heapSize == -1 ? "null" : String
-				.valueOf(Driver.heapSize);
-		String current_class_name = Driver.classes[Driver.currentClass].name;
+		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
+		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
+		String current_method_name = Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).name;
 
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("stack_height", sHeight);
-		map.put("heap_height", hHeight);
-		map.put("class_name", current_class_name);
+		map.put("stack_size", sSize);
+		map.put("heap_size", hSize);
+		map.put("method_name", current_method_name);
 		String uri = null;
 
 		// convert the byte code line number to the java line number
