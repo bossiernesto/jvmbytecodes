@@ -39,7 +39,7 @@ class Bytecode_sub extends Bytecode_ {
 			y = f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			Integer z = (Integer) x - (Integer) y;
+			Integer z = (Integer) y - (Integer) x;
 			f._stack.push(z);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
@@ -57,7 +57,7 @@ class Bytecode_sub extends Bytecode_ {
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			Long z = (Long) x - (Long) y;
+			Long z = (Long) y - (Long) x;
 			f._stack.push(z);
 			f._stack.push(a);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -74,7 +74,7 @@ class Bytecode_sub extends Bytecode_ {
 			y = f._stack.pop();
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			Float z = (Float) x - (Float) y;
+			Float z = (Float) y - (Float) x;
 			f._stack.push(z);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
@@ -92,7 +92,7 @@ class Bytecode_sub extends Bytecode_ {
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
-			Double z = (Double) x - (Double) y;
+			Double z = (Double) y - (Double) x;
 			f._stack.push(z);
 			f._stack.push(a);
 			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);

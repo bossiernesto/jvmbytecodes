@@ -137,6 +137,7 @@ abstract class Bytecode_ {
 	 */
 	public void parse(String s) {
 		entireOpcode = s;
+System.out.println("entire opcode: " + s);
 		String[] s2 = s.split(":");
 		entireOpcode = s2[1];
 
