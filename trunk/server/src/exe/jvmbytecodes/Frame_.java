@@ -38,7 +38,7 @@ class Frame_{
 			stack.set("", i);
 
 		//create, set, and sort local var array
-		localVariableArray = new GAIGSarray(Driver.classes[0].methods.get(currentMethod).localVariableTable.length, false,
+		localVariableArray = new GAIGSarray(Driver.classes[0].methods.get(currentMethod).numLocals, false,
 				"Local Variables", "#999999", 0.5, 0.5, 0.9, 0.9, 0.1);
 
 		for (int i = 0; i < Driver.classes[0].methods.get(currentMethod).localVariableTable.length; i++) {

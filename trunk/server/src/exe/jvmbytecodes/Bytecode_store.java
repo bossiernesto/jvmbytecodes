@@ -36,7 +36,7 @@ public class Bytecode_store extends Bytecode_ {
 
 		// istore
 		if (opcode.contains("i")) {
-			System.out.println("Enter istore");
+			//System.out.println("Enter istore");
 
 			int index = Integer.parseInt(arguments.get(0));
 			Integer x;

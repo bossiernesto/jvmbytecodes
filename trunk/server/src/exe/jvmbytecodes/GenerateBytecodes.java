@@ -15,7 +15,6 @@ import java.util.ArrayList;
 class GenerateBytecodes {
     static long timeStamp;
     static BufferedReader br;
-    //static Class_[] classes;
 
 	/*
 	 * A generation of a class object from a class file
@@ -72,7 +71,8 @@ class GenerateBytecodes {
 		Process javac = null;
 		int javacStatus;
 		try {
-			String javacCommand = "javac -g " + path + "/" + fileName;
+		    //String javacCommand = "javac -g " + path + "/" + fileName;
+			String javacCommand = "javac -g -d " + path + " " + path + "/" + fileName;
 			System.out.println(javacCommand);
 			javac = Runtime.getRuntime().exec(javacCommand);
 		} catch (IOException e) {
@@ -350,11 +350,14 @@ class GenerateBytecodes {
 	 */
 	static class ClassNameFilter implements FilenameFilter {
 		public boolean accept(File dir, String name) {
-			return name.endsWith(".class");
-			/*
-			 * System.out.println(name); return name.endsWith(".class") && (new File(dir,name).lastModified() >
-			 * GenerateBytecodes.timeStamp);
-			 */
+		    return name.endsWith(".class");
+
+		    // System.out.println(name); 
+		    /*
+		    return name.endsWith(".class") && 
+			(new File(dir,name).lastModified() >
+			 GenerateBytecodes.timeStamp);
+		    */
 		}
 	}// ClassNameFilter class
 

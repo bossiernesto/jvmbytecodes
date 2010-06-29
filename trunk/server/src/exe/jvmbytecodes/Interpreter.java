@@ -11,7 +11,7 @@ public class Interpreter {
 	 * Cycles through byte code
 	 */
 	static public void interpret() throws IOException {
-		System.out.println("Enter interpreter");		
+		//System.out.println("Enter interpreter");		
 		Bytecode_ bc = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes[0];
 		bc.execute();
 
@@ -19,7 +19,7 @@ public class Interpreter {
 			Bytecode_[] b = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes;
 			for (Bytecode_ x : b) {
 				if (x.getLineNumber() == bc.next) {
-					System.out.println("Begin interpreting " + x.opcode);
+					//System.out.println("Begin interpreting " + x.opcode);
 					x.execute();
 					bc = x;
 				} else

@@ -1,4 +1,4 @@
-public class Fibonacci {
+class Fibonacci {
 
  public static void main(String args[]) {
  int firstNum = 0;
@@ -7,7 +7,7 @@ public class Fibonacci {
  int temp = 0;
 
  int i = 0;
- while (i < 10) {
+ while (i < 5) {
  temp = secondNum;
  secondNum = firstNum + secondNum;
  firstNum = temp;
@@ -15,8 +15,7 @@ public class Fibonacci {
  i++;
  }
 
- fibonacci = secondNum; // the twelfth fib num
-
+ fibonacci = secondNum; 
  }
 
 }
