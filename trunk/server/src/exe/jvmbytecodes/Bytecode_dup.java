@@ -9,15 +9,14 @@ import org.jdom.*;
 import exe.*;
 import exe.pseudocode.*;
 /*
- * Recognizes all byte codes that contain goto
- * only goto
+ * Recognizes bytecodes that contain dup
  */
-public class Bytecode_goto extends Bytecode_
+public class Bytecode_dup extends Bytecode_
 {
 	/*
 	 * Constructor
 	 */
-	Bytecode_goto(String str) 
+	Bytecode_dup(String str) 
 	{
 		parse(str);
 	}
@@ -29,10 +28,14 @@ public class Bytecode_goto extends Bytecode_
 	public int execute() throws IOException 
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
-		//Goto
-		next = Integer.parseInt(arguments.get(0));
+		next = lineNumber+1;
 		writeNextLineSnap();
+		Object x;
+		x = f._stack.peek();
+		f._stack.push(x);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		writeSnap();
+		f.stack.setColor(f.currentStackHeight, "#999999");
 		f.returnAddress = next;
 		return next;
 	}

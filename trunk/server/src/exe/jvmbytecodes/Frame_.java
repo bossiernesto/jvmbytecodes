@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 //import exe.GAIGSprimitiveCollection.*;
 import java.io.*;
-import java.util.*;
+import java.util.*; 
 import java.net.*;
 import exe.*;
 
@@ -23,13 +23,15 @@ class Frame_{
     int currentStackHeight;
     String methodName;
     int returnAddress;
+    int methodIndex;
 
 	public Frame_(int currentMethod)
 	{
 		stackSize = Driver.classes[0].methods.get(currentMethod).stackSize;
 		currentStackHeight = Driver.classes[0].methods.get(currentMethod).stackSize;
 		methodName = Driver.classes[0].methods.get(currentMethod).name;
-		stack = new GAIGSarray(stackSize, false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
+		stack = new GAIGSarray( stackSize  , false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
+		methodIndex = currentMethod;
 
 		//set stack to initial values, rather than "null"
 		for (int i = 0; i < stackSize; i++)

@@ -376,40 +376,64 @@ class GenerateBytecodes {
 		ArrayList<Bytecode_> arraylist = new ArrayList<Bytecode_>();
 
 		for (String b : bc) {
-			if (b.contains("mul")) {
-				System.out.println("___________________________");
-				arraylist.add(new Bytecode_mul(b));
-			} else if (b.contains("add")) {
-				System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+			if (b.contains("add")) {
 				arraylist.add(new Bytecode_add(b));
+			} else if (b.contains("and")) {
+				arraylist.add(new Bytecode_and(b));
 			} else if (b.contains("const")) {
-				System.out.println("***************************");
 				arraylist.add(new Bytecode_const(b));
+			} else if (b.contains("dcmp")) {
+				arraylist.add(new Bytecode_dcmp(b));
+			} else if (b.contains("div")) {
+				arraylist.add(new Bytecode_div(b));
+			} else if (b.contains("dup") && !b.contains("dup2") && !b.contains("x")) {
+				arraylist.add(new Bytecode_dup(b));
+			} else if (b.contains("dup2") && !b.contains("x")) {
+				arraylist.add(new Bytecode_dup2(b));
+			} else if (b.contains("dup_x1")) {
+				arraylist.add(new Bytecode_dup_x1(b));
+			} else if (b.contains("dup_x2")) {
+				arraylist.add(new Bytecode_dup_x2(b));
+			} else if (b.contains("dup2_x1")) {
+				arraylist.add(new Bytecode_dup2_x1(b));
+			} else if (b.contains("dup2_x2")) {
+				arraylist.add(new Bytecode_dup2_x2(b));
+			} else if (b.contains("goto")) {
+				arraylist.add(new Bytecode_goto(b));
 			} else if (b.contains("if")) {
-				System.out.println("(((((((((((((((((((((((((((");
 				arraylist.add(new Bytecode_if(b));
 			} else if (b.contains("inc")) {
-				System.out.println(":::::::::::::::::::::::::::");
 				arraylist.add(new Bytecode_inc(b));
-			} else if (b.contains("load")) {
-				System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				arraylist.add(new Bytecode_load(b));
-			} else if (b.contains("store")) {
-				System.out.println("###########################");
-				arraylist.add(new Bytecode_store(b));
-			} else if (b.contains("goto")) {
-				System.out.println("+++++++++++++++++++++++++++");
-				arraylist.add(new Bytecode_goto(b));
-			} else if (b.contains("return")) {
-				System.out.println(";;;;;;;;;;;;;;;;;;;;;;;;;;;");
-				arraylist.add(new Bytecode_return(b));
-			}else if (b.contains("invokestatic")) {
-				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			} else if (b.contains("invokestatic")) {
 				arraylist.add(new Bytecode_invokestatic(b));
-			}  else
+			} else if (b.contains("lcmp")) {
+				arraylist.add(new Bytecode_lcmp(b));
+			} else if (b.contains("load")) {
+				arraylist.add(new Bytecode_load(b));
+			} else if (b.contains("mul")) {
+				arraylist.add(new Bytecode_mul(b));
+			} else if (b.contains("neg")) {
+				arraylist.add(new Bytecode_neg(b));
+			} else if (b.contains("or") && !b.contains("store") && !b.contains("xor")) {
+				arraylist.add(new Bytecode_or(b));
+			} else if (b.contains("pop") && !b.contains("pop2")) {
+				arraylist.add(new Bytecode_pop(b));
+			} else if (b.contains("pop2")) {
+				arraylist.add(new Bytecode_pop2(b));
+			} else if (b.contains("rem")) {
+				arraylist.add(new Bytecode_rem(b));
+			} else if (b.contains("return")) {
+				arraylist.add(new Bytecode_return(b));
+			} else if (b.contains("store")) {
+				arraylist.add(new Bytecode_store(b));
+			} else if (b.contains("sub")) {
+				arraylist.add(new Bytecode_sub(b));
+			} else if (b.contains("swap")) {
+				arraylist.add(new Bytecode_swap(b));
+			} else if (b.contains("xor")) {
+				arraylist.add(new Bytecode_xor(b));
+			} else
 				System.out.println("no bytecodes generated");
-			// arraylist.add(new Bytecode_(b));
-
 		}
 		for (int i = 0; i < arraylist.size(); i++) {
 			System.out.println(arraylist.get(i).toString());

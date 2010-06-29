@@ -19,7 +19,7 @@ public class GenerateXML {
 				String bytecodeStr = "";
 				bytecodeStr += "<?xml version=\"1.0\"?>\n";
 				bytecodeStr += "<pseudocode>\n";
-				bytecodeStr += "\t<stack><replace var=\"class_name\" /></stack>\n";
+				bytecodeStr += "\t<stack>method: <replace var=\"method_name\" /></stack>\n";
 				bytecodeStr += "\t<code>\n";
 				bytecodeStr += "\t<signature>Java Byte Code</signature>\n";
 
@@ -35,8 +35,8 @@ public class GenerateXML {
 
 				bytecodeStr += "\t</code>\n";
 				bytecodeStr += "\t<vars>\n";
-				bytecodeStr += "\t<var>heap height = <replace var=\"heap_height\" /></var>\n";
-				bytecodeStr += "\t<var>stack height = <replace var=\"stack_height\" /></var>\n";
+				bytecodeStr += "\t<var>heap size: <replace var=\"heap_size\" /></var>\n";
+				bytecodeStr += "\t<var>stack size: <replace var=\"stack_size\" /></var>\n";
 				bytecodeStr += "\t</vars>\n";
 				bytecodeStr += "</pseudocode>\n";
 
@@ -87,7 +87,7 @@ public class GenerateXML {
 			String bytecodeStr = "";
 			bytecodeStr += "<?xml version=\"1.0\"?>\n";
 			bytecodeStr += "<pseudocode>\n";
-			bytecodeStr += "\t<stack><replace var=\"class_name\" /></stack>\n";
+			bytecodeStr += "\t<stack>method: <replace var=\"method_name\" /></stack>\n";
 			bytecodeStr += "\t<code>\n";
 			bytecodeStr += "\t<signature>Java Code</signature>\n";
 
@@ -125,6 +125,10 @@ public class GenerateXML {
 			}
 
 			bytecodeStr += "\t</code>\n";
+			bytecodeStr += "\t<vars>\n";
+			bytecodeStr += "\t<var>heap size: <replace var=\"heap_size\" /></var>\n";
+			bytecodeStr += "\t<var>stack size: <replace var=\"stack_size\" /></var>\n";
+			bytecodeStr += "\t</vars>\n";
 			bytecodeStr += "</pseudocode>\n";
 
 			String XML = "exe/jvmbytecodes/" + Driver.classes[i].name + ".xml";
@@ -146,6 +150,8 @@ public class GenerateXML {
 		for (int i = 0; i < temp.length(); i++) {
 			if (temp.charAt(i) == '<')
 				returnStr += "&#60;";
+			else if (temp.charAt(i) == ' ')
+				returnStr += "&#32;";
 			else
 				returnStr += temp.charAt(i);
 		}
