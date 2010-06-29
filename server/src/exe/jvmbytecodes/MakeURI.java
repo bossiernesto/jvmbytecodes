@@ -66,8 +66,7 @@ public class MakeURI {
 		for (int i = 0; i < currentMethod.lineNumberTable.length; i++) {
 			if (currentMethod.lineNumberTable[i][1] <= line) {
 				javaLine = currentMethod.lineNumberTable[i][0] - 1;
-				System.out.println("\t\t\t\t\t\t\t\t\t"
-						+ (currentMethod.lineNumberTable[i][0] - 1));
+				//System.out.println("\t\t\t\t\t\t\t\t\t"						+ (currentMethod.lineNumberTable[i][0] - 1));
 			}
 		}
 
