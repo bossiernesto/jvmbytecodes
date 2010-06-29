@@ -53,7 +53,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x == 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -64,7 +64,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x != 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -75,7 +75,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x < 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -86,7 +86,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x >= 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -97,7 +97,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x > 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -108,7 +108,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x <= 0) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);				
 			}
@@ -127,12 +127,12 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x == y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
-			// if_icmpeq
+			// if_icmpne
 			else if (arguments.get(0).contains("icmpne")) 
 			{
 				x = (Integer) f._stack.pop();
@@ -141,7 +141,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x != y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
@@ -155,7 +155,7 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x > y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
@@ -163,16 +163,19 @@ public class Bytecode_if extends Bytecode_ {
 			// if_icmpge
 			else if (arguments.get(0).contains("icmpge")) 
 			{
+				System.out.println(f._stack);
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
 
 				if ( x <= y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				
+				writeSnap();
 			}
 			// if_icmpgt
 			else if (arguments.get(0).contains("icmpgt")) 
@@ -194,7 +197,7 @@ public class Bytecode_if extends Bytecode_ {
 				if (x < y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
@@ -208,10 +211,11 @@ public class Bytecode_if extends Bytecode_ {
 				if ( x >= y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
-					/* no jump */
+					;/* no jump */
 				
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				writeSnap();
 			}
 			else
 				System.out.println("Not a recognized bytecode.");

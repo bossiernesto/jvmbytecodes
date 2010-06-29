@@ -2,16 +2,31 @@ class T
 {
  public static void main( String [ ] args )
  {
-    l();
+ l();
  }
 
  static void l()
  {
-	float a = 1;
-	float b = a + a;
-	float c = -(b*b);
-	float d = b-b;
-	float e = c/b;
-	float z = b + c + d + e;
+ int a = 1;
+ int b = a + a;
+ int c = (b*b);
+ int d = -(b-a);
+ int e = c/b;
+ int f = a + b + c + d + e;
+ int g = a & b;
+ int h = a | b;
+ int i = a ^ b;
+ while(e < 5)
+ {
+ m();
+ a++;
+ e++;
+ }
+ }
+
+ static void m()
+ {
+ float j = 2;
+ j = j*1;
  }
 }
