@@ -19,7 +19,7 @@ public class GenerateXML {
 				String bytecodeStr = "";
 				bytecodeStr += "<?xml version=\"1.0\"?>\n";
 				bytecodeStr += "<pseudocode>\n";
-				bytecodeStr += "\t<stack>method: <replace var=\"method_name\" /></stack>\n";
+				bytecodeStr += "\t<stack>method: <replace var=\"method_call_stack\" /></stack>\n";
 				bytecodeStr += "\t<code>\n";
 				bytecodeStr += "\t<signature>Java Byte Code</signature>\n";
 
@@ -87,7 +87,7 @@ public class GenerateXML {
 			String bytecodeStr = "";
 			bytecodeStr += "<?xml version=\"1.0\"?>\n";
 			bytecodeStr += "<pseudocode>\n";
-			bytecodeStr += "\t<stack>method: <replace var=\"method_name\" /></stack>\n";
+			bytecodeStr += "\t<stack>method: <replace var=\"method_call_stack\" /></stack>\n";
 			bytecodeStr += "\t<code>\n";
 			bytecodeStr += "\t<signature>Java Code</signature>\n";
 
@@ -150,7 +150,7 @@ public class GenerateXML {
 		for (int i = 0; i < temp.length(); i++) {
 			if (temp.charAt(i) == '<')
 				returnStr += "&#60;";
-			else if (temp.charAt(i) == '>')
+			if (temp.charAt(i) == '>')
 				returnStr += "&#62;";
 			else if (temp.charAt(i) == '&')
 				returnStr += "&#38;";
