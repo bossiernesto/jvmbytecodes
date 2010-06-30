@@ -20,9 +20,11 @@ abstract class Bytecode_ {
 
 	public String opcode;
 	public int lineNumber;
-	public String comments;
 	public ArrayList<String> arguments = new ArrayList<String>();
-	public char type;
+	public String objectType;
+	public String path;
+	public String parameters;
+	public String returnType;
 	public int next;
 	public String underscore;
 	public String entireOpcode;
@@ -137,86 +139,44 @@ abstract class Bytecode_ {
 	 */
 	public void parse(String s) {
 		entireOpcode = s;
-System.out.println("entire opcode: " + s);
-		String[] s2 = s.split(":");
-		entireOpcode = s2[1];
 
-		if (s.contains(";")) {
-			String[] temp = s.split(";");
-			comments = temp[1];
-			temp = temp[0].split("[ \t]");
-			lineNumber = Integer.parseInt(temp[0].substring(0, temp[0].length() - 1));
+		if(s.contains("_"))
+			underscore = "_";
+		else
+			underscore = " ";
 
-			int j = 1;
-			while (temp[j].compareTo("") == 0)
-				j++;
-			opcode = temp[j];
+		if(s.contains(";"))
+		{
+			String[] split = s.split("//");
 
-			if (opcode.contains("_")) {
-				underscore = "_";
-				String[] temp1 = opcode.split("_");
-				opcode = temp1[0];
-				arguments.add(temp1[1]);
-			} else {
-				underscore = " ";
-			}
+			String[] front = split[0].split("( |\\t|:|,|_|;)+");
+			lineNumber = Integer.parseInt(front[0]);
+			opcode = front[1];
+			for(int i = 2; i < front.length; i++)
+				arguments.add(front[i]);
 
-			if (temp.length <= 1) {
+			String[] back = split[1].split("( |\\t|:|,|_|;)+");
+			objectType = back[0];
+			path = back[1];
+			if(back.length > 2)
+				parameters = back[2].substring(1, back[2].length());
+			else
 				;
-			} else {
-				for (int i = 2; i < temp.length; i++) {
-					if (temp[i].contains(",")) {
-						temp[i] = temp[i].substring(0, temp[i].length() - 1);
-					}
-					arguments.add(temp[i]);
-				}
-			}
-
-                        if(!comments.equals(null))
-                        {
-				String[] commentsString = comments.split(" ");
-
-                                        for( int i = 1; i < commentsString.length; i++)
-                                        {
-                                                String returnType = "";
-                                                if(commentsString[i].contains(":"))
-                                                {
-                                                        returnType = commentsString[i].substring(commentsString[i].length() - 1, commentsString[i].length());
-                                                        commentsString[i] = commentsString[i].substring(0, commentsString[i].length()-1);
-                                                }
-                                                arguments.add(commentsString[i]);
-                                                if(returnType != "")
-                                                        arguments.add(returnType);
-                                        }
-                         }
-
-		} else {
-			String[] temp = s.split("[ \t]");
-			lineNumber = Integer.parseInt(temp[0].substring(0, temp[0].length() - 1));
-
-			int j = 1;
-			while (temp[j].compareTo("") == 0)
-				j++;
-			opcode = temp[j];
-
-			if (opcode.contains("_")) {
-				underscore = "_";
-				String[] temp1 = opcode.split("_");
-				opcode = temp1[0];
-				arguments.add(temp1[1]);
-			} else {
-				underscore = "";
-			}
-
-			for (int i = 2; i < temp.length; i++) {
-				if (temp[i].contains(",")) {
-					temp[i] = temp[i].substring(0, temp[i].length() - 1);
-				}
-				arguments.add(temp[i]);
-			}
+			if(back.length > 3)
+				returnType = back[3].substring(1, back[3].length());
+			else
+				;
+		}
+		else
+		{
+			String[] split = s.split("( |\\t|:|,|_)+");
+			lineNumber = Integer.parseInt(split[0]);
+			opcode = split[1];
+			for(int i = 2; i < split.length; i++)
+				arguments.add(split[i]);		
 		}
 		next = lineNumber + 1;
-		System.out.println(opcode + " " + lineNumber + " " + arguments + " " + comments + " " + next);
+		System.out.println("Opcode: " + opcode + ", lineNumber: " + lineNumber + ", arguments: " + arguments + ", parameters: " + parameters + ", returnType: " + returnType + ", next: " + next);
 	}
 
 	/*

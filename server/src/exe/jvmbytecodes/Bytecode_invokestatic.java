@@ -26,12 +26,10 @@ public class Bytecode_invokestatic extends Bytecode_
 			f = (Frame_) Driver._runTimeStack.peek();
 			f.returnAddress = next;
 			writeNextLineSnap();
-            String[] methodName = arguments.get(2).split(":");
-            String name = methodName[0];
             int index = 0;
             for(Method_ m : Driver.classes[0].methods)
             {
-                    if(m.name.equals(name))
+                    if(m.name.equals(path))
                     {
                             break;
                     }
@@ -39,7 +37,7 @@ public class Bytecode_invokestatic extends Bytecode_
             }
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, "#999999");        
-			Driver.runTimeStack.push(name, Driver.CURRENT_FRAME_COLOR);
+			Driver.runTimeStack.push(path, Driver.CURRENT_FRAME_COLOR);
 			writeMethodSnap();
 			Driver.currentMethod = index;
         	Frame_ f2 = new Frame_(Driver.currentMethod);

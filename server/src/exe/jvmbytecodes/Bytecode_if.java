@@ -124,6 +124,15 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
 
+				/*question block*/
+				if (counter == 0) 
+				{
+					createQuestion1(x, y);
+					counter++;
+				} 
+				else
+					createQuestion2(x, y);
+
 				if ( x == y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
@@ -137,6 +146,15 @@ public class Bytecode_if extends Bytecode_ {
 			{
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
+
+				/*question block*/
+				if (counter == 0) 
+				{
+					createQuestion1(x, y);
+					counter++;
+				} 
+				else
+					createQuestion2(x, y);
 
 				if ( x != y) 
 					next = Integer.parseInt(arguments.get(1));
@@ -152,6 +170,15 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
 
+				/*question block*/
+				if (counter == 0) 
+				{
+					createQuestion1(x, y);
+					counter++;
+				} 
+				else
+					createQuestion2(x, y);
+
 				if ( x > y) 
 					next = Integer.parseInt(arguments.get(1));
 				else
@@ -163,9 +190,17 @@ public class Bytecode_if extends Bytecode_ {
 			// if_icmpge
 			else if (arguments.get(0).contains("icmpge")) 
 			{
-				System.out.println(f._stack);
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
+
+				/*question block*/
+				if (counter == 0) 
+				{
+					createQuestion1(x, y);
+					counter++;
+				} 
+				else
+					createQuestion2(x, y);
 
 				if ( x <= y) 
 					next = Integer.parseInt(arguments.get(1));
@@ -182,6 +217,8 @@ public class Bytecode_if extends Bytecode_ {
 			{
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
+				
+				/*question block*/
 				if (counter == 0) 
 				{
 					createQuestion1(x, y);
@@ -207,6 +244,15 @@ public class Bytecode_if extends Bytecode_ {
 			{
 				x = (Integer) f._stack.pop();
 				y = (Integer) f._stack.pop();
+
+				/*question block*/
+				if (counter == 0) 
+				{
+					createQuestion1(x, y);
+					counter++;
+				} 
+				else
+					createQuestion2(x, y);
 
 				if ( x >= y) 
 					next = Integer.parseInt(arguments.get(1));
