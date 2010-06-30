@@ -39,11 +39,33 @@ import java.util.*;
 public class jvmbytecodes {
 	/*
 	 * Calls the Driver program.
-	 * @param args[0] ex: ../../src/exe/jvmbytecodes
-	 * @param args[1] ex: Test.java
-	 * @param args[2] ex: ../../src/exe/jvmbytecodes/1.xml
 	 */
     public static void main(String args[]) throws IOException {
+
+	Hashtable hash = XMLParameterParser.parseToHash( args[2] );
+
+	String s1 = (String)hash.get("You may load one of your Java source files (and if so, make sure to replace 'EMPTY' with its name), or pick a built-in program below.");
+				    
+	String s2 = (String)hash.get("You may pick a built-in sample program from the drop-down list on the right. Then, click OK.");
+
+	String[] params = new String[3];
+	params[0] = args[0];
+
+	if (s2.startsWith("Builtin_Program_")) { 
+	    // the user picked a builtin example
+
+	    params[1] = s2.substring(16);  // example name
+	    params[2] = "contents are not in here";
+	}
+	else { // the user loaded a file of their own
+
+	    // the first line of s is the name of the file
+	    params[1] = s1.substring(0,s1.indexOf('\n') );
+	    // the rest of s is the contents of the file
+	    params[2] = s1.substring(s1.indexOf('\n') + 1);
+	}
+
+	/*
 	System.out.println("jvmbytecodes.java args[0]: " + args[0] + " args[1]: " + args[1]);
 
 	Hashtable hash = XMLParameterParser.parseToHash( args[2]);
@@ -56,6 +78,7 @@ public class jvmbytecodes {
 	params[1] = s.substring(0,s.indexOf('\n') );
 	// the rest of s is the contents of the file
 	params[2] = s.substring(s.indexOf('\n') + 1);
+	*/
 
 	Driver.main(params);
 
