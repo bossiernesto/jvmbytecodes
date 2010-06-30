@@ -37,9 +37,9 @@ public class Bytecode_inc extends Bytecode_ {
 			int index = Integer.parseInt(arguments.get(0));
 			Integer x, y;
 			x = Integer.parseInt(arguments.get(1));
-			y = Integer.parseInt(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2]);
+			y = Integer.parseInt(f._localVariableArray[index]);
 			int z = x + y;
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = String.valueOf(z);
+			f._localVariableArray[index] = String.valueOf(z);
 			f.localVariableArray.set(z, index, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.localVariableArray.setColor(index, "#999999");

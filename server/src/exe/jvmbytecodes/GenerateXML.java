@@ -150,6 +150,8 @@ public class GenerateXML {
 		for (int i = 0; i < temp.length(); i++) {
 			if (temp.charAt(i) == '<')
 				returnStr += "&#60;";
+			else if (temp.charAt(i) == '>')
+				returnStr += "&#62;";
 			else if (temp.charAt(i) == '&')
 				returnStr += "&#38;";
 			else if (temp.charAt(i) == '|')

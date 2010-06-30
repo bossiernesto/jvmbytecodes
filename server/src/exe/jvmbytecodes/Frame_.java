@@ -18,6 +18,7 @@ class Frame_{
 
     Stack _stack = new Stack();
     GAIGSarray stack;
+	String[] _localVariableArray;
     GAIGSarray localVariableArray;
     int stackSize = 0;
     int currentStackHeight;
@@ -32,7 +33,8 @@ class Frame_{
 		methodName = Driver.classes[0].methods.get(currentMethod).name;
 		stack = new GAIGSarray( stackSize  , false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
 		methodIndex = currentMethod;
-
+		 _localVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
+		
 		//set stack to initial values, rather than "null"
 		for (int i = 0; i < stackSize; i++)
 			stack.set("", i);
@@ -41,13 +43,20 @@ class Frame_{
 		localVariableArray = new GAIGSarray(Driver.classes[0].methods.get(currentMethod).numLocals, false,
 				"Local Variables", "#999999", 0.5, 0.5, 0.9, 0.9, 0.1);
 
-		for (int i = 0; i < Driver.classes[0].methods.get(currentMethod).localVariableTable.length; i++) {
-			String[][] array = Driver.classes[0].methods.get(currentMethod).localVariableTable;
-			Arrays.sort(array, new Compare());
+		String[][] array = Driver.classes[0].methods.get(currentMethod).localVariableTable;
+		Arrays.sort(array, new Compare());
+
+		for (int i = 0; i < _localVariableArray.length; i++) {
 			localVariableArray.set("", i);
-			localVariableArray.setRowLabel(array[i][1] + " | " + array[i][0], i);
+			localVariableArray.setRowLabel(Integer.toString(i), i);
 		}
+		
+		for (int i = 0; i < Driver.classes[0].methods.get(currentMethod).localVariableTable.length; i++) {
+			int index = Integer.parseInt(Driver.classes[0].methods.get(currentMethod).localVariableTable[i][0]);
+			localVariableArray.setRowLabel(array[i][1] + " | " + array[i][0], index);
+		}
+
+		for(int i = 0; i < _localVariableArray.length; i++)
+			System.out.println("localVarArray: " + localVariableArray.get(i));
 	}
-
-
 }

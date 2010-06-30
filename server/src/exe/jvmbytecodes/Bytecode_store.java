@@ -41,7 +41,7 @@ public class Bytecode_store extends Bytecode_ {
 			int index = Integer.parseInt(arguments.get(0));
 			Integer x;
 			x = (Integer) f._stack.pop();
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = String.valueOf(x);
+			f._localVariableArray[index] = String.valueOf(x);
 			f.stack.set("", f.currentStackHeight++);
 			f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
@@ -56,12 +56,8 @@ public class Bytecode_store extends Bytecode_ {
 			y = (String) f._stack.pop();
 			x = (Long) f._stack.pop();
 			System.out.println("Index: " + index);
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = y;
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index+1][2] = String.valueOf(x);
-
-for(int i = 0; i < Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable.length; i++)
-	System.out.println(Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[i][2]);
-
+			f._localVariableArray[index] = y;
+			f._localVariableArray[index+1] = String.valueOf(x);
 			f.stack.set("", f.currentStackHeight++);			
 			f.stack.set("", f.currentStackHeight++);
 			f.localVariableArray.set(String.valueOf(y), index, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -75,7 +71,7 @@ for(int i = 0; i < Driver.classes[0].methods.get(Driver.currentMethod).localVari
 			int index = Integer.parseInt(arguments.get(0));
 			Float x;
 			x = (Float) f._stack.pop();
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = String.valueOf(x);
+			f._localVariableArray[index] = String.valueOf(x);
 			f.stack.set("", f.currentStackHeight++);
 			f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
@@ -89,8 +85,8 @@ for(int i = 0; i < Driver.classes[0].methods.get(Driver.currentMethod).localVari
 			String y;
 			y = (String) f._stack.pop();
 			x = (Double) f._stack.pop();
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index][2] = y;
-			Driver.classes[0].methods.get(Driver.currentMethod).localVariableTable[index+1][2] = String.valueOf(x);
+			f._localVariableArray[index] = y;
+			f._localVariableArray[index+1] = String.valueOf(x);
 			f.stack.set("", f.currentStackHeight++);			
 			f.stack.set("", f.currentStackHeight++);
 			f.localVariableArray.set(String.valueOf(y), index, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -98,6 +94,17 @@ for(int i = 0; i < Driver.classes[0].methods.get(Driver.currentMethod).localVari
 			writeSnap();
 			f.localVariableArray.setColor(index, "#999999");
 			f.localVariableArray.setColor(index+1, "#999999");
+		}
+		//aconst_null
+		else if (opcode.contains("astore")) {
+			int index = Integer.parseInt(arguments.get(0));
+			Object x;
+			x = f._stack.pop();
+			f._localVariableArray[index] = " ";
+			f.stack.set("", f.currentStackHeight++);
+			f.localVariableArray.set("null", index, Driver.CURRENT_HIGHLIGHT_COLOR);
+			writeSnap();
+			f.localVariableArray.setColor(index, "#999999");
 		}
 		else
 			System.out.println("store bytecode not found");

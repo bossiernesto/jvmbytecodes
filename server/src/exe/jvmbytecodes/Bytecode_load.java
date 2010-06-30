@@ -40,8 +40,8 @@ public class Bytecode_load extends Bytecode_
 		{
 			int index = Integer.parseInt(arguments.get(0));
 
-			f._stack.push(Integer.parseInt(Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2]));
-			f.stack.set((String) Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f._stack.push(Integer.parseInt(f._localVariableArray[index]));
+			f.stack.set((String)f._localVariableArray[index], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
@@ -52,8 +52,8 @@ public class Bytecode_load extends Bytecode_
 			int index = Integer.parseInt(arguments.get(0));
 			Long x;
 			String y;
-			y = Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2];
-			x = Long.parseLong(Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index + 1][2]);
+			y =f._localVariableArray[index];
+			x = Long.parseLong(f._localVariableArray[index+1]);
 			f._stack.push(x);
 			f._stack.push(y);
 			System.out.println(f._stack);
@@ -69,8 +69,8 @@ public class Bytecode_load extends Bytecode_
 		{
 			int index = Integer.parseInt(arguments.get(0));
 
-			f._stack.push(Float.parseFloat(Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2]));
-			f.stack.set((String) Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f._stack.push(Float.parseFloat(f._localVariableArray[index]));
+			f.stack.set((String)f._localVariableArray[index], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
@@ -81,8 +81,8 @@ public class Bytecode_load extends Bytecode_
 			int index = Integer.parseInt(arguments.get(0));
 			Double x;
 			String y;
-			y = Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index][2];
-			x = Double.parseDouble(Driver.classes[Driver.currentClass].methods.get(Driver.currentMethod).localVariableTable[index + 1][2]);
+			y =f._localVariableArray[index];
+			x = Double.parseDouble(f._localVariableArray[index+1]);
 
 			f._stack.push(x);
 			f._stack.push(y);

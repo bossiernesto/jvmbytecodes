@@ -383,7 +383,9 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_add(b));
 			} else if (b.contains("and")) {
 				arraylist.add(new Bytecode_and(b));
-			} else if (b.contains("const")) {
+			} else if (b.contains("bipush")) {
+				arraylist.add(new Bytecode_bipush(b));		
+		    } else if (b.contains("const")) {
 				arraylist.add(new Bytecode_const(b));
 			} else if (b.contains("dcmp")) {
 				arraylist.add(new Bytecode_dcmp(b));
@@ -411,6 +413,8 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_invokestatic(b));
 			} else if (b.contains("lcmp")) {
 				arraylist.add(new Bytecode_lcmp(b));
+			} else if (b.contains("ldc")) {
+				arraylist.add(new Bytecode_ldc(b));	
 			} else if (b.contains("load")) {
 				arraylist.add(new Bytecode_load(b));
 			} else if (b.contains("mul")) {
@@ -427,6 +431,8 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_rem(b));
 			} else if (b.contains("return")) {
 				arraylist.add(new Bytecode_return(b));
+			} else if (b.contains("sipush")) {
+				arraylist.add(new Bytecode_sipush(b));	
 			} else if (b.contains("store")) {
 				arraylist.add(new Bytecode_store(b));
 			} else if (b.contains("sub")) {
