@@ -57,22 +57,30 @@ public class Driver {
 	 * Main driver for the client
 	 * 
 	 * args[0] is the full path and number for naming showfile 
-	 * args[1] is the name of the Java source file or "" 
-	 * args[2] is the contents of the Java file
 	 */
 	public static void main(String args[]) throws IOException {
 
+	    String file_contents = null;
+	    String fileName = null;
+	    File pathname = new File("", args[0]);
 
-		String file_contents = args[2];
-		File pathname = new File("", args[0]);
-		String fileName = (args[1].equals("") ? "Test.java" : args[1]);
+	    // create the uid sub-directory
+	    try {
+		success = (pathname.mkdir());
+	    } catch (Exception e) {
+		System.err.println("Error: " + e.getMessage() );
+	    }
 
-		try {
-			success = (pathname.mkdir());
-		} catch (Exception e) {
-			System.err.println("Error: " + e.getMessage() + "here4");
-			System.err.println("Error: " + e.getMessage() + "here2");
-		}
+	    if (args[2].equals("contents are not in here")) { 
+		// file is a builtin example
+		fileName = args[1] + ".java";
+		Runtime.getRuntime().exec( 
+                   "cp ../../src/exe/jvmbytecodes/Builtin_Programs/" + args[1] + " " + args[0] + "/" + fileName );
+	    } else { // file is a user file and its content is in args[2]
+		file_contents = args[2];
+		
+		fileName = args[1];
+
 		try {
 			FileWriter fw = new FileWriter(args[0] + "/" + fileName);
 			BufferedWriter bw = new BufferedWriter(fw);
@@ -80,12 +88,14 @@ public class Driver {
 			outFile.print(file_contents);
 			outFile.close();
 		} catch (Exception e) {
-			System.err.println("Error: " + e.getMessage() + "here1");
+			System.err.println("Error: " + e.getMessage() );
 		}
+	    } // done writing .java file
 
-		    //String[] tmp = { args[0] + ".sho", args[0], args[1] };
-		    String[] tmp = { args[0], args[1] };
 
+
+	    String[] tmp = { args[0], fileName };
+			
 		show = new ShowFile(args[0] + ".sho", 5); // first argument is the script foo.sho
 		
 		classes = GenerateBytecodes.getClasses(tmp);
@@ -102,7 +112,7 @@ public class Driver {
 		
         //make the XML files
 		GenerateXML.generateBytecodeXML();
-		GenerateXML.generateSourceCodeXML(args[0], args[1]);
+		GenerateXML.generateSourceCodeXML(args[0], fileName);
 
 		pseudoBytecodes = new ArrayList[Driver.classes.length];
 		for (int i=0; i<Driver.classes.length; i++)
