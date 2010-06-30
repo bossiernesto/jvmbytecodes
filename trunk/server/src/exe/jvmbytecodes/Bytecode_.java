@@ -23,7 +23,7 @@ abstract class Bytecode_ {
 	public ArrayList<String> arguments = new ArrayList<String>();
 	public String objectType;
 	public String path;
-	public String parameters;
+	public String[] parameters;
 	public String returnType;
 	public int next;
 	public String underscore;
@@ -155,15 +155,21 @@ abstract class Bytecode_ {
 			for(int i = 2; i < front.length; i++)
 				arguments.add(front[i]);
 
-			String[] back = split[1].split("( |\\t|:|,|_|;)+");
+			String[] back = split[1].split("( |\\t|:|,|_|;|\\))+");
 			objectType = back[0];
 			path = back[1];
 			if(back.length > 2)
-				parameters = back[2].substring(1, back[2].length());
+			{
+				String combinedParams = back[2].substring(1, back[2].length());
+				char[] charArray = combinedParams.toCharArray();
+				parameters = new String[charArray.length];
+				for(int i = 0; i < charArray.length; i++)
+					parameters[i] = Character.toString(charArray[i]);
+			}
 			else
 				;
 			if(back.length > 3)
-				returnType = back[3].substring(1, back[3].length());
+				returnType = back[3];
 			else
 				;
 		}
@@ -176,7 +182,7 @@ abstract class Bytecode_ {
 				arguments.add(split[i]);		
 		}
 		next = lineNumber + 1;
-		System.out.println("Opcode: " + opcode + ", lineNumber: " + lineNumber + ", arguments: " + arguments + ", parameters: " + parameters + ", returnType: " + returnType + ", next: " + next);
+		//System.out.println("Opcode: " + opcode + ", lineNumber: " + lineNumber + ", arguments: " + arguments + ", path: " + path + ", + parameters " + parameters + ", returnType: "+ returnType + ", 			next: " + next);
 	}
 
 	/*

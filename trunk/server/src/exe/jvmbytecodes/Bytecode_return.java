@@ -30,25 +30,86 @@ public class Bytecode_return extends Bytecode_ {
 	public int execute() throws IOException {
 		writeNextLineSnap();
 		writeSnap();
-		
-		if(Driver.runTimeStack.size() > 1)
+		if(opcode.equals("return"))
+		{		
+			if(Driver.runTimeStack.size() > 1)
+			{
+				Driver._runTimeStack.pop();
+				Driver.runTimeStack.pop();
+				f = (Frame_) Driver._runTimeStack.peek();
+				next = f.returnAddress;
+				String x = (String) Driver.runTimeStack.pop();
+				Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
+				Driver.currentMethod = f.methodIndex;
+			}
+			else
+			{
+				f = (Frame_) Driver._runTimeStack.pop();
+				Driver.runTimeStack.pop();
+				next = -1;
+				writeFinalSnap();
+			}
+		}
+		else if(opcode.equals("ireturn"))
 		{
-			Driver._runTimeStack.pop();
+			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
+			int integer = (Integer) f2._stack.pop();
+			f._stack.push(integer);
+			f.stack.set(integer, --f.currentStackHeight);
 			next = f.returnAddress;
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
 			Driver.currentMethod = f.methodIndex;
-			writeSnap();
+		}
+		else if(opcode.equals("lreturn"))
+		{
+			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
+			Driver.runTimeStack.pop();
+			f = (Frame_) Driver._runTimeStack.peek();
+			String type = (String) f2._stack.pop();
+			int integer = (Integer) f2._stack.pop();
+			f._stack.push(integer);
+			f._stack.push(type);
+			f.stack.set(integer, --f.currentStackHeight);
+			f.stack.set(type, --f.currentStackHeight);
+			next = f.returnAddress;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
+			Driver.currentMethod = f.methodIndex;
+		}
+		else if(opcode.equals("freturn"))
+		{
+			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
+			Driver.runTimeStack.pop();
+			f = (Frame_) Driver._runTimeStack.peek();
+			int integer = (Integer) f2._stack.pop();
+			f._stack.push(integer);
+			f.stack.set(integer, --f.currentStackHeight);
+			next = f.returnAddress;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
+			Driver.currentMethod = f.methodIndex;
+		}
+		else if(opcode.equals("dreturn"))
+		{
+			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
+			Driver.runTimeStack.pop();
+			f = (Frame_) Driver._runTimeStack.peek();
+			String type = (String) f2._stack.pop();
+			int integer = (Integer) f2._stack.pop();
+			f._stack.push(integer);
+			f._stack.push(type);
+			f.stack.set(integer, --f.currentStackHeight);
+			f.stack.set(type, --f.currentStackHeight);
+			next = f.returnAddress;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
+			Driver.currentMethod = f.methodIndex;
 		}
 		else
-		{
-			f = (Frame_) Driver._runTimeStack.pop();
-			Driver.runTimeStack.pop();
-			next = -1;
-			writeFinalSnap();
-		}
+			System.out.println("Unrecognized opcode");
 
 		// return
 		return next;
