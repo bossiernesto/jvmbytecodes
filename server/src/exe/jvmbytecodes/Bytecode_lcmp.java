@@ -44,7 +44,7 @@ class Bytecode_lcmp extends Bytecode_ {
 			f.stack.set("",f.currentStackHeight++);
 			f.stack.set("",f.currentStackHeight++);
 			int z;
-			if( (Long) x > (Long) y)
+			if( (Long) x < (Long) y)
 				z = 1;
 			else if( (Long) x == (Long) y)
 				z = 0;

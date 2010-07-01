@@ -35,12 +35,8 @@ public class Bytecode_ldc extends Bytecode_ {
 
 		if(objectType.contains("int"))
 			f._stack.push(Integer.parseInt(path));
-		else if(objectType.contains("long"))
-			f._stack.push(Long.parseLong(path));
 		else if(objectType.contains("float"))
 			f._stack.push(Float.parseFloat(path));
-		else if(objectType.contains("double"))
-			f._stack.push(Double.parseDouble(path));
 		else
 			System.out.println("Unrecognized bytecode");
 

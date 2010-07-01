@@ -158,6 +158,7 @@ abstract class Bytecode_ {
 			String[] back = split[1].split("( |\\t|:|,|_|;|\\))+");
 			objectType = back[0];
 			path = back[1];
+			System.out.println("in the parser, path:" + path);
 			if(back.length > 2)
 			{
 				String combinedParams = back[2].substring(1, back[2].length());
