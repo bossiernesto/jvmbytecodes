@@ -21,9 +21,9 @@ public class Interpreter {
 			Bytecode_[] b = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes;
 			for (Bytecode_ x : b) {
 				if (x.getLineNumber() == bc.next) {
-					//System.out.println("Begin interpreting " + x.opcode);
+					System.out.println("Begin interpreting " + x.opcode);
 					x.execute();
-					//System.out.println("end" + x.opcode);
+					System.out.println("end" + x.opcode);
 					bc = x;
 				} else
 					;
