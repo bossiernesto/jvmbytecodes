@@ -50,10 +50,10 @@ public class Bytecode_const extends Bytecode_ {
 		// lconst 0, 1
 		else if (opcode.contains("l")) {
 			f._stack.push(Long.parseLong(arguments.get(0)));
-			f._stack.push("");
+			f._stack.push("L");
 			System.out.println(f._stack);
-			f.stack.set(arguments.get(0)+"l", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set(arguments.get(0), --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set("L", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
 			f.stack.setColor(f.currentStackHeight+1, "#999999");
@@ -61,20 +61,20 @@ public class Bytecode_const extends Bytecode_ {
 		// fconst_ 0, 1, 2
 		else if (opcode.contains("f")) {
 			f._stack.push(Float.parseFloat(arguments.get(0)));
-			f.stack.set(arguments.get(0) + "f", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set(arguments.get(0), --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
 		}
 		// dconst 0, 1
 		else if (opcode.contains("d")) {
 			f._stack.push(Double.parseDouble(arguments.get(0)));
-			f._stack.push("");
+			f._stack.push("D");
 			f.stack.set(arguments.get(0), --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set("D", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
 			f.stack.setColor(f.currentStackHeight+1, "#999999");
-		}
+		}/*
 		else if (opcode.contains("aconst")) {
 			f._stack.push(null);
 			f.stack.set("null", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -82,7 +82,7 @@ public class Bytecode_const extends Bytecode_ {
 			Driver._heap.add(null);
 			writeSnap();
 			f.stack.setColor(f.currentStackHeight, "#999999");
-		}
+		}*/
 		else {
 			System.out.println("Unrecognized opcode");
 		}

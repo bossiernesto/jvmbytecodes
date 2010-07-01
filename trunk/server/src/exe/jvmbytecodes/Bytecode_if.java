@@ -51,7 +51,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x == 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				
@@ -62,7 +62,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x != 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				
@@ -73,7 +73,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x < 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				
@@ -84,7 +84,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x >= 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				
@@ -95,7 +95,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x > 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				
@@ -106,7 +106,7 @@ public class Bytecode_if extends Bytecode_ {
 				x = (Integer) f._stack.pop();
 
 				if ( x <= 0) 
-					next = Integer.parseInt(arguments.get(1));
+					next = Integer.parseInt(arguments.get(0));
 				else
 					;/* no jump */
 				

@@ -29,11 +29,11 @@ public class Bytecode_return extends Bytecode_ {
 	 */
 	public int execute() throws IOException {
 		writeNextLineSnap();
-		writeSnap();
 		if(opcode.equals("return"))
 		{		
 			if(Driver.runTimeStack.size() > 1)
 			{
+				writeSnap();
 				Driver._runTimeStack.pop();
 				Driver.runTimeStack.pop();
 				f = (Frame_) Driver._runTimeStack.peek();
@@ -44,6 +44,7 @@ public class Bytecode_return extends Bytecode_ {
 			}
 			else
 			{
+				writeSnap();
 				f = (Frame_) Driver._runTimeStack.pop();
 				Driver.runTimeStack.pop();
 				next = -1;
@@ -57,7 +58,9 @@ public class Bytecode_return extends Bytecode_ {
 			f = (Frame_) Driver._runTimeStack.peek();
 			int integer = (Integer) f2._stack.pop();
 			f._stack.push(integer);
-			f.stack.set(integer, --f.currentStackHeight);
+			f.stack.set(integer, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			writeSnap();
+			f.stack.setColor(f.currentStackHeight, "#999999");
 			next = f.returnAddress;
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
@@ -69,11 +72,14 @@ public class Bytecode_return extends Bytecode_ {
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
 			String type = (String) f2._stack.pop();
-			int integer = (Integer) f2._stack.pop();
-			f._stack.push(integer);
+			long var = (Long) f2._stack.pop();
+			f._stack.push(var);
 			f._stack.push(type);
-			f.stack.set(integer, --f.currentStackHeight);
-			f.stack.set(type, --f.currentStackHeight);
+			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set(type, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			writeSnap();
+			f.stack.setColor(f.currentStackHeight, "#999999");
+			f.stack.setColor(f.currentStackHeight+1, "#999999");
 			next = f.returnAddress;
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
@@ -84,9 +90,11 @@ public class Bytecode_return extends Bytecode_ {
 			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
-			int integer = (Integer) f2._stack.pop();
-			f._stack.push(integer);
-			f.stack.set(integer, --f.currentStackHeight);
+			float var = (Float) f2._stack.pop();
+			f._stack.push(var);
+			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			writeSnap();
+			f.stack.setColor(f.currentStackHeight, "#999999");
 			next = f.returnAddress;
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
@@ -98,11 +106,14 @@ public class Bytecode_return extends Bytecode_ {
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
 			String type = (String) f2._stack.pop();
-			int integer = (Integer) f2._stack.pop();
-			f._stack.push(integer);
+			double var = (Double) f2._stack.pop();
+			f._stack.push(var);
 			f._stack.push(type);
-			f.stack.set(integer, --f.currentStackHeight);
-			f.stack.set(type, --f.currentStackHeight);
+			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			f.stack.set(type, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+			writeSnap();
+			f.stack.setColor(f.currentStackHeight, "#999999");
+			f.stack.setColor(f.currentStackHeight+1, "#999999");
 			next = f.returnAddress;
 			String x = (String) Driver.runTimeStack.pop();
 			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
