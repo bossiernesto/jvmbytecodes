@@ -22,8 +22,7 @@ public class MakeURI {
 	static String make_uri(int[] lines, int[] colors, Frame_ f) {
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
-		
-		//print the call stack in the display
+				//print the call stack in the display
 		String methodCallStack = printCallStack();
 
 		HashMap<String, String> map = new HashMap<String, String>();
@@ -42,10 +41,7 @@ public class MakeURI {
 		return uri;
 	}
 
-	/*
-	 * Returns a string that contains the method call stack.
-	 */
-	static String printCallStack() {
+static String printCallStack() {
 		String returnStr =" ";
 		Frame_ tempFrame;
 
@@ -64,7 +60,6 @@ public class MakeURI {
 	static String doc_uri(int line, Frame_ f) {
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
-		
 		//print the call stack in the display
 		String methodCallStack = printCallStack();
 
