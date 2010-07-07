@@ -29,7 +29,7 @@ public class Bytecode_dup2_x2 extends Bytecode_
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
-		writeNextLineSnap();
+
 		Object a, b, c, d;
 		a = f._stack.pop();
 		b = f._stack.pop();

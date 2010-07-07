@@ -28,67 +28,30 @@ class Bytecode_neg extends Bytecode_ {
 	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
-		writeNextLineSnap();
 	
 		//ineg
 		if(opcode.contains("i"))
 		{
-			Integer x;
-			x = (Integer) f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			Integer z = -x.intValue();
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			Integer z = (-popInteger().intValue());
+			pushInteger(z);
 		}
 		//lneg
 		else if(opcode.contains("l"))
 		{
-			Object a;
-			Long x;
-			a = f._stack.pop();
-			x = (Long) f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Long z = -x.longValue();
-			f._stack.push(z);
-			f._stack.push(a);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(a, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			Long z = (-popLong().longValue());
+			pushLong(z);
 		}
 		//fneg
 		else if(opcode.contains("f"))
 		{
-			Float x;
-			x = (Float) f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			Float z = -x.floatValue();
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			Float z = (-popFloat().floatValue());
+			pushFloat(z);
 		}
 		//dneg
 		else if(opcode.contains("d"))
 		{
-			Object a;
-			Double x;
-			a = f._stack.pop();
-			x = (Double) f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Double z = -x.doubleValue();
-			f._stack.push(z);
-			f._stack.push(a);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(a, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			Double z = (-popDouble().doubleValue());
+			pushDouble(z);
 		}
 		else
 		{

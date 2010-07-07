@@ -48,10 +48,13 @@ public class Driver {
     static int heapSize = 0;
     static int currentMethod = 1;
     static Class_[] classes;
-    static final String CURRENT_FRAME_COLOR = "#66CCBB";
 	static String CURRENT_HIGHLIGHT_COLOR = "#FFEE11";
+	static String standardGray = "#EEEEEE";
+	static String lightGray = "#BBBBBB";
+	static String darkGray = "#888888";
     static GAIGSarray XMLstack;
     static int XMLstackSize = 0;
+	static String[] runTimeStackColors = new String[4];
 
 	/*
 	 * Main driver for the client
@@ -165,14 +168,19 @@ public class Driver {
 		//questionID
 		questionID = 0;
 
-		Frame_ f = new Frame_(currentMethod);
-		_runTimeStack.push(f);
+		runTimeStackColors[0] = "#66FF66";
+		runTimeStackColors[1] = "#0066FF";
+		runTimeStackColors[2] = "#FF9933";
+		runTimeStackColors[3] = "#660099";
 
 		// get a random color for the stack
 		//String mainColor = getRandomColor();
-		String mainColor = CURRENT_FRAME_COLOR;
+
+		Frame_ f = new Frame_(currentMethod);
+		_runTimeStack.push(f);
+
 		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-		runTimeStack.push(classes[0].methods.get(currentMethod).name, mainColor);
+		runTimeStack.push(classes[0].methods.get(currentMethod).name, f.CURRENT_FRAME_COLOR);
 		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
 
 		// begin interpreter

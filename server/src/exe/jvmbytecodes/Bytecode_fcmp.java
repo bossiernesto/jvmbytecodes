@@ -27,29 +27,25 @@ class Bytecode_fcmp extends Bytecode_ {
 	public int execute() throws IOException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
-		writeNextLineSnap();
-		//lcmp
+
+		//fcmp
 		//total: 1
 
-		//lcmp
+		//fcmp
 		if(opcode.contains("f"))
 		{
-			Object x, y;
-			x = f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
+			Float x = popFloat();
+			Float y = popFloat();
+			
 			int z;
-			if( (Float) x < (Float) y)
+			if(x < y)
 				z = 1;
-			else if( (Float) x == (Float) y)
+			else if(x == y)
 				z = 0;
 			else
 				z = -1;
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+
+			pushInteger(z);
 		}
 		else
 		{

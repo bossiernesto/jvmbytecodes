@@ -28,9 +28,10 @@ public class Bytecode_return extends Bytecode_ {
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
 	public int execute() throws IOException {
-		writeNextLineSnap();
+
 		if(opcode.equals("return"))
-		{		
+		{
+			System.out.println("HERE");
 			if(Driver.runTimeStack.size() > 1)
 			{
 				writeSnap();
@@ -39,7 +40,7 @@ public class Bytecode_return extends Bytecode_ {
 				f = (Frame_) Driver._runTimeStack.peek();
 				next = f.returnAddress;
 				String x = (String) Driver.runTimeStack.pop();
-				Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
+				Driver.runTimeStack.push(x, f.CURRENT_FRAME_COLOR);
 				Driver.currentMethod = f.methodIndex;
 			}
 			else
@@ -56,34 +57,27 @@ public class Bytecode_return extends Bytecode_ {
 			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
-			int integer = (Integer) f2._stack.pop();
-			f._stack.push(integer);
-			f.stack.set(integer, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			int var = (Integer) f2._stack.pop();
+
 			next = f.returnAddress;
-			String x = (String) Driver.runTimeStack.pop();
-			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
 			Driver.currentMethod = f.methodIndex;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, f.CURRENT_FRAME_COLOR);
+			pushInteger(var);
 		}
 		else if(opcode.equals("lreturn"))
 		{
 			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
-			String type = (String) f2._stack.pop();
 			long var = (Long) f2._stack.pop();
-			f._stack.push(var);
-			f._stack.push(type);
-			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(type, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			f2._stack.pop();
+
 			next = f.returnAddress;
-			String x = (String) Driver.runTimeStack.pop();
-			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
 			Driver.currentMethod = f.methodIndex;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, f.CURRENT_FRAME_COLOR);
+			pushLong(var);
 		}
 		else if(opcode.equals("freturn"))
 		{
@@ -91,33 +85,26 @@ public class Bytecode_return extends Bytecode_ {
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
 			float var = (Float) f2._stack.pop();
-			f._stack.push(var);
-			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+
 			next = f.returnAddress;
-			String x = (String) Driver.runTimeStack.pop();
-			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
 			Driver.currentMethod = f.methodIndex;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, f.CURRENT_FRAME_COLOR);
+			pushFloat(var);
 		}
 		else if(opcode.equals("dreturn"))
 		{
 			Frame_ f2 = (Frame_) Driver._runTimeStack.pop();
 			Driver.runTimeStack.pop();
 			f = (Frame_) Driver._runTimeStack.peek();
-			String type = (String) f2._stack.pop();
 			double var = (Double) f2._stack.pop();
-			f._stack.push(var);
-			f._stack.push(type);
-			f.stack.set(var, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(type, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			f2._stack.pop();
+
 			next = f.returnAddress;
-			String x = (String) Driver.runTimeStack.pop();
-			Driver.runTimeStack.push(x, Driver.CURRENT_FRAME_COLOR);
 			Driver.currentMethod = f.methodIndex;
+			String x = (String) Driver.runTimeStack.pop();
+			Driver.runTimeStack.push(x, f.CURRENT_FRAME_COLOR);
+			pushDouble(var);
 		}
 		else
 			System.out.println("Unrecognized opcode");

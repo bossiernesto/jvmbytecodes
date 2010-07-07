@@ -30,7 +30,7 @@ public class Bytecode_inc extends Bytecode_ {
 	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Inc		next = lineNumber + 1;
-		writeNextLineSnap();
+		next += 2;
 		
 		// iinc
 		if (opcode.contains("ii")) {
@@ -39,13 +39,9 @@ public class Bytecode_inc extends Bytecode_ {
 			x = Integer.parseInt(arguments.get(1));
 			y = Integer.parseInt(f._localVariableArray[index]);
 			int z = x + y;
-			f._localVariableArray[index] = String.valueOf(z);
-			f.localVariableArray.set(z, index, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.localVariableArray.setColor(index, "#999999");
+			storeInteger(z);
 		}
 
-		next += 2;
 		f.returnAddress = next;
 		return next;
 	}

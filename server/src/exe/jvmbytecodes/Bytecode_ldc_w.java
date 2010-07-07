@@ -31,19 +31,14 @@ public class Bytecode_ldc_w extends Bytecode_ {
 		// ldc_w
 		// total: 1
 		next = lineNumber + 3;
-		writeNextLineSnap();
 
 		if(objectType.contains("int"))
-			f._stack.push(Integer.parseInt(path));
+			pushInteger(Integer.parseInt(path));
 		else if(objectType.contains("float"))
-			f._stack.push(Float.parseFloat(path));
+			pushFloat(Float.parseFloat(path));
 		else
 			System.out.println("Unrecognized bytecode");
-
-		f.stack.set(path, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
-			
+	
 		f.returnAddress = next;
 		return next;
 	}

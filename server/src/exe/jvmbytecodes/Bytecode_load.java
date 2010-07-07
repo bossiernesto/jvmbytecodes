@@ -33,65 +33,31 @@ public class Bytecode_load extends Bytecode_
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
-		writeNextLineSnap();
+
 		//Load
 		//iload
 		if(opcode.contains("i"))
 		{
 			int index = Integer.parseInt(arguments.get(0));
-
-			f._stack.push(Integer.parseInt(f._localVariableArray[index]));
-			f.stack.set((String)f._localVariableArray[index], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			loadInteger(Integer.parseInt(f._localVariableArray[index]));
 		}
 		//lload
 		else if(opcode.contains("ll"))
 		{
 			int index = Integer.parseInt(arguments.get(0));
-			Long x;
-			String y;
-			y =f._localVariableArray[index];
-			x = Long.parseLong(f._localVariableArray[index+1]);
-			f._stack.push(x);
-			f._stack.push(y);
-			System.out.println(f._stack);
-			f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(y, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight + 1, "#999999");
+			loadLong(Long.parseLong(f._localVariableArray[index]));
 		}
 		//fload
 		else if(opcode.contains("f"))
 		{
 			int index = Integer.parseInt(arguments.get(0));
-
-			f._stack.push(Float.parseFloat(f._localVariableArray[index]));
-			f.stack.set((String)f._localVariableArray[index], --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			pushFloat(Float.parseFloat(f._localVariableArray[index]));
 		}
 		//dload
 		else if(opcode.contains("dl"))
 		{
 			int index = Integer.parseInt(arguments.get(0));
-			Double x;
-			String y;
-			y =f._localVariableArray[index];
-			x = Double.parseDouble(f._localVariableArray[index+1]);
-
-			f._stack.push(x);
-			f._stack.push(y);
-			f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(y, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight + 1, "#999999");
+			loadDouble(Double.parseDouble(f._localVariableArray[index]));
 		}
 
 		//we may need to increment next for long and double
