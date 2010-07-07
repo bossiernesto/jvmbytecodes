@@ -1,6 +1,5 @@
 package exe.jvmbytecodes;
 
-import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -24,7 +23,7 @@ class Bytecode_and extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
 		//and

@@ -33,6 +33,8 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
+import org.jdom.JDOMException;
+
 /*
  * Entry point for the server program.
  */
@@ -40,7 +42,7 @@ public class jvmbytecodes {
 	/*
 	 * Calls the Driver program.
 	 */
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, InterruptedException, JDOMException {
 
 	Hashtable hash = XMLParameterParser.parseToHash( args[2] );
 

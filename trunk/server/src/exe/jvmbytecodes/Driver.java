@@ -33,163 +33,207 @@ import exe.pseudocode.*;
 
 public class Driver {
 
-    static final String TITLE = null; // no title
-    static ArrayList<PseudoCodeDisplay> pseudoBytecodes[];//pseudo;
-    static PseudoCodeDisplay pseudoSourceCode[];//realCode;
-    static boolean success;
-    static ShowFile show;
-    static GAIGSstack runTimeStack;
-    static Stack _runTimeStack = new Stack();
-    static GAIGSstack heap;
-    static ArrayList _heap;
-    static int currentClass;
-    static int questionID;
-    static int numberOfLinesInJavaFile = 1;
-    static int heapSize = 0;
-    static int currentMethod = 1;
-    static Class_[] classes;
+	static final String TITLE = null; // no title
+	static ArrayList<PseudoCodeDisplay> pseudoBytecodes[];// pseudo;
+	static PseudoCodeDisplay pseudoSourceCode[];// realCode;
+	static boolean success;
+	static ShowFile show;
+	static GAIGSstack runTimeStack;
+	static Stack _runTimeStack = new Stack();
+	static GAIGSstack heap;
+	static ArrayList _heap;
+	static int currentClass;
+	static int questionID;
+	static int numberOfLinesInJavaFile = 1;
+	static int heapSize = 0;
+	static int currentMethod = 1;
+	static Class_[] classes;
 	static String CURRENT_HIGHLIGHT_COLOR = "#FFEE11";
 	static String standardGray = "#EEEEEE";
 	static String lightGray = "#BBBBBB";
 	static String darkGray = "#888888";
-    static GAIGSarray XMLstack;
-    static int XMLstackSize = 0;
+	static GAIGSarray XMLstack;
+	static int XMLstackSize = 0;
 	static String[] runTimeStackColors = new String[4];
 
 	/*
 	 * Main driver for the client
 	 * 
-	 * args[0] is the full path and number for naming showfile 
+	 * args[0] is the full path and number for naming showfile
 	 */
-	public static void main(String args[]) throws IOException {
+	public static void main(String args[]) throws IOException,
+			InvalidClassFileException, InterruptedException, JDOMException {
 
-	    String file_contents = null;
-	    String fileName = null;
-	    File pathname = new File("", args[0]);
+		String file_contents = null;
+		String fileName = null;
+		File pathname = new File("", args[0]);
 
-	    // create the uid sub-directory
-	    try {
-		success = (pathname.mkdir());
-	    } catch (Exception e) {
-		System.err.println("Error: " + e.getMessage() );
-	    }
+		show = new ShowFile(args[0] + ".sho", 5); // first argument is the
+													// script foo.sho
 
-	    if (args[2].equals("contents are not in here")) { 
-		// file is a builtin example
-		fileName = args[1] + ".java";
-		Runtime.getRuntime().exec( 
-                   "cp ../../src/exe/jvmbytecodes/Builtin_Programs/" + args[1] + " " + args[0] + "/" + fileName );
-	    } else { // file is a user file and its content is in args[2]
-		file_contents = args[2];
-		
-		fileName = args[1];
-
+		// create the uid sub-directory
 		try {
-			FileWriter fw = new FileWriter(args[0] + "/" + fileName);
-			BufferedWriter bw = new BufferedWriter(fw);
-			PrintWriter outFile = new PrintWriter(bw);
-			outFile.print(file_contents);
-			outFile.close();
-		} catch (Exception e) {
-			System.err.println("Error: " + e.getMessage() );
-		}
-	    } // done writing .java file
+			success = (pathname.mkdir());
+			// } catch (Exception e) {
+			// System.err.println("Error: " + e.getMessage() );
+			// }
 
+			if (args[2].equals("contents are not in here")) {
+				// file is a builtin example
+				fileName = args[1] + ".java";
+				Runtime.getRuntime().exec(
+						"cp ../../src/exe/jvmbytecodes/Builtin_Programs/"
+								+ args[1] + " " + args[0] + "/" + fileName);
+			} else { // file is a user file and its content is in args[2]
+				file_contents = args[2];
 
+				fileName = args[1];
 
-	    String[] tmp = { args[0], fileName };
-			
-		show = new ShowFile(args[0] + ".sho", 5); // first argument is the script foo.sho
-		
-		classes = GenerateBytecodes.getClasses(tmp);
+				// try {
+				FileWriter fw = new FileWriter(args[0] + "/" + fileName);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter outFile = new PrintWriter(bw);
+				outFile.print(file_contents);
+				outFile.close();
+				// } catch (Exception e) {
+				// System.err.println("Error: " + e.getMessage() );
+				// }
+			} // done writing .java file
 
-		// create visual stack and heap using the predetermined sizes
-		heap = new GAIGSstack("Heap", "#999999", 0.01, 0.5, 0.3, 0.9, 0.15);
-		runTimeStack = new GAIGSstack("Run Time Stack", "#999999", 0.01, 0.1, 0.3, 0.5, 0.15);
+			String[] tmp = { args[0], fileName };
 
-		// set current method and class
-		currentClass = 0;		
-		currentMethod =0;
-		int index = 0;
+			classes = GenerateBytecodes.getClasses(tmp);
 
-		
-        //make the XML files
-		GenerateXML.generateBytecodeXML();
-		GenerateXML.generateSourceCodeXML(args[0], fileName);
+			// create visual stack and heap using the predetermined sizes
+			heap = new GAIGSstack("Heap", "#999999", 0.01, 0.5, 0.3, 0.9, 0.15);
+			runTimeStack = new GAIGSstack("Run Time Stack", "#999999", 0.01,
+					0.1, 0.3, 0.5, 0.15);
 
-		pseudoBytecodes = new ArrayList[Driver.classes.length];
-		for (int i=0; i<Driver.classes.length; i++)
-			pseudoBytecodes[i] = new ArrayList<PseudoCodeDisplay>();
-		pseudoSourceCode = new PseudoCodeDisplay[Driver.classes.length];
-		
-		//make the URI need for the display
-		try {
-			
+			// set current method and class
+			currentClass = 0;
+			currentMethod = 0;
+			int index = 0;
+
+			// make the XML files
+			GenerateXML.generateBytecodeXML();
+			GenerateXML.generateSourceCodeXML(args[0], fileName);
+
+			pseudoBytecodes = new ArrayList[Driver.classes.length];
+			for (int i = 0; i < Driver.classes.length; i++)
+				pseudoBytecodes[i] = new ArrayList<PseudoCodeDisplay>();
+			pseudoSourceCode = new PseudoCodeDisplay[Driver.classes.length];
+
+			// make the URI need for the display
+			// try {
+
 			System.out.println("starting uri ");
-			
-			for (int i=0; i < Driver.classes.length; i++) {
-				currentMethod =0;
+
+			for (int i = 0; i < Driver.classes.length; i++) {
+				currentMethod = 0;
 				for (int j = 0; j < Driver.classes[i].methods.size(); j++) {
-					String signature="";
-					for (int m=0; m<Driver.classes[i].methods.get(j).localVariableTable.length; m++)
-						signature+=Driver.classes[i].methods.get(j).localVariableTable[m][2];
+					String signature = "";
+					for (int m = 0; m < Driver.classes[i].methods.get(j).localVariableTable.length; m++)
+						signature += Driver.classes[i].methods.get(j).localVariableTable[m][2];
 					signature = GenerateXML.replaceSlashWithDot(signature);
-					System.out.println("sinature is: "+signature+" i: "+i+" j: "+j+" "+"exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml");
-					pseudoBytecodes[i].add(new PseudoCodeDisplay("exe/jvmbytecodes/"+Driver.classes[i].name+Driver.classes[i].methods.get(j).name+signature+".xml"));
+					System.out.println("sinature is: " + signature + " i: " + i
+							+ " j: " + j + " " + "exe/jvmbytecodes/"
+							+ Driver.classes[i].name
+							+ Driver.classes[i].methods.get(j).name + signature
+							+ ".xml");
+					pseudoBytecodes[i].add(new PseudoCodeDisplay(
+							"exe/jvmbytecodes/" + Driver.classes[i].name
+									+ Driver.classes[i].methods.get(j).name
+									+ signature + ".xml"));
 					System.out.println("found file");
 					currentMethod++;
 				}
 				currentClass++;
 			}
-			currentClass = 0;		
-			currentMethod =0;
+			currentClass = 0;
+			currentMethod = 0;
 			System.out.println("completed uri ");
 
-			for (int i=0; i < Driver.classes.length; i++) {
-				pseudoSourceCode[i] = (new PseudoCodeDisplay("exe/jvmbytecodes/" + Driver.classes[i].name + ".xml"));
+			for (int i = 0; i < Driver.classes.length; i++) {
+				pseudoSourceCode[i] = (new PseudoCodeDisplay(
+						"exe/jvmbytecodes/" + Driver.classes[i].name + ".xml"));
 				currentClass++;
 			}
-			currentClass = 0;		
-			currentMethod =0;
-		} catch (JDOMException e) {
-			e.printStackTrace();
+			currentClass = 0;
+			currentMethod = 0;
+			// } catch (JDOMException e) {
+			// e.printStackTrace();
+			// }
+
+			for (Method_ m : classes[0].methods) {
+				if (m.name.equals("main")) {
+					currentMethod = index;
+					break;
+				}
+				index++;
+			}
+
+			// questionID
+			questionID = 0;
+
+			runTimeStackColors[0] = "#66FF66";
+			runTimeStackColors[1] = "#0066FF";
+			runTimeStackColors[2] = "#FF9933";
+			runTimeStackColors[3] = "#660099";
+
+			// get a random color for the stack
+			// String mainColor = getRandomColor();
+
+			Frame_ f = new Frame_(currentMethod);
+			_runTimeStack.push(f);
+
+			show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1,
+					PseudoCodeDisplay.RED, f), runTimeStack);
+			runTimeStack.push(classes[0].methods.get(currentMethod).name,
+					f.CURRENT_FRAME_COLOR);
+			show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1,
+					PseudoCodeDisplay.RED, f), runTimeStack);
+
+			// begin interpreter
+			Interpreter.interpret();
+		} catch (InvalidNumOfSnaps e) {
+			GAIGStext errorText = new GAIGStext(
+					0.5,
+					0.5,
+					"Visualization could not be produced because: \n"
+							+ "-too many snapshots were made. "
+							+ "-the program could run for too long"
+							+ "-there may be an infinite loop in the source code");
+			show.writeSnap(Driver.TITLE, errorText);
+		} catch (InvalidClassFileException e) {
+			GAIGStext errorText = new GAIGStext(
+					0.5,
+					0.5,
+					"Visualization could not be produced because: \n"
+							+ "-the source code contains features not supported by your interpreter "
+							+ " ex: objects, abstract classes, private classes, etc.\n"
+							+ "-the source code could not compile.");
+			show.writeSnap(Driver.TITLE, errorText);
+		} catch (InterruptedException e) {
+			GAIGStext errorText = new GAIGStext(0.5, 0.5,
+					"Visualization could not be produced because: \n"
+							+ "-the source code does not compile.");
+			show.writeSnap(Driver.TITLE, errorText);
+		} catch (IOException e) {
+			GAIGStext errorText = new GAIGStext(0.5, 0.5,
+					"Visualization could not be produced because: \n"
+							+ "-the source code does not compile."
+							+ "-the file could be missing."
+							+ "Check source code.");
+			show.writeSnap(Driver.TITLE, errorText);
+		} catch (Exception e) {
+			GAIGStext errorText = new GAIGStext(0.5, 0.5,
+					"Visualization could not be produced for an unknown reason. \n"
+							+ "Check source code");
+			show.writeSnap(Driver.TITLE, errorText);
 		}
 
-        for(Method_ m : classes[0].methods)
-        {
-                if(m.name.equals("main"))
-                {
-                        currentMethod = index;
-                        break;
-                }
-                index++;
-        }
-
-		//questionID
-		questionID = 0;
-
-		runTimeStackColors[0] = "#66FF66";
-		runTimeStackColors[1] = "#0066FF";
-		runTimeStackColors[2] = "#FF9933";
-		runTimeStackColors[3] = "#660099";
-
-		// get a random color for the stack
-		//String mainColor = getRandomColor();
-
-		Frame_ f = new Frame_(currentMethod);
-		_runTimeStack.push(f);
-
-		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-		runTimeStack.push(classes[0].methods.get(currentMethod).name, f.CURRENT_FRAME_COLOR);
-		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-
-		// begin interpreter
-		Interpreter.interpret();
-
-	   	show.close();
+		show.close();
 	}
-	
-	
 
 	/*
 	 * Generates a random string for a hex color in the format: "#000000"
