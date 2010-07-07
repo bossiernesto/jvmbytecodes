@@ -1,6 +1,5 @@
 package exe.jvmbytecodes;
 
-import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -26,7 +25,7 @@ public class Bytecode_ldc2_w extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// ldc2_w
 		// total: 1

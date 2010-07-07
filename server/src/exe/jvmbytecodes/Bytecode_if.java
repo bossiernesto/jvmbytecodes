@@ -30,7 +30,7 @@ public class Bytecode_if extends Bytecode_ {
 	 * 
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException 
+	public int execute() throws IOException,JDOMException 
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber + 1;
@@ -260,7 +260,7 @@ public class Bytecode_if extends Bytecode_ {
 		return next;
 	}
 
-	void makePurple() throws IOException
+	void makePurple() throws IOException,JDOMException
 	{
 		f.stack.setColor(f.currentStackHeight, "#6666BB");
 		f.stack.setColor(f.currentStackHeight+1, "#6666BB");
