@@ -27,33 +27,26 @@ class Bytecode_lcmp extends Bytecode_ {
 	public int execute() throws IOException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
-		writeNextLineSnap();
+
 		//lcmp
 		//total: 1
 
 		//lcmp
 		if(opcode.contains("l"))
 		{
-			Object x, y, a;
-			a = f._stack.pop();
-			x = f._stack.pop();
-			f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
+			Long x, y;
 			int z;
-			if( (Long) x < (Long) y)
+			x = popLong();
+			y = popLong();
+
+			if(x < y)
 				z = 1;
-			else if( (Long) x == (Long) y)
+			else if(x == y)
 				z = 0;
 			else
 				z = -1;
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+
+			pushInteger(z);
 		}
 		else
 		{

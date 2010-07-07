@@ -28,16 +28,11 @@ public class Bytecode_sipush extends Bytecode_ {
 	 */
 	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
-		// Bipush
+		// sipush
 		// total: 1
 		next = lineNumber + 3;
-		writeNextLineSnap();
 
-		f._stack.push(Integer.parseInt(arguments.get(0)));
-		f.stack.set(arguments.get(0), --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
-			
+		pushInteger(Integer.parseInt(arguments.get(0)));
 		f.returnAddress = next;
 		return next;
 	}

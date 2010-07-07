@@ -18,6 +18,7 @@ public class Interpreter {
 		bc.execute();
 
 		while (bc.next != -1) {
+			System.out.println("HI");
 			Bytecode_[] b = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes;
 			for (Bytecode_ x : b) {
 				if (x.getLineNumber() == bc.next) {

@@ -31,13 +31,8 @@ public class Bytecode_bipush extends Bytecode_ {
 		// Bipush
 		// total: 1
 		next = lineNumber + 2;
-		writeNextLineSnap();
 
-		f._stack.push(Integer.parseInt(arguments.get(0)));
-		f.stack.set(arguments.get(0), --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
-			
+		pushInteger(Integer.parseInt(arguments.get(0)));		
 		f.returnAddress = next;
 		return next;
 	}

@@ -44,37 +44,42 @@ abstract class Bytecode_ {
 			    4,
 			    new double[] { 0.45, 0.45, 0.95, 0.95 },
 			    new double[] { 0.05, 0.95, 0.95, 0.05 },
-			    Driver.CURRENT_FRAME_COLOR,  // fill color
-			    Driver.CURRENT_FRAME_COLOR,  // outline color
+			    f.CURRENT_FRAME_COLOR,  // fill color
+			    f.CURRENT_FRAME_COLOR,  // outline color
 			    "#FFFFFF",  // label color
 			    ""          // polygon label
 			  );
+		int[] colorArray;
+		if(next > lineNumber)
+			colorArray = new int[] {PseudoCodeDisplay.GREEN, PseudoCodeDisplay.RED};
+		else
+			colorArray = new int[] {PseudoCodeDisplay.RED, PseudoCodeDisplay.GREEN};
 
-       if (f.stackSize > 0)
+       if (f.stackSize > 0){
 	    Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
-				  MakeURI.make_uri(lineNumber, 
-						   PseudoCodeDisplay.GREEN, f), 
+				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
 				  pc,
 				  Driver.runTimeStack, 
 				  f.stack, 
 				  Driver.heap,
 				  f.localVariableArray
 				  );
-		else
+		}
+		else{
 			Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
-				  MakeURI.make_uri(lineNumber, 
-						   PseudoCodeDisplay.GREEN, f), 
+				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
 				  f.localVariableArray
 				  );
+			}
 		}
 
 	//highlights the next line we want to execute red
-	public void writeNextLineSnap() throws IOException
+	public void writeSnapReturn() throws IOException
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
@@ -82,8 +87,8 @@ abstract class Bytecode_ {
 			    4,
 			    new double[] { 0.45, 0.45, 0.95, 0.95 },
 			    new double[] { 0.05, 0.95, 0.95, 0.05 },
-			    Driver.CURRENT_FRAME_COLOR,  // fill color
-			    Driver.CURRENT_FRAME_COLOR,  // outline color
+			    f.CURRENT_FRAME_COLOR,  // fill color
+			    f.CURRENT_FRAME_COLOR,  // outline color
 			    "#FFFFFF",  // label color
 			    ""          // polygon label
 			  );
@@ -91,8 +96,8 @@ abstract class Bytecode_ {
 		if (f.stackSize > 0)
 			Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
-				  MakeURI.make_uri(lineNumber, 
-						   PseudoCodeDisplay.RED, f), 
+				  MakeURI.make_uri(new int[] {next}, new int[] 
+						   {PseudoCodeDisplay.RED}, f), 
 				  pc,
 				  Driver.runTimeStack, 
 				  f.stack, 
@@ -102,8 +107,8 @@ abstract class Bytecode_ {
 		else
 			Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
-				  MakeURI.make_uri(lineNumber, 
-						   PseudoCodeDisplay.RED, f), 
+				  MakeURI.make_uri(new int[] {next}, new int[] 
+						   {PseudoCodeDisplay.RED}, f), 
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
@@ -129,10 +134,276 @@ abstract class Bytecode_ {
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
-						   PseudoCodeDisplay.RED, f), 
+						   PseudoCodeDisplay.GREEN, f), 
 				  Driver.runTimeStack,
 				  Driver.heap);
 	}
+
+	//double
+	public void pushDouble(double d) throws IOException
+	{
+		f._stack.push("");
+		f._stack.push(d);
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(d, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		if(opcode.contains("return"))
+			writeSnapReturn();
+		else
+			writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}	
+	}
+
+	public Double popDouble()
+	{
+		Double temp;
+		temp = (Double) f._stack.pop();
+		f._stack.pop();
+		f.stack.set("", f.currentStackHeight++);			
+		f.stack.set("", f.currentStackHeight++);
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
+			f.stackColor = true;
+		}
+		return temp;
+	}
+
+	public void storeDouble(Double x) throws IOException
+	{
+		int index = Integer.parseInt(arguments.get(0));
+		f._localVariableArray[index] = String.valueOf(x);
+		f._localVariableArray[index+1] = "";
+		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.localVariableArray.set("", index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
+		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
+	}
+
+	public void loadDouble(Double x) throws IOException
+	{
+		f._stack.push("");
+		f._stack.push(x);
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+
+	//long
+	public void pushLong(long l) throws IOException
+	{
+		f._stack.push("");
+		f._stack.push(l);
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(l, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		if(opcode.contains("return"))
+			writeSnapReturn();
+		else
+			writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}		
+	}
+
+	public Long popLong()
+	{
+		Long temp;
+		temp = (Long) f._stack.pop();
+		f._stack.pop();
+		f.stack.set("", f.currentStackHeight++);			
+		f.stack.set("", f.currentStackHeight++);
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
+			f.stackColor = true;
+		}
+		return temp;
+	}
+
+	public void storeLong(Long x) throws IOException
+	{
+		int index = Integer.parseInt(arguments.get(0));
+		f._localVariableArray[index] = String.valueOf(x);
+		f._localVariableArray[index+1] = "";
+		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.localVariableArray.set("", index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
+		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
+	}
+
+	public void loadLong(Long x) throws IOException
+	{
+		f._stack.push("");
+		f._stack.push(x);
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+
+	//int
+	public void pushInteger(int i) throws IOException
+	{
+		f._stack.push(i);
+		f.stack.set(i, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		if(opcode.contains("return"))
+			writeSnapReturn();
+		else
+			writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+
+	public Integer popInteger()
+	{
+		Integer temp = (Integer) f._stack.pop();
+		f.stack.set("", f.currentStackHeight++);
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = true;
+		}
+		return temp;
+	}
+
+	public void storeInteger(Integer x) throws IOException
+	{
+		int index = Integer.parseInt(arguments.get(0));
+		f._localVariableArray[index] = String.valueOf(x);
+		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
+	}
+
+	public void loadInteger(Integer x) throws IOException
+	{
+		f._stack.push(x);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+
+	//float
+	public void pushFloat(float fl) throws IOException
+	{
+		f._stack.push(fl);
+		f.stack.set(fl, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		if(opcode.contains("return"))
+			writeSnapReturn();
+		else
+			writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}	
+	}
+
+	public Float popFloat()
+	{
+		Float temp = (Float) f._stack.pop();
+		f.stack.set("", f.currentStackHeight++);
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = true;
+		}
+		return temp;
+	}
+
+	public void storeFloat(Float x) throws IOException
+	{
+		int index = Integer.parseInt(arguments.get(0));
+		f._localVariableArray[index] = String.valueOf(x);
+		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
+	}
+
+	public void loadFloat(Float x) throws IOException
+	{
+		f._stack.push(x);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		writeSnap();
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else{
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+
+
 
 	/*
 	 * Splices out the elements needed within a byte code string

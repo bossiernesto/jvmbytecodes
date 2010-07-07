@@ -29,7 +29,7 @@ public class Bytecode_pop extends Bytecode_
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
-		writeNextLineSnap();
+
 		f._stack.pop();
 		f.stack.set("",f.currentStackHeight++, Driver.CURRENT_HIGHLIGHT_COLOR);
 		writeSnap();

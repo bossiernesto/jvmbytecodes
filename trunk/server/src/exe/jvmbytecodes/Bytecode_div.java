@@ -28,77 +28,38 @@ class Bytecode_div extends Bytecode_ {
 	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
-		writeNextLineSnap();
 	
 		//idiv
 		if(opcode.contains("id"))
 		{
-			Object x, y;
-			x = f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Integer z = (Integer) y / (Integer) x;
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			Integer x = popInteger();
+			Integer y = popInteger();
+			Integer z = (y / x);
+			pushInteger(z);
 		}
 		//ldiv
 		else if(opcode.contains("l"))
 		{
-			Object x, y, a;
-			a = f._stack.pop();
-			x = f._stack.pop();
-			f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Long z = (Long) y / (Long) x;
-			f._stack.push(z);
-			f._stack.push(a);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(a, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			Long x = popLong();
+			Long y = popLong();
+			Long z = (y / x);
+			pushLong(z);
 		}
 		//fdiv
 		else if(opcode.contains("f"))
 		{
-			Object x, y;
-			x = f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Float z = (Float) y / (Float) x;
-			f._stack.push(z);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
+			Float x = popFloat();
+			Float y = popFloat();
+			Float z = (y / x);
+			pushFloat(z);
 		}
 		//ddiv
 		else if(opcode.contains("dd"))
 		{
-			Object x, y, a;
-			a = f._stack.pop();
-			x = f._stack.pop();
-			f._stack.pop();
-			y = f._stack.pop();
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			f.stack.set("",f.currentStackHeight++);
-			Double z = (Double) y / (Double) x;
-			f._stack.push(z);
-			f._stack.push(a);
-			f.stack.set(z, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.stack.set(a, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.stack.setColor(f.currentStackHeight, "#999999");
-			f.stack.setColor(f.currentStackHeight+1, "#999999");
+			Double x = popDouble();
+			Double y = popDouble();
+			Double z = (y / x);
+			pushDouble(z);
 		}
 		else
 		{

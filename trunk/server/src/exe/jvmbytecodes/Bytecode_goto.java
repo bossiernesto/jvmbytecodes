@@ -31,9 +31,10 @@ public class Bytecode_goto extends Bytecode_
 		f = (Frame_) Driver._runTimeStack.peek();
 		//Goto
 		next = Integer.parseInt(arguments.get(0));
-		writeNextLineSnap();
-		writeSnap();
+
 		f.returnAddress = next;
+
+		writeSnap();
 		return next;
 	}
 }

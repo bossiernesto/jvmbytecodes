@@ -38,8 +38,6 @@ public class Bytecode_if extends Bytecode_ {
 		// If
 		//total: 11
 		Integer x, y;
-		
-		writeNextLineSnap();
 
 		Random rand = new Random();
 		int random = rand.nextInt(2);
@@ -48,69 +46,57 @@ public class Bytecode_if extends Bytecode_ {
 		{
 			if (opcode.contains("ifeq"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x == 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */			
 			}
 			else if (opcode.contains("ifne"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x != 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */			
 			}
 			else if (opcode.contains("iflt"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x < 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */		
 			}
 			else if (opcode.contains("ifge"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x >= 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */			
 			}
 			else if (opcode.contains("ifgt"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x > 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */			
 			}
 			else if (opcode.contains("ifle"))
 			{
-				x = (Integer) f._stack.pop();
+				x = popInteger();
 
 				if ( x <= 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */
-				
-				f.stack.set("", f.currentStackHeight++);				
+					;/* no jump */			
 			}
 			else
 				System.out.println("Not a recognized bytecode");
@@ -137,7 +123,8 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
@@ -160,7 +147,8 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
@@ -183,7 +171,8 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
@@ -206,11 +195,10 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
-				
-				writeSnap();
 			}
 			// if_icmpgt
 			else if (arguments.get(0).contains("icmpgt")) 
@@ -235,7 +223,8 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
 			}
@@ -258,10 +247,10 @@ public class Bytecode_if extends Bytecode_ {
 					next = Integer.parseInt(arguments.get(1));
 				else
 					;/* no jump */
-				
+
+				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
-				writeSnap();
 			}
 			else
 				System.out.println("Not a recognized bytecode.");
@@ -271,6 +260,15 @@ public class Bytecode_if extends Bytecode_ {
 		return next;
 	}
 
+	void makePurple() throws IOException
+	{
+		f.stack.setColor(f.currentStackHeight, "#6666BB");
+		f.stack.setColor(f.currentStackHeight+1, "#6666BB");
+		writeSnap();
+		f.stack.setColor(f.currentStackHeight, "#999999");
+		f.stack.setColor(f.currentStackHeight+1, "#999999");
+	}
+
 	/*
 	 * Make a true of false question
 	 */
@@ -278,11 +276,6 @@ public class Bytecode_if extends Bytecode_ {
 		XMLtfQuestion question = new XMLtfQuestion(Driver.show, Driver.questionID + "");
 		question.setQuestionText("The bytecode will jump to line number " + arguments.get(1) + ".");
 		question.setAnswer(x <= y);
-		f.stack.setColor(f.currentStackHeight, "#6666BB");
-		f.stack.setColor(f.currentStackHeight + 1, "#6666BB");
-		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
-		f.stack.setColor(f.currentStackHeight + 1, "#999999");
 	}
 
 	/*
@@ -298,11 +291,6 @@ public class Bytecode_if extends Bytecode_ {
 			question.setAnswer(1);
 		else
 			question.setAnswer(2);
-		f.stack.setColor(f.currentStackHeight, "#6666BB");
-		f.stack.setColor(f.currentStackHeight + 1, "#6666BB");
-		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
-		f.stack.setColor(f.currentStackHeight + 1, "#999999");
 	}
 
 }

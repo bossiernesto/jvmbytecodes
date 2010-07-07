@@ -32,68 +32,24 @@ public class Bytecode_store extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Store
 		next = lineNumber + 1;
-		writeNextLineSnap();
 
 		// istore
 		if (opcode.contains("i")) {
-			//System.out.println("Enter istore");
-
-			int index = Integer.parseInt(arguments.get(0));
-			Integer x;
-			x = (Integer) f._stack.pop();
-			f._localVariableArray[index] = String.valueOf(x);
-			f.stack.set("", f.currentStackHeight++);
-			f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.localVariableArray.setColor(index, "#999999");
+			storeInteger(popInteger());
 		}
 		// lstore
 		//check and make sure that the localvartable is being modified at the correct indices
 		else if (opcode.contains("l")) {
-			int index = Integer.parseInt(arguments.get(0));
-			Long x;
-			String y;
-			y = (String) f._stack.pop();
-			x = (Long) f._stack.pop();
-			System.out.println("Index: " + index);
-			f._localVariableArray[index] = y;
-			f._localVariableArray[index+1] = String.valueOf(x);
-			f.stack.set("", f.currentStackHeight++);			
-			f.stack.set("", f.currentStackHeight++);
-			f.localVariableArray.set(String.valueOf(y), index, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.localVariableArray.set(String.valueOf(x), index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.localVariableArray.setColor(index, "#999999");
-			f.localVariableArray.setColor(index+1, "#999999");
+			storeLong(popLong());
 		}
 		//fstore
 		else if (opcode.contains("f")) {
-			int index = Integer.parseInt(arguments.get(0));
-			Float x;
-			x = (Float) f._stack.pop();
-			f._localVariableArray[index] = String.valueOf(x);
-			f.stack.set("", f.currentStackHeight++);
-			f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.localVariableArray.setColor(index, "#999999");
+			storeFloat(popFloat());
 		}
 		// dstore
 		//check and make sure that the localvartable is being modified at the correct indices
 		else if (opcode.contains("d")) {
-			int index = Integer.parseInt(arguments.get(0));
-			Double x;
-			String y;
-			y = (String) f._stack.pop();
-			x = (Double) f._stack.pop();
-			f._localVariableArray[index] = y;
-			f._localVariableArray[index+1] = String.valueOf(x);
-			f.stack.set("", f.currentStackHeight++);			
-			f.stack.set("", f.currentStackHeight++);
-			f.localVariableArray.set(String.valueOf(y), index, Driver.CURRENT_HIGHLIGHT_COLOR);
-			f.localVariableArray.set(String.valueOf(x), index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
-			writeSnap();
-			f.localVariableArray.setColor(index, "#999999");
-			f.localVariableArray.setColor(index+1, "#999999");
+			storeDouble(popDouble());
 		}
 		//aconst_null
 		else if (opcode.contains("astore")) {
@@ -118,3 +74,4 @@ public class Bytecode_store extends Bytecode_ {
 		return next;
 	}
 }
+
