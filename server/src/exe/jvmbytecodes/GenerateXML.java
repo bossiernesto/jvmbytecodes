@@ -118,10 +118,21 @@ public class GenerateXML {
 				e.printStackTrace();
 			}
 
+			//Replace spaces at the beginning of the line with tabs.
 			Driver.numberOfLinesInJavaFile = javaCode.size();
 			for (int k = 0; k < Driver.numberOfLinesInJavaFile; k++) {
-				bytecodeStr += "\t<line num=\"" + k + "\">" + javaCode.get(k)
-						+ "</line>\n";
+				int j=0;
+				String javaTempStr = javaCode.get(k);
+				while (javaCode.get(k).length() > j && (javaCode.get(k).charAt(j) == '\t' || javaCode.get(k).charAt(j) == ' '))
+				{
+					javaTempStr = javaTempStr.substring(1);
+					j++;
+				}
+				
+				if (k<10)
+					bytecodeStr += "\t<line num=\"" + k + "\" indent=\""+j+"\" >" + " "+javaTempStr + "</line>\n";
+				else
+					bytecodeStr += "\t<line num=\"" + k + "\" indent=\""+j+"\" >" + javaTempStr + "</line>\n";
 			}
 
 			bytecodeStr += "\t</code>\n";
@@ -150,6 +161,8 @@ public class GenerateXML {
 		for (int i = 0; i < temp.length(); i++) {
 			if (temp.charAt(i) == '<')
 				returnStr += "&#60;";
+			else if (temp.charAt(i) == '>')
+				returnStr += "&#62;";
 			else if (temp.charAt(i) == '&')
 				returnStr += "&#38;";
 			else if (temp.charAt(i) == '|')
