@@ -410,6 +410,8 @@ abstract class Bytecode_ {
 	 */
 	public void parse(String s) {
 		entireOpcode = s;
+		String[] s2 = s.split(":");
+		entireOpcode = s2[1];	
 
 		if(s.contains("_"))
 			underscore = "_";
