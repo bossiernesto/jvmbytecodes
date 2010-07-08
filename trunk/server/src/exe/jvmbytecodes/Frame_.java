@@ -1,5 +1,6 @@
 package exe.jvmbytecodes;
-
+import exe.GAIGSlegend;
+import exe.GAIGSItem;
 import java.io.IOException;
 import java.lang.InterruptedException;
 import java.io.File;
@@ -27,20 +28,35 @@ class Frame_{
     String methodName;
     int returnAddress;
     int methodIndex;
+	public GAIGSItem color1, color2, color3, color4;
+	public int rows = 1, columns = 4;
+	public GAIGSlegend jvmLegend = new GAIGSlegend(rows, columns,"", -.15, -.08, 1.15, .55, 1.5);
   	String CURRENT_FRAME_COLOR;
 
 	public Frame_(int currentMethod)
 	{
+
+
 		stackSize = Driver.classes[0].methods.get(currentMethod).stackSize;
 		currentStackHeight = Driver.classes[0].methods.get(currentMethod).stackSize;
 		methodName = Driver.classes[0].methods.get(currentMethod).name;
-		stack = new GAIGSarray( stackSize  , false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
+		stack = new GAIGSarray( stackSize, false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
 		methodIndex = currentMethod;
 		_localVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
 		_colorLocalVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
 		
-		System.out.println("CURRENTMETHOD" + (Driver._runTimeStack.size()%4));
-		CURRENT_FRAME_COLOR = Driver.runTimeStackColors[Driver._runTimeStack.size()%4];
+		System.out.println("CURRENTMETHOD" + (Driver._runTimeStack.size()%3));
+		CURRENT_FRAME_COLOR = Driver.runTimeStackColors[Driver._runTimeStack.size()%3];
+
+		color1 = new GAIGSItem("Before Execution", "#CCFFCC"); 
+		color2 = new GAIGSItem("After Execution", "#f691a6"); 
+		color3 = new GAIGSItem("Compared Items", "#6666BB"); 
+		color4 = new GAIGSItem("Current Frame", CURRENT_FRAME_COLOR); 
+		jvmLegend.setItem(0, 0, color1);
+		jvmLegend.setItem(0, 1, color2);
+		jvmLegend.setItem(0, 2, color3);
+		jvmLegend.setItem(0, 3, color4);
+		jvmLegend.disableBox();
 
 		//set stack to initial values, rather than "null"
 		for (int i = 0; i < stackSize; i++)

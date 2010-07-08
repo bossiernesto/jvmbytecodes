@@ -1,5 +1,6 @@
 package exe.jvmbytecodes;
 
+import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -23,7 +24,7 @@ class Bytecode_dcmp extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException,JDOMException {
+	public int execute() throws IOException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
 
@@ -33,17 +34,18 @@ class Bytecode_dcmp extends Bytecode_ {
 		//lcmp
 		if(opcode.contains("d"))
 		{
-			Double x, y;
+			Double x = popDouble();
+			Double y = popDouble();
 			int z;
-			x = popDouble();
-			y = popDouble();
 
-			if(x < y)
+			z = y.compareTo(x);
+/*			if(x < y)
 				z = 1;
 			else if(x == y)
 				z = 0;
 			else
 				z = -1;
+*/
 
 			pushInteger(z);
 		}

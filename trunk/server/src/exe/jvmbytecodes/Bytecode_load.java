@@ -1,4 +1,5 @@
 package exe.jvmbytecodes;
+import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -28,10 +29,15 @@ public class Bytecode_load extends Bytecode_
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException,JDOMException 
+	public int execute() throws IOException 
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
+
+		if(underscore.compareTo("_") == 0)
+			;
+		else
+			next += 1;
 
 		//Load
 		//iload
@@ -60,14 +66,7 @@ public class Bytecode_load extends Bytecode_
 		}
 
 		//we may need to increment next for long and double
-		if(underscore.compareTo("_") == 0)
-		{
-			;
-		}
-		else
-		{
-			next += 1;
-		}
+
 		f.returnAddress = next;
 		return next;
 	}

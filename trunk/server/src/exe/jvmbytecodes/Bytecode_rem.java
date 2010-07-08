@@ -1,4 +1,5 @@
 package exe.jvmbytecodes;
+import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -24,7 +25,7 @@ class Bytecode_rem extends Bytecode_ {
 	 * executes the current line
 	 * @return line number
 	 */
-	public int execute() throws IOException,JDOMException {
+	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
 

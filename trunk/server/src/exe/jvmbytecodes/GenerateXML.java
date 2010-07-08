@@ -96,27 +96,27 @@ public class GenerateXML {
 			Process cat = null;
 			
 			System.out.println("generating XML for class: "+Driver.classes[i].name);
-			//try {
+			try {
 				String catCommand = "cat " + path + "/" + fileName;
 				System.out.println(catCommand);
 				cat = Runtime.getRuntime().exec(catCommand);
-			//} catch (IOException e) {
-			//	e.printStackTrace();
-			//}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(cat
 					.getInputStream()));
 			ArrayList<String> javaCode = new ArrayList<String>();
 			String tempStr;
-			//try {
+			try {
 
 				while ((tempStr = br.readLine()) != null) {
 					tempStr = insertEscapeChar(tempStr);
 					javaCode.add(tempStr);
 				}
-			//} catch (IOException e) {
-			//	e.printStackTrace();
-			//}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 
 			//Replace spaces at the beginning of the line with tabs.
 			Driver.numberOfLinesInJavaFile = javaCode.size();

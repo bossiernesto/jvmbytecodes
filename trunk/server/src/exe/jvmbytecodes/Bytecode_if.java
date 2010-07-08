@@ -30,7 +30,7 @@ public class Bytecode_if extends Bytecode_ {
 	 * 
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException,JDOMException 
+	public int execute() throws IOException 
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber + 1;
@@ -46,57 +46,74 @@ public class Bytecode_if extends Bytecode_ {
 		{
 			if (opcode.contains("ifeq"))
 			{
-				x = popInteger();
-
+				x = (Integer) f._stack.pop();
 				if ( x == 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */			
+					;/* no jump */
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);	
 			}
 			else if (opcode.contains("ifne"))
 			{
-				x = popInteger();
+				x = (Integer) f._stack.pop();
 
 				if ( x != 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */			
+					;/* no jump */	
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);		
 			}
 			else if (opcode.contains("iflt"))
 			{
-				x = popInteger();
+				x = (Integer) f._stack.pop();
 
 				if ( x < 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */		
+					;/* no jump */	
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);	
 			}
 			else if (opcode.contains("ifge"))
 			{
-				x = popInteger();
+				x = (Integer) f._stack.pop();
 
 				if ( x >= 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */			
+					;/* no jump */		
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);		
 			}
 			else if (opcode.contains("ifgt"))
 			{
-				x = popInteger();
+				x = (Integer) f._stack.pop();
 
 				if ( x > 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */			
+					;/* no jump */		
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);		
 			}
 			else if (opcode.contains("ifle"))
 			{
-				x = popInteger();
+				x = (Integer) f._stack.pop();
 
 				if ( x <= 0) 
 					next = Integer.parseInt(arguments.get(0));
 				else
-					;/* no jump */			
+					;/* no jump */		
+
+				makePurpleSingle();
+				f.stack.set("", f.currentStackHeight++);		
 			}
 			else
 				System.out.println("Not a recognized bytecode");
@@ -260,13 +277,20 @@ public class Bytecode_if extends Bytecode_ {
 		return next;
 	}
 
-	void makePurple() throws IOException,JDOMException
+	void makePurple() throws IOException
 	{
 		f.stack.setColor(f.currentStackHeight, "#6666BB");
 		f.stack.setColor(f.currentStackHeight+1, "#6666BB");
 		writeSnap();
+		f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+		f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+	}
+
+	void makePurpleSingle() throws IOException
+	{
+		f.stack.setColor(f.currentStackHeight, "#6666BB");
+		writeSnap();
 		f.stack.setColor(f.currentStackHeight, "#999999");
-		f.stack.setColor(f.currentStackHeight+1, "#999999");
 	}
 
 	/*
