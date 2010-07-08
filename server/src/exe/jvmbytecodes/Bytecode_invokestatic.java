@@ -20,7 +20,7 @@ public class Bytecode_invokestatic extends Bytecode_
                 parse(str);
         }
 
-        public int execute() throws IOException 
+        public int execute() throws IOException,JDOMException 
         {
 			next = lineNumber+3;
 			f = (Frame_) Driver._runTimeStack.peek();

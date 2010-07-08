@@ -25,7 +25,7 @@ class Bytecode_rem extends Bytecode_ {
 	 * executes the current line
 	 * @return line number
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		next = lineNumber+1;
 

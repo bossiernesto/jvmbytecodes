@@ -28,7 +28,7 @@ public class Bytecode_store extends Bytecode_ {
 	 * 
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Store
 		next = lineNumber + 1;

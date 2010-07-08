@@ -8,10 +8,11 @@ import org.jdom.JDOMException;
 
 public class MakeURI {
 
+	static int numSnapshots =0;
 	/*
 	 * Generate the byte code for the visualization
 	 */
-	static String make_uri(int line, int color, Frame_ f) {
+	static String make_uri(int line, int color, Frame_ f) throws JDOMException{
 		// System.out.println("highlighting line: "+line);
 		return make_uri(new int[] { line }, new int[] { color }, f);
 	}
@@ -19,7 +20,12 @@ public class MakeURI {
 	/*
 	 * Generate the byte code for the visualization
 	 */
-	static String make_uri(int[] lines, int[] colors, Frame_ f) {
+	static String make_uri(int[] lines, int[] colors, Frame_ f) throws JDOMException {
+		numSnapshots++;
+		               if (numSnapshots > 500)
+		                       throw new InvalidNumOfSnaps("too many snapshots");
+		               
+		               
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
 				//print the call stack in the display
@@ -31,12 +37,12 @@ public class MakeURI {
 		map.put("method_call_stack", methodCallStack);
 		String uri = null;
 
-		try {
+		//try {
 			uri = Driver.pseudoBytecodes[Driver.currentClass].get(Driver.currentMethod).pseudo_uri(
 					map, lines, colors);
-		} catch (JDOMException e) {
-			e.printStackTrace();
-		}
+		//} catch (JDOMException e) {
+		//	e.printStackTrace();
+		//}
 
 		return uri;
 	}
@@ -57,7 +63,7 @@ static String printCallStack() {
 	/*
 	 * This method displays the java class
 	 */
-	static String doc_uri(int line, Frame_ f) {
+	static String doc_uri(int line, Frame_ f) throws JDOMException{
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
 		//print the call stack in the display
@@ -87,12 +93,12 @@ static String printCallStack() {
 
 		int[] lineToHighlight = new int[] { javaLine };
 
-		try {
+		//try {
 			uri = Driver.pseudoSourceCode[Driver.currentClass].pseudo_uri(
 					map, lineToHighlight, colors);
-		} catch (JDOMException e) {
-			e.printStackTrace();
-		}
+		//} catch (JDOMException e) {
+		//	e.printStackTrace();
+		//}
 
 		return uri;
 

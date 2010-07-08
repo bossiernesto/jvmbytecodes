@@ -24,7 +24,7 @@ class Bytecode_xor extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
 
