@@ -26,7 +26,7 @@ public class Bytecode_ldc extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// ldc
 		// total: 1

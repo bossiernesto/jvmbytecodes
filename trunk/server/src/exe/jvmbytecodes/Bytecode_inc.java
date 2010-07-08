@@ -27,7 +27,7 @@ public class Bytecode_inc extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Inc		next = lineNumber + 1;
 		next += 2;

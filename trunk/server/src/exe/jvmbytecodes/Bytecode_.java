@@ -14,6 +14,7 @@ import java.io.*;
 import java.util.*;
 import java.net.*;
 import exe.pseudocode.*;
+import org.jdom.JDOMException;
 
 /*
  * A representation of a byte code within the Java Virtual Machine.
@@ -31,15 +32,15 @@ abstract class Bytecode_ {
 	public String underscore;
 	public String entireOpcode;
 	public Frame_ f;
+	public String opcodeDisplay;
 
-
-	public abstract int execute() throws IOException;
+	public abstract int execute() throws IOException,JDOMException;
 	
 	/*
 	 * Writes a snapshot for the visualization
 	 * the line is highlighted green for executing right now!
 	 */
-	public void writeSnap() throws IOException {
+	public void writeSnap() throws IOException, JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
@@ -82,7 +83,7 @@ abstract class Bytecode_ {
 		}
 
 	//highlights the next line we want to execute red
-	public void writeSnapReturn() throws IOException
+	public void writeSnapReturn() throws IOException,JDOMException
 	{
 		f = (Frame_) Driver._runTimeStack.peek();
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
@@ -121,7 +122,7 @@ abstract class Bytecode_ {
 
 	//we may need this to show that we are starting to execute a new method
 	//i think it's called in invoke static
-	public void writeMethodSnap() throws IOException
+	public void writeMethodSnap() throws IOException,JDOMException
 	{
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
@@ -132,7 +133,7 @@ abstract class Bytecode_ {
 	}
 
 	//last snap of the entire slideshow, called in Driver
-	public void writeFinalSnap() throws IOException
+	public void writeFinalSnap() throws IOException,JDOMException
 	{
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
@@ -143,7 +144,7 @@ abstract class Bytecode_ {
 	}
 
 	//double
-	public void pushDouble(double d) throws IOException
+	public void pushDouble(double d) throws IOException,JDOMException
 	{
 		f._stack.push("");
 		f._stack.push(d);
@@ -185,7 +186,7 @@ abstract class Bytecode_ {
 		return temp;
 	}
 
-	public void storeDouble(Double x) throws IOException
+	public void storeDouble(Double x) throws IOException,JDOMException
 	{
 		int index = Integer.parseInt(arguments.get(0));
 		f._localVariableArray[index] = String.valueOf(x);
@@ -197,7 +198,7 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
 	}
 
-	public void loadDouble(Double x) throws IOException
+	public void loadDouble(Double x) throws IOException,JDOMException
 	{
 		f._stack.push("");
 		f._stack.push(x);
@@ -217,7 +218,7 @@ abstract class Bytecode_ {
 	}
 
 	//long
-	public void pushLong(long l) throws IOException
+	public void pushLong(long l) throws IOException,JDOMException
 	{
 		f._stack.push("");
 		f._stack.push(l);
@@ -259,7 +260,7 @@ abstract class Bytecode_ {
 		return temp;
 	}
 
-	public void storeLong(Long x) throws IOException
+	public void storeLong(Long x) throws IOException,JDOMException
 	{
 		int index = Integer.parseInt(arguments.get(0));
 		f._localVariableArray[index] = String.valueOf(x);
@@ -271,7 +272,7 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
 	}
 
-	public void loadLong(Long x) throws IOException
+	public void loadLong(Long x) throws IOException,JDOMException
 	{
 		f._stack.push("");
 		f._stack.push(x);
@@ -291,7 +292,7 @@ abstract class Bytecode_ {
 	}
 
 	//int
-	public void pushInteger(int i) throws IOException
+	public void pushInteger(int i) throws IOException,JDOMException
 	{
 		f._stack.push(i);
 		f.stack.set(i, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -324,7 +325,7 @@ abstract class Bytecode_ {
 		return temp;
 	}
 
-	public void storeInteger(Integer x) throws IOException
+	public void storeInteger(Integer x) throws IOException,JDOMException
 	{
 		int index = Integer.parseInt(arguments.get(0));
 		f._localVariableArray[index] = String.valueOf(x);
@@ -333,7 +334,7 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
 
-	public void loadInteger(Integer x) throws IOException
+	public void loadInteger(Integer x) throws IOException,JDOMException
 	{
 		f._stack.push(x);
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -349,7 +350,7 @@ abstract class Bytecode_ {
 	}
 
 	//float
-	public void pushFloat(float fl) throws IOException
+	public void pushFloat(float fl) throws IOException,JDOMException
 	{
 		f._stack.push(fl);
 		f.stack.set(fl, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -382,7 +383,7 @@ abstract class Bytecode_ {
 		return temp;
 	}
 
-	public void storeFloat(Float x) throws IOException
+	public void storeFloat(Float x) throws IOException,JDOMException
 	{
 		int index = Integer.parseInt(arguments.get(0));
 		f._localVariableArray[index] = String.valueOf(x);
@@ -391,7 +392,7 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
 
-	public void loadFloat(Float x) throws IOException
+	public void loadFloat(Float x) throws IOException,JDOMException
 	{
 		f._stack.push(x);
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
@@ -420,10 +421,10 @@ abstract class Bytecode_ {
 			underscore = "_";
 		else
 			underscore = " ";
-
+		String[] split;
 		if(s.contains(";"))
 		{
-			String[] split = s.split("//");
+			split = s.split("//");
 
 			String[] front = split[0].split("( |\\t|:|,|_|;)+");
 			lineNumber = Integer.parseInt(front[0]);
@@ -452,7 +453,7 @@ abstract class Bytecode_ {
 		}
 		else
 		{
-			String[] split = s.split("( |\\t|:|,|_)+");
+			split = s.split("( |\\t|:|,|_)+");
 			lineNumber = Integer.parseInt(split[0]);
 			opcode = split[1];
 			for(int i = 2; i < split.length; i++)
@@ -460,6 +461,11 @@ abstract class Bytecode_ {
 		}
 
 		next = lineNumber + 1;
+		if(entireOpcode.contains("#"))
+		{
+			String[] x = entireOpcode.split("#");
+			entireOpcode = x[0]+(split[1]);
+		}
 	}
 
 	/*

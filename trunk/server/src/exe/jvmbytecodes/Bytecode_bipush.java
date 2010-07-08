@@ -9,6 +9,7 @@ import org.jdom.*;
 
 import exe.*;
 import exe.pseudocode.*;
+import org.jdom.JDOMException;
 
 /*
  * Recognizes all byte codes that contain bipush
@@ -26,7 +27,7 @@ public class Bytecode_bipush extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Bipush
 		// total: 1

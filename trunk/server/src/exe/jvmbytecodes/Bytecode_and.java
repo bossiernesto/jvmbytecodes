@@ -9,6 +9,7 @@ import org.jdom.*;
 
 import exe.*;
 import exe.pseudocode.*;
+import org.jdom.JDOMException;
 
 //iand, land implemented
 class Bytecode_and extends Bytecode_ {
@@ -24,7 +25,7 @@ class Bytecode_and extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 		next = lineNumber + 1;
 		f = (Frame_) Driver._runTimeStack.peek();
 		//and

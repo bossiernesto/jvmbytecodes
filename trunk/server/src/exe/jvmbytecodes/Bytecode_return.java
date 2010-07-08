@@ -27,7 +27,7 @@ public class Bytecode_return extends Bytecode_ {
 	 * (non-Javadoc)
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException {
+	public int execute() throws IOException,JDOMException {
 
 		if(opcode.equals("return"))
 		{
