@@ -1,5 +1,6 @@
 package exe.jvmbytecodes;
 
+import java.io.IOException;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -27,11 +28,15 @@ public class Bytecode_store extends Bytecode_ {
 	 * 
 	 * @see exe.jvmbytecodes.Bytecode_#execute()
 	 */
-	public int execute() throws IOException,JDOMException {
+	public int execute() throws IOException {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Store
 		next = lineNumber + 1;
 
+		if (underscore.compareTo("_") == 0)
+			;
+		else
+			next += 1;
 		// istore
 		if (opcode.contains("i")) {
 			storeInteger(popInteger());
@@ -65,10 +70,7 @@ public class Bytecode_store extends Bytecode_ {
 			System.out.println("store bytecode not found");
 
 		//we may need to increment next for long and double
-		if (underscore.compareTo("_") == 0)
-			return next;
-		else
-			next += 1;
+
 		f.returnAddress = next;
 		return next;
 	}
