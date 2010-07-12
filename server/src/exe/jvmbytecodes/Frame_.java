@@ -18,29 +18,27 @@ import exe.*;
 class Frame_{
 
     Stack _stack = new Stack();
-    GAIGSarray stack;
+    GAIGSnewArray stack;
 	String[] _localVariableArray;
 	boolean stackColor = false;
-    GAIGSarray localVariableArray;
+    GAIGSnewArray localVariableArray;
 	String[] _colorLocalVariableArray;
     int stackSize = 0;
     int currentStackHeight;
     String methodName;
     int returnAddress;
     int methodIndex;
-	public GAIGSItem color1, color2, color3, color4;
-	public int rows = 1, columns = 4;
+	public GAIGSItem color1, color2, color3;
+	public int rows = 1, columns = 3;
 	public GAIGSlegend jvmLegend = new GAIGSlegend(rows, columns,"", -.15, -.08, 1.15, .55, 1.5);
   	String CURRENT_FRAME_COLOR;
 
 	public Frame_(int currentMethod)
 	{
-
-
 		stackSize = Driver.classes[0].methods.get(currentMethod).stackSize;
 		currentStackHeight = Driver.classes[0].methods.get(currentMethod).stackSize;
 		methodName = Driver.classes[0].methods.get(currentMethod).name;
-		stack = new GAIGSarray( stackSize, false, "Operand Stack", "#999999", 0.5, 0.1, 0.9, 0.5, 0.1);
+		stack = new GAIGSnewArray(stackSize, "Operand Stack", "#999999", 0.5, 0.1, 0.8, 0.4, 0.15);
 		methodIndex = currentMethod;
 		_localVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
 		_colorLocalVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
@@ -48,14 +46,12 @@ class Frame_{
 		System.out.println("CURRENTMETHOD" + (Driver._runTimeStack.size()%3));
 		CURRENT_FRAME_COLOR = Driver.runTimeStackColors[Driver._runTimeStack.size()%3];
 
-		color1 = new GAIGSItem("Before Execution", "#CCFFCC"); 
-		color2 = new GAIGSItem("After Execution", "#f691a6"); 
-		color3 = new GAIGSItem("Compared Items", "#6666BB"); 
-		color4 = new GAIGSItem("Current Frame", CURRENT_FRAME_COLOR); 
+		color1 = new GAIGSItem("After Execution", "#CCFFCC"); 
+		color2 = new GAIGSItem("Before Execution", "#FFDDDD"); 
+		color3 = new GAIGSItem("Current Frame", CURRENT_FRAME_COLOR); 
 		jvmLegend.setItem(0, 0, color1);
 		jvmLegend.setItem(0, 1, color2);
 		jvmLegend.setItem(0, 2, color3);
-		jvmLegend.setItem(0, 3, color4);
 		jvmLegend.disableBox();
 
 		//set stack to initial values, rather than "null"
@@ -63,8 +59,8 @@ class Frame_{
 			stack.set("", i);
 
 		//create, set, and sort local var array
-		localVariableArray = new GAIGSarray(Driver.classes[0].methods.get(currentMethod).numLocals, false,
-				"Local Variables", "#999999", 0.5, 0.5, 0.9, 0.9, 0.1);
+		localVariableArray = new GAIGSnewArray(Driver.classes[0].methods.get(currentMethod).numLocals,
+				"Local Variables", "#999999", 0.5, 0.6, 0.8, 0.9, 0.15);
 
 		String[][] array = Driver.classes[0].methods.get(currentMethod).localVariableTable;
 		Arrays.sort(array, new Compare());
@@ -88,26 +84,19 @@ class Frame_{
 		}
 
 		int num = 0;
-		for(int j = 0; j < _colorLocalVariableArray.length; j++)
-		{
+		for(int j = 0; j < _colorLocalVariableArray.length; j++) {
 			boolean label1 = localVariableArray.getRowLabel(j).contains("|");
 			boolean label2 = false;
 			if(j != _colorLocalVariableArray.length-1)
 				label2 = !localVariableArray.getRowLabel(j+1).contains("|");
-			else
-			{
+			else {
 				if(num == 0)
-				{
 					_colorLocalVariableArray[j] = Driver.lightGray;
-				}
 				else
-				{
 					_colorLocalVariableArray[j] = Driver.darkGray;
-				}	
 				break;			
 			}
-			if (label1 && label2)
-			{
+			if (label1 && label2) {
 				if(num == 0)
 				{
 					_colorLocalVariableArray[j] = Driver.lightGray;
@@ -115,23 +104,19 @@ class Frame_{
 					num = 1;
 					j++;
 				}
-				else
-				{
+				else {
 					_colorLocalVariableArray[j] = Driver.darkGray;
 					_colorLocalVariableArray[j+1] = Driver.darkGray;
 					num = 0;
 					j++;
 				}
 			}
-			else
-			{
-				if(num == 0)
-				{
+			else {
+				if(num == 0) {
 					_colorLocalVariableArray[j] = Driver.lightGray;
 					num = 1;
 				}
-				else
-				{
+				else {
 					_colorLocalVariableArray[j] = Driver.darkGray;
 					num = 0;
 				}

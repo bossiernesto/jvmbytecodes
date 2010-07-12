@@ -38,9 +38,9 @@ public class Driver {
     static PseudoCodeDisplay pseudoSourceCode[];//realCode;
     static boolean success;
     static ShowFile show;
-    static GAIGSstack runTimeStack;
+    static GAIGSnewStack runTimeStack;
     static Stack _runTimeStack = new Stack();
-    static GAIGSstack heap;
+    static GAIGSnewStack heap;
     static ArrayList _heap;
     static int currentClass;
     static int questionID;
@@ -104,9 +104,9 @@ public class Driver {
 			classes = GenerateBytecodes.getClasses(tmp);
 
 			// create visual stack and heap using the predetermined sizes
-			heap = new GAIGSstack("Heap", "#999999", 0.01, 0.5, 0.3, 0.9, 0.15);
-			runTimeStack = new GAIGSstack("Run Time Stack", "#999999", 0.01,
-					0.1, 0.3, 0.5, 0.15);
+			heap = new GAIGSnewStack("Heap", "#999999", 0, 0.55, 0.2, 0.9);
+			runTimeStack = new GAIGSnewStack("Run Time Stack", "#999999", 0,
+					0.1, 0.2, 0.5);
 
 			// set current method and class
 			currentClass = 0;

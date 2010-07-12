@@ -32,7 +32,7 @@ class Bytecode_dcmp extends Bytecode_ {
 		//dcmp
 		//total: 1
 
-		//lcmp
+		//dcmp
 		if(opcode.contains("d"))
 		{
 			Double x = popDouble();

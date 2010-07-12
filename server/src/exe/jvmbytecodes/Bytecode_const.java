@@ -44,15 +44,30 @@ public class Bytecode_const extends Bytecode_ {
 		}
 		// lconst 0, 1
 		else if (opcode.contains("l")) {
-			pushLong(Long.parseLong(arguments.get(0)));
+			if(arguments.get(0).compareTo("0") == 0)
+				pushLong(0L);
+			else if(arguments.get(0).compareTo("1") == 0)
+				pushLong(1L);
+			else
+				pushLong(Long.parseLong(arguments.get(0)));
 		}
 		// fconst_ 0, 1, 2
 		else if (opcode.contains("f")) {
-			pushFloat(Float.parseFloat(arguments.get(0)));
+			if(arguments.get(0).compareTo("0") == 0)
+				pushFloat(0F);
+			else if(arguments.get(0).compareTo("1") == 0)
+				pushFloat(1F);
+			else
+				pushFloat(Float.parseFloat(arguments.get(0)));
 		}
 		// dconst 0, 1
 		else if (opcode.contains("d")) {
-			pushDouble(Double.parseDouble(arguments.get(0)));
+			if(arguments.get(0).compareTo("0") == 0)
+				pushDouble(0.0);
+			else if(arguments.get(0).compareTo("1") == 0)
+				pushDouble(1.0);
+			else
+				pushDouble(Double.parseDouble(arguments.get(0)));
 		}
 		else {
 			System.out.println("Unrecognized opcode");
