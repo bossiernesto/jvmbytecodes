@@ -38,7 +38,7 @@ class Frame_{
 		stackSize = Driver.classes[0].methods.get(currentMethod).stackSize;
 		currentStackHeight = Driver.classes[0].methods.get(currentMethod).stackSize;
 		methodName = Driver.classes[0].methods.get(currentMethod).name;
-		stack = new GAIGSnewArray(stackSize, "Operand Stack", "#999999", 0.5, 0.1, 0.8, 0.4, 0.15);
+		stack = new GAIGSnewArray(stackSize, "Operand Stack", "#999999", 0.75, 0.1, 0.95, 0.9, 0.15);
 		methodIndex = currentMethod;
 		_localVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
 		_colorLocalVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals];
@@ -60,7 +60,7 @@ class Frame_{
 
 		//create, set, and sort local var array
 		localVariableArray = new GAIGSnewArray(Driver.classes[0].methods.get(currentMethod).numLocals,
-				"Local Variables", "#999999", 0.5, 0.6, 0.8, 0.9, 0.15);
+				"Local Variables", "#999999", 0.15, 0.1, 0.55, 0.9, 0.15);
 
 		String[][] array = Driver.classes[0].methods.get(currentMethod).localVariableTable;
 		Arrays.sort(array, new Compare());
@@ -122,6 +122,8 @@ class Frame_{
 				}
 			}
 		}
+		for(int i = 0; i < _colorLocalVariableArray.length; i++)
+			localVariableArray.setColor(i, _colorLocalVariableArray[i]);
 
 
 		for(int i = 0; i < stackSize; i++)

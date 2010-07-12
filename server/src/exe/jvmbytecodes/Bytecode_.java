@@ -116,7 +116,7 @@ abstract class Bytecode_ {
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
 	    pc.addPolygon(
 			    4,
-			    new double[] { 0.45, 0.45, 0.95, 0.95 },
+			    new double[] { .20, .20, 1.15, 1.15 },
 			    new double[] { 0.05, 0.95, 0.95, 0.05 },
 			    f.CURRENT_FRAME_COLOR,  // fill color
 			    f.CURRENT_FRAME_COLOR,  // outline color
@@ -124,13 +124,14 @@ abstract class Bytecode_ {
 			    ""          // polygon label
 			  );
 
+
 		//Draw connecting lines to frame
 		double [] coords = Driver.runTimeStack.getCornerPoints(
           Driver.runTimeStack.size() - 1);
-		double [] xline1 = new double[]{coords[2], .45};
+		double [] xline1 = new double[]{coords[2], .20};
 		double [] yline1 = new double[]{coords[3], .05};
 		pc.addLine(xline1, yline1, f.CURRENT_FRAME_COLOR, "#000000", "");
-		double [] xline2 = new double[]{coords[4], .45};
+		double [] xline2 = new double[]{coords[4], .20};
 		double [] yline2 = new double[]{coords[5], .95};
 		pc.addLine(xline2, yline2, f.CURRENT_FRAME_COLOR, "#000000", "");
 
@@ -175,7 +176,7 @@ abstract class Bytecode_ {
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
 	    pc.addPolygon(
 			    4,
-			    new double[] { 0.45, 0.45, 0.95, 0.95 },
+			    new double[] { .20, .20, 1.15, 1.15 },
 			    new double[] { 0.05, 0.95, 0.95, 0.05 },
 			    f.CURRENT_FRAME_COLOR,  // fill color
 			    f.CURRENT_FRAME_COLOR,  // outline color
@@ -186,10 +187,10 @@ abstract class Bytecode_ {
 		//Draw connecting lines to frame
 		double [] coords = Driver.runTimeStack.getCornerPoints(
           Driver.runTimeStack.size() - 1);
-		double [] xline1 = new double[]{coords[2], .45};
+		double [] xline1 = new double[]{coords[2], .20};
 		double [] yline1 = new double[]{coords[3], .05};
 		pc.addLine(xline1, yline1, f.CURRENT_FRAME_COLOR, "#000000", "");
-		double [] xline2 = new double[]{coords[4], .45};
+		double [] xline2 = new double[]{coords[4], .20};
 		double [] yline2 = new double[]{coords[5], .95};
 		pc.addLine(xline2, yline2, f.CURRENT_FRAME_COLOR, "#000000", "");
 
@@ -257,8 +258,14 @@ abstract class Bytecode_ {
 		f._stack.push(d);
 
 		//set the double in the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+
 		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.set(d, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
 
 		//write the snapshot
 		if(opcode.contains("return"))
@@ -291,8 +298,13 @@ abstract class Bytecode_ {
 		f._stack.pop();
 
 		//set the visual stack to blank values
+		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);			
 		f.stack.set("", f.currentStackHeight++);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("Top", (f.currentStackHeight));
 
 		//update the coloring the the visual stack
 		if(f.stackColor) {
@@ -346,8 +358,13 @@ abstract class Bytecode_ {
 		f._stack.push(x);
 
 		//set the double in the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
 
 		//write the snapshot
 		writeSnap();
@@ -369,8 +386,15 @@ abstract class Bytecode_ {
 	public void pushLong(long l) throws IOException,JDOMException {
 		f._stack.push("");
 		f._stack.push(l);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+
 		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.set(l, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
@@ -391,8 +415,14 @@ abstract class Bytecode_ {
 		Long temp;
 		temp = (Long) f._stack.pop();
 		f._stack.pop();
+		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);			
 		f.stack.set("", f.currentStackHeight++);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
@@ -420,8 +450,13 @@ abstract class Bytecode_ {
 	public void loadLong(Long x) throws IOException,JDOMException {
 		f._stack.push("");
 		f._stack.push(x);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
 		writeSnap();
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
@@ -438,7 +473,15 @@ abstract class Bytecode_ {
     //---------------------- Integer Methods ----------------------------------
 	public void pushInteger(int i) throws IOException,JDOMException {
 		f._stack.push(i);
+		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+
 		f.stack.set(i, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
@@ -455,7 +498,14 @@ abstract class Bytecode_ {
 
 	public Integer popInteger() {
 		Integer temp = (Integer) f._stack.pop();
+		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stackColor = false;
@@ -477,7 +527,14 @@ abstract class Bytecode_ {
 
 	public void loadInteger(Integer x) throws IOException,JDOMException {
 		f._stack.push(x);
+		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
 		writeSnap();
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
@@ -492,7 +549,13 @@ abstract class Bytecode_ {
     //---------------------- Float Methods -----------------------------------
 	public void pushFloat(float fl) throws IOException,JDOMException {
 		f._stack.push(fl);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set(fl, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
@@ -509,7 +572,13 @@ abstract class Bytecode_ {
 
 	public Float popFloat() {
 		Float temp = (Float) f._stack.pop();
+		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("Top", (f.currentStackHeight));
+
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stackColor = false;
@@ -531,7 +600,12 @@ abstract class Bytecode_ {
 
 	public void loadFloat(Float x) throws IOException,JDOMException {
 		f._stack.push(x);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
 		writeSnap();
 		if(f.stackColor){
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);

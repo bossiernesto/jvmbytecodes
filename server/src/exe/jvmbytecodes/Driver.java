@@ -117,8 +117,7 @@ public class Driver {
 
 			// create visual stack and heap using the predetermined sizes
 			heap = new GAIGSnewStack("Heap", "#999999", 0, 0.55, 0.2, 0.9);
-			runTimeStack = new GAIGSnewStack("Run Time Stack", "#999999", 0,
-					0.1, 0.2, 0.5);
+			runTimeStack = new GAIGSnewStack("Runtime Stack", "#999999", -1, 0.1, .05, 0.5);
 
 			// set current method and class
 			currentClass = 0;
