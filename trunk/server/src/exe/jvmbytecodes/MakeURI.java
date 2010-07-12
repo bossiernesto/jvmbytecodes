@@ -22,8 +22,8 @@ public class MakeURI {
 	 */
 	static String make_uri(int[] lines, int[] colors, Frame_ f) throws JDOMException {
 		numSnapshots++;
-		               if (numSnapshots > 500)
-		                       throw new InvalidNumOfSnaps("too many snapshots");
+		if (numSnapshots > 1000)
+		  throw new InvalidClassFileException("Too many snapshots made.");
 		               
 		               
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
