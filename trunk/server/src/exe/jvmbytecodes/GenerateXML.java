@@ -146,7 +146,7 @@ public class GenerateXML {
 			else if (temp.charAt(i) == '>')
 				returnStr += "&#62;";
 			else if (temp.charAt(i) == '&')
-				returnStr += "&#38;";
+				returnStr += "&amp;amp;";
 			else if (temp.charAt(i) == '|')
 				returnStr += "&#124;";
 			else if (temp.charAt(i) == '^')

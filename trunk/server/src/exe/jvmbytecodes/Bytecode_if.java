@@ -52,7 +52,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				f.stack.set("", f.currentStackHeight++);	
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));	
 				makeGreenSingle();
 			}
 			else if (opcode.contains("ifne"))
@@ -64,7 +69,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */	
 
-				f.stack.set("", f.currentStackHeight++);		
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));	
 				makeGreenSingle();
 			}
 			else if (opcode.contains("iflt"))
@@ -76,7 +86,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */	
 
-				f.stack.set("", f.currentStackHeight++);	
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreenSingle();
 			}
 			else if (opcode.contains("ifge"))
@@ -88,7 +103,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				f.stack.set("", f.currentStackHeight++);		
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));	
 				makeGreenSingle();
 			}
 			else if (opcode.contains("ifgt"))
@@ -100,7 +120,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				f.stack.set("", f.currentStackHeight++);		
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));	
 				makeGreenSingle();
 			}
 			else if (opcode.contains("ifle"))
@@ -112,7 +137,12 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				f.stack.set("", f.currentStackHeight++);		
+				f.stack.setRowLabel("", (f.currentStackHeight));
+				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));	
 				makeGreenSingle();
 			}
 			else
@@ -141,8 +171,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			// if_icmpne
@@ -165,8 +200,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			// if_icmplt
@@ -189,8 +229,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			// if_icmpge
@@ -213,8 +258,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			// if_icmpgt
@@ -241,8 +291,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			// if_icmple
@@ -265,8 +320,13 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
+				f.stack.setRowLabel("", (f.currentStackHeight));
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				if(f.currentStackHeight == f.stackSize)
+					;
+				else
+					f.stack.setRowLabel("Top", (f.currentStackHeight));
 				makeGreen();
 			}
 			else

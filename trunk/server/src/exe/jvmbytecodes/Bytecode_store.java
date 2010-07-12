@@ -32,7 +32,6 @@ public class Bytecode_store extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek();
 		// Store
 		next = lineNumber + 1;
-
 		if (underscore.compareTo("_") == 0)
 			;
 		else
