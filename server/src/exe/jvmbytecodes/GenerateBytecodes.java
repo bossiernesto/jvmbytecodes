@@ -15,6 +15,8 @@ import java.util.ArrayList;
 class GenerateBytecodes {
     static long timeStamp;
     static BufferedReader br;
+    static String currentMethodStr = "";
+    static String currentClassStr = "";
 
 	/*
 	 * A generation of a class object from a class file
@@ -74,19 +76,25 @@ class GenerateBytecodes {
 		    //String javacCommand = "javac -g " + path + "/" + fileName;
 			String javacCommand = "javac -g -d " + path + " " + path + "/" + fileName;
 			System.out.println(javacCommand);
+
+
+			
+			
 			javac = Runtime.getRuntime().exec(javacCommand);
+
 		//} catch (IOException e) {
 		//	return new String[] { "Error message 1" };
 		//}
 		//try {
 			javacStatus = javac.waitFor();
+
 		//} catch (InterruptedException e) {
 		//	return new String[] { "Error message 2" };
 		//}
 		if (javacStatus == 0) { // no compilation error
 			return new File(path).list(new ClassNameFilter());
 		} else {
-			throw new InvalidClassFileException("a compilation error occured");
+			throw new InvalidClassFileException("The java source file does not compile. ");
 			//return new String[] { "Error message 3" };
 		}
 	}// compile method
@@ -153,7 +161,9 @@ class GenerateBytecodes {
 		if (classIndex > 0) {
 			classModifiers = line.substring(0, classIndex - 1);
 			if (classModifiers.contains("abstract"))
-				throw new InvalidClassFileException("Abstract classes are not supported");
+				throw new InvalidClassFileException("Abstract classes are not supported.");
+			else if (classModifiers.contains("private"))
+				throw new InvalidClassFileException("Private classes are not supported.");
 
 			line = line.substring(classIndex);
 		} else {
@@ -173,6 +183,8 @@ class GenerateBytecodes {
 		}
 
 		String superName = tokens[3];
+		
+		currentClassStr = className;
 		return new Class_(classModifiers, packageName, className, superName);
 	}// parseClassNameAndSuperName method
 
@@ -339,6 +351,7 @@ class GenerateBytecodes {
 				}
 			}
 
+			currentMethodStr = name;
 			c.addMethod(new Method_(modifiers, returnType, name, parameterTypes, stackSize, numLocals, numArgs,
 					createBytecodeObjects(bytecodes), lineNumberTable, localVars, c.indent));
 
@@ -365,7 +378,7 @@ class GenerateBytecodes {
 	/*
 	 * determines if the string is a modifier
 	 * @param String s - containing a possible modifier
-	 * @return boolean true if the string containes a modifier
+	 * @return boolean true if the string contains a modifier
 	 */
 	private static boolean isModifier(String s) {
 		return s.equals("abstract") || s.equals("final") || s.equals("static") || s.equals("package")
@@ -422,6 +435,9 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_ldc_w(b));
 			} else if (b.contains("ldc2_w")) {
 				arraylist.add(new Bytecode_ldc2_w(b));
+			} else if (b.contains("aload")) {
+				if (currentMethodStr.compareTo(currentClassStr) != 0)
+					throw new InvalidClassFileException("aload bytecode is not supported by this visualization.");
 			} else if (b.contains("load")) {
 				arraylist.add(new Bytecode_load(b));
 			} else if (b.contains("mul")) {
@@ -448,8 +464,14 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_swap(b));
 			} else if (b.contains("xor")) {
 				arraylist.add(new Bytecode_xor(b));
-			} else
+			} else if (b.contains("invokespecial")) {
+				if (currentMethodStr.compareTo(currentClassStr) != 0)
+					throw new InvalidClassFileException("invokespecial bytecode is not recognized by this visualization.\n" +
+							"Object creation is not supported by this visualization."	);
+			} else {
 				System.out.println("no bytecodes generated");
+				//throw new InvalidClassFileException("A bytecode is not recognized by this visualization.");
+			}
 		}
 		for (int i = 0; i < arraylist.size(); i++) {
 			System.out.println(arraylist.get(i).toString());

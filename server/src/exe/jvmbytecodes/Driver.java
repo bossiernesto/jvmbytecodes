@@ -52,23 +52,23 @@ public class Driver {
 	static String standardGray = "#EEEEEE";
 	static String lightGray = "#BBBBBB";
 	static String darkGray = "#888888";
-    static GAIGSarray XMLstack;
-    static int XMLstackSize = 0;
+	static GAIGSarray XMLstack;
+	static int XMLstackSize = 0;
 	static String[] runTimeStackColors = new String[3];
+	static String file_contents = "";
 
 	/*
 	 * Main driver for the client
 	 * 
-	 * args[0] is the full path and number for naming showfile 
+	 * args[0] is the full path and number for naming showfile
 	 */
-	public static void main(String args[]) throws IOException, InvalidClassFileException, InterruptedException, JDOMException  {
+	public static void main(String args[]) throws IOException,
+			InvalidClassFileException, InterruptedException, JDOMException {
 
-		String file_contents = null;
 		String fileName = null;
 		File pathname = new File("", args[0]);
 
-		show = new ShowFile(args[0] + ".sho", 5); // first argument is the
-													// script foo.sho
+		show = new ShowFile(args[0] + ".sho", 5);
 
 		// create the uid sub-directory
 		try {
@@ -83,6 +83,18 @@ public class Driver {
 				Runtime.getRuntime().exec(
 						"cp ../../src/exe/jvmbytecodes/Builtin_Programs/"
 								+ args[1] + " " + args[0] + "/" + fileName);
+
+				// grab the file contents
+				Process cat = null;
+				String path = args[0];
+				String catCommand = "cat " + path + "/" + fileName;
+				cat = Runtime.getRuntime().exec(catCommand);
+				BufferedReader br = new BufferedReader(new InputStreamReader(cat.getInputStream()));
+				String tempStr = "";
+				while ((tempStr = br.readLine()) != null) {
+					file_contents += tempStr;
+				}
+
 			} else { // file is a user file and its content is in args[2]
 				file_contents = args[2];
 
@@ -171,67 +183,35 @@ public class Driver {
 				index++;
 			}
 
-		//questionID
-		questionID = 0;
+			// questionID
+			questionID = 0;
 
-		runTimeStackColors[0] = "#8f7864";
-		runTimeStackColors[1] = "#7a6365";
-		runTimeStackColors[2] = "#6b6a7c";
+			runTimeStackColors[0] = "#8f7864";
+			runTimeStackColors[1] = "#7a6365";
+			runTimeStackColors[2] = "#6b6a7c";
 
+			// get a random color for the stack
+			// String mainColor = getRandomColor();
 
-		// get a random color for the stack
-		//String mainColor = getRandomColor();
+			Frame_ f = new Frame_(currentMethod);
+			_runTimeStack.push(f);
 
-		Frame_ f = new Frame_(currentMethod);
-		_runTimeStack.push(f);
+			show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1,
+					PseudoCodeDisplay.RED, f), runTimeStack);
+			runTimeStack.push(classes[0].methods.get(currentMethod).name,
+					f.CURRENT_FRAME_COLOR);
+			show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1,
+					PseudoCodeDisplay.RED, f), runTimeStack);
 
-		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-		runTimeStack.push(classes[0].methods.get(currentMethod).name, f.CURRENT_FRAME_COLOR);
-		show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1, PseudoCodeDisplay.RED, f), runTimeStack);
-
-		// begin interpreter
-		Interpreter.interpret();
-		} catch (InvalidNumOfSnaps e) {
-			GAIGStext errorText = new GAIGStext(
-					0.5,
-					0.5,
-					"Visualization could not be produced because: \n"
-							+ "-too many snapshots were made. "
-							+ "-the program could run for too long"
-							+ "-there may be an infinite loop in the source code");
-			show.writeSnap(Driver.TITLE, errorText);
-		} catch (InvalidClassFileException e) {
-			GAIGStext errorText = new GAIGStext(
-					0.5,
-					0.5,
-					"Visualization could not be produced because: \n"
-							+ "-the source code contains features not supported by your interpreter\n "
-							+ " ex: objects, abstract classes, private classes, etc.\n"
-							+ "-the source code could not compile.\n"+e);
-			show.writeSnap(Driver.TITLE, errorText);
-		} catch (InterruptedException e) {
-			GAIGStext errorText = new GAIGStext(0.5, 0.5,
-					"Visualization could not be produced because: \n"
-							+ "-the source code does not compile.");
-			show.writeSnap(Driver.TITLE, errorText);
-		} catch (IOException e) {
-			GAIGStext errorText = new GAIGStext(0.5, 0.5,
-					"Visualization could not be produced because: \n"
-							+ "-the source code does not compile."
-							+ "-the file could be missing."
-							+ "Check source code.");
-			show.writeSnap(Driver.TITLE, errorText);
+			// begin interpreter
+			Interpreter.interpret();
 		} catch (Exception e) {
-			GAIGStext errorText = new GAIGStext(0.5, 0.5,
-					"Visualization could not be produced for an unknown reason. \n"
-							+ "Check source code");
+			GAIGStext errorText = new GAIGStext(0.5, 0.5, "" + e);
 			show.writeSnap(Driver.TITLE, errorText);
 		}
 
-	   	show.close();
+		show.close();
 	}
-	
-	
 
 	/*
 	 * Generates a random string for a hex color in the format: "#000000"

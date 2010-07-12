@@ -40,6 +40,7 @@ public class GenerateXML {
 				bytecodeStr += "\t</vars>\n";
 				bytecodeStr += "</pseudocode>\n";
 
+				//make the signature
 				String signature="";
 				for (int m=0; m<Driver.classes[i].methods.get(j).localVariableTable.length; m++)
 					signature+=Driver.classes[i].methods.get(j).localVariableTable[m][2];
@@ -96,34 +97,15 @@ public class GenerateXML {
 			Process cat = null;
 			
 			System.out.println("generating XML for class: "+Driver.classes[i].name);
-			//try {
-				String catCommand = "cat " + path + "/" + fileName;
-				System.out.println(catCommand);
-				cat = Runtime.getRuntime().exec(catCommand);
-			//} catch (IOException e) {
-			//	e.printStackTrace();
-			//}
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(cat
-					.getInputStream()));
-			ArrayList<String> javaCode = new ArrayList<String>();
-			String tempStr;
-			//try {
-
-				while ((tempStr = br.readLine()) != null) {
-					tempStr = insertEscapeChar(tempStr);
-					javaCode.add(tempStr);
-				}
-			//} catch (IOException e) {
-			//	e.printStackTrace();
-			//}
-
+			Driver.file_contents = insertEscapeChar(Driver.file_contents);
+			String fileContents[] = Driver.file_contents.split("[\n]");
+			
 			//Replace spaces at the beginning of the line with tabs.
-			Driver.numberOfLinesInJavaFile = javaCode.size();
-			for (int k = 0; k < Driver.numberOfLinesInJavaFile; k++) {
+			for (int k = 0; k < fileContents.length; k++) {
 				int j=0;
-				String javaTempStr = javaCode.get(k);
-				while (javaCode.get(k).length() > j && (javaCode.get(k).charAt(j) == '\t' || javaCode.get(k).charAt(j) == ' '))
+				String javaTempStr = fileContents[k];
+				while (fileContents[k].length() > j && (fileContents[k].charAt(j) == '\t' || fileContents[k].charAt(j) == ' '))
 				{
 					javaTempStr = javaTempStr.substring(1);
 					j++;
@@ -141,7 +123,7 @@ public class GenerateXML {
 			bytecodeStr += "\t<var>stack size: <replace var=\"stack_size\" /></var>\n";
 			bytecodeStr += "\t</vars>\n";
 			bytecodeStr += "</pseudocode>\n";
-
+			
 			String XML = "exe/jvmbytecodes/" + Driver.classes[i].name + ".xml";
 			FileOutputStream out = new FileOutputStream(XML);
 			out.write(bytecodeStr.getBytes());
