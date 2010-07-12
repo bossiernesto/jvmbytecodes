@@ -52,8 +52,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);	
+				makeGreenSingle();
 			}
 			else if (opcode.contains("ifne"))
 			{
@@ -64,8 +64,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */	
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);		
+				makeGreenSingle();
 			}
 			else if (opcode.contains("iflt"))
 			{
@@ -76,8 +76,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */	
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);	
+				makeGreenSingle();
 			}
 			else if (opcode.contains("ifge"))
 			{
@@ -88,8 +88,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);		
+				makeGreenSingle();
 			}
 			else if (opcode.contains("ifgt"))
 			{
@@ -100,8 +100,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);		
+				makeGreenSingle();
 			}
 			else if (opcode.contains("ifle"))
 			{
@@ -112,8 +112,8 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */		
 
-				makePurpleSingle();
 				f.stack.set("", f.currentStackHeight++);		
+				makeGreenSingle();
 			}
 			else
 				System.out.println("Not a recognized bytecode");
@@ -141,9 +141,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			// if_icmpne
 			else if (arguments.get(0).contains("icmpne")) 
@@ -165,9 +165,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			// if_icmplt
 			else if (arguments.get(0).contains("icmplt")) 
@@ -189,9 +189,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			// if_icmpge
 			else if (arguments.get(0).contains("icmpge")) 
@@ -213,9 +213,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			// if_icmpgt
 			else if (arguments.get(0).contains("icmpgt")) 
@@ -241,9 +241,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			// if_icmple
 			else if (arguments.get(0).contains("icmple")) 
@@ -265,9 +265,9 @@ public class Bytecode_if extends Bytecode_ {
 				else
 					;/* no jump */
 
-				makePurple();
 				f.stack.set("", f.currentStackHeight++);
 				f.stack.set("", f.currentStackHeight++);
+				makeGreen();
 			}
 			else
 				System.out.println("Not a recognized bytecode.");
@@ -277,20 +277,20 @@ public class Bytecode_if extends Bytecode_ {
 		return next;
 	}
 
-	void makePurple() throws IOException,JDOMException
+	void makeGreen() throws IOException,JDOMException
 	{
-		f.stack.setColor(f.currentStackHeight, "#6666BB");
-		f.stack.setColor(f.currentStackHeight+1, "#6666BB");
+		f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+		f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
 		writeSnap();
-		f.stack.setColor(f.currentStackHeight, Driver.lightGray);
-		f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+		f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+		f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
 	}
 
-	void makePurpleSingle() throws IOException,JDOMException
+	void makeGreenSingle() throws IOException,JDOMException
 	{
-		f.stack.setColor(f.currentStackHeight, "#6666BB");
+		f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 		writeSnap();
-		f.stack.setColor(f.currentStackHeight, "#999999");
+		f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 	}
 
 	/*

@@ -35,8 +35,7 @@ public class Bytecode_invokestatic extends Bytecode_
                     }
                     index++;
             }
-//			String x = (String) Driver.runTimeStack.pop();
-//			Driver.runTimeStack.setColor(Driver.runTimeStack.size()-1, Driver.lightGray);        
+        
 			writeMethodSnap();
 			Driver.currentMethod = index;
 			int numParameters = parameters.length;
@@ -44,7 +43,7 @@ public class Bytecode_invokestatic extends Bytecode_
 			int counter = 0;
 			for(int i = 0; i < numParameters; i++)
 			{
-				if(parameters[i].equals("D") || parameters[i].equals("L"))
+				if(parameters[i].equals("D") || parameters[i].equals("J"))
 					counter++;
 				else
 					;
@@ -53,19 +52,21 @@ public class Bytecode_invokestatic extends Bytecode_
 
         	Frame_ f2 = new Frame_(Driver.currentMethod);
 			Driver.runTimeStack.push(path, f2.CURRENT_FRAME_COLOR);
+
 			int j = counter-1;
-			if(numParameters%2 == 0)
+			System.out.println("j: " + j);
+		    if(numParameters%2 == 0)
 				;
 			else
-				f2.stackColor = true;
-			for(int i = 0; i < numParameters; i++)
+				f2.stackColor = true; 
+			for(int i = (numParameters-1); i >= 0; i--)
 			{
+				System.out.println("Parameters are: " + parameters[i]);
 				if(parameters[i].equals("I"))
 				{
 					int var;
 					var = popInteger();
 					f2._localVariableArray[j] = Integer.toString(var);
-					System.out.println("I AM HERE + " + f2.stackColor);
 					if(!f2.stackColor){
 						f2.localVariableArray.set(Integer.toString(var), j, Driver.darkGray);
 						f2.stackColor = true;
@@ -74,7 +75,6 @@ public class Bytecode_invokestatic extends Bytecode_
 						f2.localVariableArray.set(Integer.toString(var), j, Driver.lightGray);
 						f2.stackColor = false;		
 					}				
-						
 				}
 				else if(parameters[i].equals("J"))
 				{
@@ -105,7 +105,7 @@ public class Bytecode_invokestatic extends Bytecode_
 					else{
 						f2.localVariableArray.set(Float.toString(var), j, Driver.lightGray);
 						f2.stackColor = false;
-					}						
+					}				
 				}
 				else if(parameters[i].equals("D"))
 				{
@@ -122,6 +122,8 @@ public class Bytecode_invokestatic extends Bytecode_
 						f2.localVariableArray.set("", j, Driver.lightGray);
 						f2.stackColor = false;
 					}
+					//f2.localVariableArray.set(var, j-1);
+					//f2.localVariableArray.set("", j);
 					j--;
 				}
 				else
