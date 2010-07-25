@@ -27,7 +27,6 @@ along with the JHAVE. If not, see:
 // then processes these inputs so they can be properly fed into 
 // Sort.java.
 package exe.jvmbytecodes;
-
 import exe.*;
 import java.io.*;
 import java.lang.*;

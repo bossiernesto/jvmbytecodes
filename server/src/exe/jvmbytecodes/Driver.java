@@ -21,40 +21,115 @@
  */
 
 package exe.jvmbytecodes;
-
 import java.io.*;
 import java.util.*;
 import java.net.*;
-
 import org.jdom.*;
-
 import exe.*;
 import exe.pseudocode.*;
-
+/*
+* <p><code>Driver</code> drives the execution of the JVM simulator
+* Use the <code>main</code> method to execute all operations.
+*
+* @author William Clements
+* @author David Furcy
+* @author Caitlyn Pickens
+* @author Cory Sheeley
+* @version 7/11/2010
+*/
 public class Driver {
-
+  //---------------------- Instance Variables -------------------------------------
+  /**
+    * The title
+  */
     static final String TITLE = null; // no title
-    static ArrayList<PseudoCodeDisplay> pseudoBytecodes[];//pseudo;
+  /**
+    * An array of Pseudo Code display tab information
+  */
+    static ArrayList<PseudoCodeDisplay> pseudoBytecodes[];//pseudo;]
+
+  /**
+    * An array of Info tab display information
+  */
     static PseudoCodeDisplay pseudoSourceCode[];//realCode;
+
+  /**
+    * A boolean counter
+  */
     static boolean success;
+
+  /**
+    * The show file where JHAVE snapshot are stored
+  */
     static ShowFile show;
+
+  /**
+    * The visual runtime stack
+  */
     static GAIGSnewStack runTimeStack;
+  /**
+    * The virtual runtime stack
+  */
     static Stack _runTimeStack = new Stack();
+  /**
+    * The visual heap
+  */
     static GAIGSnewStack heap;
+  /**
+    * The virtual heap
+  */
     static ArrayList _heap;
+  /**
+    * Current class counter
+  */
     static int currentClass;
-    static int questionID;
+  /**
+    * The number of lines in the input java file
+  */
     static int numberOfLinesInJavaFile = 1;
+  /**
+    * The size of the heap
+  */
     static int heapSize = 0;
+  /**
+    * Current method counter
+  */
     static int currentMethod = 1;
+  /**
+    * An array of Class_ objects
+  */
     static Class_[] classes;
+  /**
+    * The color used to highlight in a snapshot
+  */
 	static String CURRENT_HIGHLIGHT_COLOR = "#CCFFCC";
+  /**
+    * The color used for standard gray background
+  */
 	static String standardGray = "#EEEEEE";
-	static String lightGray = "#FFFFFF";
-	static String darkGray = "#DDDDDD";
+  /**
+    * The color used for light gray
+  */
+	static String lightGray = "#BBBBBB";
+  /**
+    * The color used for dark gray
+  */
+	static String darkGray = "#888888";
+  /**
+    * XMLstack used in XML classes
+  */
 	static GAIGSarray XMLstack;
+  /**
+    * XMLstack size used in XML classes
+  */
 	static int XMLstackSize = 0;
+  /**
+    * Array of colors for the visual runtime stack
+  */
 	static String[] runTimeStackColors = new String[3];
+  /**
+    * The input file contents
+  */
 	static String file_contents = "";
 	static String path;
 
@@ -183,9 +258,7 @@ public class Driver {
 				index++;
 			}
 
-			// questionID
-			questionID = 0;
-
+			//set the visual runtime stack colors
 			//these colors will be cycled through when a new frame is added
 			runTimeStackColors[0] = "#a7bbff";
 			runTimeStackColors[1] = "#e589e4";
@@ -201,9 +274,10 @@ public class Driver {
 			// get a random color for the stack
 			// String mainColor = getRandomColor();
 
-			Frame_ f = new Frame_(currentMethod);
-			_runTimeStack.push(f);
+			Frame_ f = new Frame_(currentMethod);	//make a new frame
+			_runTimeStack.push(f); //push the frame
 
+			//write opening snapshots
 			show.writeSnap(TITLE, MakeURI.doc_uri(-1, f), MakeURI.make_uri(-1,
 					PseudoCodeDisplay.RED, f), runTimeStack);
 			runTimeStack.push(classes[0].methods.get(currentMethod).name,
@@ -218,7 +292,7 @@ public class Driver {
 			show.writeSnap(Driver.TITLE, errorText);
 		}
 
-		show.close();
+		show.close(); //close the show file
 		
 		//remove the directory b/c you are done with it
 			File dirObj = new File(args[0]);
