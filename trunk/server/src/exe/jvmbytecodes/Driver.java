@@ -261,8 +261,8 @@ public class Driver {
 			//set the visual runtime stack colors
 			//these colors will be cycled through when a new frame is added
 			runTimeStackColors[0] = "#a7bbff";
-			runTimeStackColors[1] = "#e589e4";
-			runTimeStackColors[2] = "#f0ff6b";
+			runTimeStackColors[1] = "#dbf1ff";
+			runTimeStackColors[2] = "#ffffaa";
 
 			/*
 			//bright colors
