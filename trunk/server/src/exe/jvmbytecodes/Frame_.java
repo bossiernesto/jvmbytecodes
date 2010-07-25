@@ -35,6 +35,10 @@ class Frame_{
 
 	public Frame_(int currentMethod)
 	{
+		if (Driver.classes[0].methods.get(currentMethod).numLocals > 20)
+			throw new InvalidClassFileException("Please limit the number of local variables in a frame of \n"
+				+"the program to 20.");
+	
 		stackSize = Driver.classes[0].methods.get(currentMethod).stackSize;
 		currentStackHeight = Driver.classes[0].methods.get(currentMethod).stackSize;
 		methodName = Driver.classes[0].methods.get(currentMethod).name;

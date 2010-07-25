@@ -47,7 +47,7 @@ public class GenerateXML {
 				signature = replaceSlashWithDot(signature);
 				System.out.println("sinature is: "+signature);
 				
-				String XML = "exe/jvmbytecodes/"
+				String XML = Driver.path + "/"
 						+ Driver.classes[i].name
 						+ Driver.classes[i].methods.get(j).name+signature
 						+ ".xml";
@@ -124,7 +124,7 @@ public class GenerateXML {
 			bytecodeStr += "\t</vars>\n";
 			bytecodeStr += "</pseudocode>\n";
 			
-			String XML = "exe/jvmbytecodes/" + Driver.classes[i].name + ".xml";
+			String XML = Driver.path + "/" + Driver.classes[i].name + ".xml";
 			FileOutputStream out = new FileOutputStream(XML);
 			out.write(bytecodeStr.getBytes());
 			out.flush();

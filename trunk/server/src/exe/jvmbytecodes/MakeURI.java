@@ -25,7 +25,6 @@ public class MakeURI {
 		if (numSnapshots > 1000)
 		  throw new InvalidClassFileException("Too many snapshots made.");
 		               
-		               
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);
 				//print the call stack in the display
@@ -37,17 +36,13 @@ public class MakeURI {
 		map.put("method_call_stack", methodCallStack);
 		String uri = null;
 
-		//try {
-			uri = Driver.pseudoBytecodes[Driver.currentClass].get(Driver.currentMethod).pseudo_uri(
-					map, lines, colors);
-		//} catch (JDOMException e) {
-		//	e.printStackTrace();
-		//}
+		uri = Driver.pseudoBytecodes[Driver.currentClass].get(Driver.currentMethod).pseudo_uri(
+			map, lines, colors);
 
 		return uri;
 	}
 
-static String printCallStack() {
+	static String printCallStack() {
 		String returnStr =" ";
 		Frame_ tempFrame;
 
@@ -87,7 +82,7 @@ static String printCallStack() {
 		for (int i = 0; i < currentMethod.lineNumberTable.length; i++) {
 			if (currentMethod.lineNumberTable[i][1] <= line) {
 				javaLine = currentMethod.lineNumberTable[i][0] - 1;
-				//System.out.println("\t\t\t\t\t\t\t\t\t"						+ (currentMethod.lineNumberTable[i][0] - 1));
+				
 			}
 		}
 
