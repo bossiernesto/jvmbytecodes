@@ -35,6 +35,11 @@ import java.util.*;
 import java.net.*;
 import exe.pseudocode.*;
 import org.jdom.JDOMException;
+import java.io.*;
+import java.util.*;
+import org.jdom.*;
+import exe.*;
+import exe.pseudocode.*;
 
 /*
 * <p><code>Bytecode_</code> provides a representation of a bytecode within the Java Virtual
@@ -102,6 +107,7 @@ abstract class Bytecode_ {
     //---------------------- Constructors -------------------------------------------
 	// No constructors.
 
+    //---------------------- Abstract methods -------------------------------------------
 	public abstract int execute() throws IOException,JDOMException;
 	
     //---------------------- Snapshot Methods ---------------------------------------
@@ -273,7 +279,7 @@ abstract class Bytecode_ {
 		else
 			writeSnap();
 
-		//update the coloring the the visual stack
+		//update the coloring of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
@@ -306,7 +312,7 @@ abstract class Bytecode_ {
 		else
 			f.stack.setRowLabel("Top", (f.currentStackHeight));
 
-		//update the coloring the the visual stack
+		//update the coloring of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
@@ -369,7 +375,7 @@ abstract class Bytecode_ {
 		//write the snapshot
 		writeSnap();
 
-		//update the coloring the the visual stack
+		//update the coloring of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
@@ -383,9 +389,17 @@ abstract class Bytecode_ {
 	}
 
     //---------------------- Long Methods ------------------------------------
+    /**
+	 * Push a long on the operand stack
+     *
+     * @param       l           The long to be pushed
+     */
 	public void pushLong(long l) throws IOException,JDOMException {
+		//push a long on the virtual stack
 		f._stack.push("");
 		f._stack.push(l);
+
+		//set a long on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -395,10 +409,13 @@ abstract class Bytecode_ {
 		f.stack.set(l, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
 
+		//write the snapshot
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
 			writeSnap();
+
+		//update the coloring of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
@@ -411,13 +428,23 @@ abstract class Bytecode_ {
 		}		
 	}
 
+    /**
+	 * Pop a long from the operand stack
+     *
+     * @return           The long popped off the operand stack
+     */
 	public Long popLong() {
+		//pop a long off the virtual stack
 		Long temp;
 		temp = (Long) f._stack.pop();
 		f._stack.pop();
+
+		//set the visual stack to blank values
 		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);			
 		f.stack.set("", f.currentStackHeight++);
+
+		//update the colors on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -433,23 +460,47 @@ abstract class Bytecode_ {
 			f.stack.setColor(f.currentStackHeight-2, Driver.lightGray);
 			f.stackColor = true;
 		}
+
+		//return the long
 		return temp;
 	}
 
+    /**
+	 * Store a long in the local variable array
+     *
+     * @param       x           The long to be stored
+     */
 	public void storeLong(Long x) throws IOException,JDOMException {
+		//get the index
 		int index = Integer.parseInt(arguments.get(0));
+
+		//store the long in the virtual local variable array
 		f._localVariableArray[index] = String.valueOf(x);
 		f._localVariableArray[index+1] = "";
+
+		//set the long in the visual local variable array
 		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.localVariableArray.set("", index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
+
+		//write the snapshot
 		writeSnap();
+
+		//update the shades of gray
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
 	}
 
+    /**
+	 * Load a long to the operand stack
+     *
+     * @param       x           The long to be loaded
+     */
 	public void loadLong(Long x) throws IOException,JDOMException {
+		//push the long on the virtual stack
 		f._stack.push("");
 		f._stack.push(x);
+
+		//set the long in the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -457,7 +508,11 @@ abstract class Bytecode_ {
 		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
 		writeSnap();
+
+		//update the colors of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
@@ -471,9 +526,16 @@ abstract class Bytecode_ {
 	}
 
     //---------------------- Integer Methods ----------------------------------
+    /**
+	 * Push an int on the operand stack
+     *
+     * @param       i           The int to be pushed
+     */
 	public void pushInteger(int i) throws IOException,JDOMException {
+		//push the int on the virtual stack
 		f._stack.push(i);
-		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+
+		//set the int on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -482,10 +544,13 @@ abstract class Bytecode_ {
 		f.stack.set(i, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
 
+		//write the snapshot
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
 			writeSnap();
+
+		//update the colors on the visual stack
 		if(f.stackColor){
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stackColor = false;
@@ -496,11 +561,20 @@ abstract class Bytecode_ {
 		}
 	}
 
+    /**
+	 * Pop an int from the operand stack
+     *
+     * @return           The Integer popped off the operand stack
+     */
 	public Integer popInteger() {
+		//pop an int off of the virtual stack
 		Integer temp = (Integer) f._stack.pop();
-		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+
+		//set the visual stack to blank values
 		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);
+
+		//set the colors of the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -514,28 +588,54 @@ abstract class Bytecode_ {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stackColor = true;
 		}
+
+		//return the int
 		return temp;
 	}
 
+    /**
+	 * Store an int in the local variable array
+     *
+     * @param       x           The Integer to be stored
+     */
 	public void storeInteger(Integer x) throws IOException,JDOMException {
+		//get the index
 		int index = Integer.parseInt(arguments.get(0));
+
+		//store the value in the virtual local variable array
 		f._localVariableArray[index] = String.valueOf(x);
+
+		//set the value in the visual local variable array
 		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+
+		//write the snapshot
 		writeSnap();
+
+		//update the shades of gray
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
 
+    /**
+	 * Load an int to the operand stack
+     *
+     * @param       x           The int to be loaded
+     */
 	public void loadInteger(Integer x) throws IOException,JDOMException {
+		//push the int on the virtual stack
 		f._stack.push(x);
-		System.out.println("CURRENTSTACKHEIGHT: " + f.currentStackHeight);
+
+		//set the int on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
 			f.stack.setRowLabel("", (f.currentStackHeight));
-
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
 		writeSnap();
+
+		//update the colors of the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stackColor = false;
@@ -547,19 +647,30 @@ abstract class Bytecode_ {
 	}
 
     //---------------------- Float Methods -----------------------------------
+    /**
+	 * Push a float on the operand stack
+     *
+     * @param       f           The float to be pushed
+     */
 	public void pushFloat(float fl) throws IOException,JDOMException {
+		//push the float on the virtual stack
 		f._stack.push(fl);
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
 			f.stack.setRowLabel("", (f.currentStackHeight));
+
+		//set the float on the visual stack
 		f.stack.set(fl, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
 
+		//write the snapshot
 		if(opcode.contains("return"))
 			writeSnapReturn();
 		else
 			writeSnap();
+
+		//update the colors on the visual stack
 		if(f.stackColor) {
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stackColor = false;
@@ -570,10 +681,20 @@ abstract class Bytecode_ {
 		}	
 	}
 
+    /**
+	 * Pop a float from the operand stack
+     *
+     * @return           The float popped off the operand stack
+     */
 	public Float popFloat() {
+		//pop the float off of the virtual stack
 		Float temp = (Float) f._stack.pop();
+
+		//set the visual stack to blank values
 		f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set("", f.currentStackHeight++);
+
+		//update the colors of the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -587,26 +708,54 @@ abstract class Bytecode_ {
 			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
 			f.stackColor = true;
 		}
+
+		//return the float
 		return temp;
 	}
 
+    /**
+	 * Store a float in the local variable array
+     *
+     * @param       x           The float to be stored
+     */
 	public void storeFloat(Float x) throws IOException,JDOMException {
+		//get the index
 		int index = Integer.parseInt(arguments.get(0));
+
+		//store the value in the virtual local variable array
 		f._localVariableArray[index] = String.valueOf(x);
+
+		//set the value in the visual local variable array
 		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		
+		//write the snapshot
 		writeSnap();
+
+		//update the colors of the local variable array
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
 
+    /**
+	 * Load a float to the operand stack
+     *
+     * @param       x           The float to be loaded
+     */
 	public void loadFloat(Float x) throws IOException,JDOMException {
+		//push the float on the virtual stack
 		f._stack.push(x);
+
+		//set the float on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
 			f.stack.setRowLabel("", (f.currentStackHeight));
 		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
 		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
 		writeSnap();
+
+		//update the coloring of the visual stack
 		if(f.stackColor){
 			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
 			f.stackColor = false;
@@ -616,7 +765,6 @@ abstract class Bytecode_ {
 			f.stackColor = true;
 		}
 	}
-
 
     //---------------------- Parse Methods -----------------------------------
 	/*
@@ -723,6 +871,8 @@ abstract class Bytecode_ {
 	}
 
 	/*
+	 * (non-Javadoc)
+	 *
 	 * Current line number being executed within the byte code
 	 */
 	public int getLineNumber() {
