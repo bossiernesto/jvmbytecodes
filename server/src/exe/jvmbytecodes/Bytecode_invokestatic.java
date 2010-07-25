@@ -132,6 +132,11 @@ public class Bytecode_invokestatic extends Bytecode_
 				j--;
 			}
 			Driver._runTimeStack.push(f2);
+			
+			if (Driver.runTimeStack.size() > 50)
+		  		throw new InvalidClassFileException("Cannot produce more thatn 50 stack frames.\n"
+		  			+"Try less than 50 method calls.");
+		  
 			next = 0;
         	return next;
         }

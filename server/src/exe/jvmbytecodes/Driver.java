@@ -50,50 +50,51 @@ public class Driver {
     static Class_[] classes;
 	static String CURRENT_HIGHLIGHT_COLOR = "#CCFFCC";
 	static String standardGray = "#EEEEEE";
-	static String lightGray = "#BBBBBB";
-	static String darkGray = "#888888";
+	static String lightGray = "#FFFFFF";
+	static String darkGray = "#DDDDDD";
 	static GAIGSarray XMLstack;
 	static int XMLstackSize = 0;
 	static String[] runTimeStackColors = new String[3];
 	static String file_contents = "";
+	static String path;
 
 	/*
 	 * Main driver for the client
 	 * 
-	 * args[0] is the full path and number for naming showfile
+	 * args[0] is the full path with the number of the uid folder at the end
+	 * args[1] is the name of the class in the source code file. example: Foo
+	 * args[2] is the string containing the whole source code. It contains
+	 * 		"contents are not in here" if the example is a hardedcoded file that resides on the server.
 	 */
 	public static void main(String args[]) throws IOException,
 			InvalidClassFileException, InterruptedException, JDOMException {
 
 		String fileName = null;
 		File pathname = new File("", args[0]);
-
 		show = new ShowFile(args[0] + ".sho", 5);
+		path = args[0];
 
-		// create the uid sub-directory
 		try {
-			success = (pathname.mkdir());
-			// } catch (Exception e) {
-			// System.err.println("Error: " + e.getMessage() );
-			// }
-
+			pathname.mkdir();
+		
+			//hard coded file is loaded 
 			if (args[2].equals("contents are not in here")) {
-				// file is a builtin example
+
 				fileName = args[1] + ".java";
-				Runtime.getRuntime().exec(
-						"cp ../../src/exe/jvmbytecodes/Builtin_Programs/"
+				Process cp = null;
+				cp= Runtime.getRuntime().exec("cp ../../src/exe/jvmbytecodes/Builtin_Programs/"
 								+ args[1] + " " + args[0] + "/" + fileName);
+				int cpStatus =0;
+				cpStatus = cp.waitFor();
+					System.out.println("Finished with status: "+cpStatus);
 
 				// grab the file contents
-				Process cat = null;
-				String path = args[0];
-				String catCommand = "cat " + path + "/" + fileName;
-				cat = Runtime.getRuntime().exec(catCommand);
-				BufferedReader br = new BufferedReader(new InputStreamReader(cat.getInputStream()));
-				String tempStr = "";
-				while ((tempStr = br.readLine()) != null) {
-					file_contents += tempStr;
-				}
+				
+				FileReader fr = new FileReader(args[0] + "/" + fileName);
+				BufferedReader br = new BufferedReader(fr);
+				String line;
+				while ((line = br.readLine()) != null) 
+		        	file_contents += line+"\n";
 
 			} else { // file is a user file and its content is in args[2]
 				file_contents = args[2];
@@ -146,12 +147,12 @@ public class Driver {
 						signature += Driver.classes[i].methods.get(j).localVariableTable[m][2];
 					signature = GenerateXML.replaceSlashWithDot(signature);
 					System.out.println("sinature is: " + signature + " i: " + i
-							+ " j: " + j + " " + "exe/jvmbytecodes/"
+							+ " j: " + j + " " + args[0] + "/"
 							+ Driver.classes[i].name
 							+ Driver.classes[i].methods.get(j).name + signature
 							+ ".xml");
 					pseudoBytecodes[i].add(new PseudoCodeDisplay(
-							"exe/jvmbytecodes/" + Driver.classes[i].name
+							args[0] + "/" + Driver.classes[i].name
 									+ Driver.classes[i].methods.get(j).name
 									+ signature + ".xml"));
 					System.out.println("found file");
@@ -165,7 +166,7 @@ public class Driver {
 
 			for (int i = 0; i < Driver.classes.length; i++) {
 				pseudoSourceCode[i] = (new PseudoCodeDisplay(
-						"exe/jvmbytecodes/" + Driver.classes[i].name + ".xml"));
+						args[0] + "/" + Driver.classes[i].name + ".xml"));
 				currentClass++;
 			}
 			currentClass = 0;
@@ -185,9 +186,17 @@ public class Driver {
 			// questionID
 			questionID = 0;
 
-			runTimeStackColors[0] = "#8f7864";
-			runTimeStackColors[1] = "#7a6365";
-			runTimeStackColors[2] = "#6b6a7c";
+			//these colors will be cycled through when a new frame is added
+			runTimeStackColors[0] = "#a7bbff";
+			runTimeStackColors[1] = "#e589e4";
+			runTimeStackColors[2] = "#f0ff6b";
+
+			/*
+			//bright colors
+			runTimeStackColors[0] = "#6287ff";
+			runTimeStackColors[1] = "#ff5d00";
+			runTimeStackColors[2] = "#e5ff00";
+			*/
 
 			// get a random color for the stack
 			// String mainColor = getRandomColor();
@@ -210,6 +219,23 @@ public class Driver {
 		}
 
 		show.close();
+		
+		//remove the directory b/c you are done with it
+			File dirObj = new File(args[0]);
+			if (dirObj.isDirectory()) { // dir exists
+				String[] files = dirObj.list();
+				
+				//remove the files in the dir
+				if (files.length > 0) { 
+					for (int i=0; i<files.length; i++) {
+						File fileObj = new File(args[0]+"/"+files[i]);
+						fileObj.delete();
+					}
+				}
+				
+				//finally delete the folder
+				dirObj.delete();
+			}
 	}
 
 	/*
