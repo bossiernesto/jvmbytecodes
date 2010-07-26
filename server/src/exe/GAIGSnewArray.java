@@ -45,34 +45,32 @@ package exe;
 
 
 public class GAIGSnewArray extends GAIGSbase {
+
   /**
-    * Standard box width
+      * Standard box width
   */
-  static final double STD_WIDTH = .12;
+      static final double STD_WIDTH = .12;
   /**
       * Standard box height
   */
-  static final double STD_HEIGHT = .07;
-  /**
-      * Number of characters before resizing box
-  */
-  static final int LINE_LENGTH = 8;
+      static final double STD_HEIGHT = .07;
   /**
       * Adjustment factor
   */
-  static final double EPSILON = .012;
+      static final double EPSILON = .005;
   /**
       * Default label font size
   */
-  static final double LABEL_FONT_SIZE = .04;
+      static final double LABEL_FONT_SIZE = .043;
   /**
       * Width of the character
   */
-  static final double CHAR_SIZE = LABEL_FONT_SIZE / 2;
+      static final double CHAR_SIZE = LABEL_FONT_SIZE / 2;
+
   /**
       * Default Title font size
   */
-  static final double TITLE_FONT_SIZE = .045;
+      static final double TITLE_FONT_SIZE = .045;
 
   protected class BoxPair {
     public double width;
@@ -87,19 +85,22 @@ public class GAIGSnewArray extends GAIGSbase {
   }
 
     /**
-     * Color for null values.
-     */
-    static final String NULL_COLOR = "#CCCCCC";
+        * Color for null values.
+    */
+        static final String NULL_COLOR = "#CCCCCC";
 
     /**
-     * Default Font Size
+        * Default Font Size
     */
-    static final double FONT_SIZE = 0.03;
-
+        static final double FONT_SIZE = 0.043;
     /**
-      * Default Line Width for Boxes
+        * Number of characters before resizing box
     */
-    static final int LINE_THICKNESS = 12;
+        static final int LINE_LENGTH = (int)Math.ceil(STD_WIDTH / (FONT_SIZE / 2));
+    /**
+        * Default Line Width for Boxes
+    */
+        static final int LINE_THICKNESS = 12;
 
     //---------------------- Instance Variables -------------------------------------
 
@@ -489,7 +490,7 @@ public class GAIGSnewArray extends GAIGSbase {
         double dyi = yout - y2;
         double yratio = yout > y2 ? dy / (dyi + dy) : 1;
 
-        double xstart = x2 - deltaArray[0][cols - 1].width; //right hand side for the moment
+        double xstart = x2 - deltaArray[rows-1][cols-1].width; //right hand side for the moment
         xstart = (xstart - xout) * xratio + x1;
         double ystart = y1;
         double xupdate = 0;
@@ -614,7 +615,7 @@ public class GAIGSnewArray extends GAIGSbase {
         double yratio = yout > y2 ? dy / (dyi + dy) : 1;
 
         //draw the array
-        double xstart = x2 - deltaArray[0][cols - 1].width; //right hand side for the moment
+        double xstart = x2 - deltaArray[rows-1][cols-1].width; //right hand side for the moment
         xstart = (xstart - xout) * xratio + x1;
         double ystart = y1;
         double xupdate = 0;
@@ -627,7 +628,9 @@ public class GAIGSnewArray extends GAIGSbase {
               double [] y = new double[]{ystart, ystart, deltaArray[r][c].height * yratio + ystart,
                 deltaArray[r][c].height * yratio + ystart};
               String temp = theArray[r][c] == null ? "null" : theArray[r][c].toString();
-              double newFontSize = FONT_SIZE * xratio * yratio;
+              double newXFontSize =  FONT_SIZE * xratio;
+              double newYFontSize = yratio * FONT_SIZE;
+              double newFontSize = newXFontSize < newYFontSize ? newXFontSize : newYFontSize;
               pc.addPolygon(4, x, y, theColorArray[r][c], "#000000", "#000000",
                             (theArray[r][c] == null ? "null" : theArray[r][c].toString()), newFontSize, LINE_THICKNESS);
               ystart += deltaArray[r][c].height * yratio;
@@ -724,7 +727,7 @@ public class GAIGSnewArray extends GAIGSbase {
       boolean outofbounds = false;
 
       //check the array structure
-      double xstart = x2 - STD_WIDTH; //right hand side for the moment
+      double xstart = x2 - deltaArray[rows-1][cols-1].width; //right hand side for the moment
       double ystart = y1;
       double xupdate = 0;
 
