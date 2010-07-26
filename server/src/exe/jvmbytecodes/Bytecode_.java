@@ -167,7 +167,7 @@ abstract class Bytecode_ {
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
 				  );
 			}
 		}
@@ -220,7 +220,7 @@ abstract class Bytecode_ {
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
 				  );
 	}
 

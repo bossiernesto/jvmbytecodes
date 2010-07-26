@@ -101,6 +101,10 @@ class Frame_{
     * The current frame color
   */
   	String CURRENT_FRAME_COLOR;
+ /**
+    * The label for an empty operand stack
+  */
+  	GAIGSlabel emptyStackLabel = new GAIGSlabel("Operand Stack (Empty)", 0.75, 0.05, 0.95, 0.1, 0.65); //create visual empty operand stack
     /**
 	 * Constructor
 	 * Intialize all values and colors in a frame.
@@ -116,10 +120,14 @@ class Frame_{
 		methodIndex = currentMethod; //set method index
 		_localVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals]; //create virtual local variable array
 		_colorLocalVariableArray = new String[Driver.classes[0].methods.get(currentMethod).numLocals]; //create color local variable array
+
+		//if the local variable array is too big, throw an exception
 		if (Driver.classes[0].methods.get(currentMethod).numLocals > 20)
 			throw new InvalidClassFileException("Please limit the number of local variables in a frame of \n"
 				+"the program to 20.");
-	
+		//if the operand stack is too big, throw an exception
+		if (stackSize > 20)
+			throw new InvalidClassFileException("Please limit the operand stack size in a frame to 20.");
 		
 		CURRENT_FRAME_COLOR = Driver.runTimeStackColors[Driver._runTimeStack.size()%3]; //set current frame coloe
 

@@ -245,11 +245,12 @@ public class Driver {
 				currentClass++;
 			}
 			currentClass = 0;
-			currentMethod = 0;
+			currentMethod = -1;
 			// } catch (JDOMException e) {
 			// e.printStackTrace();
 			// }
 
+			//find the main method as an entry point
 			for (Method_ m : classes[0].methods) {
 				if (m.name.equals("main")) {
 					currentMethod = index;
@@ -258,21 +259,15 @@ public class Driver {
 				index++;
 			}
 
+			//if there is no main method, throw an error
+			if(currentMethod == -1)
+				throw new InvalidClassFileException("The input class must have a main method with the following signature: \n"+"public static void main(String[] args)\n" + "Please check your java source code and make sure the main method exists.");
+
 			//set the visual runtime stack colors
 			//these colors will be cycled through when a new frame is added
 			runTimeStackColors[0] = "#a7bbff";
 			runTimeStackColors[1] = "#dbf1ff";
 			runTimeStackColors[2] = "#ffffaa";
-
-			/*
-			//bright colors
-			runTimeStackColors[0] = "#6287ff";
-			runTimeStackColors[1] = "#ff5d00";
-			runTimeStackColors[2] = "#e5ff00";
-			*/
-
-			// get a random color for the stack
-			// String mainColor = getRandomColor();
 
 			Frame_ f = new Frame_(currentMethod);	//make a new frame
 			_runTimeStack.push(f); //push the frame
