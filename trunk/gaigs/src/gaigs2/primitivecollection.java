@@ -1,4 +1,4 @@
-/* 
+/*
    This file is part of JHAVE -- Java Hosted Algorithm Visualization
    Environment, developed by Tom Naps, David Furcy (both of the
    University of Wisconsin - Oshkosh), Myles McNally (Alma College), and
@@ -26,11 +26,11 @@ import java.util.*;
 import java.lang.*;
 import org.jdom.*;
 
-public class primitivecollection extends StructureType 
+public class primitivecollection extends StructureType
 {
 
 protected interface Primitive {  }
-  
+
   protected class Circle implements Primitive {
     public double x;
     public double y;
@@ -39,8 +39,10 @@ protected interface Primitive {  }
     public int ocolor;
     public int lcolor;
     public String label;
-    
-    public Circle(double cx, double cy, double r, int fcolor, int ocolor, int lcolor, String label) {
+    public double height;
+    public int width;
+
+    public Circle(double cx, double cy, double r, int fcolor, int ocolor, int lcolor, String label, double height, int width) {
       this.x = cx;
       this.y = cy;
       this.r = r;
@@ -48,10 +50,12 @@ protected interface Primitive {  }
       this.ocolor = ocolor;
       this.lcolor = lcolor;
       this.label = label;
+      this.height = height;
+      this.width = width;
     }
   }
-  
-  protected class Polygon implements Primitive 
+
+  protected class Polygon implements Primitive
   {
     public int nSides;
     public double ptsX[];
@@ -60,26 +64,31 @@ protected interface Primitive {  }
     public int ocolor;
     public int lcolor;
     public String label;
-	
-	public Polygon(int nSides, double ptsX[], double ptsY[], int fcolor, int ocolor, int lcolor, String label){
+    public double height;
+    public int width;
+
+    public Polygon(int nSides, double ptsX[], double ptsY[], int fcolor, int ocolor,
+                   int lcolor, String label, double height, int width)
+    {
       this.nSides = nSides;
-	  this.ptsX = new double [nSides];
-	  this.ptsY = new double [nSides];
-	  
-	  for(int i=0;i<nSides;++i)
-	  {
-		this.ptsX[i]=ptsX[i];
-		this.ptsY[i]=ptsY[i];
-	  }
-	  //System.arraycopy(ptsX,0,this.ptsX,0,nSides);
-	  //System.arraycopy(ptsY,0,this.ptsY,0,nSides);
+      this.ptsX = new double [nSides];
+      this.ptsY = new double [nSides];
+
+      for(int i=0;i<nSides;++i)
+      {
+        this.ptsX[i]=ptsX[i];
+        this.ptsY[i]=ptsY[i];
+      }
+
       this.fcolor = fcolor;
       this.ocolor = ocolor;
       this.lcolor = lcolor;
       this.label = label;
+      this.height = height;
+      this.width = width;
     }
   }
-  
+
   protected class Ellipse implements Primitive {
     public double x;
     public double y;
@@ -90,8 +99,12 @@ protected interface Primitive {  }
     public int color;
     public int lcolor;
     public String label;
-	
-    public Ellipse(double x, double y, double stAngle, double endAngle, double xR, double yR, int color, int lcolor, String label){
+    public double height;
+    public int width;
+
+    public Ellipse(double x, double y, double stAngle, double endAngle, double xR,
+                   double yR, int color, int lcolor, String label, double height, int width)
+    {
       this.x = x;
       this.y = y;
       this.stAngle = stAngle;
@@ -101,68 +114,78 @@ protected interface Primitive {  }
       this.color = color;
       this.lcolor = lcolor;
       this.label = label;
+      this.height = height;
+      this.width = width;
     }
   }
 
   protected ArrayList<Primitive> primitives;
-  
-  public primitivecollection() 
+
+  public primitivecollection()
   {
     super();
     primitives = new ArrayList<Primitive>();
   }
-  
-  public void loadStructure(Element rootEl, LinkedList thingsToRender, draw drawerObj) 
+
+  public void loadStructure(Element rootEl, LinkedList thingsToRender, draw drawerObj)
   {
-    
+
     load_name_and_bounds(rootEl, thingsToRender, drawerObj);
     //calcDimsAndStartPts(thingsToRender, drawerObj);
-    
+
     List children = rootEl.getChildren();
     Iterator iter = children.iterator();
-    
-    while(iter.hasNext()) 
-	{
+
+    while(iter.hasNext())
+    {
       Element child = (Element)iter.next();
-      
-      if(child.getName().equals("circle")) 
+
+      if(child.getName().equals("circle"))
       {
         double x = Double.parseDouble(child.getAttributeValue("x"));
         double y = Double.parseDouble(child.getAttributeValue("y"));
         double r = Double.parseDouble(child.getAttributeValue("r"));
-        
-        int fcolor = colorStringToInt(child.getAttributeValue("fcolor"));
+
+        String fcstring = child.getAttributeValue("fcolor");
+
+        int fcolor = ((fcstring == "" || fcstring == null) ? Integer.MIN_VALUE :
+          colorStringToInt(child.getAttributeValue("fcolor")));
         int ocolor = colorStringToInt(child.getAttributeValue("ocolor"));
         int lcolor = colorStringToInt(child.getAttributeValue("lcolor"));
-        
+
         String text = child.getAttributeValue("text");
-        
-        primitives.add(new Circle(x, y, r, fcolor, ocolor, lcolor, text));
+        double h = Double.parseDouble(child.getAttributeValue("height"));
+        int w = Integer.parseInt(child.getAttributeValue("width"));
+        primitives.add(new Circle(x, y, r, fcolor, ocolor, lcolor, text, h, w));
       }
-	  
-      if(child.getName().equals("polygon")) 
+
+      if(child.getName().equals("polygon"))
       {
         int nSides = Integer.parseInt(child.getAttributeValue("nSides"));
         double [] ptsX = new double[nSides];
         double [] ptsY = new double[nSides];
-        for(int i=0; i<nSides ; ++i) 
+        for(int i=0; i<nSides ; ++i)
         {
           String pX = "ptsX" + i;
           String pY = "ptsY" + i;
           ptsX[i] = Double.parseDouble(child.getAttributeValue(pX));
           ptsY[i] = Double.parseDouble(child.getAttributeValue(pY));
-        }  
-        
-        int fcolor = colorStringToInt(child.getAttributeValue("fcolor"));
+        }
+
+        String fcstring = child.getAttributeValue("fcolor");
+
+        int fcolor = ((fcstring == "" || fcstring == null) ? Integer.MIN_VALUE :
+          colorStringToInt(child.getAttributeValue("fcolor")));
         int ocolor = colorStringToInt(child.getAttributeValue("ocolor"));
         int lcolor = colorStringToInt(child.getAttributeValue("lcolor"));
-          
+
         String text = child.getAttributeValue("text");
-          
-        primitives.add(new Polygon(nSides, ptsX, ptsY, fcolor, ocolor, lcolor, text));
+        double h = Double.parseDouble(child.getAttributeValue("height"));
+        int w = Integer.parseInt(child.getAttributeValue("width"));
+        primitives.add(new Polygon(nSides, ptsX, ptsY, fcolor, ocolor, lcolor, text, h, w));
       }
-      
-      if(child.getName().equals("ellipse")) 
+
+      if(child.getName().equals("ellipse"))
       {
         double x = Double.parseDouble(child.getAttributeValue("x"));
         double y = Double.parseDouble(child.getAttributeValue("y"));
@@ -170,70 +193,77 @@ protected interface Primitive {  }
         double ea = Double.parseDouble(child.getAttributeValue("ea"));
         double rx = Double.parseDouble(child.getAttributeValue("rx"));
         double ry = Double.parseDouble(child.getAttributeValue("ry"));
-        
+
         int color = colorStringToInt(child.getAttributeValue("color"));
         int lcolor = colorStringToInt(child.getAttributeValue("lcolor"));
-        
+
         String text = child.getAttributeValue("text");
-        
-        primitives.add(new Ellipse(x, y, sa, ea, rx, ry, color, lcolor, text));
+        double h = Double.parseDouble(child.getAttributeValue("height"));
+        int w = Integer.parseInt(child.getAttributeValue("width"));
+        primitives.add(new Ellipse(x, y, sa, ea, rx, ry, color, lcolor, text, h, w));
       }
-      
+
     }
   }
   public void drawStructure(LinkedList thingsToRender, draw drawerObj) {
-    
+
     for(int i = 0; i < primitives.size(); ++i) {
       Primitive p = primitives.get(i);
-      
+
       if(p instanceof Circle) {
         Circle c = (Circle)p;
-        
+        LGKS.set_text_height(c.height, thingsToRender, drawerObj);
         //draw interior of circle
-        LGKS.set_fill_int_style(bsSolid, c.fcolor, thingsToRender, drawerObj);
-        LGKS.circle_fill(c.x, c.y, c.r, thingsToRender, drawerObj);
-        
+        if(c.fcolor != Integer.MIN_VALUE) {
+          LGKS.set_fill_int_style(bsSolid, c.fcolor, thingsToRender, drawerObj);
+          LGKS.circle_fill(c.x, c.y, c.r, thingsToRender, drawerObj);
+        }
+
         //draw circle outline
         LGKS.set_textline_color(c.ocolor, thingsToRender, drawerObj);
+        LGKS.set_line_width(c.width, thingsToRender, drawerObj);
         LGKS.circle(c.x, c.y, c.r, thingsToRender, drawerObj);
-        
+
         //draw label
         LGKS.set_textline_color(c.lcolor, thingsToRender, drawerObj);
         LGKS.set_text_align(TA_CENTER, TA_BOTTOM, thingsToRender, drawerObj);
         LGKS.text(c.x, c.y, c.label, thingsToRender, drawerObj);
       }
-      
+
       if(p instanceof Polygon) {
         Polygon pl = (Polygon)p;
-        if(pl.fcolor != colorStringToInt("#FFFFFF")) {
+        LGKS.set_text_height(pl.height, thingsToRender, drawerObj);
+        if(pl.fcolor != Integer.MIN_VALUE) {
           //draw interior of Polygon
           LGKS.set_fill_int_style(bsSolid, pl.fcolor, thingsToRender, drawerObj);
           LGKS.fill_area(pl.nSides, pl.ptsX, pl.ptsY, thingsToRender, drawerObj);
         }
-        
+
         //draw Polygon outline
         LGKS.set_textline_color(pl.ocolor, thingsToRender, drawerObj);
+        LGKS.set_line_width(pl.width, thingsToRender, drawerObj);
         LGKS.polyline(pl.nSides, pl.ptsX, pl.ptsY, thingsToRender, drawerObj);
-        
+
         //draw label
         LGKS.set_textline_color(pl.lcolor, thingsToRender, drawerObj);
         LGKS.set_text_align(TA_CENTER, TA_BOTTOM, thingsToRender, drawerObj);
         LGKS.text(computeCenter(pl.ptsX), computeCenter(pl.ptsY), pl.label, thingsToRender, drawerObj);
       }
-     
+
       if(p instanceof Ellipse) {
         Ellipse e = (Ellipse)p;
-        
+        LGKS.set_text_height(e.height, thingsToRender, drawerObj);
         //draw ellipse outline
         LGKS.set_textline_color(e.color, thingsToRender, drawerObj);
+        LGKS.set_line_width(e.width, thingsToRender, drawerObj);
         LGKS.ellipse(e.x, e.y,e.stAngle, e.endAngle, e.xR, e.yR, thingsToRender, drawerObj);
-        
+
         //draw label
         LGKS.set_textline_color(e.lcolor, thingsToRender, drawerObj);
         LGKS.set_text_align(TA_CENTER, TA_BOTTOM, thingsToRender, drawerObj);
         LGKS.text(e.x-e.xR/2.0, e.y+e.yR/2.0, e.label, thingsToRender, drawerObj);
       }
-      
+
     }
   }
   double computeCenter(double points[])
@@ -247,5 +277,4 @@ protected interface Primitive {  }
   }
 }
 
- 
-  
+

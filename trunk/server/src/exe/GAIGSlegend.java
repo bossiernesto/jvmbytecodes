@@ -1,4 +1,4 @@
-/* 
+/*
 This file is part of JHAVE -- Java Hosted Algorithm Visualization
 Environment, developed by Tom Naps, David Furcy (both of the
 University of Wisconsin - Oshkosh), Myles McNally (Alma College), and
@@ -30,7 +30,7 @@ import exe.*;
  * show the meanings of the various colors used in GAIGS visualizations. The
  * class is implemented similarly to the <code>GAIGSarray</code> class and uses
  * a two-dimensional array of <code>GAIGSItem</code> objects to store the color
- * and text information for each element in the color key. Each element in the 
+ * and text information for each element in the color key. Each element in the
  * color key is displayed as a box containing the color for that element with
  * the text for that element appearing to the right of the box. Multiple lines
  * are allowed in the text that is displayed, but using too many lines for the
@@ -60,6 +60,9 @@ public class GAIGSlegend extends GAIGSbase{
     // The font size for the name for this legend.
     double name_fontsize;
 
+    // The value to determine whether we draw the box for the legend
+    boolean draw_box;
+
     //////////////////
     // CONSTRUCTORS //
     //////////////////
@@ -73,7 +76,7 @@ public class GAIGSlegend extends GAIGSbase{
      */
     public GAIGSlegend(int rows, int columns){
 	setVariables(rows, columns, DEFAULT_NAME, DEFAULT_X1, DEFAULT_Y1,
-		     DEFAULT_X2, DEFAULT_Y2, DEFAULT_FONT_SIZE);
+		     DEFAULT_X2, DEFAULT_Y2, DEFAULT_FONT_SIZE, true);
     }
 
     /**
@@ -86,7 +89,7 @@ public class GAIGSlegend extends GAIGSbase{
      */
     public GAIGSlegend(int rows, int columns, String name){
 	setVariables(rows, columns, name, DEFAULT_X1, DEFAULT_Y1,
-		     DEFAULT_X2, DEFAULT_Y2, DEFAULT_FONT_SIZE);
+		     DEFAULT_X2, DEFAULT_Y2, DEFAULT_FONT_SIZE, true);
     }
 
     /**
@@ -99,7 +102,7 @@ public class GAIGSlegend extends GAIGSbase{
      */
     public GAIGSlegend(int rows, int columns, double fontsize){
 	setVariables(rows, columns, DEFAULT_NAME, DEFAULT_X1, DEFAULT_Y1,
-		     DEFAULT_X2, DEFAULT_Y2, fontsize);
+		     DEFAULT_X2, DEFAULT_Y2, fontsize, true);
     }
 
     /**
@@ -113,7 +116,7 @@ public class GAIGSlegend extends GAIGSbase{
      */
     public GAIGSlegend(int rows, int columns, String name, double fontsize){
 	setVariables(rows, columns, name, DEFAULT_X1, DEFAULT_Y1,
-		     DEFAULT_X2, DEFAULT_Y2, fontsize);
+		     DEFAULT_X2, DEFAULT_Y2, fontsize, true);
     }
 
     /**
@@ -129,8 +132,8 @@ public class GAIGSlegend extends GAIGSbase{
      */
     public GAIGSlegend(int rows, int columns, double x1, double y1,
 		       double x2, double y2){
-	setVariables(rows, columns, DEFAULT_NAME, x1, y1, x2, y2, 
-		     DEFAULT_FONT_SIZE);
+	setVariables(rows, columns, DEFAULT_NAME, x1, y1, x2, y2,
+		     DEFAULT_FONT_SIZE, true);
     }
 
     /**
@@ -146,31 +149,32 @@ public class GAIGSlegend extends GAIGSbase{
      * @param fontsize The font size for the text in this legend.
      */
     public GAIGSlegend(int rows, int columns, String name,
-		       double x1, double y1, double x2, double y2, 
+		       double x1, double y1, double x2, double y2,
 		       double fontsize){
-	setVariables(rows, columns, name, x1, y1, x2, y2, fontsize);
+	setVariables(rows, columns, name, x1, y1, x2, y2, fontsize, true);
     }
 
     // Helper method used by constructors to set variables used by this object.
     private void setVariables(int rows, int columns, String name,
 			      double x1, double y1, double x2, double y2,
-			      double fontsize){
-	legend = new GAIGSItem[rows][columns];
-	for(int r = 0; r < rows; r++){
-	    for(int c = 0; c < columns; c++){
-		legend[r][c] = null;
-	    }
-	}
+			      double fontsize, boolean draw){
+      legend = new GAIGSItem[rows][columns];
+      for(int r = 0; r < rows; r++){
+        for(int c = 0; c < columns; c++){
+          legend[r][c] = null;
+        }
+      }
 
-	this.rows = rows;
-	this.columns = columns;
-	this.name = name;
-	this.x1 = x1;
-	this.y1 = y1;
-	this.x2 = x2;
-	this.y2 = y2;
-	name_fontsize = fontsize;
-	fontSize = fontsize;
+      this.rows = rows;
+      this.columns = columns;
+      this.name = name;
+      this.x1 = x1;
+      this.y1 = y1;
+      this.x2 = x2;
+      this.y2 = y2;
+      name_fontsize = fontsize;
+      fontSize = fontsize;
+      draw_box = draw;
     }
 
     //////////////////////
@@ -180,15 +184,15 @@ public class GAIGSlegend extends GAIGSbase{
     /**
      * Returns the item from this legend at the index specified.
      *
-     * @param row    The row index of the <code>GAIGSItem</code> to be 
+     * @param row    The row index of the <code>GAIGSItem</code> to be
      *               returned.
      * @param column The column index of the <code>GAIGSItem</code> to be
      *               returned.
-     * @return       The <code>GAIGSItem</code> at index 
-     *               <code>[row][column]</code> in the internal array that 
+     * @return       The <code>GAIGSItem</code> at index
+     *               <code>[row][column]</code> in the internal array that
      *               represents this <code>GAIGSlegend</code>. If this index
      *               is out of the bounds given to the array when this
-     *               <code>GAIGSlegend</code> was created, then 
+     *               <code>GAIGSlegend</code> was created, then
      *               <code>null</code> is returned.
      */
     public GAIGSItem getItem(int row, int column){
@@ -230,7 +234,7 @@ public class GAIGSlegend extends GAIGSbase{
      * Returns the font size for this legend's name (can be sized independently
      * from the text size used for labels within the legend).
      *
-     * @return The font size used for the name for this 
+     * @return The font size used for the name for this
      *         <code>GAIGSlegend</code> object.
      */
     public double getNameFontSize(){
@@ -270,7 +274,7 @@ public class GAIGSlegend extends GAIGSbase{
     /**
      * Returns the upper y-bound of this legend.
      *
-     * @return The upper y-coordinate of the bounds for this 
+     * @return The upper y-coordinate of the bounds for this
      *         <code>GAIGSlegend</code> object.
      */
     public double getY2(){
@@ -314,7 +318,7 @@ public class GAIGSlegend extends GAIGSbase{
     /**
      * Sets the name for this legend.
      *
-     * @param name The new name <code>String</code> for this 
+     * @param name The new name <code>String</code> for this
      *             <code>GAIGSlegend</code> object.
      */
     public void setName(String name){
@@ -335,7 +339,7 @@ public class GAIGSlegend extends GAIGSbase{
 	this.name_fontsize = name_fontsize;
     }
 
-    /** 
+    /**
      * Sets the bounds for this <code>GAIGSlegend</code> object.
      *
      * @param x1 The new left x-coordinate for the bounds of this legend.
@@ -351,7 +355,7 @@ public class GAIGSlegend extends GAIGSbase{
     }
 
     /**
-     * Sets the font size used for the text labels in this 
+     * Sets the font size used for the text labels in this
      * <code>GAIGSlegend</code>.
      *
      * @param fontsize The new font size for labels in this legend.
@@ -359,6 +363,20 @@ public class GAIGSlegend extends GAIGSbase{
     public void setFontSize(double fontsize){
 	fontSize = fontsize;
     }
+
+    /**
+     * Enables the drawing of the surrounding box for the legend
+    */
+    public void enableBox() {
+      draw_box = true;
+    }
+
+     /**
+      * Disables the drawing of the surroudning box for the legend
+     */
+     public void disableBox() {
+       draw_box = false;
+     }
 
     //////////////////////
     // GAIGS XML METHOD //
@@ -375,21 +393,21 @@ public class GAIGSlegend extends GAIGSbase{
 	String returnString = "<legend>\n";
 
 	if(name != null){
-	    returnString += "<name fontsize=\"" + name_fontsize + "\">" + 
+	    returnString += "<name fontsize=\"" + name_fontsize + "\">" +
 		name + "</name>\n";
 	}
 
-	returnString += "<bounds x1=\"" + x1 + "\" y1=\"" + y1 +"\" x2=\"" + 
-	    x2 + "\" y2=\"" + y2 + "\" fontsize=\"" + fontSize + "\"/>\n";
+	returnString += "<bounds x1=\"" + x1 + "\" y1=\"" + y1 +"\" x2=\"" +
+	    x2 + "\" y2=\"" + y2 + "\" fontsize=\"" + fontSize + "\"" + " drawbox=\"" + draw_box + "\"" + "/>\n";
 
 	for(int c = 0; c < columns; c++){
 	    returnString += "<column>\n";
 
 	    for(int r = 0; r < rows; r++){
 		if(legend[r][c] != null){
-		    returnString += "<list_item color=\"" + 
-			legend[r][c].color + "\">\n<label>" + 
-			(String)legend[r][c].value + 
+		    returnString += "<list_item color=\"" +
+			legend[r][c].color + "\">\n<label>" +
+			(String)legend[r][c].value +
 			"</label>\n</list_item>\n";
 		}else{
 		    returnString += "<list_item color=\"#FFFFFF\">\n<label>nullandvoid</label>\n</list_item>\n";

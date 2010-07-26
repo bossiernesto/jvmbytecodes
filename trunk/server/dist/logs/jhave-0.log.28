@@ -1,25 +1,21 @@
-6/25/10 9:19 AM - INFO: Using WEBROOT = http://localhost:8080/
-6/25/10 9:19 AM - INFO: Using Script Root of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
-6/25/10 9:19 AM - INFO: Using User Script Directory of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/
-6/25/10 9:19 AM - INFO: JHAVE Server started. Listening on port 7004
-6/25/10 9:19 AM - INFO: Accepted connection 1 from 127.0.0.1
-6/25/10 9:19 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
-6/25/10 9:19 AM - INFO: Object: Thread[Thread-1,5,main]
-6/25/10 9:19 AM - INFO: 1 jvmbytecodes no_username
-6/25/10 9:19 AM - FINER: ENTRY
-6/25/10 9:19 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
-6/25/10 9:21 AM - INFO: 4 jvmbytecodes new <?xml version="1.0" encoding="UTF-8"?>
+6/25/10 10:51 AM - INFO: Using WEBROOT = http://localhost:8080/
+6/25/10 10:51 AM - INFO: Using Script Root of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
+6/25/10 10:51 AM - INFO: Using User Script Directory of /Users/davidfurcy/Documents/REU/2010/JVM/trunk/
+6/25/10 10:51 AM - INFO: JHAVE Server started. Listening on port 7004
+6/25/10 10:51 AM - INFO: Accepted connection 1 from 127.0.0.1
+6/25/10 10:51 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
+6/25/10 10:51 AM - INFO: Object: Thread[Thread-1,5,main]
+6/25/10 10:51 AM - INFO: 1 jvmbytecodes no_username
+6/25/10 10:51 AM - FINER: ENTRY
+6/25/10 10:51 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
+6/25/10 10:51 AM - INFO: 4 jvmbytecodes new <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
 <input_panel>
-  <textfield>
-    <label_line>File name:</label_line>
+  <jvm_text_area>
+    <label_line>Load your program and be sure that EMPTY is replaced by the name of the Java source file:</label_line>
     <default_field />
-    <value_entered>FFFF.java</value_entered>
-  </textfield>
-  <textarea>
-    <label_line>Code to visualize:</label_line>
-    <default_field />
-    <value_entered>class FFFF
+    <value_entered>Factorial4.java
+class Factorial4
 {
 
 	public static void main( String [ ] args )
@@ -30,104 +26,28 @@
 	}
 }
 </value_entered>
-  </textarea>
+  </jvm_text_area>
 </input_panel>
-6/25/10 9:21 AM - FINER: ENTRY
-6/25/10 9:21 AM - FINER: ENTRY
-6/25/10 9:21 AM - INFO: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 *
-6/25/10 9:21 AM - FINE: Up front with user  no_username looking for -- exe/jvmbytecodes/jvmbytecodes
-6/25/10 9:21 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml
-6/25/10 9:21 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml)
+6/25/10 10:51 AM - FINER: ENTRY
+6/25/10 10:51 AM - FINER: ENTRY
+6/25/10 10:51 AM - INFO: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 *
+6/25/10 10:51 AM - FINE: Up front with user  no_username looking for -- exe/jvmbytecodes/jvmbytecodes
+6/25/10 10:51 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml
+6/25/10 10:51 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.xml)
 ..........with script root /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
-6/25/10 9:21 AM - FINE: Process started
-6/25/10 9:21 AM - FINE: And completed
-6/25/10 9:21 AM - FINE: Loading dynamic script: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.sho
-6/25/10 9:21 AM - FINE: http://localhost:8080/html_root/uid/1.sho
-6/25/10 9:21 AM - FINE: sendtoClient - 400 jvmbytecodes gaigs
-6/25/10 9:21 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/1.sho
-6/25/10 9:22 AM - INFO: Accepted connection 2 from 127.0.0.1
-6/25/10 9:22 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
-6/25/10 9:22 AM - INFO: Object: Thread[Thread-2,5,main]
-6/25/10 9:22 AM - INFO: 1 jvmbytecodes no_username
-6/25/10 9:22 AM - FINER: ENTRY
-6/25/10 9:22 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
-6/25/10 9:22 AM - INFO: 4 jvmbytecodes new <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
-<input_panel>
-  <textfield>
-    <label_line>File name:</label_line>
-    <default_field />
-    <value_entered>F4.java</value_entered>
-  </textfield>
-  <textarea>
-    <label_line>Code to visualize:</label_line>
-    <default_field />
-    <value_entered>class F4
-{
-
-	public static void main( String [ ] args )
-	{
-	int factorial = 1;
-	for(int i = 2; i &lt;= 5; i++)
-		factorial *= i;
-	}
-}
-</value_entered>
-  </textarea>
-</input_panel>
-6/25/10 9:22 AM - FINER: ENTRY
-6/25/10 9:22 AM - FINER: ENTRY
-6/25/10 9:22 AM - INFO: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2 *
-6/25/10 9:22 AM - FINE: Up front with user  no_username looking for -- exe/jvmbytecodes/jvmbytecodes
-6/25/10 9:22 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2.xml
-6/25/10 9:22 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2.xml)
-..........with script root /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
-6/25/10 9:22 AM - FINE: Process started
-6/25/10 9:22 AM - FINE: And completed
-6/25/10 9:22 AM - FINE: Loading dynamic script: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/2.sho
-6/25/10 9:22 AM - FINE: http://localhost:8080/html_root/uid/2.sho
-6/25/10 9:22 AM - FINE: sendtoClient - 400 jvmbytecodes gaigs
-6/25/10 9:22 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/2.sho
-6/25/10 9:23 AM - INFO: Accepted connection 3 from 127.0.0.1
-6/25/10 9:23 AM - INFO: Constructor: public jhave.server.UWOSHClientConnection(java.net.Socket,int)
-6/25/10 9:23 AM - INFO: Object: Thread[Thread-3,5,main]
-6/25/10 9:23 AM - INFO: 1 jvmbytecodes no_username
-6/25/10 9:23 AM - FINER: ENTRY
-6/25/10 9:23 AM - FINE: sendtoClient - 100 Client and server connected with user login no_username
-6/25/10 9:23 AM - INFO: 4 jvmbytecodes new <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE show PUBLIC "-//JHAVE//DTD INPUT PANEL//EN" "input_panel.dtd">
-<input_panel>
-  <textfield>
-    <label_line>File name:</label_line>
-    <default_field />
-    <value_entered>F3.java</value_entered>
-  </textfield>
-  <textarea>
-    <label_line>Code to visualize:</label_line>
-    <default_field />
-    <value_entered>class F3
-{
-
-	public static void main( String [ ] args )
-	{
-	int factorial = 1;
-	for(int i = 2; i &lt;= 5; i++)
-		factorial *= i;
-	}
-}
-</value_entered>
-  </textarea>
-</input_panel>
-6/25/10 9:23 AM - FINER: ENTRY
-6/25/10 9:23 AM - FINER: ENTRY
-6/25/10 9:23 AM - INFO: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3 *
-6/25/10 9:23 AM - FINE: Up front with user  no_username looking for -- exe/jvmbytecodes/jvmbytecodes
-6/25/10 9:23 AM - FINER: Executing -- java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3.xml
-6/25/10 9:23 AM - FINE: exec(java -classpath ../../lib/jdom.jar:../../lib/jaxen.jar:. exe.jvmbytecodes.jvmbytecodes /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3 * /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3.xml)
-..........with script root /Users/davidfurcy/Documents/REU/2010/JVM/trunk/server/build/classes/
-6/25/10 9:23 AM - FINE: Process started
-6/25/10 9:23 AM - FINE: And completed
-6/25/10 9:23 AM - FINE: Loading dynamic script: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/3.sho
-6/25/10 9:23 AM - FINE: http://localhost:8080/html_root/uid/3.sho
-6/25/10 9:23 AM - FINE: sendtoClient - 400 jvmbytecodes gaigs
-6/25/10 9:23 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/3.sho
+6/25/10 10:51 AM - FINE: Process started
+6/25/10 10:51 AM - FINE: And completed
+6/25/10 10:51 AM - FINE: Loading dynamic script: /Users/davidfurcy/Documents/REU/2010/JVM/trunk/html_root/uid/1.sho
+6/25/10 10:51 AM - FINE: http://localhost:8080/html_root/uid/1.sho
+6/25/10 10:51 AM - FINE: sendtoClient - 400 jvmbytecodes gaigs
+6/25/10 10:51 AM - FINE: sendtoClient - http://localhost:8080/html_root/uid/1.sho
+6/25/10 10:54 AM - SEVERE: getObject
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2500)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1273)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:348)
+	at jhave.server.ClientConnection.getObject(ClientConnection.java:134)
+	at jhave.server.ClientConnection.run(ClientConnection.java:123)
+6/25/10 10:54 AM - FINE: killConnection: Communication Error.
+6/25/10 10:54 AM - FINE: sendtoClient - 101 Communication Error.
+6/25/10 10:54 AM - FINE: Killing client 1
