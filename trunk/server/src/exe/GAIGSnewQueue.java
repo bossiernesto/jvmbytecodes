@@ -41,29 +41,26 @@ import java.util.*;
 public class GAIGSnewQueue extends GAIGSlist {
 
   /**
-    * Standard box width
+      * Standard box width
   */
-    static final double STD_WIDTH = .12;
+      static final double STD_WIDTH = .12;
   /**
       * Standard box height
   */
       static final double STD_HEIGHT = .07;
   /**
-      * Number of characters before resizing box
-  */
-      static final int LINE_LENGTH = 8;
-  /**
       * Adjustment factor
   */
-      static final double EPSILON = .012;
+      static final double EPSILON = .005;
   /**
       * Default label font size
   */
-      static final double LABEL_FONT_SIZE = .04;
+      static final double LABEL_FONT_SIZE = .043;
   /**
       * Width of the character
   */
       static final double CHAR_SIZE = LABEL_FONT_SIZE / 2;
+
   /**
       * Default Title font size
   */
@@ -89,8 +86,11 @@ public class GAIGSnewQueue extends GAIGSlist {
     /**
         * Default Font Size
     */
-        static final double FONT_SIZE = 0.03;
-
+        static final double FONT_SIZE = 0.043;
+    /**
+        * Number of characters before resizing box
+    */
+        static final int LINE_LENGTH = (int)Math.ceil(STD_WIDTH / (FONT_SIZE / 2));
     /**
         * Default Line Width for Boxes
     */
@@ -265,7 +265,7 @@ public class GAIGSnewQueue extends GAIGSlist {
       double dyi = yout - y2;
       double yratio = yout > y2 ? dy / (dyi + dy) : 1;
 
-      double xstart = x2 - deltaArray.get(0).width;
+      double xstart = x2 - STD_WIDTH;
       xstart = xout < x1 ? (xstart - xout) * xratio + x1 : x2 - STD_WIDTH;
       double ystart = y1;
 
@@ -284,7 +284,9 @@ public class GAIGSnewQueue extends GAIGSlist {
         double [] y = new double[]{ystart, ystart, deltaArray.get(i).height * yratio + ystart,
           deltaArray.get(i).height * yratio + ystart};
         String temp = list.get(i) == null ? "null" : list.get(i).toString();
-        double newFontSize = FONT_SIZE * xratio * yratio;
+        double newXFontSize =  FONT_SIZE * xratio;
+        double newYFontSize = yratio * FONT_SIZE;
+        double newFontSize = newXFontSize < newYFontSize ? newXFontSize : newYFontSize;
         pc.addPolygon(4, x, y, colorList.get(i), "#000000", "#000000",
           (list.get(i) == null ? "null" : list.get(i).toString()), newFontSize, LINE_THICKNESS);
         ystart += deltaArray.get(i).height * yratio;
