@@ -1,4 +1,4 @@
-/* 
+/*
 This file is part of JHAVE -- Java Hosted Algorithm Visualization
 Environment, developed by Tom Naps, David Furcy (both of the
 University of Wisconsin - Oshkosh), Myles McNally (Alma College), and
@@ -54,6 +54,9 @@ public class LegendofColors extends LinearList{
     // The height of the color key box next to the text.
     private double box_height;
 
+    // Value to draw the surrounding box
+    private boolean draw_box;
+
     /**
      * Default constructor.
      */
@@ -62,11 +65,12 @@ public class LegendofColors extends LinearList{
 
 	num_cols = 0;
 	max_num_rows = 0;
+  draw_box = true;
     }
 
     /**
      * Indicates whether the legend structure is empty or contains data.
-     * @return <code>True</code> if the legend structure is empty; 
+     * @return <code>True</code> if the legend structure is empty;
      *         <code>false</code> otherwise.
      */
     public boolean emptyStruct(){
@@ -87,22 +91,26 @@ public class LegendofColors extends LinearList{
      *                                 structure from the given XML element.
      */
     public void loadStructure(Element struct, LinkedList llist, draw d)
-	throws VisualizerLoadException{
-	load_name_and_bounds(struct, llist, d);
+      throws VisualizerLoadException{
+      load_name_and_bounds(struct, llist, d);
 
-	Iterator iter = struct.getChildren().iterator();
+      Iterator iter = struct.getChildren().iterator();
 
-	while(iter.hasNext()){
-	    Element child = (Element)iter.next();
+      while(iter.hasNext()){
+        Element child = (Element)iter.next();
 
-	    if(child.getName().equals("column")){
-		num_cols++;
-		loadColumn(child, llist, d);
-	    }
-	}
+        if(child.getName().equals("bounds")) {
+          draw_box = Boolean.parseBoolean(child.getAttributeValue("drawbox"));
+        }
+
+        if(child.getName().equals("column")){
+          num_cols++;
+          loadColumn(child, llist, d);
+        }
+      }
     }
 
-    // Helper method for the loadStructure method. Loads each column of the 
+    // Helper method for the loadStructure method. Loads each column of the
     // Legend when given a <column> Element from the XML showfile.
     private void loadColumn(Element column, LinkedList llist, draw d)
 	throws VisualizerLoadException{
@@ -138,7 +146,7 @@ public class LegendofColors extends LinearList{
 		num_lines++;
 
 		int temp = buffer.getGraphics().getFontMetrics(defaultFont).stringWidth(label_line);
-		double check = 
+		double check =
 		    ((double) temp / (double) GaigsAV.preferred_width);
 
 		if (check > Maxstringlength)
@@ -172,15 +180,15 @@ public class LegendofColors extends LinearList{
      */
     public void calcDimsAndStartPts(LinkedList llist, draw d){
 	super.calcDimsAndStartPts(llist,d);
-	
+
 	Lenx = 1.0 / (num_cols + (0.3 * num_cols));
 	box_width = 0.1 * Lenx;
 	TDx = 0.1 * Lenx;
-	while((Textheight >= 0.04) && 
+	while((Textheight >= 0.04) &&
 	      ((Lenx - box_width) < (Maxstringlength * Textheight))){
 	    Textheight -= 0.001;
 	}
-	Leny = (1.0 - (Titleheight * title.size()) - (Titleheight / 2)) / 
+	Leny = (1.0 - (Titleheight * title.size()) - (Titleheight / 2)) /
 	    (max_num_rows + (0.2 * max_num_rows));
 	box_height = Textheight + 0.02;
 	TDy = 0.1 * Leny;
@@ -244,16 +252,18 @@ public class LegendofColors extends LinearList{
 	LGKS.set_text_height(Textheight, llist, d);
 
 	// Draw the box around the legend.
-	ptsx[0] = 0.0; 
+	ptsx[0] = 0.0;
 	ptsy[0] = 0.0;
-	ptsx[1] = 1.0; 
+	ptsx[1] = 1.0;
 	ptsy[1] = 0.0;
-	ptsx[2] = 1.0; 
+	ptsx[2] = 1.0;
 	ptsy[2] = 1.0 - (Titleheight * title.size()) - (Titleheight / 2);
-	ptsx[3] = 0.0; 
+	ptsx[3] = 0.0;
 	ptsy[3] = 1.0 - (Titleheight * title.size()) - (Titleheight / 2);
 
-	LGKS.polyline(4, ptsx, ptsy, llist, d);
+  if(draw_box){
+    LGKS.polyline(4, ptsx, ptsy, llist, d);
+  }
 
 	nodelist.reset();
 
@@ -292,7 +302,7 @@ public class LegendofColors extends LinearList{
 		lnode.text.reset();
 		int lines = lnode.text.size();
 		if(lines % 2 == 0){
-		    double textPos = 
+		    double textPos =
 			yPos - (Leny / 2) + (Textheight / 2) - TDy;
 		    int steps = (lines / 2) - 1;
 		    for(int i = 0; i < steps; i++){
@@ -300,7 +310,7 @@ public class LegendofColors extends LinearList{
 		    }
 
 		    while(lnode.text.hasMoreElements()){
-			LGKS.text(ptsx[2] + TDx, textPos, 
+			LGKS.text(ptsx[2] + TDx, textPos,
 				  (String)lnode.text.nextElement(), llist, d);
 			textPos -= Textheight;
 		    }

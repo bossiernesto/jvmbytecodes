@@ -9,6 +9,11 @@
     <option>Builtin_Program_Factorial4_recursive</option>
     <option>Builtin_Program_Fibonacci4_iterative</option>
     <option>Builtin_Program_Fibonacci4_recursive</option>
+    <option>Builtin_Program_Byte</option>
+    <option>Builtin_Program_Character</option>
+    <option>Builtin_Program_Factorial4_Long</option>
+    <option>Builtin_Program_If</option>
+    <option>Builtin_Program_Short</option>
     <value_entered></value_entered>
   </combobox>
   <jvm_text_area>
