@@ -1,10 +1,14 @@
 package exe.jvmbytecodes;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import exe.pseudocode.*;
-
 import org.jdom.JDOMException;
+import java.io.*;
+import java.util.*;
+import java.net.*;
+import org.jdom.*;
+import exe.*;
+import exe.pseudocode.*;
 
 public class MakeURI {
 
@@ -12,7 +16,7 @@ public class MakeURI {
 	/*
 	 * Generate the byte code for the visualization
 	 */
-	static String make_uri(int line, int color, Frame_ f) throws JDOMException{
+	static String make_uri(int line, int color, Frame_ f) throws JDOMException, IOException{
 		// System.out.println("highlighting line: "+line);
 		return make_uri(new int[] { line }, new int[] { color }, f);
 	}
@@ -20,10 +24,13 @@ public class MakeURI {
 	/*
 	 * Generate the byte code for the visualization
 	 */
-	static String make_uri(int[] lines, int[] colors, Frame_ f) throws JDOMException {
+	static String make_uri(int[] lines, int[] colors, Frame_ f) throws JDOMException, IOException {
 		numSnapshots++;
-		if (numSnapshots > 1000)
-		  throw new InvalidClassFileException("Too many snapshots made.");
+	if (numSnapshots > 500) {
+		Driver.show.close();
+		Driver.show = new ShowFile(Driver.path + ".sho", 5);
+		throw new InvalidClassFileException("Too many snapshots made. \n" + "Your program may be too long or may have an infinite loop.\n" + "Check to see if the source code compiles before resubmitting.");
+}
 		               
 		String sSize = f.stackSize == -1 ? "null" : String.valueOf(f.stackSize);
 		String hSize = Driver.heapSize == -1 ? "null" : String.valueOf(Driver.heapSize);

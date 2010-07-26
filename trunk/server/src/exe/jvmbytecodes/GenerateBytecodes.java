@@ -121,7 +121,7 @@ class GenerateBytecodes {
 		if (javacStatus == 0) { // no compilation error
 			return new File(path).list(new ClassNameFilter());
 		} else {
-			throw new InvalidClassFileException("The java source file does not compile. ");
+			throw new InvalidClassFileException("The java source file does not compile. \n" + "Try using the javac utility to compile the source file yourself.\n" + "Make sure the class name matches the file name. \n" + "If the class is called Example, the file name must be Example.java");
 			//return new String[] { "Error message 3" };
 		}
 	}// compile method
