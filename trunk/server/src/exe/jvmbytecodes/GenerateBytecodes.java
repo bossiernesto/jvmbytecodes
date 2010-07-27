@@ -430,8 +430,10 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_and(b));
 			} else if (b.contains("bipush")) {
 				arraylist.add(new Bytecode_bipush(b));		
-		    } else if (b.contains("const")) {
+		    	} else if (b.contains("const")) {
 				arraylist.add(new Bytecode_const(b));
+			} else if (b.contains("d2")) {
+				arraylist.add(new Bytecode_d2(b));
 			} else if (b.contains("dcmp")) {
 				arraylist.add(new Bytecode_dcmp(b));
 			} else if (b.contains("div")) {
@@ -448,16 +450,22 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_dup2_x1(b));
 			} else if (b.contains("dup2_x2")) {
 				arraylist.add(new Bytecode_dup2_x2(b));
+			} else if (b.contains("f2")) {
+				arraylist.add(new Bytecode_f2(b));
 			} else if (b.contains("fcmp")) {
 				arraylist.add(new Bytecode_fcmp(b));
 			} else if (b.contains("goto")) {
 				arraylist.add(new Bytecode_goto(b));
+			} else if (b.contains("i2")) {
+				arraylist.add(new Bytecode_i2(b));
 			} else if (b.contains("if")) {
 				arraylist.add(new Bytecode_if(b));
 			} else if (b.contains("inc")) {
 				arraylist.add(new Bytecode_inc(b));
 			} else if (b.contains("invokestatic")) {
 				arraylist.add(new Bytecode_invokestatic(b));
+			} else if (b.contains("l2")) {
+				arraylist.add(new Bytecode_l2(b));
 			} else if (b.contains("lcmp")) {
 				arraylist.add(new Bytecode_lcmp(b));
 			} else if (b.contains("ldc") && !b.contains("ldc2_w") && !b.contains("ldc_w")) {
