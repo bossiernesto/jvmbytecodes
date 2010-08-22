@@ -23,6 +23,7 @@ along with the JHAVE. If not, see:
 package exe.jvmbytecodes;
 import exe.GAIGSlegend;
 import exe.GAIGSItem;
+import exe.GAIGStext;
 import java.io.IOException;
 import java.lang.InterruptedException;
 import java.io.File;
@@ -105,6 +106,12 @@ class Frame_{
     * The label for an empty operand stack
   */
   	GAIGSlabel emptyStackLabel = new GAIGSlabel("Operand Stack (Empty)", 0.75, 0.05, 0.95, 0.1, 0.65); //create visual empty operand stack
+
+ /**
+    * The textBox for displaying information about the currently executing bytecode
+   */
+	GAIGStext textBox = new GAIGStext(.25, .9, 1, 2, .04, "#000000", " "); //create the textbox
+
     /**
 	 * Constructor
 	 * Intialize all values and colors in a frame.

@@ -64,36 +64,53 @@ public class Bytecode_const extends Bytecode_ {
 		// iconst -1, 0, 1, 2, 3, 4, 5
 		if (opcode.contains("i")) {
 			if (arguments.get(0).compareTo("m1") == 0) {
+				text = "The bytecode iconst_m1 pushed -1 on the operand stack.";
 				pushInteger((int) -1);
 			}
 			else {
-				pushInteger(Integer.parseInt(arguments.get(0)));
+				int temp = Integer.parseInt(arguments.get(0));
+				text = "The bytecode iconst_" + temp + " pushed " + temp + " on the operand stack.";
+				pushInteger(temp);
 			}
 		}
 		// lconst 0, 1
 		else if (opcode.contains("l")) {
-			if(arguments.get(0).compareTo("0") == 0)
+			if(arguments.get(0).compareTo("0") == 0) {
+				text = "The bytecode lconst_0 pushed 0L on the operand stack.";
 				pushLong(0L);
-			else if(arguments.get(0).compareTo("1") == 0)
+			}
+			else if(arguments.get(0).compareTo("1") == 0) {
+				text = "The bytecode lconst_1 pushed 1L on the operand stack.";
 				pushLong(1L);
+			}
 			else
 				pushLong(Long.parseLong(arguments.get(0)));
 		}
 		// fconst_ 0, 1, 2
 		else if (opcode.contains("f")) {
-			if(arguments.get(0).compareTo("0") == 0)
+			if(arguments.get(0).compareTo("0") == 0) {
+				text = "The bytecode fconst_0 pushed 0.0F on the operand stack.";
 				pushFloat(0F);
-			else if(arguments.get(0).compareTo("1") == 0)
+			}
+			else if(arguments.get(0).compareTo("1") == 0) {
+				text = "The bytecode fconst_1 pushed 1.0F on the operand stack.";
 				pushFloat(1F);
-			else
+			}
+			else {
+				text = "The bytecode fconst_2 pushed 2.0F on the operand stack.";
 				pushFloat(Float.parseFloat(arguments.get(0)));
+			}
 		}
 		// dconst 0, 1
 		else if (opcode.contains("d")) {
-			if(arguments.get(0).compareTo("0") == 0)
+			if(arguments.get(0).compareTo("0") == 0) {
+				text = "The bytecode dconst_0 pushed 0.0 on the operand stack.";
 				pushDouble(0.0);
-			else if(arguments.get(0).compareTo("1") == 0)
+			}
+			else if(arguments.get(0).compareTo("1") == 0) {
+				text = "The bytecode dconst_1 pushed 1.0 on the operand stack.";
 				pushDouble(1.0);
+			}
 			else
 				pushDouble(Double.parseDouble(arguments.get(0)));
 		}

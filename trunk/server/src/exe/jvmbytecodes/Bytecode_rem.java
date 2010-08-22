@@ -65,6 +65,7 @@ class Bytecode_rem extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y % x); //remainder operator
+			text = "The bytecode irem performed " + y + " % " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//lrem
@@ -73,6 +74,7 @@ class Bytecode_rem extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y % x); //remainder operator
+			text = "The bytecode lrem performed " + y + " % " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		//frem
@@ -81,6 +83,7 @@ class Bytecode_rem extends Bytecode_ {
 			Float x = popFloat();
 			Float y = popFloat();
 			Float z = (y % x); //remainder operator
+			text = "The bytecode frem performed " + y + " % " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		//drem
@@ -89,6 +92,7 @@ class Bytecode_rem extends Bytecode_ {
 			Double x = popDouble();
 			Double y = popDouble();
 			Double z = (y % x); //remainder operator
+			text = "The bytecode drem performed " + y + " % " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else

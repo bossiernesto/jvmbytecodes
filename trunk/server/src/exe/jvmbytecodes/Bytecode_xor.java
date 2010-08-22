@@ -67,6 +67,7 @@ class Bytecode_xor extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y ^ x); //bitwise xor operator
+			text = "The bytecode ixor performed " + y + " ^ " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//lxor
@@ -75,6 +76,7 @@ class Bytecode_xor extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y ^ x); //bitwise xor operator
+			text = "The bytecode lxor performed " + y + " ^ " + x + " = " + z + ".";
 			pushLong(z);
 		}
 

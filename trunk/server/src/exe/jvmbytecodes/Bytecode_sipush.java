@@ -59,7 +59,9 @@ public class Bytecode_sipush extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek(); //get current frame
 		next = lineNumber + 3; //update next line number
 
-		pushInteger(Integer.parseInt(arguments.get(0))); //push signed int
+		int temp = Integer.parseInt(arguments.get(0));
+		text = "The bytecode sipush " + temp + " pushed " + temp + " on the operand stack.";
+		pushInteger(temp); //push signed int
 		f.returnAddress = next; //update return address
 		return next; //return next line number
 	}

@@ -69,6 +69,7 @@ class Bytecode_add extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y + x); //do the add
+			text = "The bytecode iadd performed " + y + " + " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//ladd
@@ -77,6 +78,7 @@ class Bytecode_add extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y + x); //do the add
+			text = "The bytecode ladd performed " + y + " + " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		//fadd
@@ -85,6 +87,7 @@ class Bytecode_add extends Bytecode_ {
 			Float x = popFloat();
 			Float y = popFloat();
 			Float z = (y + x); //do the add
+			text = "The bytecode fadd performed " + y + " + " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		//dadd
@@ -93,6 +96,7 @@ class Bytecode_add extends Bytecode_ {
 			Double x = popDouble();
 			Double y = popDouble();
 			Double z = (y + x); //do the add
+			text = "The bytecode dadd performed " + y + " + " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else

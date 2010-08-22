@@ -65,6 +65,7 @@ class Bytecode_or extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y | x); //bitwise or operator
+			text = "The bytecode ior performed " + y + " | " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//lor
@@ -73,6 +74,7 @@ class Bytecode_or extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y | x); //bitwise or operator
+			text = "The bytecode lor performed " + y + " | " + x + " = " + z + ".";
 			pushLong(z);
 		}
 

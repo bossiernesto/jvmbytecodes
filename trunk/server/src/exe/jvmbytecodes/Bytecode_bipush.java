@@ -60,7 +60,9 @@ public class Bytecode_bipush extends Bytecode_ {
 		next = lineNumber + 2; //set the next line number
 
 		//bipush
-		pushInteger(Integer.parseInt(arguments.get(0))); //do the byte push operator
+		int temp = Integer.parseInt(arguments.get(0));
+		text = "The bytecode bipush " + temp + " pushed " + temp + " on the operand stack.";
+		pushInteger(temp); //do the byte push operator
 		f.returnAddress = next; //set the return address
 		return next; //return the next line number
 	}

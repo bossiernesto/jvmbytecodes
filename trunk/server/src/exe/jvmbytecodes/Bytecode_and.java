@@ -67,6 +67,7 @@ class Bytecode_and extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y & x); //do the and
+			text = "The bytecode iand performed " + y + " & " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//land
@@ -75,6 +76,7 @@ class Bytecode_and extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y & x); //do the and
+			text = "The bytecode land performed " + y + " & " + x + " = " + z + ".";
 			pushLong(z);
 		}
 

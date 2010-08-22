@@ -60,10 +60,16 @@ public class Bytecode_ldc_w extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek(); //get the current frame
 		next = lineNumber + 3; //update the line number
 
-		if(objectType.contains("int")) //is it an int constant?
-			pushInteger(Integer.parseInt(path)); //load the int
-		else if(objectType.contains("float")) //is it a float constant?
-			pushFloat(Float.parseFloat(path)); //load the float
+		if(objectType.contains("int")) { //is it an int constant? 
+			int temp = Integer.parseInt(path);
+			text = "The bytecode ldc_w pushed the integer " + temp + " on the operand stack.";
+			pushInteger(temp); //load the int
+		}
+		else if(objectType.contains("float")) { //is it a float constant?
+			float temp = Float.parseFloat(path);
+			text = "The bytecode ldc_w pushed the float" + temp + " on the operand stack.";
+			pushFloat(temp); //load the float
+		}
 		else
 			System.out.println("Unrecognized bytecode");
 	

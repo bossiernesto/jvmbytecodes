@@ -62,25 +62,33 @@ class Bytecode_neg extends Bytecode_ {
 		//ineg
 		if(opcode.contains("i"))
 		{
-			Integer z = (-popInteger().intValue()); //negation operator
+			int x = popInteger().intValue();
+			Integer z = -x; //negation operator
+			text = "The bytecode ineg performed -1 * " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//lneg
 		else if(opcode.contains("l"))
 		{
-			Long z = (-popLong().longValue()); //negation operator
+			long x = -popLong().longValue();
+			Long z = (-x); //negation operator
+			text = "The bytecode lneg performed -1 * " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		//fneg
 		else if(opcode.contains("f"))
 		{
-			Float z = (-popFloat().floatValue()); //negation operator
+			float x = popFloat().floatValue();
+			Float z = (-x); //negation operator
+			text = "The bytecode fneg performed -1 * " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		//dneg
 		else if(opcode.contains("d"))
 		{
-			Double z = (-popDouble().doubleValue()); //negation operator
+			double x = popDouble().doubleValue();
+			Double z = (-x); //negation operator
+			text = "The bytecode dneg performed -1 * " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else

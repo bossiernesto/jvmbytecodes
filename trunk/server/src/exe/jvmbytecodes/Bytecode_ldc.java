@@ -60,9 +60,16 @@ public class Bytecode_ldc extends Bytecode_ {
 		next = lineNumber + 2; //update the line number
 
 		if(objectType.contains("int")) //is it an int constant?
-			pushInteger(Integer.parseInt(path)); //load the int
+		{
+			int temp = Integer.parseInt(path);
+			text = "The bytecode ldc pushed the integer " + temp + " on the operand stack.";
+			pushInteger(temp); //load the int
+		}
 		else if(objectType.contains("float")) //is it a float constant?
-			pushFloat(Float.parseFloat(path)); //load the float
+		{
+			float temp = Float.parseFloat(path);
+			text = "The bytecode ldc pushed the float" + temp + " on the operand stack.";
+			pushFloat(temp); //load the float
 		else
 			System.out.println("Unrecognized bytecode");
 			

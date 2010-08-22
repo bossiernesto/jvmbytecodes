@@ -66,6 +66,7 @@ class Bytecode_mul extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y * x); //multiplication operator
+			text = "The bytecode imul performed " + y + " * " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		else if(opcode.contains("lm")) //lmul
@@ -73,6 +74,7 @@ class Bytecode_mul extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y * x); //multiplication operator
+			text = "The bytecode lmul performed " + y + " * " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		else if(opcode.contains("f")) //fmul
@@ -80,6 +82,7 @@ class Bytecode_mul extends Bytecode_ {
 			Float x = popFloat();
 			Float y = popFloat();
 			Float z = (y * x); //multiplication operator
+			text = "The bytecode fmul performed " + y + " * " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		else if(opcode.contains("d")) //dmul
@@ -87,6 +90,7 @@ class Bytecode_mul extends Bytecode_ {
 			Double x = popDouble();
 			Double y = popDouble();
 			Double z = (y * x); //multiplication operator
+			text = "The bytecode dmul performed " + y + " * " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else
@@ -96,5 +100,6 @@ class Bytecode_mul extends Bytecode_ {
 
 		f.returnAddress = next; //update the return address
 		return next; //return the next line number
+
 	}
 }
