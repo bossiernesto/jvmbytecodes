@@ -66,6 +66,7 @@ class Bytecode_sub extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y - x); //subtraction operator
+			text = "The bytecode isub performed " + y + " - " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//lsub
@@ -74,6 +75,7 @@ class Bytecode_sub extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y - x); //subtraction operator
+			text = "The bytecode lsub performed " + y + " - " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		//fsub
@@ -82,6 +84,7 @@ class Bytecode_sub extends Bytecode_ {
 			Float x = popFloat();
 			Float y = popFloat();
 			Float z = (y - x); //subtraction operator
+			text = "The bytecode fsub performed " + y + " - " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		//dsub
@@ -91,6 +94,7 @@ class Bytecode_sub extends Bytecode_ {
 			x = popDouble();
 			y = popDouble();
 			Double z = (y - x); //subtraction operator
+			text = "The bytecode dsub performed " + y + " - " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else

@@ -61,11 +61,15 @@ public class Bytecode_ldc2_w extends Bytecode_ {
 
 		if(objectType.contains("long")) //is it a long?
 		{
-			pushLong(Long.parseLong(path)); //load the long
+			long temp = Long.parseLong(path);
+			text = "The bytecode ldc2_w pushed the long " + temp + " on the operand stack.";
+			pushLong(temp); //load the long
 		}
 		else if(objectType.contains("double")) //is it a double?
 		{
-			pushDouble(Double.parseDouble(path)); //load the double
+			double temp = Double.parseDouble(path);
+			text = "The bytecode ldc2_w pushed the double " + temp + " on the operand stack.";
+			pushDouble(temp); //load the double
 		}
 		else
 			System.out.println("Unrecognized bytecode");

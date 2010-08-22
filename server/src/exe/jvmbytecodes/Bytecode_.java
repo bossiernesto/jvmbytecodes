@@ -30,6 +30,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import exe.GAIGSlegend;
 import exe.GAIGSItem;
+import exe.GAIGStext;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -100,6 +101,10 @@ abstract class Bytecode_ {
   */
 	public String entireOpcode;
   /**
+    * Text describing the current opcode
+  */
+	public String text;
+  /**
     * The frame a Bytecode_ object exists within
   */
 	public Frame_ f;
@@ -148,6 +153,7 @@ abstract class Bytecode_ {
 		else
 			colorArray = new int[] {PseudoCodeDisplay.RED, PseudoCodeDisplay.GREEN};
 
+	f.textBox.setText(text);
 		//Write the snapshot
        if (f.stackSize > 0) {
 	    Driver.show.writeSnap(Driver.TITLE, 
@@ -157,7 +163,7 @@ abstract class Bytecode_ {
 				  Driver.runTimeStack, 
 				  f.stack, 
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend
+				  f.localVariableArray, f.jvmLegend, f.textBox
 				  );
 		}
 		else {
@@ -167,9 +173,10 @@ abstract class Bytecode_ {
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel, f.textBox
 				  );
 			}
+		f.textBox.setText(" ");
 		}
 
     /**
@@ -200,6 +207,7 @@ abstract class Bytecode_ {
 		double [] yline2 = new double[]{coords[5], .95};
 		pc.addLine(xline2, yline2, f.CURRENT_FRAME_COLOR, "#000000", "");
 
+		f.textBox.setText(text);
 		//Write the snapshot
 		if (f.stackSize > 0)
 			Driver.show.writeSnap(Driver.TITLE, 
@@ -210,7 +218,7 @@ abstract class Bytecode_ {
 				  Driver.runTimeStack, 
 				  f.stack, 
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend
+				  f.localVariableArray, f.jvmLegend, f.textBox
 				  );
 		else
 			Driver.show.writeSnap(Driver.TITLE, 
@@ -220,34 +228,39 @@ abstract class Bytecode_ {
 				  pc,
 				  Driver.runTimeStack,
 				  Driver.heap,
-				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel, f.textBox
 				  );
+		f.textBox.setText(" ");
 	}
 
     /**
      * Write a snapshot of a bytecode that calls a method
      */
 	public void writeMethodSnap() throws IOException,JDOMException {
+		f.textBox.setText(text);
 		//Write the snapshot
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.GREEN, f), 
-				  Driver.runTimeStack, f.jvmLegend,
+				  Driver.runTimeStack, f.jvmLegend, f.textBox,
 				  Driver.heap);
+		f.textBox.setText(" ");
 	}
 
     /**
      * Write the last snapshot of the visualization
      */
 	public void writeFinalSnap() throws IOException,JDOMException {
+		f.textBox.setText(text);
 		//Write the snapshot
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.GREEN, f), 
-				  Driver.runTimeStack, f.jvmLegend,
+				  Driver.runTimeStack, f.jvmLegend, f.textBox,
 				  Driver.heap);
+		f.textBox.setText(" ");
 	}
 
     //---------------------- Stack Manipulation Methods ----------------------

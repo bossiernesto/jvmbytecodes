@@ -67,6 +67,7 @@ class Bytecode_div extends Bytecode_ {
 			Integer x = popInteger();
 			Integer y = popInteger();
 			Integer z = (y / x); //do the division
+			text = "The bytecode idiv performed " + y + " / " + x + " = " + z + ".";
 			pushInteger(z);
 		}
 		//ldiv
@@ -75,6 +76,7 @@ class Bytecode_div extends Bytecode_ {
 			Long x = popLong();
 			Long y = popLong();
 			Long z = (y / x); //do the division
+			text = "The bytecode ldiv performed " + y + " / " + x + " = " + z + ".";
 			pushLong(z);
 		}
 		//fdiv
@@ -83,6 +85,7 @@ class Bytecode_div extends Bytecode_ {
 			Float x = popFloat();
 			Float y = popFloat();
 			Float z = (y / x); //do the division
+			text = "The bytecode fdiv performed " + y + " / " + x + " = " + z + ".";
 			pushFloat(z);
 		}
 		//ddiv
@@ -91,6 +94,7 @@ class Bytecode_div extends Bytecode_ {
 			Double x = popDouble();
 			Double y = popDouble();
 			Double z = (y / x); //do the division
+			text = "The bytecode ddiv performed " + y + " / " + x + " = " + z + ".";
 			pushDouble(z);
 		}
 		else
