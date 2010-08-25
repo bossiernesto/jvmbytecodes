@@ -274,8 +274,8 @@ public class ControlPanel extends JPanel implements QuizListener {
 	         */
 	        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, byteCodeTab, sourceCodeTab);
             splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, scroll, splitPane);
-            sourceCodeTab.setMinimumSize(new Dimension(200, 0));
-            byteCodeTab.setMinimumSize(new Dimension(200, 0));
+            sourceCodeTab.setMinimumSize(new Dimension(100, 0));
+            byteCodeTab.setMinimumSize(new Dimension(100, 0));
             scroll.setMinimumSize(new Dimension(0, 0));
 
         }
