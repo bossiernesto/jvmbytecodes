@@ -150,6 +150,15 @@ public class ControlPanel extends JPanel implements QuizListener {
     /** */
     private JSplitPane splitPane = null;
     
+    /* 
+     * William Clements
+     * Aug 28, 2010
+     * jvmbytecodes project - used to return the current running visualization
+     */
+    private String algoName;
+    private JTabbedPane byteCodeTab;
+    private JTabbedPane sourceCodeTab;
+
     /** */
     private JTabbedPane documentTabs;
     /** */
@@ -236,10 +245,46 @@ public class ControlPanel extends JPanel implements QuizListener {
         }
         visualizer.addAudioTextListener(audioTextHandler);
         
-        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, scroll, documentTabs);
-        documentTabs.setMinimumSize(new Dimension(200, 0));
-        scroll.setMinimumSize(new Dimension(0, 0));
-        splitPane.setDividerLocation(9000);
+        /*
+         * William Clements
+         * Aug 28, 2010
+         * jvmbytecodes project
+         * Get the name of the current running algorithm
+         */
+        ClientNetworkController control = ClientNetworkController.getInstance();
+        algoName = control.getLastAlgorithm().GetAlgoName();
+        if(algoName.compareTo("jvmbytecodes")==0) {
+            /*
+             * William Clements
+             * Aug 28, 2010
+             * A bytecode tab and a source code tab are made for the jvmbytecodes project
+             */
+            byteCodeTab = new JTabbedPane();
+
+            JHAVETranslator.getGUIBuilder().insertTranslatableTab("byteCodeTab",
+                new JScrollPane(codePage), byteCodeTab);
+            sourceCodeTab = new JTabbedPane();
+            JHAVETranslator.getGUIBuilder().insertTranslatableTab("sourceCodeTab", 
+            new JScrollPane(infoPage), sourceCodeTab);
+
+	        /*
+             * William Clements
+             * Aug 28, 2010
+	         * This is where the jvmbytecodes project splits the code pane
+	         */
+	        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, byteCodeTab, sourceCodeTab);
+            splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, scroll, splitPane);
+            sourceCodeTab.setMinimumSize(new Dimension(200, 0));
+            byteCodeTab.setMinimumSize(new Dimension(200, 0));
+            scroll.setMinimumSize(new Dimension(0, 0));
+
+        }
+        else { //normal JHAVE visualization
+            splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, false, scroll, documentTabs);
+            documentTabs.setMinimumSize(new Dimension(200, 0));
+            scroll.setMinimumSize(new Dimension(0, 0));
+            splitPane.setDividerLocation(9000);
+        }
         
         //setPreferredSize(visualizer.getRenderPane().getPreferredSize());
         add(BorderLayout.CENTER, splitPane);
@@ -367,6 +412,15 @@ public class ControlPanel extends JPanel implements QuizListener {
         panel.add(frameNumber);
         //panel.setLayout(new GridLayout(1, count));
         return panel;
+    }
+
+    /* 
+     * William Clements
+     * Aug 28, 2010
+     * jvmbytecodes project - returns the name of the currently running visualization
+     */
+    String getCurrentAlgorithm() {
+        return algoName;
     }
 
 	/**
