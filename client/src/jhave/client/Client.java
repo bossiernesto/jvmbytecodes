@@ -153,16 +153,7 @@ public class Client extends JFrame implements NetworkListener, TransactionCodes 
     private Component parent = getParent();
 
     private SetupPanel setupPanel;
-    
-    /*
-     * William Clements
-     * Aug 28, 2010
-     * jvmbytecodes project - used to retrieve the max size the window can resize to
-     */
-    static int monitorWidth;
-    static int monitorHeight;
-    static boolean firstTime =true;
-    
+   
     // End Globals
     ///////////////////////////////////////////////////////////////////////////
     // Menu Items
@@ -1068,17 +1059,6 @@ public class Client extends JFrame implements NetworkListener, TransactionCodes 
         }
         
         visController = new ControlPanel(v);
-        
-        /*
-         * William Clements 
-         * Aug 28, 2010
-         * jvmbytecodes project - resizing of window
-         */
-        if (visController.getCurrentAlgorithm().compareTo("jvmbytecodes")==0) {
-            setSize(Client.monitorWidth, Client.monitorHeight);
-            setResizable(true);
-            setLocationRelativeTo(null);
-        }
         
         class QuestionHandler implements QuestionListener {
             public void handleQuestion(QuestionEvent e) {
