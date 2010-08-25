@@ -70,6 +70,7 @@ public class Bytecode_ldc extends Bytecode_ {
 			float temp = Float.parseFloat(path);
 			text = "The bytecode ldc pushed the float" + temp + " on the operand stack.";
 			pushFloat(temp); //load the float
+	    }
 		else
 			System.out.println("Unrecognized bytecode");
 			
