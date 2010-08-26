@@ -72,13 +72,13 @@ public class Driver {
   */
     static Stack _runTimeStack = new Stack();
   /**
-    * The visual heap
+    * The visual array
   */
-    static GAIGSnewStack heap;
+    static GAIGSnewArray array;
   /**
     * The virtual heap
   */
-    static ArrayList _heap;
+    static char[] _heap = new char[26];
   /**
     * Current class counter
   */
@@ -87,6 +87,14 @@ public class Driver {
     * The number of lines in the input java file
   */
     static int numberOfLinesInJavaFile = 1;
+  /**
+    * The number of arrays in the java file
+  */
+    static int numberOfArrays = 0;
+  /**
+    * The type of array
+  */
+    static String arrayType = "";
   /**
     * The size of the heap
   */
@@ -192,7 +200,7 @@ public class Driver {
 			classes = GenerateBytecodes.getClasses(tmp);
 
 			// create visual stack and heap using the predetermined sizes
-			heap = new GAIGSnewStack("Heap", "#999999", 0, 0.55, 0.2, 0.9);
+			array = new GAIGSnewArray(0, "", "#999999", -.05, 0.6, 0.05, 0.9, .5);
 			runTimeStack = new GAIGSnewStack("Runtime Stack", "#999999", -1, 0.1, .05, 0.5);
 
 			// set current method and class

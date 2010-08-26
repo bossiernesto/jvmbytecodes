@@ -26,7 +26,7 @@ public class MakeURI {
 	 */
 	static String make_uri(int[] lines, int[] colors, Frame_ f) throws JDOMException, IOException {
 		numSnapshots++;
-	if (numSnapshots > 500) {
+	if (numSnapshots > 1000) {
 		Driver.show.close();
 		Driver.show = new ShowFile(Driver.path + ".sho", 5);
 		throw new InvalidClassFileException("Too many snapshots made. \n" + "Your program may be too long or may have an infinite loop.\n" + "Check to see if the source code compiles before resubmitting.");

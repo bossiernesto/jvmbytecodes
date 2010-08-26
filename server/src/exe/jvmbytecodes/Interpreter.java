@@ -37,11 +37,12 @@ public class Interpreter {
 	static public void interpret() throws IOException,JDOMException {	
 		Bytecode_ bc = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes[0]; //get the very first bytecode
 		bc.execute(); //execute the first one
-
+		System.out.println(bc);
 		while (bc.next != -1) { //loop through bytecodes
 			Bytecode_[] b = Driver.classes[0].methods.get(Driver.currentMethod).bytecodes;
 			for (Bytecode_ x : b) {
 				if (x.getLineNumber() == bc.next) { //find the correct bytecode
+					System.out.println(x);
 					x.execute(); //execute that bytecode
 					bc = x;
 				} else

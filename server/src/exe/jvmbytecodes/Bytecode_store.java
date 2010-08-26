@@ -60,26 +60,46 @@ public class Bytecode_store extends Bytecode_ {
 		f = (Frame_) Driver._runTimeStack.peek(); //get current frame
 		next = lineNumber + 1; //update line number
 
-		if (underscore.compareTo("_") == 0) //update line number again if necessary
+		if (underscore.compareTo("_") == 0 || opcode.contains("iastore") || opcode.contains("fastore") || opcode.contains("lastore") || opcode.contains("dastore")) //update line number again if necessary
 			;
 		else
 			next += 1;
 
 		// istore
-		if (opcode.contains("i")) {
+		if (opcode.contains("i") && !opcode.contains("iastore")) {
 			storeInteger(popInteger()); //store
 		}
 		// lstore
-		else if (opcode.contains("l")) {
+		else if (opcode.contains("l") && !opcode.contains("lastore")) {
 			storeLong(popLong()); //store
 		}
 		//fstore
-		else if (opcode.contains("f")) {
+		else if (opcode.contains("f") && !opcode.contains("fastore")) {
 			storeFloat(popFloat()); //store
 		}
 		// dstore
-		else if (opcode.contains("d")) {
+		else if (opcode.contains("d") && !opcode.contains("dastore")) {
 			storeDouble(popDouble()); //store
+		}
+		// astore
+		else if (opcode.contains("astore") && !opcode.contains("iastore") && !opcode.contains("fastore") && !opcode.contains("lastore") && !opcode.contains("dastore")) {
+			storeString(popString()); //store
+		}
+		// iastore
+		else if (opcode.contains("iastore")) {
+			storeArrayInteger(popInteger()); //store
+		}
+		// fastore
+		else if (opcode.contains("fastore")) {
+			storeArrayFloat(popFloat()); //store
+		}
+		// lastore
+		else if (opcode.contains("lastore")) {
+			storeArrayLong(popLong()); //store
+		}
+		// dastore
+		else if (opcode.contains("dastore")) {
+			storeArrayDouble(popDouble()); //store
 		}
 		else
 			System.out.println("Bytecode not found");

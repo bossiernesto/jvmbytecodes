@@ -89,11 +89,11 @@ class Frame_{
  /**
     * Colors
   */
-	public GAIGSItem color1, color2, color3;
+	public GAIGSItem color1, color2, color3, color4;
  /**
     * Ints used for the legend
   */
-	public int rows = 1, columns = 3;
+	public int rows = 1, columns = 4;
  /**
     * The visual legend
   */
@@ -142,9 +142,11 @@ class Frame_{
 		color1 = new GAIGSItem("After Execution", "#CCFFCC"); 
 		color2 = new GAIGSItem("Before Execution", "#FFDDDD"); 
 		color3 = new GAIGSItem("Current Frame", CURRENT_FRAME_COLOR); 
+		color4 = new GAIGSItem("Objects Stored Here", "#EAC1F7");
 		jvmLegend.setItem(0, 0, color1); 
 		jvmLegend.setItem(0, 1, color2);
 		jvmLegend.setItem(0, 2, color3);
+		jvmLegend.setItem(0, 3, color4);
 		jvmLegend.disableBox();
 
 		//set stack to initial values, rather than "null"

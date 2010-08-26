@@ -76,13 +76,23 @@ public class Bytecode_invokestatic extends Bytecode_
 			int numParameters = parameters.length; //number of parameters passed in
 
 			int counter = 0;
-			for(int i = 0; i < numParameters; i++) //find the number of array elements needed to store parameters
+			int check2 = 0;
+			for(int i = (numParameters-1); i >= 0; i--) //find the number of array elements needed to store parameters
 			{
-				if(parameters[i].equals("D") || parameters[i].equals("J"))
-					counter++;
+				if(i != 0)
+					check2 = i-1;
 				else
-					;
-				counter++;
+					check2 = 0;
+				if((parameters[i].equals("D") || parameters[i].equals("J")) && !parameters[check2].equals("[")){
+
+					System.out.println("here");
+					counter+=2;
+				}
+				else if(!parameters[i].equals("["))
+					counter++;
+				//System.out.println(check2);
+				System.out.println(parameters[i]);
+				System.out.println(counter);
 			}
 
         	Frame_ f2 = new Frame_(Driver.currentMethod); //create the new frame
@@ -94,11 +104,16 @@ public class Bytecode_invokestatic extends Bytecode_
 				;
 			else
 				f2.stackColor = true; 
-
 			//put the parameters in the local variable array of f2
+			int check;
 			for(int i = (numParameters-1); i >= 0; i--)
 			{
-				if(parameters[i].equals("I")) //is the parameter an int?
+				//System.out.println(j);
+				if(i != 0)
+					check = i-1;
+				else
+					check = 0;
+				if(parameters[i].equals("I") && !parameters[check].equals("[")) //is the parameter an int?
 				{
 					int var;
 					var = popInteger();
@@ -112,7 +127,7 @@ public class Bytecode_invokestatic extends Bytecode_
 						f2.stackColor = false;		
 					}				
 				}
-				else if(parameters[i].equals("J")) //in the parameter a long?
+				else if(parameters[i].equals("J") && !parameters[check].equals("[")) //in the parameter a long?
 				{
 					long var = popLong();
 					f2._localVariableArray[j-1] = Long.toString(var);
@@ -129,7 +144,7 @@ public class Bytecode_invokestatic extends Bytecode_
 					}
 					j--;
 				}
-				else if(parameters[i].equals("F")) //is the parameter a float?
+				else if(parameters[i].equals("F") && !parameters[check].equals("[")) //is the parameter a float?
 				{
 					float var;
 					var = popFloat();
@@ -143,9 +158,10 @@ public class Bytecode_invokestatic extends Bytecode_
 						f2.stackColor = false;
 					}				
 				}
-				else if(parameters[i].equals("D")) //is the parameter a double?
+				else if(parameters[i].equals("D") && !parameters[check].equals("[")) //is the parameter a double?
 				{
 					double var = popDouble();
+				System.out.println("here");
 					f2._localVariableArray[j-1] = Double.toString(var);
 					f2._localVariableArray[j] = "";
 					if(!f2.stackColor){
@@ -160,10 +176,26 @@ public class Bytecode_invokestatic extends Bytecode_
 					}
 					j--;
 				}
+				else if((parameters[i].equals("I") && parameters[check].equals("[")) || (parameters[i].equals("J") && parameters[check].equals("[")) || (parameters[i].equals("F") && parameters[check].equals("[")) || (parameters[i].equals("D") && parameters[check].equals("["))) //is the parameter an int?
+				{	
+					String var;
+					var = popString();
+					f2._localVariableArray[j] = var;
+					if(!f2.stackColor){
+						f2.localVariableArray.set(var, j, Driver.darkGray);
+						f2.stackColor = true;
+					}
+					else{
+						f2.localVariableArray.set(var, j, Driver.lightGray);
+						f2.stackColor = false;		
+					}
+					i--;	
+				}
 				else
 					System.out.println("not working");
 
 				j--;
+			System.out.println("Now");
 			}
 			Driver._runTimeStack.push(f2); //push the frame on the virtual stack
 			next = 0; //set the next line number to the start of the new method

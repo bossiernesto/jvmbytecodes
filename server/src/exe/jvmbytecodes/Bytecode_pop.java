@@ -62,12 +62,10 @@ public class Bytecode_pop extends Bytecode_
 		f = (Frame_) Driver._runTimeStack.peek(); //get the current frame
 		next = lineNumber+1; //update the line number
 
-		f._stack.pop(); //pop from the virtual stack
-		f.stack.set("",f.currentStackHeight++, Driver.CURRENT_HIGHLIGHT_COLOR); //clear the visual stack
+		f._stack.pop(); //pop from the virtual stack	
+		f.stack.set("",f.currentStackHeight++, Driver.lightGray); //clear the visual stack
 		writeSnap(); //write the snapshot
-		
 		//coloring must be corrected when objects are implemented
-		f.stack.setColor(f.currentStackHeight, "#999999");
 		f.returnAddress = next; //update the return address
 		return next; //return the next line number
 	}
