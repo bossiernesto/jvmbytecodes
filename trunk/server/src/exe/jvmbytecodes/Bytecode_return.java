@@ -85,6 +85,7 @@ public class Bytecode_return extends Bytecode_ {
 			Frame_ f2 = (Frame_) Driver._runTimeStack.pop(); //pop frame off virtual runtime stack
 			Driver.runTimeStack.pop(); //pop frame off visual runtime stack
 			f = (Frame_) Driver._runTimeStack.peek(); //get current frame
+			System.out.println("here");
 			int var = (Integer) f2._stack.pop(); //get int return value
 
 			next = f.returnAddress; //set next line number to return address

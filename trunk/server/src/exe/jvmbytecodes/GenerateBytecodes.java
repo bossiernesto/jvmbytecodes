@@ -426,8 +426,13 @@ class GenerateBytecodes {
 		for (String b : bc) {
 			if (b.contains("add")) {
 				arraylist.add(new Bytecode_add(b));
+			} else if (b.contains("anewarray")) {
+			     if (currentMethodStr.compareTo(currentClassStr) != 0)
+				throw new InvalidClassFileException("anewarray bytecode is not supported by this visualization.");
 			} else if (b.contains("and")) {
 				arraylist.add(new Bytecode_and(b));
+			} else if (b.contains("arraylength")) {
+				arraylist.add(new Bytecode_arraylength(b));
 			} else if (b.contains("bipush")) {
 				arraylist.add(new Bytecode_bipush(b));		
 		    	} else if (b.contains("const")) {
@@ -474,15 +479,14 @@ class GenerateBytecodes {
 				arraylist.add(new Bytecode_ldc_w(b));
 			} else if (b.contains("ldc2_w")) {
 				arraylist.add(new Bytecode_ldc2_w(b));
-			} else if (b.contains("aload")) {
-				if (currentMethodStr.compareTo(currentClassStr) != 0)
-					throw new InvalidClassFileException("aload bytecode is not supported by this visualization.");
 			} else if (b.contains("load")) {
 				arraylist.add(new Bytecode_load(b));
 			} else if (b.contains("mul")) {
 				arraylist.add(new Bytecode_mul(b));
 			} else if (b.contains("neg")) {
 				arraylist.add(new Bytecode_neg(b));
+			} else if (b.contains("newarray")) {
+				arraylist.add(new Bytecode_newarray(b)); 
 			} else if (b.contains("or") && !b.contains("store") && !b.contains("xor")) {
 				arraylist.add(new Bytecode_or(b));
 			} else if (b.contains("pop") && !b.contains("pop2")) {

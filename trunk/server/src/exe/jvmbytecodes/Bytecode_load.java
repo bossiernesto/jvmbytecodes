@@ -63,31 +63,72 @@ public class Bytecode_load extends Bytecode_
 		f = (Frame_) Driver._runTimeStack.peek(); //get the current frame
 		next = lineNumber+1; //update the next line number
 
-		if(underscore.compareTo("_") == 0) //update the next line number again if necessary
+		if(underscore.compareTo("_") == 0 || opcode.contains("iaload") || opcode.contains("faload") || opcode.contains("laload") || opcode.contains("daload")) //update the next line number again if necessary
 			;
 		else
 			next += 1;
 
-		if(opcode.contains("i")) //iload
+		if(opcode.contains("i") && !opcode.contains("iaload")) //iload
 		{
 			int index = Integer.parseInt(arguments.get(0));
 			loadInteger(Integer.parseInt(f._localVariableArray[index]));
 		}
-		else if(opcode.contains("ll")) //lload
+		else if(opcode.contains("ll") && !opcode.contains("laload")) //lload
 		{
 			int index = Integer.parseInt(arguments.get(0));
 			loadLong(Long.parseLong(f._localVariableArray[index]));
 		}
-		else if(opcode.contains("f")) //fload
+		else if(opcode.contains("f") && !opcode.contains("faload")) //fload
 		{
 			int index = Integer.parseInt(arguments.get(0));
 			pushFloat(Float.parseFloat(f._localVariableArray[index]));
 		}
-		else if(opcode.contains("dl")) //dload
+		else if(opcode.contains("dl") && !opcode.contains("daload")) //dload
 		{
 			int index = Integer.parseInt(arguments.get(0));
 			loadDouble(Double.parseDouble(f._localVariableArray[index]));
 		}
+		else if(opcode.contains("aload") && !opcode.contains("iaload") && !opcode.contains("faload") && !opcode.contains("laload") && !opcode.contains("daload")) //aload
+		{
+			int index = Integer.parseInt(arguments.get(0));
+			loadString(f._localVariableArray[index]);
+		}
+		else if(opcode.contains("iaload")) //iaload
+		{
+			int index = popInteger();
+			String refArray = popString();
+			if(refArray.equals("Arr 1")) {
+				loadArrayInteger(Bytecode_newarray.int_array[index]);
+			}
+		}
+		else if(opcode.contains("faload")) //faload
+		{
+			int index = popInteger();
+			String refArray = popString();
+			if(refArray.equals("Arr 1")) {
+				loadArrayFloat(Bytecode_newarray.float_array[index]);
+			}
+		}
+		else if(opcode.contains("laload")) //laload
+		{
+			int index = popInteger();
+			index = index * 2;
+			String refArray = popString();
+			if(refArray.equals("Arr 1")) {
+				loadArrayLong(Bytecode_newarray.long_array[index]);
+			}
+		}
+		else if(opcode.contains("daload")) //daload
+		{
+			int index = popInteger();
+			index = index * 2;
+			String refArray = popString();
+			if(refArray.equals("Arr 1")) {
+				loadArrayDouble(Bytecode_newarray.double_array[index]);
+			}
+		}
+
+
 
 		f.returnAddress = next; //update the return address
 		return next; //return the next line number

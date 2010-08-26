@@ -123,6 +123,21 @@ abstract class Bytecode_ {
 	public void writeSnap() throws IOException, JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek(); //peek at the current frame
 
+		//create a gaigslabel
+	    GAIGSlabel hpLabel = new GAIGSlabel("Heap", -.1, .85, .1, .95, .5);
+
+		//create a primitiveCollection object
+	    exe.GAIGSprimitiveCollection pcHeap = new exe.GAIGSprimitiveCollection( "");
+	    pcHeap.addPolygon(
+			    4,
+			    new double[] { -.1, -.1, .1, .1 },
+			    new double[] { 0.55, 0.95, 0.95, 0.55 },
+			    "#EAC1F7",  // fill color
+			    "#EAC1F7",  // outline color
+			    "#FFFFFF",  // label color
+			    ""          // polygon label
+			  );
+
 		//create a primitiveCollection object
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
 	    pc.addPolygon(
@@ -155,14 +170,17 @@ abstract class Bytecode_ {
 
 	f.textBox.setText(text);
 		//Write the snapshot
+if(Driver.numberOfArrays > 0){
        if (f.stackSize > 0) {
 	    Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
 				  pc,
+				  pcHeap,
 				  Driver.runTimeStack, 
 				  f.stack, 
-				  Driver.heap,
+				  Driver.array,
+				  hpLabel,
 				  f.localVariableArray, f.jvmLegend, f.textBox
 				  );
 		}
@@ -171,12 +189,40 @@ abstract class Bytecode_ {
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
 				  pc,
+				  pcHeap,
 				  Driver.runTimeStack,
-				  Driver.heap,
+				  Driver.array,
+				  hpLabel,
 				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel, f.textBox
 				  );
 			}
+}
+else
+       if (f.stackSize > 0) {
+	    Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
+				  pc,
+				  pcHeap,
+				  Driver.runTimeStack, 
+				  f.stack, 
+				  hpLabel,
+				  f.localVariableArray, f.jvmLegend
+				  );
 		f.textBox.setText(" ");
+		}
+		else {
+			Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(new int[] {next, lineNumber}, colorArray, f), 
+				  pc,
+				  pcHeap,
+				  Driver.runTimeStack,
+				  hpLabel,
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  );
+			}
+
 		}
 
     /**
@@ -184,6 +230,21 @@ abstract class Bytecode_ {
      */
 	public void writeSnapReturn() throws IOException,JDOMException {
 		f = (Frame_) Driver._runTimeStack.peek(); //peek at the current frame
+
+		//create a gaigslabel
+	    GAIGSlabel hpLabel = new GAIGSlabel("Heap", -.1, .85, .1, .95, .5);
+
+		//create a primitiveCollection object
+	    exe.GAIGSprimitiveCollection pcHeap = new exe.GAIGSprimitiveCollection( "");
+	    pcHeap.addPolygon(
+			    4,
+			    new double[] { -.1, -.1, .1, .1 },
+			    new double[] { 0.55, 0.95, 0.95, 0.55 },
+			    "#EAC1F7",  // fill color
+			    "#EAC1F7",  // outline color
+			    "#FFFFFF",  // label color
+			    ""          // polygon label
+			  );
 
 		//create a primitiveCollection object
 	    exe.GAIGSprimitiveCollection pc = new exe.GAIGSprimitiveCollection( f.methodName + " frame");
@@ -209,15 +270,18 @@ abstract class Bytecode_ {
 
 		f.textBox.setText(text);
 		//Write the snapshot
+if(Driver.numberOfArrays > 0) {
 		if (f.stackSize > 0)
 			Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(new int[] {next}, new int[] 
 						   {PseudoCodeDisplay.RED}, f), 
 				  pc,
+				  pcHeap,
 				  Driver.runTimeStack, 
 				  f.stack, 
-				  Driver.heap,
+				  Driver.array,
+				  hpLabel,
 				  f.localVariableArray, f.jvmLegend, f.textBox
 				  );
 		else
@@ -226,10 +290,39 @@ abstract class Bytecode_ {
 				  MakeURI.make_uri(new int[] {next}, new int[] 
 						   {PseudoCodeDisplay.RED}, f), 
 				  pc,
+				  pcHeap,
 				  Driver.runTimeStack,
-				  Driver.heap,
+				  Driver.array,
+				  hpLabel,
 				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel, f.textBox
 				  );
+}
+else {
+		if (f.stackSize > 0)
+			Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(new int[] {next}, new int[] 
+						   {PseudoCodeDisplay.RED}, f), 
+				  pc,
+				  pcHeap,
+				  Driver.runTimeStack, 
+				  f.stack, 
+				  hpLabel,
+				  f.localVariableArray, f.jvmLegend
+				  );
+		else
+			Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(new int[] {next}, new int[] 
+						   {PseudoCodeDisplay.RED}, f), 
+				  pc,
+				  pcHeap,
+				  Driver.runTimeStack,
+				  hpLabel,
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  );
+		}
+
 		f.textBox.setText(" ");
 	}
 
@@ -237,14 +330,41 @@ abstract class Bytecode_ {
      * Write a snapshot of a bytecode that calls a method
      */
 	public void writeMethodSnap() throws IOException,JDOMException {
+
+		//create a gaigslabel
+	    GAIGSlabel hpLabel = new GAIGSlabel("Heap", -.1, .85, .1, .95, .5);
+
+		//create a primitiveCollection object
+	    exe.GAIGSprimitiveCollection pcHeap = new exe.GAIGSprimitiveCollection( "");
+	    pcHeap.addPolygon(
+			    4,
+			    new double[] { -.1, -.1, .1, .1 },
+			    new double[] { 0.55, 0.95, 0.95, 0.55 },
+			    "#EAC1F7",  // fill color
+			    "#EAC1F7",  // outline color
+			    "#FFFFFF",  // label color
+			    ""          // polygon label
+			  );
+
 		f.textBox.setText(text);
 		//Write the snapshot
+if(Driver.numberOfArrays > 0) {
 		Driver.show.writeSnap(Driver.TITLE, 
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.GREEN, f), 
-				  Driver.runTimeStack, f.jvmLegend, f.textBox,
-				  Driver.heap);
+				  Driver.array,
+				  hpLabel,
+				  Driver.runTimeStack, f.jvmLegend, pcHeap, f.textBox);
+}
+else {
+		Driver.show.writeSnap(Driver.TITLE, 
+				  MakeURI.doc_uri(lineNumber, f), 
+				  MakeURI.make_uri(lineNumber, 
+						   PseudoCodeDisplay.GREEN, f), 
+						   hpLabel,
+				  Driver.runTimeStack, f.jvmLegend, pcHeap, f.textBox);
+		}
 		f.textBox.setText(" ");
 	}
 
@@ -258,8 +378,7 @@ abstract class Bytecode_ {
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.GREEN, f), 
-				  Driver.runTimeStack, f.jvmLegend, f.textBox,
-				  Driver.heap);
+				  Driver.runTimeStack, f.jvmLegend);
 		f.textBox.setText(" ");
 	}
 
@@ -365,6 +484,36 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
 	}
+    /**
+	 * Store a double in the array located in the heap
+     *
+     * @param       x           The Double to be stored
+     */
+	public void storeArrayDouble(Double x) throws IOException,JDOMException {
+		String colorAtIndex = Driver.lightGray;
+		//value
+		double val = x;
+		//get the index
+		int index = popInteger();
+		index = index * 2;
+		//get the array reference
+		String refArray = popString(); 
+		if(refArray.equals("Arr 1")) {
+			//store the value in the virtual array in heap
+			Bytecode_newarray.double_array[index] = val;
+			//get color at index
+			colorAtIndex = Driver.array.getColor(index);
+			//set the value in the visual array in heap
+			Driver.array.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+			Driver.array.set("", index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
+		}
+		//write the snapshot
+		writeSnap();
+
+		//update the shades of gray
+		Driver.array.setColor(index, colorAtIndex);
+		Driver.array.setColor(index+1, colorAtIndex);
+	}
 
     /**
 	 * Load a Double to the operand stack
@@ -372,6 +521,40 @@ abstract class Bytecode_ {
      * @param       x           The double to be loaded
      */
 	public void loadDouble(Double x) throws IOException,JDOMException {
+		//push a double on to the virtual stack
+		f._stack.push("");
+		f._stack.push(x);
+
+		//set the double in the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		writeSnap();
+
+		//update the coloring of the visual stack
+		if(f.stackColor) {
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+    /**
+	 * Load a Double from array onto the operand stack
+     *
+     * @param       x           The double to be loaded
+     */
+	public void loadArrayDouble(Double x) throws IOException,JDOMException {
 		//push a double on to the virtual stack
 		f._stack.push("");
 		f._stack.push(x);
@@ -502,6 +685,36 @@ abstract class Bytecode_ {
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 		f.localVariableArray.setColor(index+1, f._colorLocalVariableArray[index+1]);
 	}
+    /**
+	 * Store a long in the array located in the heap
+     *
+     * @param       x           The Long to be stored
+     */
+	public void storeArrayLong(Long x) throws IOException,JDOMException {
+		String colorAtIndex = Driver.lightGray;
+		//value
+		long val = x;
+		//get the index
+		int index = popInteger();
+		index = index * 2;
+		//get the array reference
+		String refArray = popString(); 
+		if(refArray.equals("Arr 1")) {
+			//store the value in the virtual array in heap
+			Bytecode_newarray.long_array[index] = val;
+			//get color at index
+			colorAtIndex = Driver.array.getColor(index);
+			//set the value in the visual array in heap
+			Driver.array.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+			Driver.array.set("", index+1, Driver.CURRENT_HIGHLIGHT_COLOR);
+		}
+		//write the snapshot
+		writeSnap();
+
+		//update the shades of gray
+		Driver.array.setColor(index, colorAtIndex);
+		Driver.array.setColor(index+1, colorAtIndex);
+	}
 
     /**
 	 * Load a long to the operand stack
@@ -509,6 +722,40 @@ abstract class Bytecode_ {
      * @param       x           The long to be loaded
      */
 	public void loadLong(Long x) throws IOException,JDOMException {
+		//push the long on the virtual stack
+		f._stack.push("");
+		f._stack.push(x);
+
+		//set the long in the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set("", --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		writeSnap();
+
+		//update the colors of the visual stack
+		if(f.stackColor) {
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stack.setColor(f.currentStackHeight+1, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+    /**
+	 * Load a long from array onto the operand stack
+     *
+     * @param       x           The long to be loaded
+     */
+	public void loadArrayLong(Long x) throws IOException,JDOMException {
 		//push the long on the virtual stack
 		f._stack.push("");
 		f._stack.push(x);
@@ -627,6 +874,33 @@ abstract class Bytecode_ {
 		//update the shades of gray
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
+    /**
+	 * Store an int in the array located in the heap
+     *
+     * @param       x           The Integer to be stored
+     */
+	public void storeArrayInteger(Integer x) throws IOException,JDOMException {
+		String colorAtIndex = Driver.lightGray;
+		//value
+		int val = x;
+		//get the index
+		int index = popInteger();
+		//get the array reference
+		String refArray = popString(); 
+		if(refArray.equals("Arr 1")) {
+			//store the value in the virtual array in heap
+			Bytecode_newarray.int_array[index] = val;
+			//get color at index
+			colorAtIndex = Driver.array.getColor(index);
+			//set the value in the visual array in heap
+			Driver.array.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		}
+		//write the snapshot
+		writeSnap();
+
+		//update the shades of gray
+		Driver.array.setColor(index, colorAtIndex);
+	}
 
     /**
 	 * Load an int to the operand stack
@@ -634,6 +908,36 @@ abstract class Bytecode_ {
      * @param       x           The int to be loaded
      */
 	public void loadInteger(Integer x) throws IOException,JDOMException {
+		//push the int on the virtual stack
+		f._stack.push(x);
+
+		//set the int on the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		writeSnap();
+
+		//update the colors of the visual stack
+		if(f.stackColor) {
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+    /**
+	 * Load an int from array onto the operand stack
+     *
+     * @param       x           The int to be loaded
+     */
+	public void loadArrayInteger(Integer x) throws IOException,JDOMException {
 		//push the int on the virtual stack
 		f._stack.push(x);
 
@@ -747,6 +1051,33 @@ abstract class Bytecode_ {
 		//update the colors of the local variable array
 		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
 	}
+    /**
+	 * Store a float in the array located in the heap
+     *
+     * @param       x           The Float to be stored
+     */
+	public void storeArrayFloat(Float x) throws IOException,JDOMException {
+		String colorAtIndex = Driver.lightGray;
+		//value
+		float val = x;
+		//get the index
+		int index = popInteger();
+		//get the array reference
+		String refArray = popString(); 
+		if(refArray.equals("Arr 1")) {
+			//store the value in the virtual array in heap
+			Bytecode_newarray.float_array[index] = val;
+			//get color at index
+			colorAtIndex = Driver.array.getColor(index);
+			//set the value in the visual array in heap
+			Driver.array.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		}
+		//write the snapshot
+		writeSnap();
+
+		//update the shades of gray
+		Driver.array.setColor(index, colorAtIndex);
+	}
 
     /**
 	 * Load a float to the operand stack
@@ -758,6 +1089,155 @@ abstract class Bytecode_ {
 		f._stack.push(x);
 
 		//set the float on the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		writeSnap();
+
+		//update the coloring of the visual stack
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+    /**
+	 * Load a float from array onto the operand stack
+     *
+     * @param       x           The float to be loaded
+     */
+	public void loadArrayFloat(Float x) throws IOException,JDOMException {
+		//push the float on the virtual stack
+		f._stack.push(x);
+
+		//set the float on the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set(x, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		writeSnap();
+
+		//update the coloring of the visual stack
+		if(f.stackColor){
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}
+	}
+    //---------------------- String Methods -----------------------------------
+    /**
+	 * Push a string on the operand stack
+     *
+     * @param       f           The string to be pushed
+     */
+	public void pushString(String str) throws IOException,JDOMException {
+		//push the string on the virtual stack
+		f._stack.push(str);
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("", (f.currentStackHeight));
+
+		//set the string on the visual stack
+		f.stack.set(str, --f.currentStackHeight, Driver.CURRENT_HIGHLIGHT_COLOR);
+		f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		//write the snapshot
+		if(opcode.contains("return"))
+			writeSnapReturn();
+		else
+			writeSnap();
+
+		//update the colors on the visual stack
+		if(f.stackColor) {
+			f.stack.setColor(f.currentStackHeight, Driver.darkGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight, Driver.lightGray);
+			f.stackColor = true;
+		}	
+	}
+
+    /**
+	 * Pop a float from the operand stack
+     *
+     * @return           The float popped off the operand stack
+     */
+	public String popString() {
+		//pop the string off of the virtual stack
+		String temp = (String) f._stack.pop();
+
+		//set the visual stack to blank values
+		f.stack.setRowLabel("", (f.currentStackHeight));
+		f.stack.set("", f.currentStackHeight++);
+
+		//update the colors of the visual stack
+		if(f.currentStackHeight == f.stackSize)
+		;
+		else
+			f.stack.setRowLabel("Top", (f.currentStackHeight));
+
+		if(f.stackColor) {
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = false;
+		}		
+		else {
+			f.stack.setColor(f.currentStackHeight-1, Driver.lightGray);
+			f.stackColor = true;
+		}
+
+		//return the float
+		return temp;
+	}
+
+    /**
+	 * Store a string in the local variable array
+     *
+     * @param       x           The string to be stored
+     */
+	public void storeString(String x) throws IOException,JDOMException {
+		//get the index
+		int index = Integer.parseInt(arguments.get(0));
+
+		//store the value in the virtual local variable array
+		f._localVariableArray[index] = String.valueOf(x);
+
+		//set the value in the visual local variable array
+		f.localVariableArray.set(String.valueOf(x), index, Driver.CURRENT_HIGHLIGHT_COLOR);
+		
+		//write the snapshot
+		writeSnap();
+
+		//update the colors of the local variable array
+		f.localVariableArray.setColor(index, f._colorLocalVariableArray[index]);
+	}
+
+    /**
+	 * Load a string to the operand stack
+     *
+     * @param       x           The string to be loaded
+     */
+	public void loadString(String x) throws IOException,JDOMException {
+		//push the string on the virtual stack
+		f._stack.push(x);
+
+		//set the string on the visual stack
 		if(f.currentStackHeight == f.stackSize)
 		;
 		else
@@ -819,8 +1299,8 @@ abstract class Bytecode_ {
 			for(int i = 2; i < front.length; i++)
 				arguments.add(front[i]);
 
-			//split the front half of the string into an array of components
-			String[] back = split[1].split("( |\\t|:|,|_|;|\\))+");
+			//split the back half of the string into an array of components
+			String[] back = split[1].split("( |\\t|:|,|;|\\))+");
 
 			//get the type of object referred to
 			objectType = back[0];
