@@ -207,8 +207,8 @@ else
 				  Driver.runTimeStack, 
 				  f.stack, 
 				  hpLabel,
-				  f.localVariableArray, f.jvmLegend
-				  );
+				  f.localVariableArray, f.jvmLegend,
+				  f.textBox);
 		f.textBox.setText(" ");
 		}
 		else {
@@ -219,7 +219,7 @@ else
 				  pcHeap,
 				  Driver.runTimeStack,
 				  hpLabel,
-				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel,f.textBox
 				  );
 			}
 
@@ -308,7 +308,7 @@ else {
 				  Driver.runTimeStack, 
 				  f.stack, 
 				  hpLabel,
-				  f.localVariableArray, f.jvmLegend
+				  f.localVariableArray, f.jvmLegend,f.textBox
 				  );
 		else
 			Driver.show.writeSnap(Driver.TITLE, 
@@ -319,7 +319,7 @@ else {
 				  pcHeap,
 				  Driver.runTimeStack,
 				  hpLabel,
-				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel
+				  f.localVariableArray, f.jvmLegend, f.emptyStackLabel,f.textBox
 				  );
 		}
 
@@ -378,7 +378,7 @@ else {
 				  MakeURI.doc_uri(lineNumber, f), 
 				  MakeURI.make_uri(lineNumber, 
 						   PseudoCodeDisplay.GREEN, f), 
-				  Driver.runTimeStack, f.jvmLegend);
+				  Driver.runTimeStack, f.jvmLegend,f.textBox);
 		f.textBox.setText(" ");
 	}
 
